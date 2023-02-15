@@ -1,16 +1,23 @@
+import Layout from 'components/Layout';
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const OperationsPage = lazy(() =>
+  import('../pages/OperationsPage/OperationsPage')
+);
+const ReportsPage = lazy(() => import('../pages/ReportsPage/ReportsPage'));
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/operations" element={<OperationsPage />} />
+          <Route path="/reports" element={<ReportsPage />} />
+        </Route>
+      </Routes>
     </div>
   );
 };

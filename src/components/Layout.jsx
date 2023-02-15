@@ -5,7 +5,6 @@ import Header from './Header/Header';
 const Layout = () => {
   return (
     <div>
-      Hello World
       <Header />
       <Suspense fallback={<div>Loading...</div>}>
         Hello World

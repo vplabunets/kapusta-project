@@ -9,7 +9,7 @@ import { CustomizedSwitcher } from 'components/UI/CustomizedSwitcher';
 
 const Header = () => {
   // In future will be connected with Redux
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  // const [isLoggedIn, setIsLoggedIn] = useState(true); // inactive until usage start
   //
 
   return (

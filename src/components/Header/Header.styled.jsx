@@ -8,6 +8,7 @@ export const ContainerHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 56px;
   box-sizing: border-box;
   flex-shrink: 0;
 

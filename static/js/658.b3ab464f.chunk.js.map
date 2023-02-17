@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/658.b3ab464f.chunk.js","mappings":"iJAMA,UAJoB,WAClB,OAAO,kBACR,C","sources":["pages/ReportsPage/ReportsPage.jsx"],"sourcesContent":["import React from 'react';\n\nconst ReportsPage = () => {\n  return <div></div>;\n};\n\nexport default ReportsPage;\n"],"names":[],"sourceRoot":""}

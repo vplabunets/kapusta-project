@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/754.4cd50b81.chunk.js","mappings":"iJAMA,UAJuB,WACrB,OAAO,2CACR,C","sources":["pages/OperationsPage/OperationsPage.jsx"],"sourcesContent":["import React from 'react';\n\nconst OperationsPage = () => {\n  return <div>OperationsPage</div>;\n};\n\nexport default OperationsPage;\n"],"names":[],"sourceRoot":""}

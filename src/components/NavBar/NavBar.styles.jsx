@@ -40,7 +40,7 @@ export const UserName = styled.p`
       top: 10px;
 
       width: 1px;
-      height: 54px;
+      height: 36px;
 
       background-color: rgba(224, 229, 235, 1);
       @media ${device.laptop} {

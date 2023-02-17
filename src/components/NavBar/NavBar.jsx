@@ -8,9 +8,9 @@ import {
   UserName,
   ExitContainer,
   LogoutBtn,
-} from './AuthNav.styles';
+} from './NavBar.styles';
 
-const AuthNav = () => {
+const NavBar = () => {
   return (
     <Container>
       <Avatar
@@ -39,4 +39,4 @@ const AuthNav = () => {
   );
 };
 
-export default AuthNav;
+export default NavBar;

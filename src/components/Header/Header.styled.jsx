@@ -6,6 +6,7 @@ export const ContainerHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   box-sizing: border-box;
   flex-shrink: 0;

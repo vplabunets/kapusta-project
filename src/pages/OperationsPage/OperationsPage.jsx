@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OperationsPage = () => {
-  return <div></div>;
+  return <div>OperationsPage</div>;
 };
 
 export default OperationsPage;

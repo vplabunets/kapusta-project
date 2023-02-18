@@ -16,10 +16,15 @@ export const Btn = styled.button`
   border: none;
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
+  }
+
   width: ${p => {
     if (p.design === 'home') return '116px';
     if (p.design === 'operation') return '130px';
-    if (p.design === 'modal') return '80px';
+    if (p.design === 'modal') return '110px';
   }};
 
   @media ${device.tablet} {
@@ -58,8 +63,4 @@ export const Btn = styled.button`
     if (p.color === 'accent') return;
     return '2px solid #f6f7fc;';
   }};
-  &:hover,
-  &:focus {
-    transform: scale(0.9);
-  }
 `;

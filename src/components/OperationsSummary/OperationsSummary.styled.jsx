@@ -1,12 +1,20 @@
 import styled from 'styled-components';
+import device from 'constants/deviceSize';
 
 const Wrapper = styled.div`
-  width: 213px;
+  display: none;
+  width: 230px;
   height: 280px;
   background-color: ${p => p.theme.lightTheme.tableHeadBackgroundColor};
   border-radius: 20px 20px 20px 0;
-  display: flex;
-  justify-content: center;
+
+  @media ${device.tablet} {
+    display: flex;
+    justify-content: center;
+  }
+  @media ${device.laptop} {
+    width: 213px;
+  }
 `;
 const Title = styled.caption`
   font-family: 'Roboto';
@@ -16,6 +24,7 @@ const Title = styled.caption`
   font-weight: 700;
   font-size: 12px;
   line-height: 1.16;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 `;
 
@@ -45,6 +54,7 @@ const Cell = styled.td`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
+  letter-spacing: 0.04em;
   color: ${p => p.theme.lightTheme.mainTextColor};
   text-transform: uppercase;
 `;

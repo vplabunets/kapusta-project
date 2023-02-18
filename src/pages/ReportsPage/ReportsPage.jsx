@@ -2,13 +2,17 @@ import ReportsBalanceContainer from 'components/ReportsBalanceContainer/ReportsB
 import React from 'react';
 import ReportsPageWrapper from './ReportsPage.styled';
 import ReportsMonthBalance from 'components/ReportsMonthBalance/ReportsMonthBalance';
+import { Background } from 'components/UI/Background/Background';
 
 const ReportsPage = () => {
   return (
-    <ReportsPageWrapper>
-      <ReportsMonthBalance />
-      <ReportsBalanceContainer />
-    </ReportsPageWrapper>
+    <>
+      <Background />
+      <ReportsPageWrapper>
+        <ReportsMonthBalance />
+        <ReportsBalanceContainer />
+      </ReportsPageWrapper>
+    </>
   );
 };
 

@@ -7,7 +7,7 @@ import {
   Line,
 } from './ReportsMonthBalance.styled';
 
-const MonthBalance = () => {
+const ReportsMonthBalance = () => {
   return (
     <Wrapper>
       <ExpensesContainer>
@@ -22,4 +22,4 @@ const MonthBalance = () => {
     </Wrapper>
   );
 };
-export default MonthBalance;
+export default ReportsMonthBalance;

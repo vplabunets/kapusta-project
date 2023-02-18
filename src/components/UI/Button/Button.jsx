@@ -1,3 +1,4 @@
+import  PropTypes  from 'prop-types';
 import { Btn } from './Button.styled';
 
 // children - text in the button
@@ -10,3 +11,11 @@ export const Button = ({ children, color, type, design }) => (
     {children}
   </Btn>
 );
+
+
+Button.propTypes = {
+  children: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  design: PropTypes.string.isRequired
+}

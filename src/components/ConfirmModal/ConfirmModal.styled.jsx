@@ -52,7 +52,7 @@ export const ButtonClose = styled.button`
   }
 `;
 
-export const Content = styled.div``;
+
 
 export const Text = styled.p`
   text-align: center;

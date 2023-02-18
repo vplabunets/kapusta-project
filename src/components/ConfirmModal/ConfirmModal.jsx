@@ -7,7 +7,6 @@ import {
   Backdrop,
   Modal,
   ButtonClose,
-  Content,
   Text,
   ButtonWrapper,
 } from "./ConfirmModal.styled";
@@ -23,7 +22,7 @@ const ConfirmModal = ({text}) => {
             <use href={`${icon}#icon-close`}></use>
           </svg>
         </ButtonClose>
-        <Content>
+        <div>
           <Text>{text}</Text>
           <ButtonWrapper>
             <Button
@@ -40,7 +39,7 @@ const ConfirmModal = ({text}) => {
               NO
             </Button>
           </ButtonWrapper>
-        </Content>
+        </div>
       </Modal>
     </Backdrop>,
     document.querySelector('#modal-root')

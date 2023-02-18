@@ -4,7 +4,7 @@ import device from 'constants/deviceSize';
 
 export const Wrapper = styled.div`
  margin-top: 32px;
- background-color: #F2F5FC;
+ background-color:  ${p => p.theme.lightTheme.mainBackgroundColor};
 
   @media ${device.tablet} {
     display: flex;
@@ -66,7 +66,7 @@ export const Input = styled.input`
     padding: 0;
     color: #000;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid  ${p => p.theme.lightTheme.headerColor};
     border-radius: 20px 0 0 20px;
      background-color: transparent;
     outline: none;
@@ -86,7 +86,7 @@ export const Input = styled.input`
       font-size: 12px;
       line-height: 1.17;
       letter-spacing: 0.02em;
-       color: #000;
+       color:  ${p => p.theme.lightTheme.tableHeadTextColor};
     }
  
 `;
@@ -104,14 +104,14 @@ export const Button = styled.button`
   text-transform: uppercase;
   padding-left: 16px;
   color: rgba(82, 85, 95, 0.7);
-  border: 2px solid white;
+  border: 2px solid ${p => p.theme.lightTheme.headerColor};
   border-radius: 0  20px 20px 0;
   cursor: pointer;
   background-color: transparent;
   :focus {
-      color: white;
-      background-color: #ff751d;
-      border-color: #ff751d;
+      color: ${p => p.theme.lightTheme.headerColor};
+      background-color: ${p => p.theme.lightTheme.accentColor};
+      border-color: ${p => p.theme.lightTheme.accentColor};
     }
 
     @media ${device.tablet} {

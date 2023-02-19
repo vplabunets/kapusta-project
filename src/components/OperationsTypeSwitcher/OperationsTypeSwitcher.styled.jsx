@@ -11,9 +11,11 @@ export const Wrapper = styled.div`
   @media ${device.tablet} {
     position: static;
     display: flex;
+    margin-top: 60px;
     align-self: flex-start;
+    width: 276px;
   }
-  width: 276px;
+
   @media ${device.laptop} {
   }
 `;
@@ -26,6 +28,10 @@ export const TypeButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  &:first-child {
+    margin-right: 2px;
+  }
 
   @media ${device.tablet} {
     width: 138px;

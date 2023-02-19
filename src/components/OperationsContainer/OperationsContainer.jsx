@@ -1,25 +1,23 @@
+import OperationsForm from 'components/OperationsForm/OperationsForm';
 import OperationsSummary from 'components/OperationsSummary/OperationsSummary';
 import OperationsTable from 'components/OperationsTable/OperationsTable';
-import OperationsTypeSwitcher from 'components/OperationsTypeSwitcher/OperationsTypeSwitcher';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Grid, Wrapper } from './OperationsContatiner.styled';
 
 const OperationsContainer = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const windowInnerWidth = window.innerWidth;
+  useEffect(() => {
+    if (windowInnerWidth > 768) {
+      setIsFormOpen(true);
+    }
+  }, [windowInnerWidth, isFormOpen]);
+
   return (
     <Wrapper>
-      <OperationsTypeSwitcher />
       <Grid>
-        <div
-          style={{
-            gridColumnStart: 1,
-            gridColumnEnd: 1,
-            gridRowStart: 1,
-            gridRowEnd: 2,
-          }}
-        >
-          Form
-        </div>
-        <OperationsTable />
+        {isFormOpen && <OperationsForm />}
+        {isFormOpen && <OperationsTable />}
         <OperationsSummary />
       </Grid>
     </Wrapper>

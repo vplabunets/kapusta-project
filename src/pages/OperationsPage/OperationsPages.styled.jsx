@@ -3,7 +3,7 @@ import device from 'constants/deviceSize';
 
 const OperationsPageWrapper = styled.div`
   position: relative;
-  /* min-height: 100%; */
+  min-height: 100%;
   width: 320px;
   /* height: 100vh; */
   display: flex;
@@ -20,6 +20,7 @@ const OperationsPageWrapper = styled.div`
     margin: 40px 32px 60px 32px;
   }
   @media ${device.laptop} {
+    width: 1098px;
     margin: 40px 91px 83px 91px;
   }
 `;

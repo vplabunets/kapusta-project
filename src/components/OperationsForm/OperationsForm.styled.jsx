@@ -13,12 +13,19 @@ export const FormWrapper = styled.form`
     margin: 0 auto;
     width: 624px;
     height: 44px;
+    grid-column-start: 1;
+    grid-column-end: 1;
   }
   @media ${device.laptop} {
-    width: 1120px;
+    /* width: 1120px; */
     flex-direction: row;
+    justify-self: flex-start;
     flex-wrap: nowrap;
     padding: 0;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    /* grid-row-start: 1;
+    grid-row-end: 2; */
   }
 `;
 

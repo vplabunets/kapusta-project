@@ -17,15 +17,19 @@ export const Table = styled.table`
     width: 100%;
     max-width: 624px;
     margin-top: 48px;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
   }
 
   @media ${device.laptop} {
     width: 746px;
     margin-top: 60px;
-    grid-column-start: 1;
+    /* grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
-    grid-row-end: 2;
+    grid-row-end: 2; */
   }
 `;
 

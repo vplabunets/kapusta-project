@@ -1,14 +1,18 @@
 import OperationsBalanceContainer from 'components/OperationsBalanceContainer/OperationsBalanceContainer';
 import OperationsSummary from 'components/OperationsSummary/OperationsSummary';
-import React from 'react';
+
+import { Background } from 'components/UI/Background/Background';
 import OperationsPageWrapper from './OperationsPages.styled';
 
 const OperationsPage = () => {
   return (
-    <OperationsPageWrapper>
-      <OperationsBalanceContainer />
-      <OperationsSummary />
-    </OperationsPageWrapper>
+    <>
+      <Background />
+      <OperationsPageWrapper>
+        <OperationsBalanceContainer />
+        <OperationsSummary />
+      </OperationsPageWrapper>
+    </>
   );
 };
 

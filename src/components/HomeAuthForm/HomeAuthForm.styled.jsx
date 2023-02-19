@@ -1,31 +1,27 @@
-import styled from "styled-components";
-import { Field} from "formik";
+import styled from 'styled-components';
+import { Field } from 'formik';
 
 import device from 'constants/deviceSize';
 
-
 export const MainWrapper = styled.div`
-margin: 0 auto;
-  background-color: #FFFFFF;
+  margin: 0 auto;
+  background-color: #ffffff;
   max-width: 426px;
 
   padding: 40px 20px;
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
   border-radius: 30px;
 
-    @media ${device.tablet} {
-     max-width: 426px;
-     width: 426px;
-      padding: 56px 83px;
+  @media ${device.tablet} {
+    max-width: 426px;
+    width: 426px;
+    padding: 56px 83px;
   }
 
-      @media ${device.laptop} {
- position: fixed;
-  top: 117px;
-  right: 91px;
+  @media ${device.laptop} {
+    margin: 117px 0 0;
   }
 `;
-
 
 export const GoogleText = styled.p`
   width: 222px;
@@ -36,13 +32,13 @@ export const GoogleText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
 
-  color: #52555F;
+  color: #52555f;
 
-      @media ${device.laptop} {
+  @media ${device.laptop} {
     width: 100%;
     margin-bottom: 20px;
   }
-  `;
+`;
 
 export const GoogleButton = styled.button`
   display: flex;
@@ -52,8 +48,8 @@ export const GoogleButton = styled.button`
   width: 122px;
   height: 40px;
   margin: 0 auto 32px;
-  background-color: #F6F7FB;
-    border: none;
+  background-color: #f6f7fb;
+  border: none;
   border-radius: 26px;
   cursor: pointer;
 
@@ -69,47 +65,45 @@ export const GoogleButton = styled.button`
     height: 18px;
     margin-right: 10px;
   }
-  `;
-
-
+`;
 
 export const LoginText = styled.p`
-    text-align: left;
+  text-align: left;
   margin-bottom: 16px;
 
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
 
-  color:#52555F;
+  color: #52555f;
 
-    @media ${device.laptop} {
-        width: 250px;
+  @media ${device.laptop} {
+    width: 250px;
     margin-bottom: 20px;
   }
 `;
 
 export const AuthFormLabel = styled.label`
-      display: block;
-margin-bottom: 12px;
+  display: block;
+  margin-bottom: 12px;
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: 0.04em;
   color: #000000;
-   :nth-of-type(2) {
+  :nth-of-type(2) {
     margin-top: 20px;
-}
+  }
   @media ${device.tablet} {
     font-size: 12px;
     line-height: 1.16;
-          :nth-of-type(2) {
-    margin-top: 32px;
-}
+    :nth-of-type(2) {
+      margin-top: 32px;
+    }
   }
 `;
 
 export const Input = styled(Field)`
-margin-top: 12px;
+  margin-top: 12px;
   width: 100%;
   height: 52px;
   padding: 17px 19px;
@@ -125,7 +119,8 @@ margin-top: 12px;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.04em;
-    color: #a6abb9;}
+    color: #a6abb9;
+  }
 `;
 
 export const ButtonContainer = styled.div`
@@ -134,8 +129,8 @@ export const ButtonContainer = styled.div`
   margin: 0 4px;
   padding-top: 28px;
   gap: 8px;
-      @media ${device.tablet} {
-       justify-content: space-between;
-         align-items: center;
-      }
+  @media ${device.tablet} {
+    justify-content: space-between;
+    align-items: center;
+  }
 `;

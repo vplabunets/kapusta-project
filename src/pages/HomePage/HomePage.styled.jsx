@@ -61,6 +61,10 @@ export const HomePageWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
+  @media ${device.tablet} {
+    max-width: 426px;
+  }
+
   @media ${device.laptop} {
     align-items: center;
     flex-direction: row;
@@ -116,7 +120,7 @@ export const CabbageContainer = styled.div`
   @media ${device.tablet} {
     position: absolute;
     left: 103px;
-    top: 770px;
+    top: 826px;
     margin-left: 0px;
 
     z-index: -1;

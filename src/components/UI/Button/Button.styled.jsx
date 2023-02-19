@@ -45,7 +45,7 @@ export const Btn = styled.button`
   filter: ${p => {
     if (p.design === 'home' && p.color === 'accent')
       return 'drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35))';
-    if (p.design === 'home' && p.color === 'white')
+    if (p.design === 'home' && p.color === 'grey')
       return 'drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15))';
     return;
   }};
@@ -60,6 +60,7 @@ export const Btn = styled.button`
     if (p.color === 'accent') return '#FFFFFF';
     return '#52555F';
   }};
+
   border: ${p => {
     if (p.color === 'accent') return;
     return '2px solid #f6f7fc;';

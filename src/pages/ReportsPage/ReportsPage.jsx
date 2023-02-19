@@ -2,17 +2,17 @@ import ReportsBalanceContainer from 'components/ReportsBalanceContainer/ReportsB
 import React from 'react';
 import ReportsPageWrapper from './ReportsPage.styled';
 import ReportsMonthBalance from 'components/ReportsMonthBalance/ReportsMonthBalance';
-import { Background } from 'components/UI/Background/Background';
+
+import { ReportsReturnBack } from 'components/ReportsReturnBack/ReportsReturnBack';
 
 const ReportsPage = () => {
   return (
-    <>
-      <Background />
-      <ReportsPageWrapper>
-        <ReportsMonthBalance />
-        <ReportsBalanceContainer />
-      </ReportsPageWrapper>
-    </>
+    <ReportsPageWrapper>
+      <ReportsReturnBack />
+      <ReportsMonthBalance />
+      <ReportsBalanceContainer />
+    </ReportsPageWrapper>
+
   );
 };
 

@@ -52,6 +52,7 @@ export const Btn = styled.button`
 
   background-color: ${p => {
     if (p.color === 'accent') return '#FF751D';
+    if (p.color === 'grey') return '#F5F6FB';
     return '#FFFFFF';
   }};
 

@@ -2,6 +2,7 @@ import ReportsBalanceContainer from 'components/ReportsBalanceContainer/ReportsB
 import React from 'react';
 import ReportsPageWrapper from './ReportsPage.styled';
 import ReportsMonthBalance from 'components/ReportsMonthBalance/ReportsMonthBalance';
+
 import { ReportsReturnBack } from 'components/ReportsReturnBack/ReportsReturnBack';
 
 const ReportsPage = () => {
@@ -11,6 +12,7 @@ const ReportsPage = () => {
       <ReportsMonthBalance />
       <ReportsBalanceContainer />
     </ReportsPageWrapper>
+
   );
 };
 

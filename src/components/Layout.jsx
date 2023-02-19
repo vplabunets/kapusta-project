@@ -9,7 +9,6 @@ const Layout = () => {
       <Header />
       <Suspense fallback={<div>Loading...</div>}>
         {/* Hello World */}
-    
         <Outlet />
       </Suspense>
     </div>

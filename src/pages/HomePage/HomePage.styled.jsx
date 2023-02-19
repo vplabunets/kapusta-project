@@ -61,8 +61,6 @@ export const HomePageWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  max-width: 426px;
-
   @media ${device.laptop} {
     align-items: center;
     flex-direction: row;

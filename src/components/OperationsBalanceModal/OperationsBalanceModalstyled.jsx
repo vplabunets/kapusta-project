@@ -10,8 +10,9 @@ export const Backdrop = styled.div`
 `;
 
 export const Modal = styled.div`
-  position: fixed;
-  top: 250px;
+  position: absolute;
+  /* overflow: hidden; */
+  top: 262px;
   left: 50%;
   transform: translateX(-50%);
   max-width: 280px;
@@ -21,12 +22,11 @@ export const Modal = styled.div`
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 30px;
   @media ${device.tablet} {
-   
     max-width: 288px;
     top: 160px;
-     left: 250px;
+    left: 250px;
   }
-  @media  ${device.laptop} {
+  @media ${device.laptop} {
     max-width: 288px;
     top: 160px;
     left: 52%;
@@ -40,7 +40,7 @@ export const Modal = styled.div`
     left: 20%;
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    border-bottom: 16px solid  #162c5b;
+    border-bottom: 16px solid #162c5b;
   }
 `;
 

@@ -11,9 +11,20 @@ const Wrapper = styled.div`
   @media ${device.tablet} {
     display: flex;
     justify-content: center;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
   }
   @media ${device.laptop} {
     width: 213px;
+    margin-top: 60px;
+    align-self: right;
+    justify-self: right;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
   }
 `;
 const Title = styled.caption`

@@ -1,13 +1,14 @@
 import Balance from 'components/Balance/Balance';
+import { Wrapper } from 'components/OperationsBalanceContainer/OperationsBalanceContainer.styled';
 import OperationsForwardToReports from 'components/OperationsForwardToReports/OperationsForwardToReports';
 import React from 'react';
 
 const OperationsBalanceContainer = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <Balance />
+    <Wrapper>
       <OperationsForwardToReports />
-    </div>
+      <Balance />
+    </Wrapper>
   );
 };
 

@@ -11,7 +11,7 @@ import {
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Wrapper } from './ReportsChart.styled';
 
-const UserData = [
+const incomeData = [
   {
     id: 1,
     mail: 'email@mail.com',
@@ -94,6 +94,8 @@ const UserData = [
     value: 190,
   },
 ];
+
+const UserData = incomeData.sort((a, b) => (a.value > b.value ? 1 : -1));
 
 const ReportsChart = () => {
   const isScreenMorePhone = useMediaQuery('(min-width: 768px)');

@@ -6,7 +6,6 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
-  n,
 } from 'chart.js/auto';
 
 import useMediaQuery from '@mui/material/useMediaQuery';

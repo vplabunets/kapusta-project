@@ -6,6 +6,7 @@ import {
   CategoryScale,
   LinearScale,
   BarElement,
+  n,
 } from 'chart.js/auto';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -113,6 +114,9 @@ const ReportsChart = () => {
       },
     ],
   });
+
+  // useEffect(() => setUserData(), []);
+
   let delayed;
   const options = {
     maintainAspectRatio: false,
@@ -145,7 +149,7 @@ const ReportsChart = () => {
 
         clamp: false,
         formatter: function (value) {
-          return value + ' ' + 'UAH';
+          return `${value} UAH`;
         },
       },
     },

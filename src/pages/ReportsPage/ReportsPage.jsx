@@ -5,6 +5,7 @@ import ReportsMonthBalance from 'components/ReportsMonthBalance/ReportsMonthBala
 
 import { ReportsReturnBack } from 'components/ReportsReturnBack/ReportsReturnBack';
 import { Background } from 'components/UI/Background/Background';
+import ReportsChart from 'components/ReportsChart/ReportsChart';
 
 const ReportsPage = () => {
   return (
@@ -14,6 +15,7 @@ const ReportsPage = () => {
         <ReportsReturnBack />
         <ReportsMonthBalance />
         <ReportsBalanceContainer />
+        <ReportsChart />
       </ReportsPageWrapper>
     </>
   );

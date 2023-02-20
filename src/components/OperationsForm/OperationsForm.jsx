@@ -50,10 +50,11 @@ const OperationsForm = () => {
             </CalendarIcon>
           </DateWrapper>
           <DescriptionInput
+            placeholder="Product description"
             aria-label="Text"
             // onChange={}
-            type="date"
-            // value={date}
+            type="text"
+            // value={description}
           />
           <SelectInput
             aria-label="Select"

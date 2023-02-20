@@ -17,13 +17,9 @@ export const FormWrapper = styled.form`
     grid-column-end: 1;
   }
   @media ${device.laptop} {
-<<<<<<< Updated upstream
-    /* width: 1120px; */
-=======
     padding-top: 30px;
     width: 1120px;
     height: 134px;
->>>>>>> Stashed changes
     flex-direction: row;
     justify-self: flex-start;
     flex-wrap: nowrap;

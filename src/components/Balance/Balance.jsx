@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Title, Input, Button, Wrapper } from './Balance.styled';
 
 const Balance = () => {

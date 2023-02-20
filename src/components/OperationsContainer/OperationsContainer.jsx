@@ -4,7 +4,7 @@ import OperationsTable from 'components/OperationsTable/OperationsTable';
 import React, { useEffect, useState } from 'react';
 import { Grid, Wrapper } from './OperationsContainer.styled';
 
-const OperationsContainer = () => {
+const OperationsContainer = ({ type }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const windowInnerWidth = window.innerWidth;
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {
@@ -10,6 +10,7 @@ import {
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Wrapper } from './ReportsChart.styled';
+ChartJS.register(CategoryScale, LinearScale, BarElement);
 
 const incomeData = [
   {
@@ -102,7 +103,23 @@ const ReportsChart = () => {
 
   const ticksFontSize = isScreenMorePhone ? 12 : 10;
 
-  const [userData, setUserData] = useState({
+  // const [userData, setUserData] = useState({
+  //   labels: UserData.map(data => data.description),
+  //   datasets: [
+  //     {
+  //       label: '',
+  //       data: UserData.map(data => data.value),
+  //       backgroundColor: ['#FF751D', '#FFDAC0'],
+  //       borderRadius: 10,
+  //       borderWidth: 1,
+  //       barMargin: 1,
+  //     },
+  //   ],
+  // });
+
+  // useEffect(() => setUserData(), []);
+
+  const userData = {
     labels: UserData.map(data => data.description),
     datasets: [
       {
@@ -114,9 +131,7 @@ const ReportsChart = () => {
         barMargin: 1,
       },
     ],
-  });
-
-  // useEffect(() => setUserData(), []);
+  };
 
   let delayed;
   const options = {

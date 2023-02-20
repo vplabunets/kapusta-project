@@ -105,11 +105,11 @@ export const CalendarIcon = styled.svg`
   top: 12px;
   cursor: pointer;
   @media ${device.tablet} {
-    left: -5px;
+    left: -12px;
     top: 2px;
   }
   @media ${device.laptop} {
-    left: 2px;
+    left: -5px;
 
     text-align: center;
   }
@@ -149,6 +149,7 @@ export const SelectInput = styled(Select)`
   color: #c7ccdc;
   @media ${device.tablet} {
     height: 44px;
+    border-bottom-right-radius: 0px;
   }
   @media ${device.laptop} {
     /* width: 238px; */
@@ -193,7 +194,7 @@ export const CalculatorIcon = styled.svg`
 
 export const CountInput = styled.input`
   width: 183px;
-  height: 44px;
+  height: 40px;
   padding-right: 55px;
   padding-left: 55px;
   border-radius: 22px;

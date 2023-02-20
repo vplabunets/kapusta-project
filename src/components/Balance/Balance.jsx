@@ -1,22 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Title, Input, Button, Wrapper } from './Balance.styled';
 
 const Balance = () => {
-  return <Wrapper>
-    <Title> Balance:</Title>
-    <Form>
-      <Input
-        type="number"
-        name="balance"
-        placeholder="00.00 UAH"
-        pattern="[0-9, .UAH]*"
-      />
+  // const [sum, setSum] = useState('');
 
-      <Button type="submit" >
-        Confirm
-      </Button>
-    </Form>
-  </Wrapper>;
-}
+  return (
+    <Wrapper>
+      <Title> Balance:</Title>
+      <Form>
+        <Input
+          type="number"
+          name="balance"
+          placeholder="00.00 UAH"
+          pattern="[0-9, .UAH]*"
+          // value={`${sum}`}
+          // onChange={e => console.log(e.target.value)}
+        />
 
-export default Balance
+        <Button type="submit">Confirm</Button>
+      </Form>
+    </Wrapper>
+  );
+};
+
+export default Balance;

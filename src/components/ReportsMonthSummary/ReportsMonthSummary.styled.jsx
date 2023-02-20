@@ -2,17 +2,21 @@
 import styled from 'styled-components';
 import device from 'constants/deviceSize';
 
-export const Section = styled.section`
+export const Section = styled.div`
   margin: 0 auto;
 
   background-color: #ffffff;
 
   width: 100%;
+  margin-bottom: 32px;
 
   @media ${device.tablet} {
     padding: 20px 0;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 30px;
+  }
+  @media ${device.laptop} {
+    margin-bottom: 37px;
   }
 `;
 

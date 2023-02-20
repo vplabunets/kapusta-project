@@ -5,6 +5,7 @@ import device from 'constants/deviceSize';
 export const BackgroundGrey = styled.div`
   width: 100%;
   height: 352px;
+  z-index: -1;
 
   position: absolute;
   top: 0;

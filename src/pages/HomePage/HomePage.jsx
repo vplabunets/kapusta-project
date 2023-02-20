@@ -2,11 +2,8 @@ import Icon from 'images/icons-sprite.svg';
 
 import HomeAuthForm from 'components/HomeAuthForm/HomeAuthForm';
 import { Cabbage } from 'components/UI/Cabbage/Cabbage';
-import CabbageBackground from 'images/background/cabbagegroup.png';
-
+import { AnimateBackground } from 'components/UI/AnimateBackground/AnimateBackground';
 import {
-  BackgroundGrey,
-  DesignWrapper,
   HomePageWrapper,
   TextGroup,
   CabbageContainer,
@@ -15,13 +12,7 @@ import {
 const HomePage = () => {
   return (
     <>
-      <BackgroundGrey />
-      <DesignWrapper>
-        <svg alt="cabbage">
-          <use href={`${Icon}#icon-cabbage-left`}></use>
-        </svg>
-        <img src={CabbageBackground} alt="cabbage group" />
-      </DesignWrapper>
+      <AnimateBackground />
       <HomePageWrapper>
         <TextGroup>
           <svg alt="mainLogo">

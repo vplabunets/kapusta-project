@@ -30,12 +30,12 @@ export const BackgroundWhite = styled.div`
 
   @media ${device.laptop} {
     display: block;
-    z-index: -1;
+    z-index: -2;
     width: 100%;
     height: 100%;
 
     position: absolute;
-    bottom: 0;
+    bottom: -1;
 
     overflow: hidden;
   }

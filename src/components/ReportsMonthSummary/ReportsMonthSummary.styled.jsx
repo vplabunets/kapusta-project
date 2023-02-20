@@ -1,5 +1,5 @@
+//  import styled from 'styled-components';
 import styled from 'styled-components';
-
 import device from 'constants/deviceSize';
 
 export const Section = styled.section`

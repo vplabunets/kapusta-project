@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import device from 'constants/deviceSize';
+
 export const Wrapper = styled.div`
   position: fixed;
   bottom: 0;
@@ -29,6 +30,10 @@ export const TypeButton = styled.button`
   align-items: center;
   justify-content: center;
   border: none;
+  cursor: pointer;
+  background-color: ${p => p.theme.lightTheme.tableHeadBackgroundColor};
+   }
+  color: ${p => p.theme.lightTheme.tableHeadTextColor};
   &:first-child {
     margin-right: 2px;
   }
@@ -39,6 +44,10 @@ export const TypeButton = styled.button`
     border: none;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
+    background-color: #fefefe;
+    :hover {
+      background-color: ${p => p.theme.lightTheme.chartLight};
+    }
   }
 
   @media ${device.laptop} {

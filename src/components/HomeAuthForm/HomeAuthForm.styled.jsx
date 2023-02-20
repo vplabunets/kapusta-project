@@ -136,24 +136,24 @@ export const ButtonContainer = styled.div`
 `;
 
 export const EyeWrapper = styled.div`
-      position: relative; 
-    width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        & svg{
-            width: 20px;
-            height: 20px;
-            fill: #52555f;
-        }
-        & button{
-            position: absolute;
-            top: 28px;
-            right: 19px;
-            width: 20px;
-            height: 20px;
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
-        }
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & svg {
+    width: 20px;
+    height: 20px;
+    fill: #52555f;
+  }
+  & button {
+    position: absolute;
+    top: 28px;
+    right: 19px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
 `;

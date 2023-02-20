@@ -54,7 +54,6 @@ const Sum = styled.p`
   }};
 `;
 
-
 const ExpensesContainer = styled.div`
   text-align: center;
   @media ${device.tablet} {

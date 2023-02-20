@@ -52,8 +52,6 @@ export const ButtonClose = styled.button`
   }
 `;
 
-
-
 export const Text = styled.p`
   text-align: center;
   font-weight: 500;

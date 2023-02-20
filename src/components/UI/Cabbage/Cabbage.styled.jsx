@@ -1,7 +1,6 @@
-import styled, { keyframes } from 'styled-components';
-
+import styled from 'styled-components';
 import device from 'constants/deviceSize';
-
+import { keyframes } from 'styled-components';
 const letDown = keyframes`
   from {
     transform: translateY(0%);

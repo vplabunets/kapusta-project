@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-
+import styled from 'styled-components';
+import { keyframes } from 'styled-components';
 import device from 'constants/deviceSize';
 
 export const BackgroundGrey = styled.div`

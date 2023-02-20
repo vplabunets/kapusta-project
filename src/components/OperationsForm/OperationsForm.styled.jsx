@@ -17,7 +17,9 @@ export const FormWrapper = styled.form`
     grid-column-end: 1;
   }
   @media ${device.laptop} {
-    /* width: 1120px; */
+    padding-top: 30px;
+    width: 1120px;
+    height: 134px;
     flex-direction: row;
     justify-self: flex-start;
     flex-wrap: nowrap;
@@ -35,19 +37,19 @@ export const InputWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 20px;
+
   padding-left: 20px;
   padding-right: 20px;
   border-bottom-left-radius: 30%;
-  /* background-color: #; */
+  background-color: transparent;
   @media ${device.tablet} {
     flex-direction: row;
     height: 192px;
   }
   @media ${device.laptop} {
-    height: 136px;
-    /* width: 104px;
-    text-align: center; */
+    height: 44px;
+    /* width: 104px; */
+    text-align: center;
   }
 `;
 
@@ -56,25 +58,31 @@ export const DateWrapper = styled.div`
 `;
 
 export const DateSelection = styled.input`
-  font-weight: 900;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: 10px;
   line-height: 14px;
-  /* color: #; */
+  color: #52555f;
   background-color: transparent;
   border: none;
-  width: 110px;
-  height: 44px;
+  width: 140px;
+  height: 40px;
   margin: 0 auto;
   text-align: center;
   position: relative;
+  border: 2px solid #fff;
+  border-radius: 16px;
   @media ${device.tablet} {
+    border: none;
+    font-weight: 900;
+    font-size: 12px;
     width: 90px;
     height: 100%;
-    margin-right: 44px;
+    margin-right: 32px;
     text-align: end;
   }
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     width: 104px;
+    padding-left: 20px;
     text-align: center;
   }
   &::-webkit-calendar-picker-indicator {
@@ -93,7 +101,7 @@ export const DateSelection = styled.input`
 export const CalendarIcon = styled.svg`
   position: absolute;
   z-index: 2;
-  left: -2px;
+  left: 11px;
   top: 12px;
   cursor: pointer;
   @media ${device.tablet} {
@@ -101,7 +109,8 @@ export const CalendarIcon = styled.svg`
     top: 2px;
   }
   @media ${device.laptop} {
-    width: 104px;
+    left: 2px;
+
     text-align: center;
   }
 `;
@@ -121,6 +130,7 @@ export const DescriptionInput = styled.input`
     font-weight: 400;
     color: #c7ccdc;
   }
+
   @media ${device.tablet} {
     width: 184px;
     padding-left: 19px;
@@ -133,17 +143,27 @@ export const DescriptionInput = styled.input`
 export const SelectInput = styled(Select)`
   width: 280px;
   /* height: 144px; */
-  height: 37px;
+  height: 40px;
   border: 2px solid #f6f7fc;
   border-bottom-right-radius: 16px;
   color: #c7ccdc;
+  @media ${device.tablet} {
+    height: 44px;
+  }
+  @media ${device.laptop} {
+    /* width: 238px; */
+  }
 `;
 
 export const CountWrapper = styled.div`
+  border: 2px solid #f6f7fc;
   position: relative;
   width: 183px;
   @media ${device.tablet} {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
     width: 110px;
+    border: 2px solid #f5f6fb;
   }
   @media ${device.laptop} {
     width: 121px;
@@ -152,24 +172,18 @@ export const CountWrapper = styled.div`
 
 export const CalculatorIcon = styled.svg`
   position: absolute;
-  right: 0px;
-  top: 10px;
-  top: 32px;
-  padding: 159px;
-  padding: 23px;
+  top: 36px;
+  right: 12px;
   padding: 8px;
+  /* border-left: 1px solid black; */
 
-  /* border: 1px solid green; */
-  /* border-bottom-right-radius: 20px; */
-  /* border-top-right-radius: 20px; */
-  /* border-left-color: chocolate; */
-  border-left: 1px solid black;
   /* position: absolute;
   right: 30px;
   top: 44px; */
   @media ${device.tablet} {
     right: 16px;
     top: 12px;
+    padding: 0;
   }
   @media ${device.laptop} {
     right: 17px;
@@ -180,7 +194,6 @@ export const CalculatorIcon = styled.svg`
 export const CountInput = styled.input`
   width: 183px;
   height: 44px;
-  border: 2px solid #f6f7fc;
   padding-right: 55px;
   padding-left: 55px;
   border-radius: 22px;
@@ -191,13 +204,12 @@ export const CountInput = styled.input`
   margin-top: 32px;
   background-color: transparent;
   color: #c7ccdc;
+  border: transparent;
   @media ${device.tablet} {
     width: 110px;
     margin-top: 0;
     padding-right: 45px;
     padding-left: 10px;
-    border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
   }
   @media ${device.laptop} {
     width: 121px;
@@ -209,9 +221,11 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
   margin: 0;
   margin-top: 32px;
+  gap: 20px;
 
   @media ${device.laptop} {
     margin-left: 32px;
     margin-top: 0;
+    gap: 15px;
   }
 `;

@@ -1,23 +1,19 @@
 import OperationsForm from 'components/OperationsForm/OperationsForm';
 import OperationsSummary from 'components/OperationsSummary/OperationsSummary';
 import OperationsTable from 'components/OperationsTable/OperationsTable';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Grid, Wrapper } from './OperationsContainer.styled';
 
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 const OperationsContainer = ({ type }) => {
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const windowInnerWidth = window.innerWidth;
-  useEffect(() => {
-    if (windowInnerWidth > 768) {
-      setIsFormOpen(true);
-    }
-  }, [windowInnerWidth, isFormOpen]);
+  const isScreenMorePhone = useMediaQuery('(min-width: 768px)');
 
   return (
     <Wrapper>
       <Grid>
-        {isFormOpen && <OperationsForm />}
-        {isFormOpen && <OperationsTable />}
+        {true && <OperationsForm />}
+        {isScreenMorePhone && <OperationsTable />}
         <OperationsSummary />
       </Grid>
     </Wrapper>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TypeButton, Wrapper } from './OperationsTypeSwitcher.styled';
 
 const OperationsTypeSwitcher = () => {
-  const [type, setType] = useState('expenses');
+  // const [type, setType] = useState('expenses');
 
   let xxx = '';
   let yyy = '';

@@ -13,7 +13,6 @@ const ReportsPage = () => {
         <ReportsNav />
         <ReportsMonthBalance />
         <ReportsMonthSummary />
-        <ReportsBalanceContainer />
         <ReportsChart />
       </ReportsPageWrapper>
     </>

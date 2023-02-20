@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import moment from 'moment';
 
 import icon from 'images/icons-sprite.svg';
 import {
@@ -21,6 +22,11 @@ import { customStyles } from './SelectorCustomStyle';
 const OperationsForm = () => {
   const isScreenMoreTablet = useMediaQuery('(min-width: 768px)');
 
+  const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'));
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
+  const [amount, setAmount] = useState('');
+
   const options = [
     { value: 'Products', label: 'Products' },
     { value: 'Health', label: 'Health' },
@@ -32,18 +38,59 @@ const OperationsForm = () => {
     { value: 'Education', label: 'Education' },
     { value: 'Other', label: 'Other' },
   ];
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+
+    if (description.trim().length === 0 || !category || !amount) {
+      return alert('missed one of the fields');
+    }
+    const userEnteredData = {
+      description: description,
+      date: date,
+      category: category.value,
+      amount: amount,
+    };
+    console.log('userEnteredData=', userEnteredData);
+    resetForm();
+  };
+
+  const handleChange = ({ target: { name, value } }) => {
+    switch (name) {
+      case 'date':
+        setDate(value);
+        break;
+      case 'description':
+        setDescription(value);
+        break;
+      case 'amount':
+        setAmount(Number(value));
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const resetForm = () => {
+    setDate(moment(new Date()).format('YYYY-MM-DD'));
+    setDescription('');
+    setCategory('');
+    setAmount('');
+  };
+
   return (
     <>
-      <FormWrapper autoComplete="off">
+      <FormWrapper autoComplete="off" onSubmit={handleSubmit}>
         <InputWrapper>
           <DateWrapper>
             <DateSelection
               aria-label="Date"
               name="date"
               dateFormat="dd.MM.yyyy"
-              // onChange={}
+              onChange={handleChange}
               type="date"
-              // value={date}
+              value={date}
             />
             <CalendarIcon width={20} height={17}>
               <use href={`${icon}#icon-calendar`}></use>
@@ -51,18 +98,19 @@ const OperationsForm = () => {
           </DateWrapper>
           <DescriptionInput
             placeholder="Product description"
+            name="description"
             aria-label="Text"
-            // onChange={}
+            onChange={handleChange}
             type="text"
-            // value={description}
+            value={description}
           />
           <SelectInput
             aria-label="Select"
             placeholder={'Product category'}
             width="200px"
             styles={customStyles}
-            // value={category}
-            // onChange={}
+            value={category}
+            onChange={setCategory}
             options={options}
             theme={theme => ({
               ...theme,
@@ -77,11 +125,11 @@ const OperationsForm = () => {
           <CountWrapper>
             <CountInput
               aria-label="Number"
-              // onChange={}
+              onChange={handleChange}
               type="number"
               name="amount"
               placeholder="00.00"
-              // value={amount}
+              value={amount}
             />
             <CalculatorIcon
               width={isScreenMoreTablet ? 20 : 40}
@@ -103,6 +151,7 @@ const OperationsForm = () => {
             type="button"
             color="white"
             design={!isScreenMoreTablet ? 'home' : 'operation'}
+            onClick={resetForm}
           >
             Clear
           </Button>

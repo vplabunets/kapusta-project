@@ -22,7 +22,7 @@ const OperationsTypeSwitcher = ({
         type="button"
         active={type === operationTypes.incomes ? true : false}
       >
-        Incomes
+        Income
       </TypeButton>
     </Wrapper>
   );

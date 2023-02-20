@@ -20,7 +20,7 @@ const OperationsPage = () => {
         <OperationsBalanceContainer />
         {false && <OperationsBalanceModal />}
         <OperationsTypeSwitcher type={type} setType={setType} />
-        <OperationsContainer />
+        <OperationsContainer type={type} />
       </OperationsPageWrapper>
     </div>
   );

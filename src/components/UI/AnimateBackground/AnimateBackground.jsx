@@ -1,92 +1,17 @@
-import Icon from 'images/icons-sprite.svg';
+import { CabbageList } from '../Cabbage/Cabbage';
+import { BackgroundGrey, BackgroundWhite } from './AnimateBackground.styled';
 
-import { BackgroundGrey, Item } from './AnimateBackground.styled';
+export const AnimateBackground = ({ white }) => {
+  if (white)
+    return (
+      <BackgroundWhite>
+        <CabbageList />
+      </BackgroundWhite>
+    );
 
-export const AnimateBackground = () => {
   return (
     <BackgroundGrey>
-      <ul>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-        <Item>
-          <svg width="83" height="85">
-            <use href={`${Icon}#icon-cabbage-left`}></use>
-          </svg>
-        </Item>
-      </ul>
+      <CabbageList />
     </BackgroundGrey>
   );
 };

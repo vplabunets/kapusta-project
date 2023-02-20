@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/kapusta-project/static/css/main.e1d9fb16.css",
-    "main.js": "/kapusta-project/static/js/main.67d870de.js",
-    "static/js/755.c5ce6034.chunk.js": "/kapusta-project/static/js/755.c5ce6034.chunk.js",
-    "static/js/303.b9bcc302.chunk.js": "/kapusta-project/static/js/303.b9bcc302.chunk.js",
-    "static/js/695.66436941.chunk.js": "/kapusta-project/static/js/695.66436941.chunk.js",
+    "main.js": "/kapusta-project/static/js/main.aba21141.js",
+    "static/js/755.50f85a4b.chunk.js": "/kapusta-project/static/js/755.50f85a4b.chunk.js",
+    "static/js/303.40f3c16b.chunk.js": "/kapusta-project/static/js/303.40f3c16b.chunk.js",
+    "static/js/695.e0757731.chunk.js": "/kapusta-project/static/js/695.e0757731.chunk.js",
     "static/js/705.48da4daa.chunk.js": "/kapusta-project/static/js/705.48da4daa.chunk.js",
     "static/js/135.9eec53d7.chunk.js": "/kapusta-project/static/js/135.9eec53d7.chunk.js",
     "static/media/icons-sprite.svg": "/kapusta-project/static/media/icons-sprite.88556e3e33ec300658be3a69172f683b.svg",
     "index.html": "/kapusta-project/index.html",
     "main.e1d9fb16.css.map": "/kapusta-project/static/css/main.e1d9fb16.css.map",
-    "main.67d870de.js.map": "/kapusta-project/static/js/main.67d870de.js.map",
-    "755.c5ce6034.chunk.js.map": "/kapusta-project/static/js/755.c5ce6034.chunk.js.map",
-    "303.b9bcc302.chunk.js.map": "/kapusta-project/static/js/303.b9bcc302.chunk.js.map",
-    "695.66436941.chunk.js.map": "/kapusta-project/static/js/695.66436941.chunk.js.map",
+    "main.aba21141.js.map": "/kapusta-project/static/js/main.aba21141.js.map",
+    "755.50f85a4b.chunk.js.map": "/kapusta-project/static/js/755.50f85a4b.chunk.js.map",
+    "303.40f3c16b.chunk.js.map": "/kapusta-project/static/js/303.40f3c16b.chunk.js.map",
+    "695.e0757731.chunk.js.map": "/kapusta-project/static/js/695.e0757731.chunk.js.map",
     "705.48da4daa.chunk.js.map": "/kapusta-project/static/js/705.48da4daa.chunk.js.map",
     "135.9eec53d7.chunk.js.map": "/kapusta-project/static/js/135.9eec53d7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e1d9fb16.css",
-    "static/js/main.67d870de.js"
+    "static/js/main.aba21141.js"
   ]
 }

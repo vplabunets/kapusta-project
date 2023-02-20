@@ -2,7 +2,7 @@ import OperationsForm from 'components/OperationsForm/OperationsForm';
 import OperationsSummary from 'components/OperationsSummary/OperationsSummary';
 import OperationsTable from 'components/OperationsTable/OperationsTable';
 import React, { useEffect, useState } from 'react';
-import { Grid, Wrapper } from './OperationsContatiner.styled';
+import { Grid, Wrapper } from './OperationsContainer.styled';
 
 const OperationsContainer = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);

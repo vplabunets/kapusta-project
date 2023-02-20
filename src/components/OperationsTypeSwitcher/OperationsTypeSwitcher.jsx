@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TypeButton, Wrapper } from './OperationsTypeSwitcher.styled';
 
 const OperationsTypeSwitcher = () => {
@@ -29,7 +29,7 @@ const OperationsTypeSwitcher = () => {
         style={{ backgroundColor: `${xxx}` }}
         type="button"
       >
-        {type}
+        Expenses
       </TypeButton>
       <TypeButton
         onClick={colorIn()}

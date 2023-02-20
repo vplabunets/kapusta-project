@@ -7,9 +7,11 @@ import {
   LoginText,
   AuthFormLabel,
   Input,
-  ButtonContainer
+  ButtonContainer,
+  EyeWrapper
 } from "./HomeAuthForm.styled"
 import icon from "images/icons-sprite.svg";
+import { useState } from "react";
 
 
 const initialValues = {
@@ -18,6 +20,8 @@ const initialValues = {
 }
 
 const HomeAuthForm = () => {
+const [showHidePassword, setShowHidePassword] = useState(false);
+
   const handleSubmit = (values, { resetForm }) => {
     resetForm();
   }
@@ -41,12 +45,19 @@ const HomeAuthForm = () => {
             <Form autoComplete="off">
               <AuthFormLabel htmlFor="Email">
               Email:
-              <Input type="text" name="email" placeholder="your@email.com" />
-                            </AuthFormLabel>
-            <AuthFormLabel htmlFor="password">
-              Password:
-              <Input type="password" name="password" placeholder="Password" />
-                          </AuthFormLabel>
+            <Input type="text" name="email" placeholder="your@email.com" />
+              </AuthFormLabel>
+          <AuthFormLabel htmlFor="password">
+            Password:
+              <EyeWrapper>
+                <Input type={showHidePassword ? "text" : "password"} name="password" placeholder="Password" />
+                <button type="button" onClick={() => setShowHidePassword(!showHidePassword)}>
+                  <svg>
+                    <use href={showHidePassword ? `${icon}#icon-eye-closed`:`${icon}#icon-eye`}></use>
+                  </svg>
+                </button>
+              </EyeWrapper>
+          </AuthFormLabel>
               <ButtonContainer>
                   <Button
                   type={"submit"}

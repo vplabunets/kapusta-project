@@ -2,7 +2,7 @@ import Icons from 'images/icons-sprite.svg';
 
 import { BackLink } from './ReportsReturnBack.styled';
 
-export const ReportsReturnBack = () => {
+const ReportsReturnBack = () => {
   return (
     <BackLink to="/operations">
       <svg width="24" height="24">
@@ -12,3 +12,5 @@ export const ReportsReturnBack = () => {
     </BackLink>
   );
 };
+
+export default ReportsReturnBack;

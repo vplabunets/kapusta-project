@@ -8,6 +8,11 @@ export const BackLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
+  margin-bottom: 16px;
+
+  @media ${device.tablet} {
+    margin-bottom: 0px;
+  }
 
   & > p {
     display: none;
@@ -23,6 +28,7 @@ export const BackLink = styled(Link)`
       display: block;
       margin-left: 15px;
     }
+
     @media ${device.laptop} {
       margin-left: 16px;
     }

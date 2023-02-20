@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import device from 'constants/deviceSize';
 
 const Wrapper = styled.div`
-  width: 280px;
   height: 85px;
   background: #ffffff;
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
@@ -11,14 +10,12 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-bottom: 32px;
+
   @media ${device.tablet} {
-    width: 704px;
     height: 50px;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 30px;
-  }
-  @media ${device.laptop} {
-    width: 1034px;
   }
 `;
 const Text = styled.p`
@@ -55,14 +52,17 @@ const Sum = styled.p`
 `;
 
 const ExpensesContainer = styled.div`
+  width: 100%;
   text-align: center;
   @media ${device.tablet} {
+    justify-content: right;
     display: flex;
     padding-top: 15px;
     padding-bottom: 15px;
   }
 `;
 const IncomeContainer = styled.div`
+  width: 100%;
   text-align: center;
   @media ${device.tablet} {
     display: flex;

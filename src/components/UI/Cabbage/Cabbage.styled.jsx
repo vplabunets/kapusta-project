@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import device from 'constants/deviceSize';
 import { keyframes } from '@emotion/css';
+
 const letDown = keyframes`
   from {
     transform: translateY(0%);

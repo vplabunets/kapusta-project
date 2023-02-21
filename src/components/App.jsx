@@ -1,7 +1,9 @@
 import Layout from 'components/Layout';
 import { lazy } from 'react';
 // import { useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import RestrictedRoute from 'routes/RestrictedRoutes';
+import PrivateRoutes from 'routes/PrivateRoutes';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const OperationsPage = lazy(() =>
@@ -9,22 +11,12 @@ const OperationsPage = lazy(() =>
 );
 const ReportsPage = lazy(() => import('../pages/ReportsPage/ReportsPage'));
 
-// export const RestrictedRoute = ({
-//   component: Component,
-//   redirectTo = '/operations',
-// }) => {
-//   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-//   console.log(isLoggedIn);
-//   return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
-// };
-
 export const App = () => {
   return (
-    <div>
+    <>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
-          {/* <Route
+          <Route
             path="/"
             element={
               <RestrictedRoute
@@ -32,11 +24,22 @@ export const App = () => {
                 component={<HomePage />}
               />
             }
-          /> */}
-          <Route path="/operations" element={<OperationsPage />} />
-          <Route path="/reports" element={<ReportsPage />} />
+          />
+          <Route
+            path="/operations"
+            element={
+              <PrivateRoutes redirectTo="/" component={<OperationsPage />} />
+            }
+          />
+          <Route
+            path="/reports"
+            element={
+              <PrivateRoutes redirectTo="/" component={<ReportsPage />} />
+            }
+          />
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
-    </div>
+    </>
   );
 };

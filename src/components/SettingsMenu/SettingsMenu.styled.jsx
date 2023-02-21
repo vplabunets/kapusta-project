@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-
+import styled from 'styled-components';
+import { keyframes } from '@emotion/css';
 import transition from 'constants/constants';
 import device from 'constants/deviceSize';
 

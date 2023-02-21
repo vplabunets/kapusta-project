@@ -25,7 +25,7 @@ const OperationsBalanceContainer = () => {
       <OperationsForwardToReports />
       <Balance />
       <OperationsModalOpenButton onClick={openModal}>
-        <svg alt="exit" width={25} height={25}>
+        <svg alt="plus" width={25} height={25}>
           <use href={`${IconPlus}#icon-plus`}></use>
         </svg>
       </OperationsModalOpenButton>

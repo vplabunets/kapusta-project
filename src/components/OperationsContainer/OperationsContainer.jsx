@@ -11,7 +11,7 @@ const OperationsContainer = ({ type }) => {
 
   return (
     <Wrapper>
-      <OperationsForm />
+      {isScreenMorePhone && <OperationsForm />}
       <WrapperTableSummary>
         <OperationsTable />
         {isScreenMorePhone && <OperationsSummary />}

@@ -20,6 +20,7 @@ export const customStyles = {
       ...defaultStyles,
       color: '#C7CCDC',
       margin: 0,
+      fontFamily: 'inherit',
     };
   },
   indicatorSeparator: styles => ({ display: 'none' }),

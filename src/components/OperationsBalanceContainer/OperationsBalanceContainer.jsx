@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import Balance from 'components/Balance/Balance';
 import {
   OperationsModalOpenButton,
@@ -7,11 +9,17 @@ import OperationsForwardToReports from 'components/OperationsForwardToReports/Op
 import React, { useState } from 'react';
 import IconPlus from 'images/icons-sprite.svg';
 import OperationsAddModal from 'components/OperationsAddModal/OperationsAddModal';
+import { useMediaQuery } from '@mui/material';
 
 const OperationsBalanceContainer = () => {
   const [isOpenOperationsAddModal, setIsOperationsAddModal] = useState(false);
-
   const openModal = () => setIsOperationsAddModal(true);
+  const isScreenMorePhone = useMediaQuery('(max-width: 767px)');
+
+  useEffect(() => {
+    if (!isScreenMorePhone) return setIsOperationsAddModal(false);
+  }, [isScreenMorePhone]);
+
   return (
     <Wrapper>
       <OperationsForwardToReports />
@@ -21,7 +29,9 @@ const OperationsBalanceContainer = () => {
           <use href={`${IconPlus}#icon-plus`}></use>
         </svg>
       </OperationsModalOpenButton>
-      {isOpenOperationsAddModal && <OperationsAddModal />}
+      {isScreenMorePhone && isOpenOperationsAddModal && (
+        <OperationsAddModal setIsOpen={setIsOperationsAddModal} />
+      )}
     </Wrapper>
   );
 };

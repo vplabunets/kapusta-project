@@ -49,38 +49,58 @@ export const TableHead = styled.thead`
 `;
 
 export const TableHeadTitle = styled.th`
-@media screen and (max-width: 768px) {
+@media ${device.mobile} {
     display: none;
-   }
+}
 
   @media ${device.tablet} {
+    display: table-cell;
     align-items: center;
-    width: 25%;
+    text-align: center;
     font-weight: bold;
     height: 40px;
     padding: 5px;
+    width: 15%;
 
     :first-child {
+        width: 18%;
         padding-left: 15px;
         text-align: left;
     }
 
+    :last-child {
+        width: 20%;
+        text-align: left;
+    }
+
     :nth-child(2) {
+        width: 35%;
+        text-align: left;
+    }
+
+    :nth-child(3) {
+        width: 25%;
         text-align: left;
     }
    }
 
    @media ${device.laptop} {
-    width: 20%;
-
     :first-child {
-        width: 18%;
+        width: 12%;
     }
+
     :last-child {
-        width: 15%;
+        width: 5%;
     }
+
     :nth-child(2) {
-        width: 22%;
+        width: 30%;
+        text-align: left;
+    }
+
+    :nth-child(3) {
+        width: 20%;
+        text-align: left;
     }
    }
 `;

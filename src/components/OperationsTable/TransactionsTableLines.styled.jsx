@@ -31,24 +31,22 @@ border-bottom: 2px solid #f2f8f8;
 `;
 
 export const Data = styled.td`
-// display: flex;
-// align-items: center;
 
 @media ${device.mobile} {
     position: absolute;
     top: 55%;
-    width: 23%;
+    width: 20%;
    }
    
    @media ${device.tablet} {
-    width: 25%;
+    width: 14%;
     top: 28%;
-    padding-left: 15px;
+    padding-left: 12px;
     text-align: left;
    }
 
    @media ${device.laptop} {
-    width: 20%;
+    width: 12%;
    }
 `;
 
@@ -68,14 +66,14 @@ text-overflow: ellipsis;
 
 @media ${device.tablet} {
     top: 28%;
-    left: 25%;
-    width: 27%;
+    left: 19%;
+    width: 30%;
     text-align: left;
    }
 
    @media ${device.laptop} {
-    left: 20%;
-    width: 20%;
+    left: 16%;
+    width: 32%;
    }
 `;
 
@@ -85,18 +83,20 @@ export const Category = styled.td`
     position: absolute;
     top: 55%;
     left: 23%;
-    width: 30%;
+    width: 25%;
 }
 
 @media ${device.tablet} {
-    width: 25%;
+    width: 18%;
     top: 28%;
-    left: 48%;
+    left: 54%;
+    text-align: left;
+}
    }
 
    @media ${device.laptop} {
-    left: 42%;
-    width: 20%;
+    left: 52%;
+    width: 23%;
    }
 `;
 
@@ -107,33 +107,67 @@ font-weight: 700;
 @media ${device.mobile} {
     position: absolute;
     top: 25%;
-    left: 50%;
-    text-align: right;
-    width: 25%;
+    left: 55%;
+    text-align: center;
+    width: 30%;
 }
 
 @media ${device.tablet} {
     top: 28%;
-    left: 58%;
-    width: 25%;
+    left: 72%;
+    width: 20%;
    }
 
    @media ${device.laptop} {
-    width: 20%;
-    left: 50%;
+    width: 15%;
+    left: 75%;
    }
 `;
 
 export const Btn = styled.td`
 @media ${device.mobile} {
+    position: absolute;
+    top: 20%;
+    left: 90%;
     text-align: center;
 }
 
 @media ${device.tablet} {
-    width: 25%;
+    top: 12%;
+    left: 92%;
+    width: 5%;
+   }
+
+   @media ${device.laptop} {
+    top: 12%;
+    left: 92%;
+    width: 5%;
+   }
+`;
+
+export const BtnStyle = styled.button`
+padding: none;
+background-color: #FFF;
+cursor: pointer;
+border: none;
+
+@media ${device.tablet} {
+    width: 32px;
+    height: 32px;
+
+    :hover {
+        background-color: #f5f6fb;
+        cursor: pointer;
+        border-radius: 50%; 
+    }
    }
 
    @media ${device.laptop} {
     width: 20%;
    }
+`;
+
+export const Delete = styled.svg`
+z-index: 2;
+cursor: pointer;
 `;

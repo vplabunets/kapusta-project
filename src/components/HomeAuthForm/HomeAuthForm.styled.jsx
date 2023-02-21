@@ -59,6 +59,13 @@ export const GoogleButton = styled.button`
 
   letter-spacing: 0.02em;
   color: #000000;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
+  }
 
   & svg {
     width: 18px;

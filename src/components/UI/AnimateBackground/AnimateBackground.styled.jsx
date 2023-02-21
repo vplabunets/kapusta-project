@@ -34,8 +34,8 @@ export const BackgroundWhite = styled.div`
     width: 100%;
     height: 100%;
 
-    position: absolute;
-    bottom: -1;
+    position: fixed;
+    bottom: -1px;
 
     overflow: hidden;
   }

@@ -1,5 +1,5 @@
 import { Avatar } from '@mui/material';
-
+import {useState} from 'react'
 import ExitIcon from 'images/icons-sprite.svg';
 
 import ConfirmModal from 'components/ConfirmModal/ConfirmModal';

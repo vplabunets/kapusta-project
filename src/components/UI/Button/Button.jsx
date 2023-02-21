@@ -6,8 +6,21 @@ import { Btn } from './Button.styled';
 // type - any (button, submit, etc)
 // design can be home, operation, modal
 
-export const Button = ({ children, color, type, design, onClick }) => (
-  <Btn type={type} color={color} design={design} onClick={onClick}>
+export const Button = ({
+  children,
+  color,
+  type,
+  design,
+  onClick,
+  onSubmit,
+}) => (
+  <Btn
+    type={type}
+    color={color}
+    design={design}
+    onClick={onClick}
+    onSubmit={onSubmit}
+  >
     {children}
   </Btn>
 );

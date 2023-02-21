@@ -29,8 +29,8 @@ const SettingsMenu = () => {
       <Title>Hello, User Name!</Title>
       {/* max 16 symbols*/}
       <Container>
-        <SettingsWrapper>
-          <Settings onClick={toggleModal}>Profile Settings</Settings>
+        <SettingsWrapper onClick={toggleModal}>
+          <Settings>Profile Settings</Settings>
           <Gear></Gear>
           <Gear></Gear>
         </SettingsWrapper>

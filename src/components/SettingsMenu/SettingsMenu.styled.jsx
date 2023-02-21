@@ -59,10 +59,20 @@ const Container = styled.div`
   }
 `;
 
-const SettingsWrapper = styled.div`
+const SettingsWrapper = styled.button`
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(82, 85, 95, 1);
+  transition: color ${transition.duration} ${transition.timing};
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.lightTheme.tableHeadTextColor};
+  }
   &:hover i {
     animation-play-state: running;
   }
@@ -105,7 +115,7 @@ const Gear = styled.i`
   }
 `;
 
-const Settings = styled.button`
+const Settings = styled.p`
   background-color: transparent;
   border: none;
   outline: none;
@@ -114,12 +124,6 @@ const Settings = styled.button`
   font-size: 11px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: rgba(82, 85, 95, 1);
-  transition: color ${transition.duration} ${transition.timing};
-  &:hover,
-  &:focus {
-    color: ${p => p.theme.lightTheme.tableHeadTextColor};
-  }
 
   @media ${device.tablet} {
     font-size: 16px;

@@ -1,5 +1,5 @@
 import { Avatar } from '@mui/material';
-import {useState} from 'react'
+import { useState } from 'react';
 import ExitIcon from 'images/icons-sprite.svg';
 
 import ConfirmModal from 'components/ConfirmModal/ConfirmModal';
@@ -42,7 +42,7 @@ const NavBar = () => {
           </Avatar>
         </MenuBtn>
         <ExitContainer>
-          <UserName>User Name</UserName>
+          <UserName onClick={onUserClick}>User Name</UserName>
           <ExitBtn onClick={() => setModalOpen(true)}>Exit</ExitBtn>
         </ExitContainer>
         <LogoutBtn onClick={() => setModalOpen(true)}>

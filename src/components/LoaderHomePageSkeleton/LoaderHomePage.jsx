@@ -15,13 +15,13 @@ const LoaderHomePage = () => {
         <RightCol>
             <RightColBox>
                 <div style={{ display: "grid", justifyContent: 'space-evenly', justifyItems: "center" }}>
-                  <h2 style={{ marginBottom: 20 }}><Skeleton width={300} height={30} /></h2>
+                  <h2 style={{ marginBottom: 20 }}><Skeleton width={250} height={30} /></h2>
                   <p style={{ marginBottom: 20 }}><Skeleton width={120} height={30} /></p>
-                  <h2 style={{ marginBottom: 20 }}><Skeleton width={300} height={30} /></h2>
+                  <h2 style={{ marginBottom: 20 }}><Skeleton width={250} height={30} /></h2>
                 </div>
                 <div style={{ display: "grid", justifyContent: 'space-evenly', justifyItems: "center" }}>
-                  <h2 style={{ marginBottom: 20 }}><Skeleton width={300} height={30} /></h2>
-                  <h2 style={{ marginBottom: 20 }}><Skeleton width={300} height={30} /></h2>
+                  <h2 style={{ marginBottom: 20 }}><Skeleton width={250} height={30} /></h2>
+                  <h2 style={{ marginBottom: 20 }}><Skeleton width={250} height={30} /></h2>
                 </div>
             <div style={{ display: "flex", justifyContent: 'center' }} >
                 <p style={{ marginBottom: 20, marginRight: 10 }}><Skeleton width={120} height={30} /></p>

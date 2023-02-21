@@ -3,6 +3,7 @@ import device from 'constants/deviceSize';
 import Select from 'react-select';
 
 export const FormWrapper = styled.form`
+  margin-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;
   display: flex;
@@ -25,17 +26,18 @@ export const FormWrapper = styled.form`
 `;
 
 export const InputWrapper = styled.div`
-  width: 100%;
-  height: 258px;
-  display: flex;
+  /* display: none; */
+
+  /* height: 258px; */
+
   align-items: center;
   flex-direction: column;
-
   padding-left: 20px;
   padding-right: 20px;
   border-bottom-left-radius: 30%;
   background-color: transparent;
   @media ${device.tablet} {
+    display: flex;
     flex-direction: row;
     width: 100%;
     height: auto;
@@ -110,6 +112,7 @@ export const CalendarIcon = styled.svg`
 `;
 
 export const DescriptionInput = styled.input`
+  display: none;
   width: 100%;
   height: 44px;
   border-top-left-radius: 16px;
@@ -126,6 +129,7 @@ export const DescriptionInput = styled.input`
   }
 
   @media ${device.tablet} {
+    display: flex;
     padding-left: 19px;
   }
   @media ${device.laptop} {
@@ -134,12 +138,14 @@ export const DescriptionInput = styled.input`
 `;
 
 export const SelectInput = styled(Select)`
+  display: none;
   width: 100%;
   height: 40px;
   border: 2px solid #f6f7fc;
   border-bottom-right-radius: 16px;
   color: #c7ccdc;
   @media ${device.tablet} {
+    display: flex;
     height: 44px;
     border-left: none;
     border-right: none;
@@ -151,9 +157,11 @@ export const SelectInput = styled(Select)`
 `;
 
 export const CountWrapper = styled.div`
+  display: none;
   position: relative;
   width: 183px;
   @media ${device.tablet} {
+    display: flex;
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     width: 110px;
@@ -211,12 +219,14 @@ export const CountInput = styled.input`
 `;
 
 export const ButtonWrapper = styled.div`
-  display: flex;
   justify-content: center;
   margin: 0;
   margin-top: 32px;
   gap: 20px;
-
+  display: none;
+  @media ${device.tablet} {
+    display: flex;
+  }
   @media ${device.laptop} {
     margin-left: 32px;
     margin-top: 0;

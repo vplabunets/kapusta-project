@@ -24,28 +24,33 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const AddOperationsModal = styled.button`
+export const OperationsModalOpenButton = styled.button`
   display: flex;
-  /* align-self: center; */
+  align-self: center;
   align-items: center;
   justify-content: center;
   vertical-align: center;
-  svg {
-    /* position: absolute; */
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    stroke: red; */
-    top: 50%;
-
-    align-items: center;
-    justify-content: center;
-  }
   margin-top: 10px;
+  margin-bottom: 10px;
   border: none;
-  /* vertical-align: center; */
+
+  svg {
+    padding-top: 5px;
+  }
+
   border-radius: 50%;
   @media ${device.tablet} {
     display: none;
   }
 `;
+// svg {
+//   position: absolute;
+//   /* top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   stroke: red; */
+//   top: 50;
+
+//   align-items: center;
+//   justify-content: center;
+// }

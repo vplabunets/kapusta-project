@@ -11,10 +11,10 @@ const OperationsContainer = ({ type }) => {
 
   return (
     <Wrapper>
-      {isScreenMorePhone && <OperationsForm />}
+      <OperationsForm />
       <WrapperTableSummary>
-        {isScreenMorePhone && <OperationsTable />}
-        <OperationsSummary />
+        <OperationsTable />
+        {isScreenMorePhone && <OperationsSummary />}
       </WrapperTableSummary>
     </Wrapper>
   );

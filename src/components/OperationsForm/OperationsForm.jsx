@@ -80,84 +80,82 @@ const OperationsForm = () => {
   };
 
   return (
-    <>
-      <FormWrapper autoComplete="off" onSubmit={handleSubmit}>
-        <InputWrapper>
-          <DateWrapper>
-            <DateSelection
-              aria-label="Date"
-              name="date"
-              dateFormat="dd.MM.yyyy"
-              onChange={handleChange}
-              type="date"
-              value={date}
-            />
-            <CalendarIcon width={20} height={17}>
-              <use href={`${icon}#icon-calendar`}></use>
-            </CalendarIcon>
-          </DateWrapper>
-          <DescriptionInput
-            placeholder="Product description"
-            name="description"
-            aria-label="Text"
+    <FormWrapper autoComplete="off" onSubmit={handleSubmit}>
+      <InputWrapper>
+        <DateWrapper>
+          <DateSelection
+            aria-label="Date"
+            name="date"
+            dateFormat="dd.MM.yyyy"
             onChange={handleChange}
-            type="text"
-            value={description}
+            type="date"
+            value={date}
           />
-          <SelectInput
-            aria-label="Select"
-            placeholder={'Product category'}
-            width="200px"
-            styles={customStyles}
-            value={category}
-            onChange={setCategory}
-            options={options}
-            theme={theme => ({
-              ...theme,
-              borderRadius: 0,
-              colors: {
-                ...theme.colors,
-                primary25: '#F5F6FB',
-                primary: '#FF751D',
-              },
-            })}
+          <CalendarIcon width={20} height={17}>
+            <use href={`${icon}#icon-calendar`}></use>
+          </CalendarIcon>
+        </DateWrapper>
+        <DescriptionInput
+          placeholder="Product description"
+          name="description"
+          aria-label="Text"
+          onChange={handleChange}
+          type="text"
+          value={description}
+        />
+        <SelectInput
+          aria-label="Select"
+          placeholder={'Product category'}
+          width="200px"
+          styles={customStyles}
+          value={category}
+          onChange={setCategory}
+          options={options}
+          theme={theme => ({
+            ...theme,
+            borderRadius: 0,
+            colors: {
+              ...theme.colors,
+              primary25: '#F5F6FB',
+              primary: '#FF751D',
+            },
+          })}
+        />
+        <CountWrapper>
+          <CountInput
+            aria-label="Number"
+            onChange={handleChange}
+            type="number"
+            name="amount"
+            placeholder="00.00"
+            value={amount}
           />
-          <CountWrapper>
-            <CountInput
-              aria-label="Number"
-              onChange={handleChange}
-              type="number"
-              name="amount"
-              placeholder="00.00"
-              value={amount}
-            />
-            <CalculatorIcon
-              width={isScreenMoreTablet ? 20 : 40}
-              height={isScreenMoreTablet ? 20 : 35}
-            >
-              <use href={`${icon}#icon-calculator`}></use>
-            </CalculatorIcon>
-          </CountWrapper>
-        </InputWrapper>
-        <ButtonWrapper>
-          <Button
-            type="submit"
-            color="accent"
-            design={!isScreenMoreTablet ? 'home' : 'operation'}
+          <CalculatorIcon
+            width={isScreenMoreTablet ? 20 : 40}
+            height={isScreenMoreTablet ? 20 : 35}
           >
-            Input
-          </Button>
-          <Button
-            type="button"
-            color="white"
-            design={!isScreenMoreTablet ? 'home' : 'operation'}
-            onClick={resetForm}
-          >
-            Clear
-          </Button>
-        </ButtonWrapper>
-      </FormWrapper>
-    </>
+            <use href={`${icon}#icon-calculator`}></use>
+          </CalculatorIcon>
+        </CountWrapper>
+      </InputWrapper>
+      <ButtonWrapper>
+        <Button
+          type="submit"
+          color="accent"
+          design={!isScreenMoreTablet ? 'home' : 'operation'}
+        >
+          Input
+        </Button>
+        <Button
+          type="button"
+          color="white"
+          design={!isScreenMoreTablet ? 'home' : 'operation'}
+          onClick={resetForm}
+        >
+          Clear
+        </Button>
+      </ButtonWrapper>
+    </FormWrapper>
   );
 };
 

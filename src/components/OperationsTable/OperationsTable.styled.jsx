@@ -2,16 +2,13 @@ import styled from 'styled-components';
 import device from '../../constants/deviceSize';
 
 export const Table = styled.table`
-  @media ${device.mobile} {
-    width: 100%;
-
-    max-height: 500px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-y: scroll;
-  }
+  width: 100%;
+  max-height: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: scroll;
 
   @media ${device.tablet} {
     /* max-width: 624px; */
@@ -33,6 +30,7 @@ export const Table = styled.table`
 `;
 
 export const TableHead = styled.thead`
+  width: 100%;
   @media ${device.tablet} {
     display: table;
     width: 100%;
@@ -55,6 +53,7 @@ export const TableHead = styled.thead`
 `;
 
 export const TableHeadTitle = styled.th`
+  width: 100%;
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -95,6 +94,7 @@ export const TableBody = styled.tbody`
   @media ${device.mobile} {
     display: inline-block;
     /* width: 280px; */
+    width: 100%;
   }
 
   @media ${device.tablet} {

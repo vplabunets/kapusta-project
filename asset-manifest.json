@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/kapusta-project/static/css/main.792a8d5c.css",
-    "main.js": "/kapusta-project/static/js/main.bed5dc6f.js",
+    "main.js": "/kapusta-project/static/js/main.afc46232.js",
     "static/js/755.2e4c66b6.chunk.js": "/kapusta-project/static/js/755.2e4c66b6.chunk.js",
-    "static/js/483.cb721e29.chunk.js": "/kapusta-project/static/js/483.cb721e29.chunk.js",
+    "static/js/483.de33d7eb.chunk.js": "/kapusta-project/static/js/483.de33d7eb.chunk.js",
     "static/js/3.9ffa10d4.chunk.js": "/kapusta-project/static/js/3.9ffa10d4.chunk.js",
     "static/js/705.48da4daa.chunk.js": "/kapusta-project/static/js/705.48da4daa.chunk.js",
-    "static/js/856.b62034ae.chunk.js": "/kapusta-project/static/js/856.b62034ae.chunk.js",
-    "static/js/203.5fe80955.chunk.js": "/kapusta-project/static/js/203.5fe80955.chunk.js",
+    "static/js/856.c290147c.chunk.js": "/kapusta-project/static/js/856.c290147c.chunk.js",
+    "static/js/263.393a1146.chunk.js": "/kapusta-project/static/js/263.393a1146.chunk.js",
     "static/media/icons-sprite.svg": "/kapusta-project/static/media/icons-sprite.c8baf64db9bfe14bda943d8950653801.svg",
     "index.html": "/kapusta-project/index.html",
     "main.792a8d5c.css.map": "/kapusta-project/static/css/main.792a8d5c.css.map",
-    "main.bed5dc6f.js.map": "/kapusta-project/static/js/main.bed5dc6f.js.map",
+    "main.afc46232.js.map": "/kapusta-project/static/js/main.afc46232.js.map",
     "755.2e4c66b6.chunk.js.map": "/kapusta-project/static/js/755.2e4c66b6.chunk.js.map",
-    "483.cb721e29.chunk.js.map": "/kapusta-project/static/js/483.cb721e29.chunk.js.map",
+    "483.de33d7eb.chunk.js.map": "/kapusta-project/static/js/483.de33d7eb.chunk.js.map",
     "3.9ffa10d4.chunk.js.map": "/kapusta-project/static/js/3.9ffa10d4.chunk.js.map",
     "705.48da4daa.chunk.js.map": "/kapusta-project/static/js/705.48da4daa.chunk.js.map",
-    "856.b62034ae.chunk.js.map": "/kapusta-project/static/js/856.b62034ae.chunk.js.map",
-    "203.5fe80955.chunk.js.map": "/kapusta-project/static/js/203.5fe80955.chunk.js.map"
+    "856.c290147c.chunk.js.map": "/kapusta-project/static/js/856.c290147c.chunk.js.map",
+    "263.393a1146.chunk.js.map": "/kapusta-project/static/js/263.393a1146.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.792a8d5c.css",
-    "static/js/main.bed5dc6f.js"
+    "static/js/main.afc46232.js"
   ]
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import device from 'constants/deviceSize';
-
+//
 const ReportsPageWrapper = styled.div`
   margin: 19px 20px 0 20px;
   display: flex;

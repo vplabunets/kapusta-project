@@ -53,6 +53,7 @@ export const GoogleButton = styled.button`
   border-radius: 26px;
   cursor: pointer;
 
+  font-family: inherit;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import moment from 'moment';
+import { format, subMonths, addMonths } from 'date-fns';
 import {
   Wrapper,
   Title,
@@ -12,22 +12,16 @@ import LeftIcon from 'images/icons-sprite.svg';
 import RightIcon from 'images/icons-sprite.svg';
 
 const CurrentPeriod = () => {
-  const newDate = moment(new Date());
-  const [dateMonth, setDateMonth] = useState(moment(new Date()).format('MM'));
-  const [dateYears, setDateYears] = useState(moment(new Date()).format('YYYY'));
-
-  let monthChangeLeft = () => {
-    setDateMonth(newDate.add(-1, 'month').format('MM'));
-    if (dateMonth === '01') {
-      setDateYears(newDate.add('year').format('YYYY'));
-    }
+  const [newDate, setNewDate] = useState(() => new Date());
+  
+   const monthChangeLeft = () => {
+    const prevDate = subMonths(newDate, 1);
+    setNewDate(prevDate);
+   
   };
-
-  let monthChangeRight = () => {
-    setDateMonth(newDate.add(1, 'month').format('MM'));
-    if (dateMonth === '12') {
-      setDateYears(newDate.add('year').format('YYYY'));
-    }
+ const monthChangeRight = () => {
+    const nextDate = addMonths(newDate, 1);
+    setNewDate(nextDate);
   };
 
   return (
@@ -40,7 +34,7 @@ const CurrentPeriod = () => {
           </svg>
         </Button>
         <Text>
-          {moment(dateMonth).format('MMMM')} {dateYears}
+          {format(newDate, 'MMMM yyyy')}
         </Text>
         <Button type="button" onClick={monthChangeRight}>
           <svg alt="exit" width={16} height={16}>

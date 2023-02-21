@@ -20,7 +20,8 @@ export const Title = styled.h2`
     margin-bottom: 0;
     justify-content: end;
   }
-  transition: all linear 0.3s;
+  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
   &:hover {
     color: #555;
   }

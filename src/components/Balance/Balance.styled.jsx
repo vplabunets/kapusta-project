@@ -59,6 +59,7 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
+  font-family: inherit;
   font-weight: 700;
   font-size: 12px;
   width: 140px;

@@ -11,11 +11,9 @@ export const FormWrapper = styled.form`
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
-    /* width: 624px; */
   }
   @media ${device.laptop} {
     padding-top: 30px;
-    /* width: 1120px; */
     flex-direction: row;
     justify-self: flex-start;
     flex-wrap: nowrap;
@@ -37,7 +35,6 @@ export const InputWrapper = styled.div`
   }
   @media ${device.laptop} {
     height: 44px;
-    /* width: 104px; */
     text-align: center;
   }
 `;
@@ -51,7 +48,9 @@ export const DateWrapper = styled.div`
 `;
 
 export const DateSelection = styled.input`
-  display: block;
+  vertical-align: middle;
+  font-family: inherit;
+  display: inline-block;
   font-weight: 400;
   font-size: 10px;
   line-height: 14px;
@@ -59,12 +58,13 @@ export const DateSelection = styled.input`
   background-color: transparent;
   border: none;
   width: 140px;
-  height: 40px;
+  padding: 10px 0;
   margin: 0 auto;
   text-align: center;
   position: relative;
   border: 2px solid #fff;
   border-radius: 16px;
+
   @media ${device.tablet} {
     border: none;
     font-weight: 900;
@@ -73,6 +73,7 @@ export const DateSelection = styled.input`
     height: 100%;
     margin-right: 32px;
     text-align: end;
+    padding: 0;
   }
   @media ${device.laptop} {
     width: 104px;
@@ -94,9 +95,9 @@ export const DateSelection = styled.input`
 
 export const CalendarIcon = styled.svg`
   position: absolute;
-  z-index: 2;
   left: 11px;
-  top: 12px;
+  top: 11px;
+
   cursor: pointer;
   @media ${device.tablet} {
     left: -12px;
@@ -160,9 +161,6 @@ export const SelectInput = styled(Select)`
     border-right: none;
     border-bottom-right-radius: 0px;
   }
-  @media ${device.laptop} {
-    /* width: 238px; */
-  }
 `;
 
 export const CountWrapper = styled.div`
@@ -187,9 +185,6 @@ export const CalculatorIcon = styled.svg`
   padding: 8px;
   border-left: 2px solid #ffffff;
 
-  /* position: absolute;
-  right: 30px;
-  top: 44px; */
   @media ${device.tablet} {
     border: none;
     right: 16px;
@@ -203,6 +198,7 @@ export const CalculatorIcon = styled.svg`
 `;
 
 export const CountInput = styled.input`
+  font-family: inherit;
   width: 183px;
   height: 44px;
   padding-right: 55px;

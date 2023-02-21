@@ -4,10 +4,10 @@ import device from 'constants/deviceSize';
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   align-self: center;
   margin-top: 45px;
+
   @media ${device.tablet} {
     margin-top: 0px;
     width: 100%;
@@ -25,33 +25,34 @@ export const Wrapper = styled.div`
 `;
 
 export const OperationsModalOpenButton = styled.button`
+  border-radius: 16px;
+
   display: flex;
-  align-self: center;
   align-items: center;
   justify-content: center;
-  vertical-align: center;
+  padding: 12px 6px;
+  width: 150px;
   margin-top: 32px;
   margin-bottom: 32px;
-  border: 2px solid #ffffff;
-  background-color: transparent;
+  background-color: #ff751d;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
   svg {
-    fill: #52555f;
+    fill: #ffffff;
   }
 
-  border-radius: 50%;
+  &:focus {
+    transform: scale(0.9);
+  }
+
   @media ${device.tablet} {
     display: none;
   }
 `;
-// svg {
-//   position: absolute;
-//   /* top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   stroke: red; */
-//   top: 50;
-
-//   align-items: center;
-//   justify-content: center;
-// }

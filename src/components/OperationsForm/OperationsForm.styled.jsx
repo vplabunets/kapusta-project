@@ -100,10 +100,11 @@ export const CalendarIcon = styled.svg`
   cursor: pointer;
   @media ${device.tablet} {
     left: -12px;
-    top: 2px;
+    top: -1px;
   }
   @media ${device.laptop} {
-    left: -5px;
+    left: -1px;
+    top: 0px;
 
     text-align: center;
   }

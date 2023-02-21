@@ -42,6 +42,17 @@ export const Btn = styled.button`
     }};
   }
 
+  @media ${'screen and (max-width: 767px)'} {
+    filter: ${p => {
+      if (p.design === 'operation' && p.color === 'accent') {
+        return 'drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35))';
+      }
+      if (p.design === 'operation' && p.color === 'white') {
+        return 'drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15))';
+      }
+    }};
+  }
+
   filter: ${p => {
     if (p.design === 'home' && p.color === 'accent')
       return 'drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35))';

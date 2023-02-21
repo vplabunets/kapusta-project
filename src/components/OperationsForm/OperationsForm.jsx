@@ -132,24 +132,20 @@ const OperationsForm = () => {
           />
           <CalculatorIcon
             width={isScreenMoreTablet ? 20 : 40}
-            height={isScreenMoreTablet ? 20 : 35}
+            height={isScreenMoreTablet ? 20 : 40}
           >
             <use href={`${icon}#icon-calculator`}></use>
           </CalculatorIcon>
         </CountWrapper>
       </InputWrapper>
       <ButtonWrapper>
-        <Button
-          type="submit"
-          color="accent"
-          design={!isScreenMoreTablet ? 'home' : 'operation'}
-        >
+        <Button type="submit" color="accent" design="operation">
           Input
         </Button>
         <Button
           type="button"
           color="white"
-          design={!isScreenMoreTablet ? 'home' : 'operation'}
+          design="operation"
           onClick={resetForm}
         >
           Clear

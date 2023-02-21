@@ -1,7 +1,7 @@
 import operationTypes from 'constants/operationTypes';
 
 import OperationsBalanceContainer from 'components/OperationsBalanceContainer/OperationsBalanceContainer';
-import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';
+// import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';
 import OperationsContainer from 'components/OperationsContainer/OperationsContainer';
 import OperationsTypeSwitcher from 'components/OperationsTypeSwitcher/OperationsTypeSwitcher';
 
@@ -18,7 +18,7 @@ const OperationsPage = () => {
 
       <OperationsPageWrapper>
         <OperationsBalanceContainer />
-        {true && <OperationsBalanceModal />}
+        {/* {true && <OperationsBalanceModal />} */}
         <OperationsTypeSwitcher type={type} setType={setType} />
         <OperationsContainer />
       </OperationsPageWrapper>

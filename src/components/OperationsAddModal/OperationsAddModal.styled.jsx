@@ -2,29 +2,40 @@ import styled from 'styled-components';
 
 export const Backdrop = styled.div`
   position: fixed;
+  z-index: 2;
   left: 0;
-  top: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 56px;
 
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: white;
 `;
 
 export const Modal = styled.div`
-  position: relative;
-  width: 280px;
+  padding: 20px 22px 0;
+`;
 
-  background-color: #ffffff;
-  border-radius: 30px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  padding: 40px 40px 50px;
+export const Background = styled.div`
+  z-index: -1;
+  width: 100%;
+  height: 342px;
 
-  @media screen and (min-width: 420px) {
-    width: 380px;
-    padding: 50px 58px 60px;
-  }
+  position: absolute;
+  top: 0;
+  background-color: #f5f6fb;
+  border-bottom-left-radius: 20%;
+
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+`;
+
+export const BackBtn = styled.button`
+  display: block;
+
+  background-color: transparent;
+
+  border: none;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 16px;
 `;

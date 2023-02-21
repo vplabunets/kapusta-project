@@ -3,21 +3,19 @@ import device from 'constants/deviceSize';
 import Select from 'react-select';
 
 export const FormWrapper = styled.form`
-  margin-bottom: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
   @media ${device.tablet} {
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
     /* width: 624px; */
   }
   @media ${device.laptop} {
     padding-top: 30px;
     /* width: 1120px; */
-    height: 134px;
     flex-direction: row;
     justify-self: flex-start;
     flex-wrap: nowrap;
@@ -26,14 +24,9 @@ export const FormWrapper = styled.form`
 `;
 
 export const InputWrapper = styled.div`
-  /* display: none; */
-
-  /* height: 258px; */
-
   align-items: center;
+  display: contents;
   flex-direction: column;
-  padding-left: 20px;
-  padding-right: 20px;
   border-bottom-left-radius: 30%;
   background-color: transparent;
   @media ${device.tablet} {
@@ -51,9 +44,14 @@ export const InputWrapper = styled.div`
 
 export const DateWrapper = styled.div`
   position: relative;
+  margin-bottom: 32px;
+  @media ${device.tablet} {
+    margin-bottom: 0px;
+  }
 `;
 
 export const DateSelection = styled.input`
+  display: block;
   font-weight: 400;
   font-size: 10px;
   line-height: 14px;
@@ -112,41 +110,51 @@ export const CalendarIcon = styled.svg`
 `;
 
 export const DescriptionInput = styled.input`
-  display: none;
+  display: block;
+  font-family: inherit;
   width: 100%;
   height: 44px;
   border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.14;
   text-align: start;
   background-color: transparent;
   padding-left: 30px;
-  border: 2px solid #f6f7fc;
+
+  border: 2px solid #ffffff;
+  border-bottom: none;
   color: #c7ccdc;
+
   &::placeholder {
     font-weight: 400;
     color: #c7ccdc;
   }
 
   @media ${device.tablet} {
+    border-top-right-radius: 0px;
+    border: 2px solid #f6f7fc;
     display: flex;
-    padding-left: 19px;
+    padding-left: 12px;
   }
   @media ${device.laptop} {
+    padding-left: 12px;
     /* width: 238px; */
   }
 `;
 
 export const SelectInput = styled(Select)`
-  display: none;
+  display: block;
+  font-family: inherit;
   width: 100%;
-  height: 40px;
-  border: 2px solid #f6f7fc;
+  height: 44px;
+  border: 2px solid #ffffff;
   border-bottom-right-radius: 16px;
   color: #c7ccdc;
   @media ${device.tablet} {
+    border: 2px solid #f6f7fc;
     display: flex;
-    height: 44px;
     border-left: none;
     border-right: none;
     border-bottom-right-radius: 0px;
@@ -157,7 +165,6 @@ export const SelectInput = styled(Select)`
 `;
 
 export const CountWrapper = styled.div`
-  display: none;
   position: relative;
   width: 183px;
   @media ${device.tablet} {
@@ -174,17 +181,18 @@ export const CountWrapper = styled.div`
 
 export const CalculatorIcon = styled.svg`
   position: absolute;
-  top: 36px;
+  top: 34px;
   right: 12px;
   padding: 8px;
-  /* border-left: 1px solid black; */
+  border-left: 2px solid #ffffff;
 
   /* position: absolute;
   right: 30px;
   top: 44px; */
   @media ${device.tablet} {
+    border: none;
     right: 16px;
-    top: 12px;
+    top: 10px;
     padding: 0;
   }
   @media ${device.laptop} {
@@ -195,18 +203,20 @@ export const CalculatorIcon = styled.svg`
 
 export const CountInput = styled.input`
   width: 183px;
-  height: 40px;
+  height: 44px;
   padding-right: 55px;
   padding-left: 55px;
   border-radius: 22px;
   font-weight: 900;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.14;
   text-align: center;
   margin-top: 32px;
-  border: 2px solid #f6f7fc;
-  color: #c7ccdc;
+  border: 2px solid #ffffff;
+  background-color: transparent;
   @media ${device.tablet} {
+    height: 40px;
+    border: 2px solid #f6f7fc;
     width: 110px;
     margin-top: 0;
     padding-right: 45px;
@@ -219,13 +229,11 @@ export const CountInput = styled.input`
 `;
 
 export const ButtonWrapper = styled.div`
-  justify-content: center;
-  margin: 0;
-  margin-top: 32px;
+  display: flex;
+  margin-top: 80px;
   gap: 20px;
-  display: none;
   @media ${device.tablet} {
-    display: flex;
+    margin-top: 32px;
   }
   @media ${device.laptop} {
     margin-left: 32px;

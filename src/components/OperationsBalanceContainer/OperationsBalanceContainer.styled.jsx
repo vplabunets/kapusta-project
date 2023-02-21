@@ -30,12 +30,13 @@ export const OperationsModalOpenButton = styled.button`
   align-items: center;
   justify-content: center;
   vertical-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: none;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  border: 2px solid #ffffff;
+  background-color: transparent;
 
   svg {
-    padding-top: 5px;
+    fill: #52555f;
   }
 
   border-radius: 50%;

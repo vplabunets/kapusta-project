@@ -25,3 +25,12 @@ export const Wrapper = styled.div`
     background-color: #ffffff;
   }
 `;
+export const WrapperTableSummary = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media ${device.tablet} {
+  }
+  @media ${device.laptop} {
+    flex-direction: row;
+  }
+`;

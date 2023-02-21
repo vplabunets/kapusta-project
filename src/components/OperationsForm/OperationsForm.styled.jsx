@@ -12,7 +12,6 @@ export const FormWrapper = styled.form`
   @media ${device.tablet} {
     margin: 0 auto;
     /* width: 624px; */
-    height: 44px;
   }
   @media ${device.laptop} {
     padding-top: 30px;

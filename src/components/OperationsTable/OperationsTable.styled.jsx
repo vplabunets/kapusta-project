@@ -4,7 +4,7 @@ import device from '../../constants/deviceSize';
 export const Table = styled.table`
   @media ${device.mobile} {
     width: 100%;
-    max-width: 280px;
+
     max-height: 500px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -14,8 +14,7 @@ export const Table = styled.table`
   }
 
   @media ${device.tablet} {
-    width: 100%;
-    max-width: 624px;
+    /* max-width: 624px; */
     margin-top: 48px;
     grid-column-start: 1;
     grid-column-end: 1;
@@ -24,7 +23,7 @@ export const Table = styled.table`
   }
 
   @media ${device.laptop} {
-    width: 746px;
+    /* width: 746px; */
     margin-top: 60px;
     /* grid-column-start: 1;
     grid-column-end: 2;
@@ -37,7 +36,7 @@ export const TableHead = styled.thead`
   @media ${device.tablet} {
     display: table;
     width: 100%;
-    max-width: 624px;
+    /* max-width: 624px; */
     font-weight: 700;
     font-size: 12px;
     line-height: 14px;
@@ -51,7 +50,7 @@ export const TableHead = styled.thead`
 
   @media ${device.laptop} {
     width: 100%;
-    max-width: 746px;
+    /* max-width: 746px; */
   }
 `;
 
@@ -84,7 +83,7 @@ export const TableHeadTitle = styled.th`
       width: 18%;
     }
     :last-child {
-      width: 15%;
+      width: 1%;
     }
     :nth-child(2) {
       width: 22%;
@@ -95,7 +94,7 @@ export const TableHeadTitle = styled.th`
 export const TableBody = styled.tbody`
   @media ${device.mobile} {
     display: inline-block;
-    width: 280px;
+    /* width: 280px; */
   }
 
   @media ${device.tablet} {
@@ -117,6 +116,6 @@ export const TableBody = styled.tbody`
 
   @media ${device.laptop} {
     height: calc(17px * 9 + 1px * 9);
-    width: 746px;
+    /* width: 746px; */
   }
 `;

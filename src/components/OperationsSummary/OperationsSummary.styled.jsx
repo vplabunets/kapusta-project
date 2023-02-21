@@ -13,8 +13,9 @@ const Wrapper = styled.div`
     justify-content: center;
   }
   @media ${device.laptop} {
-    width: 213px;
+    min-width: 213px;
     margin-top: 60px;
+    margin-left: 75px;
     align-self: right;
     justify-self: right;
   }

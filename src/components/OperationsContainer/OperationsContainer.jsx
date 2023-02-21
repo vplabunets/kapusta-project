@@ -2,7 +2,7 @@ import OperationsForm from 'components/OperationsForm/OperationsForm';
 import OperationsSummary from 'components/OperationsSummary/OperationsSummary';
 import OperationsTable from 'components/OperationsTable/OperationsTable';
 import React from 'react';
-import { Wrapper } from './OperationsContainer.styled';
+import { Wrapper, WrapperTableSummary } from './OperationsContainer.styled';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -11,9 +11,11 @@ const OperationsContainer = ({ type }) => {
 
   return (
     <Wrapper>
-      {true && <OperationsForm />}
-      {isScreenMorePhone && <OperationsTable />}
-      <OperationsSummary />
+      {isScreenMorePhone && <OperationsForm />}
+      <WrapperTableSummary>
+        {isScreenMorePhone && <OperationsTable />}
+        <OperationsSummary />
+      </WrapperTableSummary>
     </Wrapper>
   );
 };

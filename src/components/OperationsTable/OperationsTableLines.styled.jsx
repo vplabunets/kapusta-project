@@ -31,8 +31,8 @@ export const Tabletr = styled.tr`
 `;
 
 export const Data = styled.td`
-  // display: flex;
-  // align-items: center;
+  display: flex;
+  align-items: center;
 
   @media ${device.mobile} {
     position: absolute;

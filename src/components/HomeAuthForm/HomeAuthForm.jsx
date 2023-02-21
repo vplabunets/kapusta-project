@@ -12,8 +12,8 @@ import {
 } from './HomeAuthForm.styled';
 import icon from 'images/icons-sprite.svg';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { logIn, register } from 'redux/auth/operations';
+// import { useDispatch } from 'react-redux';
+// import { logIn, register } from 'redux/auth/operations';
 
 const initialValues = {
   email: '',
@@ -23,10 +23,10 @@ const initialValues = {
 const HomeAuthForm = () => {
   const [showHidePassword, setShowHidePassword] = useState(false);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
-    dispatch(logIn(values));
+    // dispatch(logIn(values));
 
     resetForm();
   };

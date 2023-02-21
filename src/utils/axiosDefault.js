@@ -5,6 +5,7 @@ export const api = () =>
     'https://kapusta-project-back-production.up.railway.app/api');
 
 export const setAuthHeader = token => {
+  console.log(token);
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 

@@ -11,28 +11,22 @@ export const FormWrapper = styled.form`
   width: 100%;
   @media ${device.tablet} {
     margin: 0 auto;
-    width: 624px;
+    /* width: 624px; */
     height: 44px;
-    grid-column-start: 1;
-    grid-column-end: 1;
   }
   @media ${device.laptop} {
     padding-top: 30px;
-    width: 1120px;
+    /* width: 1120px; */
     height: 134px;
     flex-direction: row;
     justify-self: flex-start;
     flex-wrap: nowrap;
     padding: 0;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    /* grid-row-start: 1;
-    grid-row-end: 2; */
   }
 `;
 
 export const InputWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 258px;
   display: flex;
   align-items: center;
@@ -44,7 +38,8 @@ export const InputWrapper = styled.div`
   background-color: transparent;
   @media ${device.tablet} {
     flex-direction: row;
-    height: 192px;
+    width: 100%;
+    height: auto;
   }
   @media ${device.laptop} {
     height: 44px;
@@ -116,7 +111,7 @@ export const CalendarIcon = styled.svg`
 `;
 
 export const DescriptionInput = styled.input`
-  width: 280px;
+  width: 100%;
   height: 44px;
   border-top-left-radius: 16px;
   font-size: 12px;
@@ -132,23 +127,23 @@ export const DescriptionInput = styled.input`
   }
 
   @media ${device.tablet} {
-    width: 184px;
     padding-left: 19px;
   }
   @media ${device.laptop} {
-    width: 238px;
+    /* width: 238px; */
   }
 `;
 
 export const SelectInput = styled(Select)`
-  width: 280px;
-  /* height: 144px; */
+  width: 100%;
   height: 40px;
   border: 2px solid #f6f7fc;
   border-bottom-right-radius: 16px;
   color: #c7ccdc;
   @media ${device.tablet} {
     height: 44px;
+    border-left: none;
+    border-right: none;
     border-bottom-right-radius: 0px;
   }
   @media ${device.laptop} {
@@ -157,7 +152,6 @@ export const SelectInput = styled(Select)`
 `;
 
 export const CountWrapper = styled.div`
-  border: 2px solid #f6f7fc;
   position: relative;
   width: 183px;
   @media ${device.tablet} {
@@ -203,14 +197,14 @@ export const CountInput = styled.input`
   line-height: 14px;
   text-align: center;
   margin-top: 32px;
-  background-color: transparent;
+  border: 2px solid #f6f7fc;
   color: #c7ccdc;
-  border: transparent;
   @media ${device.tablet} {
     width: 110px;
     margin-top: 0;
     padding-right: 45px;
     padding-left: 10px;
+    border: transparent;
   }
   @media ${device.laptop} {
     width: 121px;

@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
     align-items: baseline;
     flex-direction: row;
     margin-left: 0;
+    flex-grow: 1;
   }
 `;
 export const Title = styled.h2`

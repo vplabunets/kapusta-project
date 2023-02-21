@@ -1,4 +1,4 @@
-mport { Avatar } from '@mui/material';
+import { Avatar } from '@mui/material';
 
 import ExitIcon from 'images/icons-sprite.svg';
 

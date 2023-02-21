@@ -1,19 +1,19 @@
-import ReportsBalanceContainer from 'components/ReportsBalanceContainer/ReportsBalanceContainer';
-import React from 'react';
 import ReportsPageWrapper from './ReportsPage.styled';
-import ReportsMonthBalance from 'components/ReportsMonthBalance/ReportsMonthBalance';
-
-import { ReportsReturnBack } from 'components/ReportsReturnBack/ReportsReturnBack';
+import ReportsNav from 'components/ReportsNav/ReportsNav';
 import { Background } from 'components/UI/Background/Background';
+import ReportsMonthBalance from 'components/ReportsMonthBalance/ReportsMonthBalance';
+import ReportsMonthSummary from 'components/ReportsMonthSummary/ReportsMonthSummary';
+import ReportsChart from 'components/ReportsChart/ReportsChart';
 
 const ReportsPage = () => {
   return (
     <>
       <Background />
       <ReportsPageWrapper>
-        <ReportsReturnBack />
+        <ReportsNav />
         <ReportsMonthBalance />
-        <ReportsBalanceContainer />
+        <ReportsMonthSummary />
+        <ReportsChart />
       </ReportsPageWrapper>
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {
@@ -10,8 +10,9 @@ import {
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Wrapper } from './ReportsChart.styled';
+ChartJS.register(CategoryScale, LinearScale, BarElement);
 
-const UserData = [
+const incomeData = [
   {
     id: 1,
     mail: 'email@mail.com',
@@ -95,12 +96,30 @@ const UserData = [
   },
 ];
 
+const UserData = incomeData.sort((a, b) => (a.value > b.value ? 1 : -1));
+
 const ReportsChart = () => {
   const isScreenMorePhone = useMediaQuery('(min-width: 768px)');
 
   const ticksFontSize = isScreenMorePhone ? 12 : 10;
 
-  const [userData, setUserData] = useState({
+  // const [userData, setUserData] = useState({
+  //   labels: UserData.map(data => data.description),
+  //   datasets: [
+  //     {
+  //       label: '',
+  //       data: UserData.map(data => data.value),
+  //       backgroundColor: ['#FF751D', '#FFDAC0'],
+  //       borderRadius: 10,
+  //       borderWidth: 1,
+  //       barMargin: 1,
+  //     },
+  //   ],
+  // });
+
+  // useEffect(() => setUserData(), []);
+
+  const userData = {
     labels: UserData.map(data => data.description),
     datasets: [
       {
@@ -112,7 +131,8 @@ const ReportsChart = () => {
         barMargin: 1,
       },
     ],
-  });
+  };
+
   let delayed;
   const options = {
     maintainAspectRatio: false,
@@ -145,7 +165,7 @@ const ReportsChart = () => {
 
         clamp: false,
         formatter: function (value) {
-          return value + ' ' + 'UAH';
+          return `${value} UAH`;
         },
       },
     },

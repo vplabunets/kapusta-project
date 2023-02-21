@@ -1,42 +1,28 @@
 import React from 'react';
+import operationTypes from 'constants/operationTypes';
+
 import { TypeButton, Wrapper } from './OperationsTypeSwitcher.styled';
 
-const OperationsTypeSwitcher = () => {
-  // const [type, setType] = useState('expenses');
-
-  let xxx = '';
-  let yyy = '';
-
-  const colorEx = () => {
-    xxx = `${p => p.theme.lightTheme.accentColor}`;
-    yyy = `${p => p.theme.lightTheme.tableHeadBackgroundColor}`;
-    // xxx = 'red';
-    // yyy = 'green';
-    // setType('expenses');
-  };
-  const colorIn = () => {
-    yyy = `${p => p.theme.lightTheme.accentColor}`;
-    xxx = `${p => p.theme.lightTheme.tableHeadBackgroundColor}`;
-    // xxx = 'green';
-    // yyy = 'red';
-    // setType('income');
-  };
-
+const OperationsTypeSwitcher = ({
+  type = operationTypes.expenses,
+  setType,
+}) => {
   return (
     <Wrapper>
       <TypeButton
-        onClick={colorEx()}
-        style={{ backgroundColor: `${xxx}` }}
         type="button"
+        active={type === operationTypes.expenses ? true : false}
+        onClick={() => setType(operationTypes.expenses)}
       >
         Expenses
       </TypeButton>
+
       <TypeButton
-        onClick={colorIn()}
-        style={{ backgroundColor: `${yyy}` }}
+        onClick={() => setType(operationTypes.incomes)}
         type="button"
+        active={type === operationTypes.incomes ? true : false}
       >
-        Incomes
+        Income
       </TypeButton>
     </Wrapper>
   );

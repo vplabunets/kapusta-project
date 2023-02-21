@@ -6,7 +6,6 @@ export const Wrap = styled.div`
   /* margin-left: auto; */
   justify-content: center;
   @media ${device.laptop} {
-    margin-left: 300px;
   }
 `;
 

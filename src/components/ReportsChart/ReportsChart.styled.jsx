@@ -4,9 +4,10 @@ import device from 'constants/deviceSize';
 
 export const Wrapper = styled.div`
   height: 422px;
-  padding: 20px 20px;
-  margin: 0 auto;
+  background-color: #ffffff;
+
   @media ${device.tablet} {
     padding: 20px 138px;
+    border-radius: 30px;
   }
 `;

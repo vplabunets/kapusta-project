@@ -23,3 +23,29 @@ export const Wrapper = styled.div`
     align-self: space-between;
   }
 `;
+
+export const AddOperationsModal = styled.button`
+  display: flex;
+  /* align-self: center; */
+  align-items: center;
+  justify-content: center;
+  vertical-align: center;
+  svg {
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    stroke: red; */
+    top: 50%;
+
+    align-items: center;
+    justify-content: center;
+  }
+  margin-top: 10px;
+  border: none;
+  /* vertical-align: center; */
+  border-radius: 50%;
+  @media ${device.tablet} {
+    display: none;
+  }
+`;

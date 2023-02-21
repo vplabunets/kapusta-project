@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { Avatar } from '@mui/material';
-import ConfirmModal from 'components/ConfirmModal/ConfirmModal';
+mport { Avatar } from '@mui/material';
 
 import ExitIcon from 'images/icons-sprite.svg';
+
+import ConfirmModal from 'components/ConfirmModal/ConfirmModal';
+import SettingsMenu from 'components/SettingsMenu/SettingsMenu';
 
 import {
   Container,
@@ -10,30 +11,36 @@ import {
   UserName,
   ExitContainer,
   LogoutBtn,
+  MenuBtn,
 } from './NavBar.styles';
-
-
 
 const NavBar = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const onUserClick = evt => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <>
       <Container>
-        <Avatar
-          sx={{
-            width: 32,
-            height: 32,
-            color: 'rgba(82, 85, 95, 1)',
-            backgroundColor: 'rgba(245, 246, 250, 1)',
-            fontWeight: 700,
-            fontSize: '12px',
-            lineHeight: 1.17,
-          }}
-        >
-          U
-        </Avatar>
+        <MenuBtn onClick={onUserClick}>
+          <Avatar
+            sx={{
+              width: 32,
+              height: 32,
+              color: 'rgba(82, 85, 95, 1)',
+              backgroundColor: 'rgba(245, 246, 250, 1)',
+              fontWeight: 700,
+              fontSize: '12px',
+              cursor: 'pointer',
+              lineHeight: 1.17,
+            }}
+          >
+            U
+          </Avatar>
+        </MenuBtn>
         <ExitContainer>
           <UserName>User Name</UserName>
           <ExitBtn onClick={() => setModalOpen(true)}>Exit</ExitBtn>
@@ -43,9 +50,15 @@ const NavBar = () => {
             <use href={`${ExitIcon}#icon-logout`}></use>
           </svg>
         </LogoutBtn>
+        {isMenuOpen === true && <SettingsMenu />}
       </Container>
-      {modalOpen && <ConfirmModal setModalOpen={setModalOpen} text={'Do you really want to leave?' } /> }  
-      </>
+      {modalOpen && (
+        <ConfirmModal
+          setModalOpen={setModalOpen}
+          text={'Do you really want to leave?'}
+        />
+      )}
+    </>
   );
 };
 

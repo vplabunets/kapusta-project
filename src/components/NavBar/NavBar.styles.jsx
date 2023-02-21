@@ -9,6 +9,13 @@ export const Container = styled.div`
   align-items: center;
 `;
 
+export const MenuBtn = styled.button`
+  display: block;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+`;
+
 export const ExitContainer = styled.div`
   display: none;
   @media ${device.tablet} {
@@ -19,14 +26,17 @@ export const ExitContainer = styled.div`
   }
 `;
 
-export const UserName = styled.p`
+export const UserName = styled.button`
   margin-right: 40px;
-  display: block;
-
+  font-family: 'Roboto';
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: rgba(82, 85, 95, 1);
+  display: block;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 
   @media ${device.tablet} {
     &::after {

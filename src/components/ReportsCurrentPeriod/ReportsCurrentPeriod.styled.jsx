@@ -1,14 +1,5 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
 
-export const Wrapper = styled.div`
-  /* @media ${device.tablet} {
-    margin-left: 102px;
-  }
-  @media ${device.laptop} {
-    margin-left: 214px;
-  } */
-`;
 export const Title = styled.h2`
   font-weight: 400;
   font-size: 12px;
@@ -29,8 +20,7 @@ export const Text = styled.p`
   line-height: 1.143;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--black-text-color);
-  width: 130px;
+  width: 134px;
   text-align: center;
 `;
 

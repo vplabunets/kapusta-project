@@ -111,6 +111,7 @@ export const AuthFormLabel = styled.label`
 `;
 
 export const Input = styled(Field)`
+  font-family: inherit;
   margin-top: 12px;
   width: 100%;
   height: 52px;

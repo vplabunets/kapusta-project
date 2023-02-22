@@ -3,7 +3,7 @@ import device from 'constants/deviceSize';
 import transition from 'constants/constants';
 
 const Backdrop = styled.div`
-  z-index: 4;
+  z-index: 6;
   position: fixed;
   left: 0;
   top: 0;

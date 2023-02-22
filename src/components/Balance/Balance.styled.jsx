@@ -4,6 +4,7 @@ import device from 'constants/deviceSize';
 
 export const Wrapper = styled.div`
   margin-top: 32px;
+  z-index: 3;
   background-color: ${p => p.theme.lightTheme.mainBackgroundColor};
 
   @media ${device.tablet} {
@@ -44,6 +45,7 @@ export const Title = styled.h2`
 
 export const Form = styled.form`
   display: flex;
+  z-index: 10;
   justify-content: center;
   align-items: center;
   flex-direction: row;

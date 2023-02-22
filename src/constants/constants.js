@@ -4,4 +4,14 @@ const transition = {
   delay: '0ms',
 };
 
-export default transition;
+const routes = {
+  home: '/',
+  operations: 'operations',
+  reports: 'reports',
+};
+
+const operationTypes = {
+  expenses: 'expenses',
+  incomes: 'incomes',
+};
+export default (transition, routes, operationTypes);

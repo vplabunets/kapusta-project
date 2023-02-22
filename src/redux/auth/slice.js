@@ -5,7 +5,7 @@ const initialState = {
   name: '',
   email: '',
   token: '',
-  isLoggedIn: false,
+  isLoggedIn: true,
   balance: 0,
   error: null,
   loading: false,

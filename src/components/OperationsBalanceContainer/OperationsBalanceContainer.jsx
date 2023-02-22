@@ -11,7 +11,7 @@ import IconPlus from 'images/icons-sprite.svg';
 import OperationsAddModal from 'components/OperationsAddModal/OperationsAddModal';
 import { useMediaQuery } from '@mui/material';
 
-const OperationsBalanceContainer = () => {
+const OperationsBalanceContainer = ({ addBalance }) => {
   const [isOpenOperationsAddModal, setIsOperationsAddModal] = useState(false);
   const openModal = () => setIsOperationsAddModal(true);
   const isScreenMorePhone = useMediaQuery('(max-width: 767px)');
@@ -23,7 +23,7 @@ const OperationsBalanceContainer = () => {
   return (
     <Wrapper>
       <OperationsForwardToReports />
-      <Balance />
+      <Balance addBalance={addBalance} />
       <OperationsModalOpenButton onClick={openModal}>
         Add new operation
         <svg alt="plus" width={25} height={25}>

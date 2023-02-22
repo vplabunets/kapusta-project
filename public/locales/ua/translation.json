@@ -1,0 +1,23 @@
+{
+"menu":{
+  "Hello, User Name": "Привіт, Ім'я Користувача",
+   "Select language" : "Оберіть мову",
+   "Profile Settings" : "Налаштування профілю"
+} ,
+
+"modal":{
+"Change Name": "Змінити ім'я",
+"Write your new name": "Напишіть своє нове ім'я",
+"Set/Change Avatar": "Встановити/змінити аватар",
+"Drop image here": "Перетягніть зображення сюди",
+"or": "або"
+},
+
+"button": {
+ "CONFIRM": "ПІДТВЕРДИТИ",
+ "CANCEL": " СКАСУВАТИ"
+},
+
+    "Reports": "Звіти"
+    
+}

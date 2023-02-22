@@ -100,6 +100,7 @@ const OperationsForm = () => {
           styles={customStyles}
           value={category}
           onChange={setCategory}
+          isSearchable={false}
           options={productCategory.expenses}
           theme={theme => ({
             ...theme,
@@ -107,7 +108,8 @@ const OperationsForm = () => {
             colors: {
               ...theme.colors,
               primary25: '#F5F6FB',
-              primary: '#FF751D',
+              primary: '#F5F6FB',
+              danger: 'red',
             },
           })}
         />

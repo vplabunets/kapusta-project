@@ -118,7 +118,6 @@ export const DescriptionInput = styled.input`
   height: 44px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-
   font-size: 12px;
   line-height: 1.14;
   text-align: start;
@@ -127,7 +126,7 @@ export const DescriptionInput = styled.input`
 
   border: 2px solid #ffffff;
   border-bottom: none;
-  color: #c7ccdc;
+  color: #52555f;
 
   &::placeholder {
     font-weight: 400;
@@ -156,7 +155,6 @@ export const SelectInput = styled(Select)`
   color: #c7ccdc;
   @media ${device.tablet} {
     border: 2px solid #f6f7fc;
-    display: flex;
     border-left: none;
     border-right: none;
     border-bottom-right-radius: 0px;
@@ -209,6 +207,7 @@ export const CountInput = styled.input`
   line-height: 1.14;
   text-align: center;
   margin-top: 32px;
+  color: #52555f;
   border: 2px solid #ffffff;
   background-color: transparent;
   @media ${device.tablet} {

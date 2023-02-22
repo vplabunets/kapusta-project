@@ -18,17 +18,16 @@ import {
 import { useState } from 'react';
 
 const SettingsMenu = () => {
-  const changeLanguage = (language) => {
+  const changeLanguage = language => {
     i18n.changeLanguage(language);
-  }
-  
+  };
+
   const { t, i18n } = useTranslation();
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
     setShowModal(prevState => !prevState);
   };
-
 
   return (
     <Menu>

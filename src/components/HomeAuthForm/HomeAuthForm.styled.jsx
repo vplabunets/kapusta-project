@@ -44,7 +44,6 @@ export const GoogleButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 122px;
   height: 40px;
   margin: 0 auto 32px;
@@ -110,6 +109,7 @@ export const AuthFormLabel = styled.label`
   }
 `;
 
+
 export const Input = styled(Field)`
   font-family: inherit;
   margin-top: 12px;
@@ -166,3 +166,10 @@ export const EyeWrapper = styled.div`
     cursor: pointer;
   }
 `;
+
+export const ErrorValidation = styled.div`
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: #EB5757;
+  `;

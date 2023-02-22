@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import { Avatar } from '@mui/material';
 import { useState } from 'react';
 import ExitIcon from 'images/icons-sprite.svg';
@@ -13,8 +14,11 @@ import {
   LogoutBtn,
   MenuBtn,
 } from './NavBar.styles';
+import { logOut } from 'redux/auth/operations';
+
 
 const NavBar = () => {
+  const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -56,6 +60,7 @@ const NavBar = () => {
         <ConfirmModal
           setModalOpen={setModalOpen}
           text={'Do you really want to leave?'}
+          onClick={()=>dispatch(logOut())}
         />
       )}
     </>

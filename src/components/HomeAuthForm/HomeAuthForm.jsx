@@ -1,4 +1,5 @@
-import { Formik, Form } from 'formik';
+import { Formik, Form} from 'formik';
+ import * as Yup from 'yup';
 import { Button } from 'components/UI/Button/Button';
 import {
   MainWrapper,
@@ -9,27 +10,39 @@ import {
   Input,
   ButtonContainer,
   EyeWrapper,
+  ErrorValidation
 } from './HomeAuthForm.styled';
 import icon from 'images/icons-sprite.svg';
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { logIn, register } from 'redux/auth/operations';
+import { useDispatch } from 'react-redux';
+import { logIn, register } from 'redux/auth/operations';
+
+ const ValidationSchema = Yup.object().shape({
+   email: Yup.string().email('Invalid email').required('This is a required field'),
+   password: Yup.string().min(6, "Password too short").max(16, "Password too long").required("This is a required field"),
+ });
 
 const initialValues = {
   email: '',
   password: '',
 };
 
+
+
 const HomeAuthForm = () => {
   const [showHidePassword, setShowHidePassword] = useState(false);
+  const dispatch = useDispatch();
 
-  // const dispatch = useDispatch();
-
-  const handleSubmit = (values, { resetForm }) => {
-    // dispatch(logIn(values));
-
-    resetForm();
-  };
+  const onClick = (errors, values, handleReset) => {
+  if (errors.email) return;
+    if (errors.password) return;
+    if (values.email && values.password) {
+   
+      dispatch(register(values));
+      handleReset();
+         return;
+    }
+}
 
   return (
     <MainWrapper>
@@ -43,11 +56,23 @@ const HomeAuthForm = () => {
       <LoginText>
         Or log in using an email and password, <br /> after registering:
       </LoginText>
-      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form autoComplete="off">
+      <Formik
+        initialValues={initialValues}
+        onSubmit={values => dispatch(logIn(values))}
+        validationSchema={ValidationSchema} >
+        {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting, handleReset }) => 
+        (<Form autoComplete="off" onSubmit={handleSubmit}>
           <AuthFormLabel htmlFor="Email">
             Email:
-            <Input type="text" name="email" placeholder="your@email.com" />
+            <Input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              values={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          <ErrorValidation>{errors.email && touched.email && errors.email}</ErrorValidation>
           </AuthFormLabel>
           <AuthFormLabel htmlFor="password">
             Password:
@@ -56,6 +81,9 @@ const HomeAuthForm = () => {
                 type={showHidePassword ? 'text' : 'password'}
                 name="password"
                 placeholder="Password"
+                values={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />
               <button
                 type="button"
@@ -72,16 +100,18 @@ const HomeAuthForm = () => {
                 </svg>
               </button>
             </EyeWrapper>
+          <ErrorValidation>{errors.password && touched.password && errors.password}</ErrorValidation>
           </AuthFormLabel>
           <ButtonContainer>
-            <Button type={'submit'} color={'accent'} design={'home'}>
+            <Button type={'submit'} color={'accent'} design={'home'} disabled={ isSubmitting } >
               LOG IN
             </Button>
-            <Button type={'submit'} color={'grey'} design={'home'}>
+            <Button type={'button'} color={'grey'} design={'home'} disabled={ isSubmitting } onClick={()=>onClick(errors, values, handleReset)} >
               REGISTRATION
             </Button>
           </ButtonContainer>
-        </Form>
+      </Form>)
+              }
       </Formik>
     </MainWrapper>
   );

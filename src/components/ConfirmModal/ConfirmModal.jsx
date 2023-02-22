@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 
 const body = document.querySelector("body");
  
-const ConfirmModal = ({ text, setModalOpen }) => {
+const ConfirmModal = ({ text, setModalOpen, onClick }) => {
     
     const closeModal = () => {
     setModalOpen(false);
@@ -56,6 +56,7 @@ const ConfirmModal = ({ text, setModalOpen }) => {
                 type={"button"}
                 color={"accent"}
                 design={"modal"}
+                onClick={onClick}
               >
                 YES
               </Button>

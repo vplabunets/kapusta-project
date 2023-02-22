@@ -25,6 +25,55 @@ const EmptyLines = () => {
             <td></td>
             <td></td>
         </Empty>
+        <Empty>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </Empty>
+        <Empty>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </Empty>
+        <Empty>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </Empty>
+        <Empty>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </Empty>
+        <Empty>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </Empty>
+        <Empty>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </Empty>
+        <Empty>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </Empty>
       </>
     );
   };

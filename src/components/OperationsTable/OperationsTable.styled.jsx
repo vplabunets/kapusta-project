@@ -99,7 +99,7 @@ export const TableBody = styled.tbody`
     display: inline-block;
     width: 100%;
     overflow-y: scroll;
-    height: calc(18px * 9 + 1px * 9);
+    height: calc(35px * 9 + 1px * 9);
 
     ::-webkit-scrollbar {
       width: 6px;
@@ -110,9 +110,5 @@ export const TableBody = styled.tbody`
       border-radius: 2px;
       background-color: #ff751d;
     }
-  }
-
-  @media ${device.laptop} {
-    height: calc(17px * 9 + 1px * 9);
   }
 `;

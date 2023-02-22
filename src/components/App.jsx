@@ -1,9 +1,12 @@
 import Layout from 'components/Layout';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 // import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import RestrictedRoute from 'routes/RestrictedRoutes';
 import PrivateRoutes from 'routes/PrivateRoutes';
+
+import { refreshUser } from 'redux/auth/operations';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const OperationsPage = lazy(() =>
@@ -12,6 +15,12 @@ const OperationsPage = lazy(() =>
 const ReportsPage = lazy(() => import('../pages/ReportsPage/ReportsPage'));
 
 export const App = () => {
+  const dispatch = useDispatch();
+  // const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
   return (
     <>
       <Routes>

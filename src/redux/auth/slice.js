@@ -5,12 +5,11 @@ const initialState = {
   name: '',
   email: '',
   token: '',
-  isLoggedIn: true,
+  isLoggedIn: false,
   balance: 0,
   error: null,
-  loading: false,
-  //   status: '',
-  //   isRefreshing: false,
+  isLoading: false,
+  isRefreshing: false,
 };
 
 const authSlice = createSlice({
@@ -19,14 +18,14 @@ const authSlice = createSlice({
   extraReducers: {
     [register.fulfilled]: state => {
       state.error = false;
-      state.loading = false;
+      state.isLoading = false;
     },
     [register.rejected](state, action) {
       state.error = action.payload.message;
-      state.loading = false;
+      state.isLoading = false;
     },
     [register.pending](state) {
-      state.loading = true;
+      state.isLoading = true;
     },
     [logIn.fulfilled](state, action) {
       state.email = action.payload.email;
@@ -34,41 +33,38 @@ const authSlice = createSlice({
       state.balance = action.payload.balance;
       state.isLoggedIn = true;
       state.error = false;
-      state.loading = false;
+      state.isLoading = false;
     },
     [logIn.rejected](state, action) {
       state.error = action.payload.message;
-      state.loading = false;
+      state.isLoading = false;
     },
     [logIn.pending](state) {
-      state.loading = true;
+      state.isLoading = true;
     },
     [logOut.fulfilled](state) {
       state.email = '';
       state.token = null;
       state.isLoggedIn = false;
-      state.loading = false;
+      state.isLoading = false;
     },
 
     [logOut.pending](state) {
-      state.loading = true;
+      state.isLoading = true;
     },
     [refreshUser.pending](state) {
-      state.loading = true;
-      //   state.isRefreshing = true;
+      state.isRefreshing = true;
     },
     [refreshUser.fulfilled](state, action) {
       state.email = action.payload.email;
       state.token = action.payload.token;
       state.balance = action.payload.balance;
       state.isLoggedIn = true;
-      state.loading = false;
-      //   state.isRefreshing = false;
+      state.isRefreshing = false;
     },
     [refreshUser.rejected](state, action) {
-      state.loading = false;
       state.error = action.payload.message;
-      //   state.isRefreshing = false;
+      state.isRefreshing = false;
     },
   },
 });

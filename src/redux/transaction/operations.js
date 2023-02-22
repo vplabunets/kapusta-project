@@ -1,8 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-// import { api } from 'utils/axiosDefault';
-
-// api();
 
 export const getSummary = createAsyncThunk(
   'transactions/summary',

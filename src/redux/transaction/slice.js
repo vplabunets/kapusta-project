@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getSummary } from './operations';
+import { getSummary, getTransactionsByOperation } from './operations';
 
 const initialState = {
   transactions: [],
   summary: [],
   error: null,
-  loading: false,
+  isLoading: false,
 };
 
 const transactionSlice = createSlice({
@@ -13,15 +13,26 @@ const transactionSlice = createSlice({
   initialState,
   extraReducers: {
     [getSummary.fulfilled]: (state, action) => {
-      state.summary = action.payload.summary;
-      state.loading = false;
+      state.summary = action.payload.transaction;
+      state.isLoading = false;
     },
     [getSummary.rejected](state, action) {
       state.error = action.payload.message;
-      state.loading = false;
+      state.isLoading = false;
     },
     [getSummary.pending](state) {
-      state.loading = true;
+      state.isLoading = true;
+    },
+    [getTransactionsByOperation.fulfilled]: (state, action) => {
+      state.transactions = action.payload;
+      state.isLoading = false;
+    },
+    [getTransactionsByOperation.rejected](state, action) {
+      state.error = action.payload.message;
+      state.isLoading = false;
+    },
+    [getTransactionsByOperation.pending](state) {
+      state.isLoading = true;
     },
   },
 });

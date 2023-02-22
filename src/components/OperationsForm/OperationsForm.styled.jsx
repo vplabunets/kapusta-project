@@ -48,6 +48,7 @@ export const DateWrapper = styled.div`
 `;
 
 export const DateSelection = styled.input`
+  outline: #ff751d;
   vertical-align: middle;
   font-family: inherit;
   display: inline-block;
@@ -123,6 +124,7 @@ export const DescriptionInput = styled.input`
   text-align: start;
   background-color: transparent;
   padding-left: 30px;
+  outline: #ff751d;
 
   border: 2px solid #ffffff;
   border-bottom: none;
@@ -197,6 +199,7 @@ export const CalculatorIcon = styled.svg`
 
 export const CountInput = styled.input`
   font-family: inherit;
+  outline: #ff751d;
   width: 183px;
   height: 44px;
   padding-right: 55px;

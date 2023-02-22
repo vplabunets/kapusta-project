@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Avatar } from '@mui/material';
 import { useState } from 'react';
 import ExitIcon from 'images/icons-sprite.svg';
@@ -15,14 +15,22 @@ import {
   MenuBtn,
 } from './NavBar.styles';
 import { logOut } from 'redux/auth/operations';
-
+import { selectEmail, selectName } from 'redux/auth/selectors';
 
 const NavBar = () => {
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const email = useSelector(selectEmail);
+  const name = useSelector(selectName);
+
+  const toCutName = email => {
+    const firstLetter = email.slice(0, 1).toUpperCase();
+    return firstLetter;
+  };
 
   const onUserClick = evt => {
+    console.log(email, name);
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -42,11 +50,11 @@ const NavBar = () => {
               lineHeight: 1.17,
             }}
           >
-            U
+            {name ? toCutName(name) : toCutName(email)}
           </Avatar>
         </MenuBtn>
         <ExitContainer>
-          <UserName onClick={onUserClick}>User Name</UserName>
+          <UserName onClick={onUserClick}>{email}</UserName>
           <ExitBtn onClick={() => setModalOpen(true)}>Exit</ExitBtn>
         </ExitContainer>
         <LogoutBtn onClick={() => setModalOpen(true)}>
@@ -60,7 +68,7 @@ const NavBar = () => {
         <ConfirmModal
           setModalOpen={setModalOpen}
           text={'Do you really want to leave?'}
-          onClick={()=>dispatch(logOut())}
+          onClick={() => dispatch(logOut())}
         />
       )}
     </>

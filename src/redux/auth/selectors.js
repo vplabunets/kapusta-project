@@ -4,3 +4,4 @@ export const selectBalance = state => state.auth.balance;
 export const selectIsLoading = state => state.auth.isLoading;
 export const selectIsRefreshing = state => state.auth.isRefreshing;
 export const selectError = state => state.auth.error;
+export const selectEmail = state => state.auth.email;

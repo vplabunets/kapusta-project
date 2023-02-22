@@ -32,7 +32,7 @@ const SettingsModal = ({ onClose }) => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
   const onKeyDown = e => {
     if (e.code === 'Escape') {
       onClose();
@@ -69,7 +69,7 @@ const SettingsModal = ({ onClose }) => {
             <Label htmlFor="avatar"> {t('modal.Set/Change Avatar')}</Label>
             <DropFiles>
               <DropFilesTitle> {t('modal.Drop image here')}</DropFilesTitle>
-               {t('modal.or')}
+              {t('modal.or')}
               <DropFilesInput
                 type="file"
                 name="avatar"
@@ -88,8 +88,7 @@ const SettingsModal = ({ onClose }) => {
               color={'white'}
               design={'modal'}
             >
-                {t('button.CANCEL')}
-              
+              {t('button.CANCEL')}
             </Button>
           </ButtonWrapper>
         </Form>

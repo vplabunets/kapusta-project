@@ -7,6 +7,8 @@ import RestrictedRoute from 'routes/RestrictedRoutes';
 import PrivateRoutes from 'routes/PrivateRoutes';
 
 import { refreshUser } from 'redux/auth/operations';
+import { useAuth } from 'hooks/useAuth';
+import { Loader } from './LoaderCabbage/LoaderCabbage.styled';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const OperationsPage = lazy(() =>
@@ -16,39 +18,43 @@ const ReportsPage = lazy(() => import('../pages/ReportsPage/ReportsPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  // const { isRefreshing } = useAuth();
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
   return (
     <>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route
-            path="/"
-            element={
-              <RestrictedRoute
-                redirectTo="/operations"
-                component={<HomePage />}
-              />
-            }
-          />
-          <Route
-            path="/operations"
-            element={
-              <PrivateRoutes redirectTo="/" component={<OperationsPage />} />
-            }
-          />
-          <Route
-            path="/reports"
-            element={
-              <PrivateRoutes redirectTo="/" component={<ReportsPage />} />
-            }
-          />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Route>
-      </Routes>
+      {isRefreshing ? (
+        <Loader />
+      ) : (
+        <Routes>
+          <Route element={<Layout />}>
+            <Route
+              path="/"
+              element={
+                <RestrictedRoute
+                  redirectTo="/operations"
+                  component={<HomePage />}
+                />
+              }
+            />
+            <Route
+              path="/operations"
+              element={
+                <PrivateRoutes redirectTo="/" component={<OperationsPage />} />
+              }
+            />
+            <Route
+              path="/reports"
+              element={
+                <PrivateRoutes redirectTo="/" component={<ReportsPage />} />
+              }
+            />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Route>
+        </Routes>
+      )}
     </>
   );
 };

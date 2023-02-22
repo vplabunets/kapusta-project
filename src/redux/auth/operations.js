@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 import { setAuthHeader, clearAuthHeader, api } from 'utils/axiosDefault';
 
@@ -11,9 +12,31 @@ export const register = createAsyncThunk(
       //   const result = await axios.post('/users/register', credentials);
       await axios.post('/users/register', credentials);
       //   setAuthHeader(res.data.token);
-
+      toast.info('Registration successful! Please confirm your email', {
+        position: toast.POSITION.TOP_RIGHT,
+        theme: 'colored',
+        pauseOnHover: true,
+      });
       //   return result.data;
     } catch (error) {
+      const errNot = error.response.data.message;
+      if (
+        errNot === 'The email is already taken by another user, try logging in '
+      ) {
+        toast.error('This email is already used', {
+          position: toast.POSITION.TOP_RIGHT,
+          theme: 'colored',
+          pauseOnHover: true,
+        });
+      }
+
+      if (errNot === 'Email is not verified') {
+        toast.warning('Your email is not verified, please check your email', {
+          position: toast.POSITION.TOP_RIGHT,
+          theme: 'colored',
+          pauseOnHover: true,
+        });
+      }
       return rejectWithValue(error.response.data);
     }
   }
@@ -28,6 +51,14 @@ export const logIn = createAsyncThunk(
       console.log(res.data);
       return res.data;
     } catch (error) {
+      const errNot = error.response.data.message;
+      if (errNot === 'Invalid email address or password') {
+        toast.warning('Your email or password is wrong', {
+          position: toast.POSITION.TOP_RIGHT,
+          theme: 'colored',
+          pauseOnHover: true,
+        });
+      }
       return rejectWithValue(error.response.data);
     }
   }

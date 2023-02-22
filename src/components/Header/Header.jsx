@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 import NavBar from 'components/NavBar/NavBar';
 
@@ -8,9 +10,8 @@ import { ContainerHeader } from './Header.styled';
 import { CustomizedSwitcher } from 'components/UI/CustomizedSwitcher';
 
 const Header = () => {
-  // In future will be connected with Redux
-  // const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const isLoggedIn = true;
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   return (
     <ContainerHeader>
       <Link>

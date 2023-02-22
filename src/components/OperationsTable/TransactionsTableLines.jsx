@@ -1,6 +1,8 @@
 import React from 'react';
+import { NumericFormat } from 'react-number-format'; 
 import icon from 'images/icons-sprite.svg';
 import { Tabletr, Data, Description, Category, Sum, Btn, BtnStyle, Delete } from './TransactionsTableLines.styled';
+
 
 // const getValueStyle = operation => {
 // switch (operation) {
@@ -26,7 +28,19 @@ const TransactionsTableLines = () => {
             <Data>18.02.2023</Data>
             <Description>Description</Description>
             <Category>Category</Category>
-            <Sum>30.00 UAH.</Sum>
+            <Sum style={{ color: "#E7192E" }}>
+              <NumericFormat 
+               value={300}
+               placeholder={'00.00 UAH'}
+               prefix={'- '}
+               suffix={' UAH'}
+               displayType={'text'}
+               disabled={true}
+               fixedDecimalScale={"true"}
+               decimalScale={'2'}
+               thousandSeparator={''}
+              />
+            </Sum>
             <Btn>
                 <BtnStyle type='button'>
                 <Delete alt="delete" width={18} height={18}>
@@ -39,7 +53,19 @@ const TransactionsTableLines = () => {
             <Data>18.02.2023</Data>
             <Description>Description</Description>
             <Category>Category</Category>
-            <Sum>30.00 UAH.</Sum>
+            <Sum style={{ color: "#E7192E" }}>
+              <NumericFormat 
+               value={300}
+               placeholder={'00.00 UAH'}
+               prefix={'- '}
+               suffix={' UAH'}
+               displayType={'text'}
+               disabled={true}
+               fixedDecimalScale={"true"}
+               decimalScale={'2'}
+               thousandSeparator={''}
+              />
+            </Sum>
             <Btn>
                 <BtnStyle type='button'>
                 <Delete alt="delete" width={18} height={18}>

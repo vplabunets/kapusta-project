@@ -8,9 +8,13 @@ import './index.css';
 import theme from './theme/theme';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
+import './i18n';
+import { Suspense } from 'react';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+     <Suspense fallback="loading"></Suspense>
     <BrowserRouter basename="/kapusta-project">
       <ThemeProvider theme={theme}>
         <Provider store={store}>

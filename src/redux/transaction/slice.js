@@ -13,7 +13,7 @@ const transactionSlice = createSlice({
   initialState,
   extraReducers: {
     [getSummary.fulfilled]: (state, action) => {
-      state.summary = action.payload.transaction;
+      state.summary = action.payload;
       state.isLoading = false;
     },
     [getSummary.rejected](state, action) {

@@ -10,14 +10,16 @@
 "Write your new name": "Write your new name",
 "Set/Change Avatar": "Set/Change Avatar",
 "Drop image here": "Drop image here",
-"or": "or"
+"or": "or",
+"YES": "YES",
+"NO": "NO"
 },
 
 "button": {
- "CONFIRM": "ПІДТВЕРДИТИ",
+ "CONFIRM": "CONFIRM",
  "CANCEL": "CANCEL"
 },
-
+"Balance":"Balance",
  "Reports": "Reports"
 
   

@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 import { createPortal } from 'react-dom';
-
+import { useTranslation } from 'react-i18next';
 import { Button } from 'components/UI/Button/Button';
 import icon from 'images/icons-sprite.svg';
 import {
@@ -15,6 +15,7 @@ import { useEffect } from 'react';
 const body = document.querySelector('body');
 
 const ConfirmModal = ({ text, setModalOpen, onClick }) => {
+    const { t } = useTranslation();
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -57,7 +58,7 @@ const ConfirmModal = ({ text, setModalOpen, onClick }) => {
               design={'modal'}
               onClick={onClick}
             >
-              YES
+             {t('modal.YES')}
             </Button>
             <Button
               onClick={closeModal}
@@ -65,7 +66,8 @@ const ConfirmModal = ({ text, setModalOpen, onClick }) => {
               color={'white'}
               design={'modal'}
             >
-              NO
+              {t('modal.NO')}
+             
             </Button>
           </ButtonWrapper>
         </div>

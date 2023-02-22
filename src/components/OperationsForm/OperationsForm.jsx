@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import moment from 'moment';
 
+import productCategory from '../../constants/productCategory';
+
 import icon from 'images/icons-sprite.svg';
 import {
   ButtonWrapper,
@@ -26,18 +28,6 @@ const OperationsForm = () => {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
-
-  const options = [
-    { value: 'Products', label: 'Products' },
-    { value: 'Health', label: 'Health' },
-    { value: 'Alcohol', label: 'Alcohol' },
-    { value: 'Entertainment', label: 'Entertainment' },
-    { value: 'Housing', label: 'Housing' },
-    { value: 'Communal, communication', label: 'Communal, communication' },
-    { value: 'Sports, hobbies', label: 'Sports, hobbies' },
-    { value: 'Education', label: 'Education' },
-    { value: 'Other', label: 'Other' },
-  ];
 
   const handleSubmit = evt => {
     evt.preventDefault();
@@ -110,7 +100,7 @@ const OperationsForm = () => {
           styles={customStyles}
           value={category}
           onChange={setCategory}
-          options={options}
+          options={productCategory.expenses}
           theme={theme => ({
             ...theme,
             borderRadius: 0,

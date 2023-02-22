@@ -1,7 +1,7 @@
 import operationTypes from 'constants/operationTypes';
 
 import OperationsBalanceContainer from 'components/OperationsBalanceContainer/OperationsBalanceContainer';
-// import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';
+import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';
 import OperationsContainer from 'components/OperationsContainer/OperationsContainer';
 import OperationsTypeSwitcher from 'components/OperationsTypeSwitcher/OperationsTypeSwitcher';
 
@@ -14,6 +14,8 @@ import { useState } from 'react';
 
 const OperationsPage = () => {
   const [type, setType] = useState(operationTypes.expenses);
+  const [balance, setBalance] = useState(null);
+  const addBalance = xxx => setBalance(xxx);
 
   // const dispatch = useDispatch();
 
@@ -27,8 +29,8 @@ const OperationsPage = () => {
       <Background />
 
       <OperationsPageWrapper>
-        <OperationsBalanceContainer />
-        {/* {true && <OperationsBalanceModal />} */}
+        <OperationsBalanceContainer addBalance={addBalance} />
+        {!balance && <OperationsBalanceModal />}
         <OperationsTypeSwitcher type={type} setType={setType} />
         <OperationsContainer />
       </OperationsPageWrapper>

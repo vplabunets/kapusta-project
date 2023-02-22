@@ -1,32 +1,19 @@
 import styled from 'styled-components';
 import device from 'constants/deviceSize';
 
-export const Backdrop2 = styled.div`
+// expo
+export const Backdrop = styled.div`
   position: fixed;
-  z-index: 5;
+  overflow: none;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 100%;
-  height: 170px;
-  background-color: #f5f6fb;
-  overflow: hidden;
-  @media ${device.tablet} {
-    height: 70px;
-  }
-  @media ${device.laptop} {
-  }
-`;
-export const Backdrop = styled.div`
-  position: fixed;
-  z-index: 5;
-  top: 248px;
-  left: 0;
-  width: 100%;
   height: 100%;
-  background-color: #f5f6fb;
+  /* background-color: rgba(0, 0, 0, 0.4); */
   overflow: hidden;
   @media ${device.tablet} {
-    top: 142px;
+    /* top: 142px; */
   }
   @media ${device.laptop} {
   }
@@ -34,8 +21,7 @@ export const Backdrop = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
-  /* overflow: hidden; */
-  top: 15px;
+  top: 262px;
   left: 50%;
   transform: translateX(-50%);
   max-width: 280px;
@@ -47,12 +33,12 @@ export const Modal = styled.div`
   @media ${device.tablet} {
     z-index: 20;
     max-width: 288px;
-
+    top: 155px;
     left: 270px;
   }
   @media ${device.laptop} {
     max-width: 288px;
-
+    top: 154px;
     left: 52%;
   }
   &:before {

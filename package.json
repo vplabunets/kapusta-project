@@ -2,7 +2,7 @@
   "name": "kapusta-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vplabunets.github.io/kapusta-project/",
+
   "dependencies": {
     "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.5",

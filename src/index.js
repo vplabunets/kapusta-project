@@ -11,11 +11,10 @@ import { store, persistor } from './redux/store';
 import './i18n';
 import { Suspense } from 'react';
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <Suspense fallback="loading"></Suspense>
-    <BrowserRouter basename="/kapusta-project">
+    <Suspense fallback="loading"></Suspense>
+    <BrowserRouter>
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>

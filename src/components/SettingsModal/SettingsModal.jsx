@@ -19,10 +19,11 @@ import {
   Label,
   NameInput,
 } from './SettingsModal.styled';
-
+import { useTranslation } from 'react-i18next';
 const modalRoot = document.querySelector('#modal-root');
 
 const SettingsModal = ({ onClose }) => {
+  const { t } = useTranslation();
   useEffect(() => {
     window.addEventListener('keydown', onKeyDown);
 
@@ -31,7 +32,7 @@ const SettingsModal = ({ onClose }) => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
   const onKeyDown = e => {
     if (e.code === 'Escape') {
       onClose();
@@ -52,23 +53,23 @@ const SettingsModal = ({ onClose }) => {
           </svg>
         </ButtonClose>
 
-        <Text>Profile Settings</Text>
+        <Text>{t('menu.Profile Settings')}</Text>
         <Form>
           <div>
-            <Label htmlFor="name"> Change Name</Label>
+            <Label htmlFor="name"> {t('modal.Change Name')}</Label>
             <NameInput
               id="name"
               type="text"
               name="name"
-              placeholder="Write your new name"
+              placeholder={t('modal.Write your new name')}
               maxlength="8"
               minlength="2"
             />
 
-            <Label htmlFor="avatar"> Set/Change Avatar</Label>
+            <Label htmlFor="avatar"> {t('modal.Set/Change Avatar')}</Label>
             <DropFiles>
-              <DropFilesTitle>Drop image here</DropFilesTitle>
-              or
+              <DropFilesTitle> {t('modal.Drop image here')}</DropFilesTitle>
+               {t('modal.or')}
               <DropFilesInput
                 type="file"
                 name="avatar"
@@ -79,7 +80,7 @@ const SettingsModal = ({ onClose }) => {
           </div>
           <ButtonWrapper>
             <Button type={'submit'} color={'accent'} design={'modal'}>
-              CONFIRM
+              {t('button.CONFIRM')}
             </Button>
             <Button
               onClick={onClose}
@@ -87,7 +88,8 @@ const SettingsModal = ({ onClose }) => {
               color={'white'}
               design={'modal'}
             >
-              CANCEL
+                {t('button.CANCEL')}
+              
             </Button>
           </ButtonWrapper>
         </Form>

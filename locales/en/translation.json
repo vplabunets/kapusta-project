@@ -1,0 +1,24 @@
+{
+"menu": {
+  "Hello, User Name": "Hello, User Name",
+   "Select language": "Select language",
+  "Profile Settings": "Profile Settings"
+} ,
+
+"modal":{
+"Change Name": "Change Name",
+"Write your new name": "Write your new name",
+"Set/Change Avatar": "Set/Change Avatar",
+"Drop image here": "Drop image here",
+"or": "or"
+},
+
+"button": {
+ "CONFIRM": "ПІДТВЕРДИТИ",
+ "CANCEL": "CANCEL"
+},
+
+ "Reports": "Reports"
+
+  
+}

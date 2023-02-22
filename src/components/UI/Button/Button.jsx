@@ -13,6 +13,7 @@ export const Button = ({
   design,
   onClick,
   onSubmit,
+  disabled,
 }) => (
   <Btn
     type={type}
@@ -20,6 +21,7 @@ export const Button = ({
     design={design}
     onClick={onClick}
     onSubmit={onSubmit}
+    disabled={disabled}
   >
     {children}
   </Btn>

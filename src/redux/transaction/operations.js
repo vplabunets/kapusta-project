@@ -29,9 +29,10 @@ export const getTransactionsByOperation = createAsyncThunk(
 export const addTransaction = createAsyncThunk(
   'transactions/addOperation',
   async (credentials, { rejectWithValue, dispatch }) => {
-    dispatch(changeBalance(credentials));
     try {
       const result = await axios.post('/transaction/new', credentials);
+
+      dispatch(changeBalance(result.data));
       return result.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -44,7 +45,7 @@ export const deleteTransaction = createAsyncThunk(
   async (transactionId, { rejectWithValue, dispatch }) => {
     try {
       const result = await axios.delete(`/transaction/delete/${transactionId}`);
-      dispatch(changeBalance(result));
+      dispatch(changeBalance(result.data));
       return result.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

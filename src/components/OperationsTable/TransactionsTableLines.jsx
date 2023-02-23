@@ -11,8 +11,8 @@ import {
   BtnStyle,
   Delete,
 } from './TransactionsTableLines.styled';
-import { useDispatch } from 'react-redux';
-import { deleteTransaction } from 'redux/transaction/operations';
+// import { useDispatch } from 'react-redux';
+// import { deleteTransaction } from 'redux/transaction/operations';
 
 // const getValueStyle = operation => {
 // switch (operation) {
@@ -30,7 +30,7 @@ import { deleteTransaction } from 'redux/transaction/operations';
 // };
 
 const TransactionsTableLines = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   return (
     <>
       <Tabletr>
@@ -76,9 +76,9 @@ const TransactionsTableLines = () => {
           />
         </Sum>
         <Btn
-          onClick={() => {
-            dispatch(deleteTransaction('63f75a322b6367855cd138aa'));
-          }}
+        // onClick={() => {
+        //   dispatch(deleteTransaction('63f7961529589dd7314a454b'));
+        // }}
         >
           <BtnStyle type="button">
             <Delete alt="delete" width={18} height={18}>

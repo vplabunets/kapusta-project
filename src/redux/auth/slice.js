@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, logIn, logOut, refreshUser } from './operations';
+import { register, logIn, logOut, refreshUser, setBalance } from './operations';
 
 const initialState = {
   name: '',
@@ -17,12 +17,12 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     changeBalance(state, action) {
-      console.log(action);
-      if (action.payload.operation === 'income') {
-        state.balance += action.payload.sum;
-        return;
-      }
-      state.balance -= action.payload.sum;
+      state.balance = action.payload.user.balance;
+      // if (action.payload.operation === 'income') {
+      //   state.balance += action.payload.sum;
+      //   return;
+      // }
+      // state.balance -= action.payload.sum;
     },
   },
   extraReducers: {
@@ -76,6 +76,16 @@ const authSlice = createSlice({
       state.isRefreshing = false;
     },
     [refreshUser.rejected](state, action) {
+      state.error = action.payload.message;
+      state.isRefreshing = false;
+    },
+    [setBalance.pending](state) {
+      state.isLoading = true;
+    },
+    [setBalance.fulfilled](state, action) {
+      state.isLoading = false;
+    },
+    [setBalance.rejected](state, action) {
       state.error = action.payload.message;
       state.isRefreshing = false;
     },

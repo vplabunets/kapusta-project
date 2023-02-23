@@ -47,8 +47,8 @@ const OperationsForm = () => {
       date: date,
       category: category.value,
       sum: amount,
-      month: 'February',
-      year: '2023',
+      month: moment(date).format('MMMM'),
+      year: moment(date).format('YYYY'),
       currency: 'UAH',
     };
     console.log('userEnteredData=', userEnteredData);
@@ -87,7 +87,7 @@ const OperationsForm = () => {
           <DateSelection
             aria-label="Date"
             name="date"
-            dateFormat="dd.MM.yyyy"
+            dateFormat="yyyy-MM-dd"
             onChange={handleChange}
             type="date"
             value={date}

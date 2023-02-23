@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
 
@@ -18,12 +18,18 @@ import {
   Form,
   Label,
   NameInput,
+  DragFileElement,
 } from './SettingsModal.styled';
 import { useTranslation } from 'react-i18next';
 const modalRoot = document.querySelector('#modal-root');
 
 const SettingsModal = ({ onClose }) => {
   const { t } = useTranslation();
+
+  const [dragActive, setDragActive] = useState(false);
+  // const [isUpload, setIsUpload] = useState(false);
+  // const [fileName, setFileName] = useState('');
+
   useEffect(() => {
     window.addEventListener('keydown', onKeyDown);
 
@@ -44,6 +50,39 @@ const SettingsModal = ({ onClose }) => {
     }
   };
 
+  const onUpload = files => {
+    console.log(files[0].name);
+    // setFileName(files[0].name);
+    // setIsUpload(true);
+  };
+
+  // handle drag events
+  const handleDrag = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === 'dragenter' || e.type === 'dragover') {
+      setDragActive(true);
+      console.log(dragActive);
+    } else if (e.type === 'dragleave') {
+      setDragActive(false);
+      console.log(dragActive);
+    }
+  };
+  const handleDrop = function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      // at least one file has been dropped so do something
+      // handleFiles(e.dataTransfer.files);
+      onUpload(e.dataTransfer.files);
+    }
+  };
+
+  const onFormSubmit = evt => {
+    evt.preventDefault();
+  };
+
   return createPortal(
     <Backdrop onClick={onBackdropClick}>
       <Modal>
@@ -52,24 +91,24 @@ const SettingsModal = ({ onClose }) => {
             <use href={`${icon}#icon-close`}></use>
           </svg>
         </ButtonClose>
-
         <Text>{t('menu.Profile Settings')}</Text>
-        <Form>
-          <div>
-            <Label htmlFor="name"> {t('modal.Change Name')}</Label>
-            <NameInput
-              id="name"
-              type="text"
-              name="name"
-              placeholder={t('modal.Write your new name')}
-              maxlength="8"
-              minlength="2"
-            />
+        <Form onDragEnter={handleDrag} onSubmit={onFormSubmit}>
+          <Label htmlFor="name"> {t('modal.Change Name')}</Label>
+          <NameInput
+            id="name"
+            type="text"
+            name="name"
+            placeholder={t('modal.Write your new name')}
+            maxlength="16"
+            minlength="2"
+          />
 
-            <Label htmlFor="avatar"> {t('modal.Set/Change Avatar')}</Label>
-            <DropFiles>
+          <Label htmlFor="avatar">
+            {t('modal.Set/Change Avatar')}
+            <DropFiles dragActive={dragActive}>
               <DropFilesTitle> {t('modal.Drop image here')}</DropFilesTitle>
               {t('modal.or')}
+              {/* <p>click to select file</p> */}
               <DropFilesInput
                 type="file"
                 name="avatar"
@@ -77,7 +116,8 @@ const SettingsModal = ({ onClose }) => {
                 accept="image/*"
               />
             </DropFiles>
-          </div>
+          </Label>
+
           <ButtonWrapper>
             <Button type={'submit'} color={'accent'} design={'modal'}>
               {t('button.CONFIRM')}
@@ -91,6 +131,15 @@ const SettingsModal = ({ onClose }) => {
               {t('button.CANCEL')}
             </Button>
           </ButtonWrapper>
+          {dragActive && (
+            <DragFileElement
+              id="drag-file-element"
+              onDragEnter={handleDrag}
+              onDragLeave={handleDrag}
+              onDragOver={handleDrag}
+              onDrop={handleDrop}
+            ></DragFileElement>
+          )}
         </Form>
       </Modal>
     </Backdrop>,

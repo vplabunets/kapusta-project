@@ -1,6 +1,6 @@
 {
 "menu":{
-  "Hello, User Name": "Привіт, Ім'я Користувача",
+  "Hello": "Привіт",
    "Select language" : "Оберіть мову",
    "Profile Settings" : "Налаштування профілю"
 } ,

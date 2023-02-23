@@ -40,7 +40,7 @@ export const GoogleText = styled.p`
   }
 `;
 
-export const GoogleButton = styled.button`
+export const GoogleButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,12 +50,11 @@ export const GoogleButton = styled.button`
   background-color: #f6f7fb;
   border: none;
   border-radius: 26px;
-  cursor: pointer;
 
-  font-family: inherit;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
+  text-decoration: none;
 
   letter-spacing: 0.02em;
   color: #000000;
@@ -109,8 +108,8 @@ export const AuthFormLabel = styled.label`
   }
 `;
 
-
 export const Input = styled(Field)`
+  outline-color: ${p => p.theme.lightTheme.accentColor};
   font-family: inherit;
   margin-top: 12px;
   width: 100%;
@@ -168,8 +167,8 @@ export const EyeWrapper = styled.div`
 `;
 
 export const ErrorValidation = styled.div`
-    font-size: 10px;
-    line-height: 1.2;
-    letter-spacing: 0.04em;
-    color: #EB5757;
-  `;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #eb5757;
+`;

@@ -18,6 +18,7 @@ import { useDispatch } from 'react-redux';
 import { logIn, register } from 'redux/auth/operations';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
+
 const ValidationSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email')
@@ -36,7 +37,7 @@ const initialValues = {
 const HomeAuthForm = () => {
   const [showHidePassword, setShowHidePassword] = useState(false);
   const dispatch = useDispatch();
- const { t } = useTranslation();
+  const { t } = useTranslation();
   const onClick = (errors, values, handleReset) => {
     if (errors.email || errors.password)
       return toast.warning('Both fields must be valid', {
@@ -62,7 +63,7 @@ const HomeAuthForm = () => {
   return (
     <MainWrapper>
       <GoogleText>{t('registration.Google Text')}:</GoogleText>
-      <GoogleButton type={'button'}>
+      <GoogleButton href="https://kapusta-project-back-production.up.railway.app/auth/google">
         <svg>
           <use href={`${icon}#icon-google-icon`}></use>
         </svg>

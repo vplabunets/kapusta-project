@@ -1,6 +1,6 @@
 const operationTypes = {
   expenses: 'expenses',
-  incomes: 'incomes',
+  incomes: 'income',
 };
 
 export default operationTypes;

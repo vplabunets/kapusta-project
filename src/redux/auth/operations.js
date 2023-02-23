@@ -9,15 +9,12 @@ export const register = createAsyncThunk(
   'auth/register',
   async (credentials, { rejectWithValue }) => {
     try {
-      //   const result = await axios.post('/users/register', credentials);
       await axios.post('/users/register', credentials);
-      //   setAuthHeader(res.data.token);
       toast.info('Registration successful! Please confirm your email', {
         position: toast.POSITION.TOP_RIGHT,
         theme: 'colored',
         pauseOnHover: true,
       });
-      //   return result.data;
     } catch (error) {
       const errNot = error.response.data.message;
       if (

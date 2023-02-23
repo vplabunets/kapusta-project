@@ -17,8 +17,8 @@ import { operationType } from 'redux/transaction/slice';
 
 const OperationsPage = () => {
   const [type, setType] = useState(operationTypes.expenses);
-  const [balance, setBalance] = useState(null);
-  const addBalance = xxx => setBalance(xxx);
+  // const [balance, setBalance] = useState(null);
+  // const addBalance = xxx => setBalance(xxx);
 
   const dispatch = useDispatch();
 

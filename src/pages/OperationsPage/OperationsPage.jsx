@@ -33,7 +33,7 @@ const OperationsPage = () => {
       <Background />
 
       <OperationsPageWrapper>
-        <OperationsBalanceContainer addBalance={addBalance} />
+        <OperationsBalanceContainer addBalance={0} />
         {false && <OperationsBalanceModal />}
         <OperationsTypeSwitcher type={type} setType={setType} />
         <OperationsContainer />

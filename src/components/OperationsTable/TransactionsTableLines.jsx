@@ -77,7 +77,7 @@ const TransactionsTableLines = () => {
         </Sum>
         <Btn
         // onClick={() => {
-        //   dispatch(deleteTransaction('63f789dd2b6367855cd13d71'));
+        //   dispatch(deleteTransaction('63f7961529589dd7314a454b'));
         // }}
         >
           <BtnStyle type="button">

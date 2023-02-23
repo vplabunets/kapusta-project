@@ -18,11 +18,6 @@ const authSlice = createSlice({
   reducers: {
     changeBalance(state, action) {
       state.balance = action.payload.user.balance;
-      // if (action.payload.operation === 'income') {
-      //   state.balance += action.payload.sum;
-      //   return;
-      // }
-      // state.balance -= action.payload.sum;
     },
   },
   extraReducers: {
@@ -83,6 +78,7 @@ const authSlice = createSlice({
       state.isLoading = true;
     },
     [setBalance.fulfilled](state, action) {
+      state.balance = action.payload.balance;
       state.isLoading = false;
     },
     [setBalance.rejected](state, action) {

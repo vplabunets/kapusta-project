@@ -31,7 +31,7 @@ const SettingsMenu = () => {
 
   return (
     <Menu>
-      <Title>{t('menu.Hello, User Name')}!</Title>
+      <Title>{t('menu.Hello')},User Name!</Title>
       {/* max 16 symbols*/}
       <Container>
         <SettingsWrapper onClick={toggleModal}>

@@ -5,7 +5,7 @@ import device from 'constants/deviceSize';
 export const Wrapper = styled.div`
   margin-top: 32px;
   z-index: 3;
-  background-color: ${p => p.theme.lightTheme.mainBackgroundColor};
+  /* background-color: ${p => p.theme.lightTheme.mainBackgroundColor}; */
 
   @media ${device.tablet} {
     display: flex;
@@ -67,7 +67,7 @@ export const Input = styled.input`
   width: 140px;
   height: 44px;
   padding: 0;
-  padding-right: 14px;
+  padding-right: 34px;
   color: #000;
   text-align: right;
   border: 2px solid ${p => p.theme.lightTheme.headerColor};
@@ -126,4 +126,22 @@ export const Button = styled.button`
     justify-content: center;
     padding: 0;
   }
+`;
+export const Label = styled.label`
+  position: absolute;
+  right: 0;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  margin-right: 15px;
+  @media ${device.tablet} {
+    margin-right: 30px;
+  }
+`;
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 `;

@@ -93,3 +93,15 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+export const setBalance = createAsyncThunk(
+  'auth/setBalance',
+  async (balance, { rejectWithValue }) => {
+    try {
+      const result = await axios.patch('/users/balance', balance);
+      return result.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);

@@ -15,6 +15,7 @@ import {
   Delete,
 } from './TransactionsTableLines.styled';
 
+
 const getSumStyle = operation => {
 switch (operation) {
   case 'expenses':
@@ -31,6 +32,7 @@ switch (operation) {
 };
 
 const TransactionsTableLines = ({ id, operation, date, description, category, sum }) => {
+
 
   const dispatch = useDispatch();
   
@@ -60,6 +62,7 @@ const onDelete = (id, operation, sum) => {
 
 const sumStyle = getSumStyle(operation);
   // console.log('getSumStyle:', sumStyle);
+
 
   return (
     <>
@@ -133,9 +136,9 @@ const sumStyle = getSumStyle(operation);
           />
         </Sum>
         <Btn
-          onClick={() => {
-            dispatch(deleteTransaction('63f75a322b6367855cd138aa'));
-          }}
+        // onClick={() => {
+        //   dispatch(deleteTransaction('63f7961529589dd7314a454b'));
+        // }}
         >
           <BtnStyle type="button">
             <Delete alt="delete" width={18} height={18}>

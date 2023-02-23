@@ -11,14 +11,14 @@ const initialState = {
   summary: [],
   error: null,
   isLoading: false,
-  operationType: null,
+  operationType: 'expenses',
 };
 
 const transactionSlice = createSlice({
   name: 'transactions',
   initialState,
   reducers: {
-    operationType(state, action) {
+    setOperationType(state, action) {
       state.operationType = action.payload;
     },
   },
@@ -89,4 +89,4 @@ const transactionSlice = createSlice({
 });
 
 export const transactionReducer = transactionSlice.reducer;
-export const { operationType } = transactionSlice.actions;
+export const { setOperationType } = transactionSlice.actions;

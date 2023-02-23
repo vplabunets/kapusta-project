@@ -38,7 +38,6 @@ const OperationsForm = () => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-
     if (description.trim().length === 0 || !category || !amount) {
       return alert('missed one of the fields');
     }

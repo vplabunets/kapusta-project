@@ -13,7 +13,7 @@ import {
   getSummary,
   getTransactionsByOperation,
 } from 'redux/transaction/operations';
-import { operationType } from 'redux/transaction/slice';
+import { setOperationType } from 'redux/transaction/slice';
 
 const OperationsPage = () => {
   const [type, setType] = useState(operationTypes.expenses);
@@ -23,7 +23,7 @@ const OperationsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(operationType(type));
+    dispatch(setOperationType(type));
     dispatch(getSummary({ operation: type }));
     dispatch(getTransactionsByOperation({ operation: type }));
   }, [dispatch, type]);

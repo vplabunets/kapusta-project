@@ -15,6 +15,16 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    changeBalance(state, action) {
+      console.log(action);
+      if (action.payload.operation === 'income') {
+        state.balance += action.payload.sum;
+        return;
+      }
+      state.balance -= action.payload.sum;
+    },
+  },
   extraReducers: {
     [register.fulfilled]: (state, action) => {
       state.error = false;
@@ -73,3 +83,4 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
+export const { changeBalance } = authSlice.actions;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import moment from 'moment';
 
@@ -20,6 +21,9 @@ import {
 } from './OperationsForm.styled';
 import { Button } from 'components/UI/Button/Button';
 import { customStyles } from './SelectorCustomStyle';
+import { addTransaction } from 'redux/transaction/operations';
+
+import { selectOperationType } from '../../redux/transaction/selectors';
 
 const OperationsForm = () => {
   const isScreenMoreTablet = useMediaQuery('(min-width: 768px)');
@@ -29,6 +33,9 @@ const OperationsForm = () => {
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
 
+  const dispatch = useDispatch();
+  const type = useSelector(selectOperationType);
+
   const handleSubmit = evt => {
     evt.preventDefault();
 
@@ -36,12 +43,17 @@ const OperationsForm = () => {
       return alert('missed one of the fields');
     }
     const userEnteredData = {
+      operation: type,
       description: description,
       date: date,
       category: category.value,
-      amount: amount,
+      sum: amount,
+      month: 'February',
+      year: '2023',
+      currency: 'UAH',
     };
     console.log('userEnteredData=', userEnteredData);
+    dispatch(addTransaction(userEnteredData));
     resetForm();
   };
 

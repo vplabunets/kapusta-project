@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { getSelectTransactions } from 'redux/transaction/selectors';
 import TransactionsTableLines from './TransactionsTableLines';
 import EmptyLines from './EmptyLines'
 import { Table, TableHead, TableHeadTitle, TableBody } from './OperationsTable.styled';
 
 const TransactionsTable = () => {
+  
+  const [transactions, setTransactions] = useState();
+  const sortedTransactions = useSelector(getSelectTransactions);
+
+  useEffect(() => {
+    setTransactions(sortedTransactions);
+  }, [sortedTransactions]);
+
   return (
       <Table>
         <TableHead>
@@ -16,7 +26,18 @@ const TransactionsTable = () => {
           </tr>
         </TableHead>
         <TableBody>
-          <TransactionsTableLines />
+           {transactions && 
+          transactions.map(transaction => (
+            <TransactionsTableLines 
+            key={transaction._id}
+            id={transaction._id}
+            operation={transaction.operation}
+            date={transaction.date}
+            description={transaction.description}
+            category={transaction.category}
+            sum={transaction.sum}
+            />
+          ))} 
           <EmptyLines />
         </TableBody>
       </Table>

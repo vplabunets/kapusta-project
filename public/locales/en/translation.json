@@ -12,7 +12,9 @@
 "Drop image here": "Drop image here",
 "or": "or",
 "YES": "YES",
-"NO": "NO"
+"NO": "NO",
+"leaveText": "Do you really want to leave?"
+
 },
 
 "button": {
@@ -20,6 +22,7 @@
  "CANCEL": "CANCEL"
 },
 "Balance":"Balance",
+"UAH": "UAH",
  "Reports": "Reports",
 
  "registration":{

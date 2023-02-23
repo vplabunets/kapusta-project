@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 const Wrapper = styled.div`
   height: 85px;
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   position: relative;
   margin-bottom: 32px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     height: 50px;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 30px;
@@ -26,7 +26,7 @@ const Text = styled.p`
   margin-bottom: 4px;
   color: ${p => p.theme.lightTheme.mainTextColor};
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-right: 15px;
     margin-bottom: 0;
   }
@@ -54,7 +54,7 @@ const Sum = styled.p`
 const ExpensesContainer = styled.div`
   width: 100%;
   text-align: center;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     justify-content: right;
     display: flex;
     padding-top: 15px;
@@ -64,7 +64,7 @@ const ExpensesContainer = styled.div`
 const IncomeContainer = styled.div`
   width: 100%;
   text-align: center;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: flex;
   }
 `;
@@ -76,7 +76,7 @@ const Line = styled.div`
   height: 70px;
   background-color: #e0e5eb;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-left: 20px;
     margin-right: 20px;
     height: 36px;

@@ -1,4 +1,4 @@
-const productCategory = {
+const PRODUCT_CATEGORY = {
   expenses: [
     { value: 'Products', label: 'Products' },
     { value: 'Health', label: 'Health' },
@@ -16,4 +16,4 @@ const productCategory = {
   ],
 };
 
-export default productCategory;
+export default PRODUCT_CATEGORY;

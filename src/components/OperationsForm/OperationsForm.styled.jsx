@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 import Select from 'react-select';
 
 export const FormWrapper = styled.form`
@@ -7,12 +7,12 @@ export const FormWrapper = styled.form`
   align-items: center;
   flex-direction: column;
   width: 100%;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     padding-top: 30px;
     flex-direction: row;
     justify-self: flex-start;
@@ -27,13 +27,13 @@ export const InputWrapper = styled.div`
   flex-direction: column;
   border-bottom-left-radius: 30%;
   background-color: transparent;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: auto;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     height: 44px;
     text-align: center;
   }
@@ -42,7 +42,7 @@ export const InputWrapper = styled.div`
 export const DateWrapper = styled.div`
   position: relative;
   margin-bottom: 32px;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-bottom: 0px;
   }
 `;
@@ -66,7 +66,7 @@ export const DateSelection = styled.input`
   border: 2px solid #fff;
   border-radius: 16px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     border: none;
     font-weight: 900;
     font-size: 12px;
@@ -76,7 +76,7 @@ export const DateSelection = styled.input`
     text-align: end;
     padding: 0;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     width: 104px;
     padding-left: 20px;
     text-align: center;
@@ -100,11 +100,11 @@ export const CalendarIcon = styled.svg`
   top: 11px;
 
   cursor: pointer;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     left: -12px;
     top: -1px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     left: -1px;
     top: 0px;
 
@@ -135,13 +135,13 @@ export const DescriptionInput = styled.input`
     color: #c7ccdc;
   }
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     border-top-right-radius: 0px;
     border: 2px solid #f6f7fc;
     display: flex;
     padding-left: 12px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     padding-left: 12px;
     /* width: 238px; */
   }
@@ -156,7 +156,7 @@ export const SelectInput = styled(Select)`
   border-bottom-right-radius: 16px;
   outline-color: #ff751d;
   color: #c7ccdc;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     border: 2px solid #f6f7fc;
     border-left: none;
     border-right: none;
@@ -167,14 +167,14 @@ export const SelectInput = styled(Select)`
 export const CountWrapper = styled.div`
   position: relative;
   width: 183px;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: flex;
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     width: 110px;
     border: 2px solid #f5f6fb;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     width: 121px;
   }
 `;
@@ -186,13 +186,13 @@ export const CalculatorIcon = styled.svg`
   padding: 8px;
   border-left: 2px solid #ffffff;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     border: none;
     right: 16px;
     top: 10px;
     padding: 0;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     right: 17px;
     top: 12px;
   }
@@ -214,7 +214,7 @@ export const CountInput = styled.input`
   color: #52555f;
   border: 2px solid #ffffff;
   background-color: transparent;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     height: 40px;
     border: 2px solid #f6f7fc;
     width: 110px;
@@ -222,12 +222,11 @@ export const CountInput = styled.input`
     padding-right: 45px;
     padding-left: 10px;
     border: transparent;
-    border-top-right-radius: 22px;
-    border-bottom-right-radius: 22px;
+
     border-top-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     width: 121px;
   }
 `;
@@ -236,10 +235,10 @@ export const ButtonWrapper = styled.div`
   display: flex;
   margin-top: 80px;
   gap: 20px;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-top: 32px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     margin-left: 32px;
     margin-top: 0;
     gap: 15px;

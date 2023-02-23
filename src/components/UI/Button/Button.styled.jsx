@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const Btn = styled.button`
   cursor: pointer;
@@ -27,14 +27,14 @@ export const Btn = styled.button`
     if (p.design === 'modal') return '110px';
   }};
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     width: ${p => {
       if (p.design === 'home') return '122.17px';
       if (p.design === 'operation') return '125px';
       if (p.design === 'modal') return '120px';
     }};
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     width: ${p => {
       if (p.design === 'home') return '122.17px';
       if (p.design === 'operation') return '136px';

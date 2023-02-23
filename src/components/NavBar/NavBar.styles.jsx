@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const Container = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const MenuBtn = styled.button`
 
 export const ExitContainer = styled.div`
   display: none;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@ export const UserName = styled.button`
   border: none;
   background-color: transparent;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     &::after {
       content: '';
 
@@ -53,7 +53,7 @@ export const UserName = styled.button`
       height: 36px;
 
       background-color: rgba(224, 229, 235, 1);
-      @media ${device.laptop} {
+      @media ${DEVICE.laptop} {
         right: 58px;
       }
     }
@@ -81,7 +81,7 @@ export const LogoutBtn = styled.button`
   margin-left: 16px;
   height: 16px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: none;
   }
 `;

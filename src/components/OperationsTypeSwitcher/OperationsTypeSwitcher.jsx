@@ -1,5 +1,5 @@
 import React from 'react';
-import operationTypes from 'constants/operationTypes';
+import OPERATION_TYPES from 'constants/constants';
 
 import { TypeButton, Wrapper } from './OperationsTypeSwitcher.styled';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,16 +17,16 @@ const OperationsTypeSwitcher = () => {
     <Wrapper>
       <TypeButton
         type="button"
-        active={OperationType === operationTypes.expenses ? true : false}
-        onClick={() => switchOperationType(operationTypes.expenses)}
+        active={OperationType === OPERATION_TYPES.expenses ? true : false}
+        onClick={() => switchOperationType(OPERATION_TYPES.expenses)}
       >
         Expenses
       </TypeButton>
 
       <TypeButton
-        onClick={() => switchOperationType(operationTypes.incomes)}
+        onClick={() => switchOperationType(OPERATION_TYPES.incomes)}
         type="button"
-        active={OperationType === operationTypes.incomes ? true : false}
+        active={OperationType === OPERATION_TYPES.incomes ? true : false}
       >
         Income
       </TypeButton>

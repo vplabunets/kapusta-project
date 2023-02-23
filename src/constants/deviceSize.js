@@ -1,11 +1,11 @@
-const size = {
+const SIZE = {
   mobile: '320px',
   tablet: '768px',
   laptop: '1280px',
 };
-const device = {
-  mobile: `screen and (min-width: ${size.mobile})`,
-  tablet: `screen and (min-width: ${size.tablet})`,
-  laptop: `screen and (min-width: ${size.laptop})`,
+const DEVICE = {
+  mobile: `screen and (min-width: ${SIZE.mobile})`,
+  tablet: `screen and (min-width: ${SIZE.tablet})`,
+  laptop: `screen and (min-width: ${SIZE.laptop})`,
 };
-export default device;
+export default DEVICE;

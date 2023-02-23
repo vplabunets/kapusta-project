@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const HomePageWrapper = styled.div`
   padding: 0 20px;
@@ -9,11 +9,11 @@ export const HomePageWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     max-width: 426px;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     align-items: center;
     flex-direction: row;
     justify-content: center;
@@ -24,12 +24,12 @@ export const TextGroup = styled.div`
   margin-top: 86px;
   margin-bottom: 50px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-top: 80px;
     margin-bottom: 80px;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     margin-right: 157px;
   }
 
@@ -37,11 +37,11 @@ export const TextGroup = styled.div`
     width: 183px;
     height: 46.34px;
 
-    @media ${device.tablet} {
+    @media ${DEVICE.tablet} {
       width: 306.52px;
       height: 77.69px;
     }
-    @media ${device.laptop} {
+    @media ${DEVICE.laptop} {
       width: 377px;
       height: 120px;
     }
@@ -54,7 +54,7 @@ export const TextGroup = styled.div`
     text-transform: uppercase;
     color: #52555f;
 
-    @media ${device.tablet} {
+    @media ${DEVICE.tablet} {
       font-size: 16px;
       line-height: 1.19;
       letter-spacing: 0.18em;
@@ -65,7 +65,7 @@ export const TextGroup = styled.div`
 export const CabbageContainer = styled.div`
   margin-left: 35px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     position: absolute;
     left: 103px;
     top: 826px;
@@ -75,7 +75,7 @@ export const CabbageContainer = styled.div`
     display: flex;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     left: 230px;
     top: 658px;
   }

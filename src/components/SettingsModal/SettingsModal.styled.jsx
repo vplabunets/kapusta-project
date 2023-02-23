@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
-import transition from 'constants/constants';
+import DEVICE from 'constants/deviceSize';
+import TRANSITION from 'constants/constants';
 
 const Backdrop = styled.div`
   z-index: 6;
@@ -75,7 +75,7 @@ const Label = styled.label`
   letter-spacing: 0.04em;
   color: #000000;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     font-size: 12px;
     line-height: 1.16;
   }
@@ -117,14 +117,14 @@ const DropFiles = styled.div`
   border: 2px dashed #555;
   color: #444;
   cursor: pointer;
-  transition: background ${transition.duration} ${transition.timing};
+  transition: background ${TRANSITION.duration} ${TRANSITION.timing};
 
   &:hover {
     background: #f6f7fb;
     border-color: ${p => p.theme.lightTheme.tableHeadTextColor};
   }
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     height: 150px;
     padding: 20px;
     gap: 10px;
@@ -137,8 +137,8 @@ const DropFilesTitle = styled.span`
   font-size: 15px;
   font-weight: bold;
   text-align: center;
-  transition: color ${transition.duration} ${transition.timing};
-  @media ${device.tablet} {
+  transition: color ${TRANSITION.duration} ${TRANSITION.timing};
+  @media ${DEVICE.tablet} {
     font-size: 20px;
   }
 `;
@@ -166,8 +166,8 @@ const DropFilesInput = styled.input`
     font-size: 10px;
     color: #fff;
     cursor: pointer;
-    transition: transform ${transition.duration} ${transition.timing};
-    @media ${device.tablet} {
+    transition: transform ${TRANSITION.duration} ${TRANSITION.timing};
+    @media ${DEVICE.tablet} {
       font-size: 12px;
       padding: 10px 20px;
     }
@@ -176,7 +176,7 @@ const DropFilesInput = styled.input`
     transform: scale(0.9);
   }
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     padding: 5px;
   }
 `;

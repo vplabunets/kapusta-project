@@ -30,7 +30,6 @@ const NavBar = () => {
   };
 
   const onUserClick = evt => {
-    console.log(email, name);
     setIsMenuOpen(!isMenuOpen);
   };
 

@@ -1,4 +1,4 @@
-// import operationTypes from 'constants/operationTypes';
+// import OPERATION_TYPE from 'constants/constants';
 
 import OperationsBalanceContainer from 'components/OperationsBalanceContainer/OperationsBalanceContainer';
 import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';

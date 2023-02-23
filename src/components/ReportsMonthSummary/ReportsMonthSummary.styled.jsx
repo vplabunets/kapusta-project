@@ -1,6 +1,6 @@
 //   import styled from 'styled-components';
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const Section = styled.div`
   margin: 0 auto;
@@ -10,18 +10,18 @@ export const Section = styled.div`
   width: 100%;
   margin-bottom: 32px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     padding: 20px 0;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 30px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     margin-bottom: 37px;
   }
 `;
 
 export const Wrapper = styled.div`
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     width: 623px;
     margin: 0 auto;
   }
@@ -71,7 +71,7 @@ export const ReportList = styled.ul`
   overflow: hidden;
   width: 100%;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     gap: 40px 15px;
   }
 `;

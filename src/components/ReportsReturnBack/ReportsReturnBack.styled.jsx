@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const BackLink = styled(Link)`
   display: flex;
@@ -10,14 +10,14 @@ export const BackLink = styled(Link)`
   text-decoration: none;
   margin-bottom: 16px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-bottom: 0px;
   }
 
   & > p {
     display: none;
 
-    @media ${device.tablet} {
+    @media ${DEVICE.tablet} {
       font-weight: 400;
       font-size: 12px;
       line-height: 1.17;
@@ -29,7 +29,7 @@ export const BackLink = styled(Link)`
       margin-left: 15px;
     }
 
-    @media ${device.laptop} {
+    @media ${DEVICE.laptop} {
       margin-left: 16px;
     }
   }

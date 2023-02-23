@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const ContainerHeader = styled.header`
   display: flex;
@@ -21,11 +21,11 @@ export const ContainerHeader = styled.header`
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
     0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     padding: 12px 32px 13px;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     padding: 12px 16px 13px;
   }
 `;

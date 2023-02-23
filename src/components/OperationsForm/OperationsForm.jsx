@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import moment from 'moment';
 
-import productCategory from '../../constants/productCategory';
+import PRODUCT_CATEGORY from '../../constants/productCategory';
 
 import icon from 'images/icons-sprite.svg';
 import {
@@ -112,7 +112,7 @@ const OperationsForm = () => {
           value={category}
           onChange={setCategory}
           isSearchable={false}
-          options={productCategory.expenses}
+          options={PRODUCT_CATEGORY.expenses}
           theme={theme => ({
             ...theme,
             borderRadius: 0,
@@ -132,6 +132,7 @@ const OperationsForm = () => {
             name="amount"
             placeholder="00.00"
             value={amount}
+            min={0}
           />
           <CalculatorIcon
             width={isScreenMoreTablet ? 20 : 40}

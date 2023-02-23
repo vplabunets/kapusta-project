@@ -1,17 +1,17 @@
-const transition = {
+const TRANSITION = {
   duration: '300ms',
   timing: 'cubic-bezier(0.4, 0, 0.2, 1)',
   delay: '0ms',
 };
 
-const routes = {
+const ROUTES = {
   home: '/',
   operations: 'operations',
   reports: 'reports',
 };
 
-const operationTypes = {
+const OPERATION_TYPES = {
   expenses: 'expenses',
-  incomes: 'incomes',
+  incomes: 'income',
 };
-export default (transition, routes, operationTypes);
+export default (TRANSITION, ROUTES, OPERATION_TYPES);

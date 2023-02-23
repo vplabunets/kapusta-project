@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const BackgroundGrey = styled.div`
   z-index: -1;
@@ -17,10 +17,10 @@ export const BackgroundGrey = styled.div`
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
     0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     height: 582px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     height: 582.5px;
   }
 `;
@@ -28,7 +28,7 @@ export const BackgroundGrey = styled.div`
 export const BackgroundWhite = styled.div`
   display: none;
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     display: block;
     z-index: -2;
     width: 100%;

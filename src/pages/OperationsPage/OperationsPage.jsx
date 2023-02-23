@@ -1,4 +1,4 @@
-import operationTypes from 'constants/operationTypes';
+import OPERATION_TYPES from 'constants/constants';
 
 import OperationsBalanceContainer from 'components/OperationsBalanceContainer/OperationsBalanceContainer';
 import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';
@@ -16,7 +16,7 @@ import {
 import { setOperationType } from 'redux/transaction/slice';
 
 const OperationsPage = () => {
-  const [type, setType] = useState(operationTypes.expenses);
+  const [type, setType] = useState(OPERATION_TYPES.expenses);
   // const [balance, setBalance] = useState(null);
   // const addBalance = xxx => setBalance(xxx);
 

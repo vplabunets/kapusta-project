@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 const Wrapper = styled.div`
   display: none;
@@ -8,11 +8,11 @@ const Wrapper = styled.div`
   background-color: ${p => p.theme.lightTheme.tableHeadBackgroundColor};
   border-radius: 20px 20px 20px 0;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: flex;
     justify-content: center;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     min-width: 213px;
     margin-top: 60px;
     margin-left: 75px;

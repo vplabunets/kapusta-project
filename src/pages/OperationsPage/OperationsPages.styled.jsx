@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 const OperationsPageWrapper = styled.div`
   position: relative;
@@ -12,14 +12,14 @@ const OperationsPageWrapper = styled.div`
   /* justify-content: center; */
   margin: 19px 20px 0 20px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: flex;
     flex-direction: column;
     justify-content: left;
     width: 768px;
     margin: 40px 32px 60px 32px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     width: 1098px;
     margin: 40px 91px 83px 91px;
   }

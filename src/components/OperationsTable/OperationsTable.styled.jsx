@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from '../../constants/deviceSize';
+import DEVICE from '../../constants/deviceSize';
 
 export const Table = styled.table`
   width: 100%;
@@ -9,18 +9,18 @@ export const Table = styled.table`
   margin-right: auto;
   overflow-y: scroll;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     width: 100%;
     margin: 48px 0 0 0;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     margin-top: 60px;
   }
 `;
 
 export const TableHead = styled.thead`
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: table;
     width: 100%;
     font-weight: 700;
@@ -34,7 +34,7 @@ export const TableHead = styled.thead`
     border-radius: 20px 20px 0 0;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     width: 100%;
   }
 `;
@@ -42,7 +42,7 @@ export const TableHead = styled.thead`
 export const TableHeadTitle = styled.th`
   display: none;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: table-cell;
     align-items: center;
     text-align: center;
@@ -73,7 +73,7 @@ export const TableHeadTitle = styled.th`
     }
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     :first-child {
       width: 12%;
     }
@@ -95,7 +95,7 @@ export const TableHeadTitle = styled.th`
 `;
 
 export const TableBody = styled.tbody`
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: inline-block;
     width: 100%;
     overflow-y: scroll;

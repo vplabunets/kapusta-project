@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { keyframes } from '@emotion/css';
-import transition from 'constants/constants';
-import device from 'constants/deviceSize';
+import TRANSITION from 'constants/constants';
+import DEVICE from 'constants/deviceSize';
 
 const barrelRoll = keyframes`
     0% { transform: rotate(0deg) }
@@ -26,7 +26,7 @@ const Menu = styled.div`
   border-radius: 0px 0px 0px 24px;
   padding: 10px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     height: 260px;
     width: 280px;
     top: 56px;
@@ -43,7 +43,7 @@ const Title = styled.p`
   font-size: 12px;
   text-align: center;
   margin-bottom: 15px;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-bottom: 33px;
     font-size: 18px;
   }
@@ -53,7 +53,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: start;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     flex-direction: column;
     align-items: center;
   }
@@ -68,7 +68,7 @@ const SettingsWrapper = styled.button`
   border: none;
   cursor: pointer;
   color: rgba(82, 85, 95, 1);
-  transition: color ${transition.duration} ${transition.timing};
+  transition: color ${TRANSITION.duration} ${TRANSITION.timing};
   &:hover,
   &:focus {
     color: ${p => p.theme.lightTheme.tableHeadTextColor};
@@ -76,7 +76,7 @@ const SettingsWrapper = styled.button`
   &:hover i {
     animation-play-state: running;
   }
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-bottom: 45px;
   }
 `;
@@ -98,7 +98,7 @@ const Gear = styled.i`
     left: 23px;
     animation-name: ${invertBarrelRoll};
   }
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     width: 25px;
     height: 25px;
     top: 20px;
@@ -110,7 +110,7 @@ const Gear = styled.i`
     }
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     animation-play-state: paused;
   }
 `;
@@ -125,7 +125,7 @@ const Settings = styled.p`
   line-height: 1.17;
   letter-spacing: 0.04em;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     font-size: 16px;
   }
 `;
@@ -141,7 +141,7 @@ const LanguageSelect = styled.p`
   color: rgba(82, 85, 95, 1);
 
   font-size: 11px;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-bottom: 10px;
     font-size: 16px;
   }
@@ -156,7 +156,7 @@ const LanguageButton = styled.button`
   &:not(:last-child) {
     margin-right: 5px;
   }
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-right: 5px;
   }
 `;
@@ -165,13 +165,13 @@ const FlagImg = styled.img`
   display: block;
   width: 25px;
   height: 25px;
-  transition: filter ${transition.duration} ${transition.timing};
+  transition: filter ${TRANSITION.duration} ${TRANSITION.timing};
 
   &:hover,
   &:focus {
     filter: drop-shadow(1px 3px 10px ${p => p.theme.lightTheme.accentColor});
   }
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     width: 32px;
     height: 32px;
   }

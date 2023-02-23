@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const ReportItemButton = styled.li`
   padding-bottom: 20px;
@@ -12,7 +12,7 @@ export const ReportItemButton = styled.li`
   width: 92px;
   border-bottom: 1px solid #e0e5eb;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     border-bottom: none;
     padding-bottom: 0px;
     width: 90px;

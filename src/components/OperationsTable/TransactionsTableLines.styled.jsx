@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from '../../constants/deviceSize';
+import DEVICE from '../../constants/deviceSize';
 
 export const Tabletr = styled.tr`
   position: relative;
@@ -12,7 +12,7 @@ export const Tabletr = styled.tr`
   border-bottom: 2px solid #f2f8f8;
   display: flex;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     font-size: 12px;
     width: calc(100% - 2px);
 
@@ -23,7 +23,7 @@ export const Tabletr = styled.tr`
     border-left: 2px solid #f2f8f8;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     height: 38px;
   }
 `;
@@ -33,14 +33,14 @@ export const Data = styled.td`
   top: 55%;
   width: 20%;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     width: 14%;
     top: 28%;
     padding-left: 12px;
     text-align: left;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     width: 12%;
   }
 `;
@@ -57,14 +57,14 @@ export const Description = styled.td`
   font-size: 12px;
   font-weight: 700;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     top: 28%;
     left: 19%;
     width: 30%;
     text-align: left;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     left: 16%;
     width: 32%;
   }
@@ -76,14 +76,14 @@ export const Category = styled.td`
   left: 23%;
   width: 25%;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     width: 18%;
     top: 28%;
     left: 54%;
     text-align: left;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     left: 52%;
     width: 23%;
   }
@@ -99,13 +99,13 @@ export const Sum = styled.td`
   text-align: center;
   width: 30%;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     top: 28%;
     left: 72%;
     width: 20%;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     width: 15%;
     left: 75%;
   }
@@ -117,13 +117,13 @@ export const Btn = styled.td`
   right: 0;
   text-align: center;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     top: 12%;
     left: 92%;
     width: 5%;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     top: 12%;
     left: 92%;
     width: 5%;
@@ -136,7 +136,7 @@ export const BtnStyle = styled.button`
   cursor: pointer;
   border: none;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     width: 32px;
     height: 32px;
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Field } from 'formik';
 
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const MainWrapper = styled.div`
   margin: 0 auto;
@@ -12,13 +12,13 @@ export const MainWrapper = styled.div`
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
   border-radius: 30px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     max-width: 426px;
     width: 426px;
     padding: 56px 83px;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     margin: 117px 0 0;
   }
 `;
@@ -34,7 +34,7 @@ export const GoogleText = styled.p`
 
   color: #52555f;
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     width: 100%;
     margin-bottom: 20px;
   }
@@ -83,7 +83,7 @@ export const LoginText = styled.p`
 
   color: #52555f;
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     width: 250px;
     margin-bottom: 20px;
   }
@@ -99,7 +99,7 @@ export const AuthFormLabel = styled.label`
   :nth-of-type(2) {
     margin-top: 20px;
   }
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     font-size: 12px;
     line-height: 1.16;
     :nth-of-type(2) {
@@ -137,7 +137,7 @@ export const ButtonContainer = styled.div`
   margin: 0 4px;
   padding-top: 28px;
   gap: 8px;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     justify-content: space-between;
     align-items: center;
   }

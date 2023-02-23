@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 import { keyframes } from '@emotion/css';
 
 const letDown = keyframes`
@@ -53,7 +53,7 @@ export const LeftCabbageWrapper = styled.div`
 export const RightCabbageWrapper = styled.div`
   display: none;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: flex;
     flex-direction: column;
 
@@ -142,7 +142,7 @@ export const Item = styled.li`
     animation-delay: 3s;
   }
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     &:nth-child(7) {
       left: 50%;
       animation-delay: 2s;

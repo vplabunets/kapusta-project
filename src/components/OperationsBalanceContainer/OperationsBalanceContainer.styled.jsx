@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -8,14 +8,14 @@ export const Wrapper = styled.div`
   align-self: center;
   margin-top: 45px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-top: 0px;
     width: 100%;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-self: space-between;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     margin-top: 0px;
     width: 100%;
     flex-direction: row-reverse;
@@ -52,7 +52,7 @@ export const OperationsModalOpenButton = styled.button`
     transform: scale(0.9);
   }
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: none;
   }
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     position: static;
     display: flex;
     margin-top: 60px;
@@ -39,7 +39,7 @@ export const TypeButton = styled.button`
     margin-right: 4px;
   }
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     background-color: ${p => (p.active ? '#FEFEFE' : '#FAFBFD')};
     color: ${p => (p.active ? '#FF751D' : '#000000')};
     width: 138px;
@@ -52,7 +52,7 @@ export const TypeButton = styled.button`
     }
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     position: static;
   }
 `;

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 import { Link } from 'react-router-dom';
 
 export const Wrap = styled.div`
   display: flex;
   /* margin-left: auto; */
   justify-content: center;
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     padding-left: 4px;
   }
 `;
@@ -18,7 +18,7 @@ export const Title = styled.h2`
   font-style: normal;
   font-weight: 400;
   color: rgba(82, 85, 95, 0.7);
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-bottom: 0;
     justify-content: end;
   }

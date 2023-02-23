@@ -1,13 +1,13 @@
 //  import styled from 'styled-components';
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 export const Wrapper = styled.div`
   margin-top: 32px;
   z-index: 3;
   /* background-color: ${p => p.theme.lightTheme.mainBackgroundColor}; */
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     display: flex;
     justify-content: start;
     align-items: baseline;
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
     /* margin-left: 32px; */
     margin-top: 0px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     justify-content: center;
     align-items: baseline;
     flex-direction: row;
@@ -34,11 +34,11 @@ export const Title = styled.h2`
   letter-spacing: 0.02em;
   color: rgba(82, 85, 95, 0.7);
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-right: 21px;
     margin-left: 36px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     margin-right: 40px;
   }
 `;
@@ -53,7 +53,7 @@ export const Form = styled.form`
   //padding-right: 20px;
   margin-top: 8px;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     align-items: baseline;
     padding: 0;
     margin: 0;
@@ -75,13 +75,13 @@ export const Input = styled.input`
   background-color: transparent;
   outline: none;
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-right: 15px;
     border-radius: 16px;
     width: 121px;
   }
 
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     margin-right: 16px;
   }
 
@@ -119,7 +119,7 @@ export const Button = styled.button`
     border-color: ${p => p.theme.lightTheme.accentColor};
   }
 
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     width: 125px;
     border-radius: 16px;
     border: 2px solid ${p => p.theme.lightTheme.headerColor};
@@ -135,7 +135,7 @@ export const Label = styled.label`
   line-height: 14px;
   text-transform: uppercase;
   margin-right: 15px;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     margin-right: 30px;
   }
 `;

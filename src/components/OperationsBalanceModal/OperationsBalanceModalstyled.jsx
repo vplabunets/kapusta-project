@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from 'constants/deviceSize';
+import DEVICE from 'constants/deviceSize';
 
 // expo
 export const Backdrop = styled.div`
@@ -12,10 +12,10 @@ export const Backdrop = styled.div`
   height: 100%;
   /* background-color: rgba(0, 0, 0, 0.4); */
   overflow: hidden;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     /* top: 142px; */
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
   }
 `;
 
@@ -30,13 +30,13 @@ export const Modal = styled.div`
   background: linear-gradient(117.84deg, #1d346a 2.84%, #031634 67.28%);
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 30px;
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     z-index: 20;
     max-width: 288px;
     top: 155px;
     left: 270px;
   }
-  @media ${device.laptop} {
+  @media ${DEVICE.laptop} {
     max-width: 288px;
     top: 154px;
     left: 52%;
@@ -63,7 +63,7 @@ export const Title = styled.h2`
   line-height: 1.43;
   margin-bottom: 20px;
   color: ${p => p.theme.lightTheme.headerColor};
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     padding-left: 29px;
     padding-right: 29px;
   }
@@ -77,7 +77,7 @@ export const Text = styled.p`
   font-size: 12px;
   line-height: 1.33;
   color: ${p => p.theme.lightTheme.headerColor};
-  @media ${device.tablet} {
+  @media ${DEVICE.tablet} {
     padding-left: 29px;
     padding-right: 29px;
   }

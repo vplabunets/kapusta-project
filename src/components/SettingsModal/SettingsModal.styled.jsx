@@ -68,6 +68,7 @@ const Form = styled.form`
 
 const Label = styled.label`
   display: block;
+  /* height: 120px; */
   margin-bottom: 8px;
   font-size: 10px;
   line-height: 1.2;
@@ -147,9 +148,14 @@ const DropFilesInput = styled.input`
   max-width: 100%;
   color: #444;
   padding: 3px;
-  background: #fff;
+  /* background: #fff; */
   border-radius: 10px;
-  border: 1px solid #555;
+  /* border: 1px solid #555; */
+  border: none;
+  &.dragover {
+    background: #f6f7fb;
+    border-color: ${p => p.theme.lightTheme.tableHeadTextColor};
+  }
   &::file-selector-button {
     font-family: 'Roboto';
     margin-right: 10px;
@@ -179,6 +185,18 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   gap: 15px;
 `;
+
+const DragFileElement = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+`;
+
 export {
   Backdrop,
   Modal,
@@ -191,4 +209,5 @@ export {
   Form,
   Label,
   NameInput,
+  DragFileElement,
 };

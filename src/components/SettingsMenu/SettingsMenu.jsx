@@ -16,6 +16,8 @@ import {
   Gear,
 } from './SettingsMenu.styled';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { selectName } from 'redux/auth/selectors';
 
 const SettingsMenu = () => {
   const changeLanguage = language => {
@@ -25,13 +27,25 @@ const SettingsMenu = () => {
   const { t, i18n } = useTranslation();
   const [showModal, setShowModal] = useState(false);
 
+  const userName = useSelector(selectName);
   const toggleModal = () => {
     setShowModal(prevState => !prevState);
   };
 
+  // const toCutName = name => {
+  //   if (name.length >= 10) {
+  //     const shortName = ${name.slice(0, 9)}...;
+  //     return shortName;
+  //   }
+  // };
+
   return (
     <Menu>
-      <Title>{t('menu.Hello')},User Name!</Title>
+
+      <Title>
+        {t('menu.Hello')}, {userName}!
+      </Title>
+
       {/* max 16 symbols*/}
       <Container>
         <SettingsWrapper onClick={toggleModal}>

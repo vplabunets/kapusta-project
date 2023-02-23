@@ -16,9 +16,10 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
-    [register.fulfilled]: state => {
+    [register.fulfilled]: (state, action) => {
       state.error = false;
       state.isLoading = false;
+      state.name = action.payload.userName;
     },
     [register.rejected](state, action) {
       state.error = action.payload.message;
@@ -31,6 +32,7 @@ const authSlice = createSlice({
       state.email = action.payload.email;
       state.token = action.payload.token;
       state.balance = action.payload.balance;
+      state.name = action.payload.userName;
       state.isLoggedIn = true;
       state.error = false;
       state.isLoading = false;
@@ -59,6 +61,7 @@ const authSlice = createSlice({
       state.email = action.payload.email;
       state.token = action.payload.token;
       state.balance = action.payload.balance;
+      state.name = action.payload.userName;
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },

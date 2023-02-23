@@ -41,9 +41,11 @@ const SettingsMenu = () => {
 
   return (
     <Menu>
+
       <Title>
         {t('menu.Hello')}, {userName}!
       </Title>
+
       {/* max 16 symbols*/}
       <Container>
         <SettingsWrapper onClick={toggleModal}>

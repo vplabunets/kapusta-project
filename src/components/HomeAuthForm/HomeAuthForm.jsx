@@ -17,7 +17,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn, register } from 'redux/auth/operations';
 import { toast } from 'react-toastify';
-
+import { useTranslation } from 'react-i18next';
 const ValidationSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email')
@@ -36,7 +36,7 @@ const initialValues = {
 const HomeAuthForm = () => {
   const [showHidePassword, setShowHidePassword] = useState(false);
   const dispatch = useDispatch();
-
+ const { t } = useTranslation();
   const onClick = (errors, values, handleReset) => {
     if (errors.email || errors.password)
       return toast.warning('Both fields must be valid', {
@@ -61,7 +61,7 @@ const HomeAuthForm = () => {
 
   return (
     <MainWrapper>
-      <GoogleText>You can log in with your Google Account:</GoogleText>
+      <GoogleText>{t('registration.Google Text')}:</GoogleText>
       <GoogleButton type={'button'}>
         <svg>
           <use href={`${icon}#icon-google-icon`}></use>
@@ -69,7 +69,7 @@ const HomeAuthForm = () => {
         Google
       </GoogleButton>
       <LoginText>
-        Or log in using an email and password, <br /> after registering:
+        {t('registration.loginText')}, <br /> {t('registration.after')}:
       </LoginText>
       <Formik
         initialValues={initialValues}
@@ -102,12 +102,12 @@ const HomeAuthForm = () => {
               </ErrorValidation>
             </AuthFormLabel>
             <AuthFormLabel htmlFor="password">
-              Password:
+              {t('registration.Password')}:
               <EyeWrapper>
                 <Input
                   type={showHidePassword ? 'text' : 'password'}
                   name="password"
-                  placeholder="Password"
+                  placeholder={t('registration.Password')}
                   values={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -138,7 +138,7 @@ const HomeAuthForm = () => {
                 design={'home'}
                 disabled={isSubmitting}
               >
-                LOG IN
+                {t('registration.LOG IN')}
               </Button>
               <Button
                 type={'button'}
@@ -147,7 +147,7 @@ const HomeAuthForm = () => {
                 disabled={isSubmitting}
                 onClick={() => onClick(errors, values, handleReset)}
               >
-                REGISTRATION
+                {t('registration.REGISTRATION')}
               </Button>
             </ButtonContainer>
           </Form>

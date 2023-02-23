@@ -146,10 +146,6 @@ export const BtnStyle = styled.button`
       border-radius: 50%;
     }
   }
-
-  @media ${device.laptop} {
-    width: 20%;
-  }
 `;
 
 export const Delete = styled.svg`

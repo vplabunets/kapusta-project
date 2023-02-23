@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import device from 'constants/deviceSize';
+import { Link } from 'react-router-dom';
 
 export const Wrap = styled.div`
   display: flex;
   /* margin-left: auto; */
   justify-content: center;
   @media ${device.laptop} {
+    padding-left: 4px;
   }
 `;
 
@@ -25,4 +27,17 @@ export const Title = styled.h2`
   &:hover {
     color: #555;
   }
+`;
+
+export const ReportLink = styled(Link)`
+  color: rgba(82, 85, 95, 0.7);
+  display: flex;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
 `;

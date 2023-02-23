@@ -20,7 +20,14 @@
  "CANCEL": "CANCEL"
 },
 "Balance":"Balance",
- "Reports": "Reports"
+ "Reports": "Reports",
 
-  
+ "registration":{
+"Google text" : "You can log in with your Google Account",
+"loginText": " Or log in using an email and password",
+"after": "after registering",
+"Password": "Password",
+"LOG IN": " LOG IN",
+ "REGISTRATION": " REGISTRATION"
+ }  
 }

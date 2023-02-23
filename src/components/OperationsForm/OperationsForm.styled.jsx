@@ -48,7 +48,7 @@ export const DateWrapper = styled.div`
 `;
 
 export const DateSelection = styled.input`
-  outline: #ff751d;
+  outline-color: #ff751d;
   vertical-align: middle;
   font-family: inherit;
   display: inline-block;
@@ -124,7 +124,7 @@ export const DescriptionInput = styled.input`
   text-align: start;
   background-color: transparent;
   padding-left: 30px;
-  outline: #ff751d;
+  outline-color: #ff751d;
 
   border: 2px solid #ffffff;
   border-bottom: none;
@@ -154,6 +154,7 @@ export const SelectInput = styled(Select)`
   height: 44px;
   border: 2px solid #ffffff;
   border-bottom-right-radius: 16px;
+  outline-color: #ff751d;
   color: #c7ccdc;
   @media ${device.tablet} {
     border: 2px solid #f6f7fc;
@@ -199,7 +200,7 @@ export const CalculatorIcon = styled.svg`
 
 export const CountInput = styled.input`
   font-family: inherit;
-  outline: #ff751d;
+  outline-color: #ff751d;
   width: 183px;
   height: 44px;
   padding-right: 55px;
@@ -221,6 +222,10 @@ export const CountInput = styled.input`
     padding-right: 45px;
     padding-left: 10px;
     border: transparent;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
   @media ${device.laptop} {
     width: 121px;

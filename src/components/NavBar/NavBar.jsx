@@ -54,7 +54,7 @@ const NavBar = () => {
           </Avatar>
         </MenuBtn>
         <ExitContainer>
-          <UserName onClick={onUserClick}>{email}</UserName>
+          <UserName onClick={onUserClick}>{name ? name : email}</UserName>
           <ExitBtn onClick={() => setModalOpen(true)}>Exit</ExitBtn>
         </ExitContainer>
         <LogoutBtn onClick={() => setModalOpen(true)}>

@@ -16,10 +16,10 @@ export const register = createAsyncThunk(
         pauseOnHover: true,
       });
     } catch (error) {
+      console.log(error);
       const errNot = error.response.data.message;
-      if (
-        errNot === 'The email is already taken by another user, try logging in '
-      ) {
+
+      if (errNot === 'Email verified, and already registered') {
         toast.error('This email is already used', {
           position: toast.POSITION.TOP_RIGHT,
           theme: 'colored',
@@ -27,12 +27,15 @@ export const register = createAsyncThunk(
         });
       }
 
-      if (errNot === 'Email is not verified') {
-        toast.warning('Your email is not verified, please check your email', {
-          position: toast.POSITION.TOP_RIGHT,
-          theme: 'colored',
-          pauseOnHover: true,
-        });
+      if (errNot === 'Email is not verified, but already registered') {
+        toast.warning(
+          'Your email is not verified, but already registered. To complete registration please check your email',
+          {
+            position: toast.POSITION.TOP_RIGHT,
+            theme: 'colored',
+            pauseOnHover: true,
+          }
+        );
       }
       return rejectWithValue(error.response.data);
     }
@@ -49,13 +52,24 @@ export const logIn = createAsyncThunk(
       console.log('token: ', res.data.token);
       return res.data;
     } catch (error) {
+      console.log(error);
       const errNot = error.response.data.message;
       if (errNot === 'Invalid email address or password') {
-        toast.warning('Your email or password is wrong', {
+        toast.error('Your email or password is wrong, check it and try again', {
           position: toast.POSITION.TOP_RIGHT,
           theme: 'colored',
           pauseOnHover: true,
         });
+      }
+      if (errNot.includes('Please confirm the mail')) {
+        toast.warning(
+          'Your email has not been verified, please confirm you email and try again',
+          {
+            position: toast.POSITION.TOP_RIGHT,
+            theme: 'colored',
+            pauseOnHover: true,
+          }
+        );
       }
       return rejectWithValue(error.response.data);
     }

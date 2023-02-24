@@ -6,11 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setOperationType } from 'redux/transaction/slice';
 import { selectOperationType } from 'redux/transaction/selectors';
 
-const OperationsTypeSwitcher = () => {
+const OperationsTypeSwitcher = ({ onChange }) => {
   const dispatch = useDispatch();
   const switchOperationType = type => {
+    onChange(true);
     dispatch(setOperationType(type));
   };
+
   const OperationType = useSelector(selectOperationType);
 
   return (

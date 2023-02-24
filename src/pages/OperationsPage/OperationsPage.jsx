@@ -7,7 +7,7 @@ import OperationsTypeSwitcher from 'components/OperationsTypeSwitcher/Operations
 
 import { Background } from 'components/UI/Background/Background';
 import OperationsPageWrapper from './OperationsPages.styled';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getSummary,
@@ -21,6 +21,11 @@ const OperationsPage = () => {
 
   // const [balance, setBalance] = useState(null);
   // const addBalance = xxx => setBalance(xxx);
+
+  const [constants, setConstants] = useState(0);
+  const handleChange = value => {
+    setConstants(prevState => (prevState += 1));
+  };
 
   const operationType = useSelector(selectOperationType);
 
@@ -40,9 +45,10 @@ const OperationsPage = () => {
         <OperationsBalanceContainer addBalance={0} />
         {false && <OperationsBalanceModal />}
         <OperationsTypeSwitcher
-        // type={type} setType={setType}
+          onChange={handleChange}
+          // type={type} setType={setType}
         />
-        <OperationsContainer />
+        <OperationsContainer value={constants} />
       </OperationsPageWrapper>
     </div>
   );

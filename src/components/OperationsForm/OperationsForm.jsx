@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import moment from 'moment';
@@ -25,7 +25,7 @@ import { addTransaction } from 'redux/transaction/operations';
 
 import { selectOperationType } from '../../redux/transaction/selectors';
 
-const OperationsForm = () => {
+const OperationsForm = ({ value }) => {
   const isScreenMoreTablet = useMediaQuery('(min-width: 768px)');
 
   const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'));
@@ -80,6 +80,12 @@ const OperationsForm = () => {
     setCategory('');
     setAmount('');
   };
+
+  useEffect(() => {
+    if (value) {
+      resetForm();
+    }
+  }, [value]);
 
   let actualOptions = '';
   if (type === 'expenses') {

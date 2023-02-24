@@ -24,7 +24,6 @@ const authSlice = createSlice({
     [register.fulfilled]: (state, action) => {
       state.error = false;
       state.isLoading = false;
-      state.name = action.payload.userName;
     },
     [register.rejected](state, action) {
       state.error = action.payload.message;

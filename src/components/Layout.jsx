@@ -9,10 +9,11 @@ const Layout = () => {
   return (
     <div>
       <Header />
+
       <Suspense fallback={<LoaderCabbage />}>
         <ToastContainer
           position="top-right"
-          autoClose={3000}
+          autoClose={5000}
           limit={3}
           hideProgressBar={false}
           newestOnTop={false}

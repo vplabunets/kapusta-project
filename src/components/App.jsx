@@ -2,7 +2,7 @@ import Layout from 'components/Layout';
 import { lazy, useEffect } from 'react';
 // import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import RestrictedRoute from 'routes/RestrictedRoutes';
 import PrivateRoutes from 'routes/PrivateRoutes';
 
@@ -52,7 +52,6 @@ export const App = () => {
                 <PrivateRoutes redirectTo="/" component={<ReportsPage />} />
               }
             />
-            <Route path="*" element={<Navigate to="/" />} />
           </Route>
         </Routes>
       )}

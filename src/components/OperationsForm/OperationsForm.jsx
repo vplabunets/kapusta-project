@@ -54,6 +54,7 @@ const OperationsForm = () => {
     console.log('userEnteredData=', userEnteredData);
     dispatch(addTransaction(userEnteredData));
     resetForm();
+    evt.target.reset();
   };
 
   const handleChange = ({ target: { name, value } }) => {
@@ -79,6 +80,20 @@ const OperationsForm = () => {
     setCategory('');
     setAmount('');
   };
+
+  let actualOptions = '';
+  if (type === 'expenses') {
+    actualOptions = PRODUCT_CATEGORY.expenses;
+  } else {
+    actualOptions = PRODUCT_CATEGORY.income;
+  }
+
+  let actualPlaceholder = '';
+  if (type === 'expenses') {
+    actualPlaceholder = 'Product category';
+  } else {
+    actualPlaceholder = 'Type of income';
+  }
 
   return (
     <FormWrapper autoComplete="off" onSubmit={handleSubmit}>
@@ -106,13 +121,13 @@ const OperationsForm = () => {
         />
         <SelectInput
           aria-label="Select"
-          placeholder={'Product category'}
+          placeholder={actualPlaceholder}
           width="200px"
           styles={customStyles}
           value={category}
           onChange={setCategory}
           isSearchable={false}
-          options={PRODUCT_CATEGORY.expenses}
+          options={actualOptions}
           theme={theme => ({
             ...theme,
             borderRadius: 0,
@@ -126,12 +141,10 @@ const OperationsForm = () => {
         />
         <CountWrapper>
           <CountInput
-            aria-label="Number"
             onChange={handleChange}
             type="number"
             name="amount"
             placeholder="00.00"
-            value={amount}
             min={0}
           />
           <CalculatorIcon

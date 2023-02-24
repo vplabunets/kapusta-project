@@ -54,7 +54,7 @@ export const App = () => {
                 <PrivateRoutes redirectTo="/" component={<ReportsPage />} />
               }
             />
-            <Route path="*" element={<Navigate to="/" />} />
+          //  <Route path="*" element={<Navigate to="/" />} />
           </Route>
         </Routes>
       )}

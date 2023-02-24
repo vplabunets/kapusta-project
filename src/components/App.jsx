@@ -9,6 +9,7 @@ import PrivateRoutes from 'routes/PrivateRoutes';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 import { Loader } from './LoaderCabbage/LoaderCabbage.styled';
+import { GooglePage } from 'pages/GooglePage/GooglePage';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const OperationsPage = lazy(() =>
@@ -40,6 +41,7 @@ export const App = () => {
                 />
               }
             />
+            <Route path="/google-redirect" component={GooglePage} />
             <Route
               path="/operations"
               element={

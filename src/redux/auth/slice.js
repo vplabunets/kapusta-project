@@ -4,7 +4,7 @@ import { register, logIn, logOut, refreshUser, setBalance } from './operations';
 const initialState = {
   name: '',
   email: '',
-  token: '',
+  accessToken: '',
   isLoggedIn: false,
   balance: 0,
   error: null,
@@ -34,7 +34,7 @@ const authSlice = createSlice({
     },
     [logIn.fulfilled](state, action) {
       state.email = action.payload.email;
-      state.token = action.payload.token;
+      state.accessToken = action.payload.accessToken;
       state.balance = action.payload.balance;
       state.name = action.payload.userName;
       state.isLoggedIn = true;
@@ -50,7 +50,7 @@ const authSlice = createSlice({
     },
     [logOut.fulfilled](state) {
       state.email = '';
-      state.token = null;
+      state.accessToken = null;
       state.isLoggedIn = false;
       state.isLoading = false;
     },
@@ -63,7 +63,7 @@ const authSlice = createSlice({
     },
     [refreshUser.fulfilled](state, action) {
       state.email = action.payload.email;
-      state.token = action.payload.token;
+      state.accessToken = action.payload.accessToken;
       state.balance = action.payload.balance;
       state.name = action.payload.userName;
       state.isLoggedIn = true;

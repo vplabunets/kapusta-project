@@ -9,6 +9,9 @@ export const Btn = styled.button`
   line-height: 1.17;
   border-radius: 16px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   font-weight: 700;

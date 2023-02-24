@@ -53,6 +53,7 @@ export const logIn = createAsyncThunk(
         );
       }
       if (error.message === 'Network Error') {
+
         toast.error('Something went wrong, please try again later');
       }
       return rejectWithValue(error.response.data);

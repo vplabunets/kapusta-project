@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Bar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {
@@ -10,6 +11,10 @@ import {
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Wrapper } from './ReportsChart.styled';
+import { selectCurrentPeriod } from 'redux/reports/selectors';
+import { selectOperationType } from 'redux/transaction/selectors';
+import { getItemsCategoryReports } from 'redux/reports/operations';
+
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
 const incomeData = [
@@ -99,6 +104,19 @@ const incomeData = [
 const UserData = incomeData.sort((a, b) => (a.value > b.value ? 1 : -1));
 
 const ReportsChart = () => {
+  const currentPeriod = useSelector(selectCurrentPeriod);
+  const operation = useSelector(selectOperationType);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      getItemsCategoryReports({
+        ...currentPeriod,
+        operation,
+        category: 'Products',
+      })
+    );
+  }, [dispatch, currentPeriod, operation]);
   const isScreenMorePhone = useMediaQuery('(min-width: 768px)');
 
   const ticksFontSize = isScreenMorePhone ? 12 : 10;

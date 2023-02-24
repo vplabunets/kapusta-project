@@ -2,7 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NumericFormat } from 'react-number-format';
 import icon from 'images/icons-sprite.svg';
-import { addTransaction, deleteTransaction } from 'redux/transaction/operations';
+import {
+  addTransaction,
+  deleteTransaction,
+} from 'redux/transaction/operations';
 import { selectTransactions } from 'redux/transaction/selectors';
 import {
   Tabletr,
@@ -15,58 +18,61 @@ import {
   Delete,
 } from './TransactionsTableLines.styled';
 
-
 const getSumStyle = operation => {
-switch (operation) {
-  case 'expenses':
-    return {
-      color: '#E7192E',
-    };
+  switch (operation) {
+    case 'expenses':
+      return {
+        color: '#E7192E',
+      };
     case 'income':
-    return {
-      color: '#407946',
-    };
+      return {
+        color: '#407946',
+      };
     default:
       return {};
-}
+  }
 };
 
-const TransactionsTableLines = ({ id, operation, date, description, category, sum }) => {
-
-
+const TransactionsTableLines = ({
+  id,
+  operation,
+  date,
+  description,
+  category,
+  sum,
+}) => {
   const dispatch = useDispatch();
-  
+
   const initialBalance = useSelector(selectTransactions);
   // console.log('initialBalance', initialBalance);
   const addTransactions = data => dispatch(addTransaction(data));
 
-  const getUpdateBallance = (operation , sum) => {
+  const getUpdateBallance = (operation, sum) => {
     switch (operation) {
       case 'expenses':
         const expenses = initialBalance + Math.abs(sum);
-        addTransactions({ transactions: expenses});
+        addTransactions({ transactions: expenses });
         return;
-        case 'income':
-          const income = initialBalance + Math.abs(sum);
-          addTransactions({ transactions: income});
-          return;
-        default:
-          return initialBalance;
-}
-};
+      case 'income':
+        const income = initialBalance + Math.abs(sum);
+        addTransactions({ transactions: income });
+        return;
+      default:
+        return initialBalance;
+    }
+  };
 
-const onDelete = (id, operation, sum) => {
-  getUpdateBallance(operation, sum);
-  dispatch(deleteTransaction(id));
-}
+  const onDelete = (id, operation, sum) => {
+    getUpdateBallance(operation, sum);
+    dispatch(deleteTransaction(id));
+  };
 
-const sumStyle = getSumStyle(operation);
+  const sumStyle = getSumStyle(operation);
   // console.log('getSumStyle:', sumStyle);
-
 
   return (
     <>
-    <Tabletr>
+      <Tabletr>
         <Data>{date}</Data>
         <Description>{description}</Description>
         <Category>{category}</Category>
@@ -84,9 +90,12 @@ const sumStyle = getSumStyle(operation);
           />
         </Sum>
         <Btn>
-          <BtnStyle type="button" onClick={() => {
-            onDelete(id, operation, sum)
-          }}>
+          <BtnStyle
+            type="button"
+            onClick={() => {
+              onDelete(id, operation, sum);
+            }}
+          >
             <Delete alt="delete" width={18} height={18}>
               <use href={`${icon}#icon-basket`}></use>
             </Delete>

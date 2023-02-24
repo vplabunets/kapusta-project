@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import moment from 'moment';
+import { toast } from 'react-toastify';
 
 import PRODUCT_CATEGORY from '../../constants/productCategory';
 
@@ -25,7 +26,7 @@ import { addTransaction } from 'redux/transaction/operations';
 
 import { selectOperationType } from '../../redux/transaction/selectors';
 
-const OperationsForm = () => {
+const OperationsForm = ({ value }) => {
   const isScreenMoreTablet = useMediaQuery('(min-width: 768px)');
 
   const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'));
@@ -39,7 +40,7 @@ const OperationsForm = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
     if (description.trim().length === 0 || !category || !amount) {
-      return alert('missed one of the fields');
+      return toast.warning('Missing required fields');
     }
     const userEnteredData = {
       operation: type,
@@ -54,6 +55,8 @@ const OperationsForm = () => {
     console.log('userEnteredData=', userEnteredData);
     dispatch(addTransaction(userEnteredData));
     resetForm();
+    evt.target.reset();
+    return;
   };
 
   const handleChange = ({ target: { name, value } }) => {
@@ -79,6 +82,26 @@ const OperationsForm = () => {
     setCategory('');
     setAmount('');
   };
+
+  useEffect(() => {
+    if (value) {
+      resetForm();
+    }
+  }, [value]);
+
+  let actualOptions = '';
+  if (type === 'expenses') {
+    actualOptions = PRODUCT_CATEGORY.expenses;
+  } else {
+    actualOptions = PRODUCT_CATEGORY.income;
+  }
+
+  let actualPlaceholder = '';
+  if (type === 'expenses') {
+    actualPlaceholder = 'Product category';
+  } else {
+    actualPlaceholder = 'Type of income';
+  }
 
   return (
     <FormWrapper autoComplete="off" onSubmit={handleSubmit}>
@@ -106,13 +129,13 @@ const OperationsForm = () => {
         />
         <SelectInput
           aria-label="Select"
-          placeholder={'Product category'}
+          placeholder={actualPlaceholder}
           width="200px"
           styles={customStyles}
           value={category}
           onChange={setCategory}
           isSearchable={false}
-          options={PRODUCT_CATEGORY.expenses}
+          options={actualOptions}
           theme={theme => ({
             ...theme,
             borderRadius: 0,
@@ -126,12 +149,10 @@ const OperationsForm = () => {
         />
         <CountWrapper>
           <CountInput
-            aria-label="Number"
             onChange={handleChange}
             type="number"
             name="amount"
             placeholder="00.00"
-            value={amount}
             min={0}
           />
           <CalculatorIcon

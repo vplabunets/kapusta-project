@@ -19,6 +19,9 @@ const authSlice = createSlice({
     changeBalance(state, action) {
       state.balance = action.payload.user.balance;
     },
+    googleAuth(state, action) {
+      state.accessToken = action.accessToken;
+    },
   },
   extraReducers: {
     [register.fulfilled]: (state, action) => {
@@ -88,4 +91,4 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-export const { changeBalance } = authSlice.actions;
+export const { changeBalance, googleAuth } = authSlice.actions;

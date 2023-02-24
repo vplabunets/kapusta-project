@@ -47,7 +47,7 @@ const Body = styled.tbody`
   overflow: auto;
   flex-direction: column;
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
     background-color: #f2f8f8;
   }
 

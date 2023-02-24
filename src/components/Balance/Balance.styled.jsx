@@ -5,7 +5,7 @@ import DEVICE from 'constants/deviceSize';
 export const Wrapper = styled.div`
   margin-top: 32px;
   z-index: 3;
-  /* background-color: ${p => p.theme.lightTheme.mainBackgroundColor}; */
+ 
 
   @media ${DEVICE.tablet} {
     display: flex;
@@ -67,7 +67,7 @@ export const Input = styled.input`
   width: 140px;
   height: 44px;
   padding: 0;
-  padding-right: 34px;
+  padding-right: 45px;
   color: #000;
   text-align: right;
   border: 2px solid ${p => p.theme.lightTheme.headerColor};
@@ -83,6 +83,7 @@ export const Input = styled.input`
 
   @media ${DEVICE.laptop} {
     margin-right: 16px;
+     padding-right: 44px;
   }
 
   &::placeholder {

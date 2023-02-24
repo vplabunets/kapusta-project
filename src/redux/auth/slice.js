@@ -1,5 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, logIn, logOut, refreshUser, setBalance } from './operations';
+import {
+  register,
+  logIn,
+  logOut,
+  refreshUser,
+  setBalance,
+  resetPassword,
+} from './operations';
 
 const initialState = {
   name: '',
@@ -83,6 +90,15 @@ const authSlice = createSlice({
     [setBalance.rejected](state, action) {
       state.error = action.payload.message;
       state.isRefreshing = false;
+    },
+    [resetPassword.pending](state) {
+      state.isLoading = true;
+    },
+    [resetPassword.fulfilled](state) {
+      state.isLoading = false;
+    },
+    [resetPassword.rejected](state) {
+      state.isLoading = false;
     },
   },
 });

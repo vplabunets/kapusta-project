@@ -53,7 +53,6 @@ export const logIn = createAsyncThunk(
         );
       }
       if (error.message === 'Network Error') {
-
         toast.error('Something went wrong, please try again later');
       }
       return rejectWithValue(error.response.data);
@@ -108,6 +107,31 @@ export const setBalance = createAsyncThunk(
       return result.data;
     } catch (error) {
       toast.error('Something went wrong, please try again later');
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const resetPassword = createAsyncThunk(
+  'auth/resetPassword',
+  async (email, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('/users/refresh-password', email);
+      toast.info('Your new password successfully sent to your email');
+      return response.data;
+    } catch (error) {
+      if (error.message === 'Network Error') {
+        toast.error('Something went wrong, please try again later');
+      }
+      const errNot = error.response.data.message;
+      if (errNot.includes('Please confirm the mail')) {
+        toast.warning(
+          'First you need to verify your email, check you email box'
+        );
+      }
+      if (errNot.includes('User with this email')) {
+        toast.warning('No user with this email, please register');
+      }
       return rejectWithValue(error.response.data);
     }
   }

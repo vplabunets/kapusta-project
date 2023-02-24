@@ -1,11 +1,9 @@
 import { Formik, Form } from 'formik';
 import { Button } from 'components/UI/Button/Button';
-import { toast } from 'react-toastify';
 import Spiner from 'components/UI/Loader/Loader';
 import { useAuth } from 'hooks/useAuth';
 import icon from 'images/icons-sprite.svg';
 import * as Yup from 'yup';
-import axios from 'axios';
 
 import {
   Input,
@@ -19,6 +17,8 @@ import {
   Wrapper,
   ButtonContainer,
 } from './ForgotModal.styled';
+import { useDispatch } from 'react-redux';
+import { resetPassword } from 'redux/auth/operations';
 
 const ValidationSchema = Yup.object().shape({
   email: Yup.string()
@@ -30,27 +30,10 @@ const initialValues = {
   email: '',
 };
 
-const resetPassword = async email => {
-  try {
-    await axios.post('/users/refresh-password', email);
-    return toast.info('Your new password successfully sent to your email');
-  } catch (error) {
-    if (error.message === 'Network Error') {
-      toast.error('Something went wrong, please try again later');
-    }
-    const errNot = error.response.data.message;
-    if (errNot.includes('Please confirm the mail')) {
-      toast.warning('First you need to verify your email, check you email box');
-    }
-    if (errNot.includes('User with this email')) {
-      toast.warning('No user with this email, please register');
-    }
-    return console.error(error);
-  }
-};
-
 export const ForgotModal = ({ closeModal }) => {
   const { isLoading } = useAuth();
+  const dispatch = useDispatch();
+
   return (
     <Wrapper>
       <ButtonBack onClick={() => closeModal(false)}>
@@ -62,7 +45,7 @@ export const ForgotModal = ({ closeModal }) => {
       <Formik
         initialValues={initialValues}
         onSubmit={values => {
-          resetPassword(values);
+          dispatch(resetPassword(values));
           closeModal(false);
         }}
         validationSchema={ValidationSchema}

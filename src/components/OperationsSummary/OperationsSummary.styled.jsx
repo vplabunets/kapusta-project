@@ -34,6 +34,7 @@ const Title = styled.caption`
 
 const Table = styled.table`
   width: 100%;
+  height: 100%;
   &:first-of-type {
     border-top: 4px solid white;
   }
@@ -42,8 +43,20 @@ const Table = styled.table`
 
 const Body = styled.tbody`
   display: flex;
+  height: 238px;
+  overflow: auto;
   flex-direction: column;
+  ::-webkit-scrollbar {
+    width: 4px;
+    background-color: #f2f8f8;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #ff751d;
+  }
 `;
+
 const Row = styled.tr`
   display: flex;
   justify-content: space-between;

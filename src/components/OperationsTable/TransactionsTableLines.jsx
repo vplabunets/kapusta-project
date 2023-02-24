@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { NumericFormat } from 'react-number-format';
 import icon from 'images/icons-sprite.svg';
 import { deleteTransaction } from 'redux/transaction/operations';
+import ConfirmModal from '../ConfirmModal/ConfirmModal';
 import {
   Tabletr,
   Data,
@@ -32,7 +33,7 @@ switch (operation) {
 };
 
 const TransactionsTableLines = ({ id, operation, date, description, category, sum }) => {
-
+  const [modalOpen, setModalOpen] = useState(false);  
   const dispatch = useDispatch();
   
   const onDelete = (_id) => {
@@ -49,6 +50,13 @@ const sumStyle = getSumStyle(operation);
   return (
     <>
       <Tabletr>
+      {modalOpen && (
+        <ConfirmModal
+          setModalOpen={setModalOpen}
+          text={'Are you sure?'}
+          onClick={() =>  onDelete(id)}
+        />
+      )}
         <Data>{date}</Data>
         <Description>{description}</Description>
         <Category>{category}</Category>
@@ -66,9 +74,7 @@ const sumStyle = getSumStyle(operation);
           />
         </Sum>
         <Btn>
-          <BtnStyle type="button" onClick={() => {
-            onDelete(id)
-          }}>
+          <BtnStyle type="button" onClick={() => setModalOpen(true)}>
             <Delete alt="delete" width={18} height={18}>
               <use href={`${icon}#icon-basket`}></use>
             </Delete>

@@ -16,7 +16,7 @@ const OperationsPage = lazy(() =>
   import('../pages/OperationsPage/OperationsPage')
 );
 const ReportsPage = lazy(() => import('../pages/ReportsPage/ReportsPage'));
-
+       //  <Route path="*" element={<Navigate to="/" />} />
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
@@ -54,7 +54,7 @@ export const App = () => {
                 <PrivateRoutes redirectTo="/" component={<ReportsPage />} />
               }
             />
-          //  <Route path="*" element={<Navigate to="/" />} />
+   
           </Route>
         </Routes>
       )}

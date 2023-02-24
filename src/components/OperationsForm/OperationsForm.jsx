@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import moment from 'moment';
+import { toast } from 'react-toastify';
 
 import PRODUCT_CATEGORY from '../../constants/productCategory';
 
@@ -39,7 +40,7 @@ const OperationsForm = ({ value }) => {
   const handleSubmit = evt => {
     evt.preventDefault();
     if (description.trim().length === 0 || !category || !amount) {
-      return alert('missed one of the fields');
+      return toast.warning('Missing required fields');
     }
     const userEnteredData = {
       operation: type,
@@ -55,6 +56,7 @@ const OperationsForm = ({ value }) => {
     dispatch(addTransaction(userEnteredData));
     resetForm();
     evt.target.reset();
+    return;
   };
 
   const handleChange = ({ target: { name, value } }) => {

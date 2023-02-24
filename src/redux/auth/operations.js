@@ -37,6 +37,13 @@ export const register = createAsyncThunk(
           }
         );
       }
+      if (error.message === 'Network Error') {
+        toast.error('Something went wrong, please try again later', {
+          position: toast.POSITION.TOP_RIGHT,
+          theme: 'colored',
+          pauseOnHover: true,
+        });
+      }
       return rejectWithValue(error.response.data);
     }
   }
@@ -70,6 +77,13 @@ export const logIn = createAsyncThunk(
             pauseOnHover: true,
           }
         );
+      }
+      if (error.message === 'Network Error') {
+        toast.error('Something went wrong, please try again later', {
+          position: toast.POSITION.TOP_RIGHT,
+          theme: 'colored',
+          pauseOnHover: true,
+        });
       }
       return rejectWithValue(error.response.data);
     }

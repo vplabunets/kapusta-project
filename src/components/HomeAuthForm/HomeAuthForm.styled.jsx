@@ -90,8 +90,9 @@ export const LoginText = styled.p`
 `;
 
 export const AuthFormLabel = styled.label`
+  position: relative;
   display: block;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: 0.04em;
@@ -134,8 +135,7 @@ export const Input = styled(Field)`
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 4px;
-  padding-top: 28px;
+  margin-top: 40px;
   gap: 8px;
   @media ${DEVICE.tablet} {
     justify-content: space-between;
@@ -171,4 +171,28 @@ export const ErrorValidation = styled.div`
   line-height: 1.2;
   letter-spacing: 0.04em;
   color: #eb5757;
+  margin-top: 5px;
+`;
+
+export const ReminderButton = styled.button`
+  position: absolute;
+  top: 100%;
+  right: 5px;
+  font-size: 10px;
+  line-height: 1, 2;
+  letter-spacing: 0.04em;
+  color: #52555f;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 5px;
+
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
+    color: #000000;
+  }
 `;

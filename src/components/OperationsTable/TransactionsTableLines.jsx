@@ -1,9 +1,9 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 import { NumericFormat } from 'react-number-format';
 import icon from 'images/icons-sprite.svg';
-import { addTransaction, deleteTransaction } from 'redux/transaction/operations';
-import { selectTransactions } from 'redux/transaction/selectors';
+import { deleteTransaction } from 'redux/transaction/operations';
 import {
   Tabletr,
   Data,
@@ -33,40 +33,22 @@ switch (operation) {
 
 const TransactionsTableLines = ({ id, operation, date, description, category, sum }) => {
 
-
   const dispatch = useDispatch();
   
-  const initialBalance = useSelector(selectTransactions);
-  // console.log('initialBalance', initialBalance);
-  const addTransactions = data => dispatch(addTransaction(data));
-
-  const getUpdateBallance = (operation , sum) => {
-    switch (operation) {
-      case 'expenses':
-        const expenses = initialBalance + Math.abs(sum);
-        addTransactions({ transactions: expenses});
-        return;
-        case 'income':
-          const income = initialBalance + Math.abs(sum);
-          addTransactions({ transactions: income});
-          return;
-        default:
-          return initialBalance;
-}
-};
-
-const onDelete = (id, operation, sum) => {
-  getUpdateBallance(operation, sum);
-  dispatch(deleteTransaction(id));
+  const onDelete = (_id) => {
+  dispatch(deleteTransaction(_id))
+  toast.warning(`The transaction "${description}" was successfully deleted`, {
+    position: toast.POSITION.TOP_RIGHT,
+    theme: 'colored',
+    pauseOnHover: true,
+  });;
 }
 
 const sumStyle = getSumStyle(operation);
-  // console.log('getSumStyle:', sumStyle);
-
 
   return (
     <>
-    <Tabletr>
+      <Tabletr>
         <Data>{date}</Data>
         <Description>{description}</Description>
         <Category>{category}</Category>
@@ -85,7 +67,7 @@ const sumStyle = getSumStyle(operation);
         </Sum>
         <Btn>
           <BtnStyle type="button" onClick={() => {
-            onDelete(id, operation, sum)
+            onDelete(id)
           }}>
             <Delete alt="delete" width={18} height={18}>
               <use href={`${icon}#icon-basket`}></use>
@@ -93,60 +75,6 @@ const sumStyle = getSumStyle(operation);
           </BtnStyle>
         </Btn>
       </Tabletr>
-      {/* <Tabletr>
-        <Data>18.02.2023</Data>
-        <Description>Description</Description>
-        <Category>Category</Category>
-        <Sum style={{ color: '#E7192E' }}>
-          <NumericFormat
-            value={300}
-            placeholder={'00.00 UAH'}
-            prefix={'- '}
-            suffix={' UAH'}
-            displayType={'text'}
-            disabled={true}
-            fixedDecimalScale={'true'}
-            decimalScale={'2'}
-            thousandSeparator={''}
-          />
-        </Sum>
-        <Btn>
-          <BtnStyle type="button">
-            <Delete alt="delete" width={18} height={18}>
-              <use href={`${icon}#icon-basket`}></use>
-            </Delete>
-          </BtnStyle>
-        </Btn>
-      </Tabletr>
-      <Tabletr>
-        <Data>18.02.2023</Data>
-        <Description>Description</Description>
-        <Category>Category</Category>
-        <Sum style={{ color: '#E7192E' }}>
-          <NumericFormat
-            value={300}
-            placeholder={'00.00 UAH'}
-            prefix={'- '}
-            suffix={' UAH'}
-            displayType={'text'}
-            disabled={true}
-            fixedDecimalScale={'true'}
-            decimalScale={'2'}
-            thousandSeparator={''}
-          />
-        </Sum>
-        <Btn
-        // onClick={() => {
-        //   dispatch(deleteTransaction('63f7961529589dd7314a454b'));
-        // }}
-        >
-          <BtnStyle type="button">
-            <Delete alt="delete" width={18} height={18}>
-              <use href={`${icon}#icon-basket`}></use>
-            </Delete>
-          </BtnStyle>
-        </Btn>
-      </Tabletr> */}
     </>
   );
 };

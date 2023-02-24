@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { getSelectTransactions } from 'redux/transaction/selectors';
+import { getSelectTransactions, selectIsLoading } from 'redux/transaction/selectors';
 import TransactionsTableLines from './TransactionsTableLines';
 import EmptyLines from './EmptyLines'
+import LoaderCabbage  from '../LoaderCabbage/LoaderCabbage';
 import { Table, TableHead, TableHeadTitle, TableBody } from './OperationsTable.styled';
 
 const TransactionsTable = () => {
+  const IsLoading = useSelector(selectIsLoading);
   
   const [transactions, setTransactions] = useState();
   const sortedTransactions = useSelector(getSelectTransactions);
@@ -15,6 +17,8 @@ const TransactionsTable = () => {
   }, [sortedTransactions]);
 
   return (
+    <>
+    {IsLoading && <LoaderCabbage />}
       <Table>
         <TableHead>
           <tr>
@@ -41,6 +45,8 @@ const TransactionsTable = () => {
           <EmptyLines />
         </TableBody>
       </Table>
+    </>
+      
   );
 };
 

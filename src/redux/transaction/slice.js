@@ -65,7 +65,7 @@ const transactionSlice = createSlice({
     },
     [deleteTransaction.fulfilled]: (state, action) => {
       const index = state.transactions.findIndex(
-        transaction => transaction._id === action.payload._id
+        transaction => transaction._id === action.payload.id
       );
       state.transactions.splice(index, 1);
       // state.transactions.push(action.payload.data);

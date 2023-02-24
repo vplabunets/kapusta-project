@@ -10,12 +10,12 @@ import {
   Text,
   ButtonWrapper,
 } from './ConfirmModal.styled';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const body = document.querySelector('body');
 
 const ConfirmModal = ({ text, setModalOpen, onClick }) => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -58,7 +58,7 @@ const ConfirmModal = ({ text, setModalOpen, onClick }) => {
               design={'modal'}
               onClick={onClick}
             >
-             {t('modal.YES')}
+              {t('modal.YES')}
             </Button>
             <Button
               onClick={closeModal}
@@ -67,7 +67,6 @@ const ConfirmModal = ({ text, setModalOpen, onClick }) => {
               design={'modal'}
             >
               {t('modal.NO')}
-             
             </Button>
           </ButtonWrapper>
         </div>

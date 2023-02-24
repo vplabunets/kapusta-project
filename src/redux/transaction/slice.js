@@ -47,12 +47,23 @@ const transactionSlice = createSlice({
     },
     [addTransaction.fulfilled]: (state, action) => {
       state.transactions.push(action.payload.data);
-      state.summary.map(item => {
-        if (item.month !== action.payload.data.month) {
-          return item;
-        }
-        return (item.sum = item.sum + action.payload.data.sum);
-      });
+      const res = state.summary.every(
+        itm => itm.month !== action.payload.data.month
+      );
+      if (!res) {
+        state.summary.map(item => {
+          if (item.month !== action.payload.data.month) {
+            return item;
+          }
+          return (item.sum = item.sum + action.payload.data.sum);
+        });
+      }
+      if (res) {
+        state.summary.push({
+          month: action.payload.data.month,
+          sum: action.payload.data.sum,
+        });
+      }
 
       state.isLoading = false;
     },
@@ -68,13 +79,19 @@ const transactionSlice = createSlice({
         transaction => transaction._id === action.payload.id
       );
       state.transactions.splice(index, 1);
-      // state.transactions.push(action.payload.data);
-      state.summary.map(item => {
-        if (item.month !== action.payload.month) {
-          return item;
-        }
-        return (item.sum = item.sum + action.payload.sum);
-      });
+
+      const res = state.summary.every(
+        itm => itm.month !== action.payload.data.month
+      );
+
+      if (!res) {
+        state.summary.map(item => {
+          if (item.month !== action.payload.data.month) {
+            return item;
+          }
+          return (item.sum = item.sum - action.payload.data.sum);
+        });
+      }
 
       state.isLoading = false;
     },

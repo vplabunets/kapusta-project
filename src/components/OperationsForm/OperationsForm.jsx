@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import moment from 'moment';
+import { toast } from 'react-toastify';
 
 import PRODUCT_CATEGORY from '../../constants/productCategory';
 
@@ -25,7 +26,7 @@ import { addTransaction } from 'redux/transaction/operations';
 
 import { selectOperationType } from '../../redux/transaction/selectors';
 
-const OperationsForm = () => {
+const OperationsForm = ({ value }) => {
   const isScreenMoreTablet = useMediaQuery('(min-width: 768px)');
 
   const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'));
@@ -39,7 +40,7 @@ const OperationsForm = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
     if (description.trim().length === 0 || !category || !amount) {
-      return alert('missed one of the fields');
+      return toast.warning('Missing required fields');
     }
     const userEnteredData = {
       operation: type,
@@ -55,6 +56,7 @@ const OperationsForm = () => {
     dispatch(addTransaction(userEnteredData));
     resetForm();
     evt.target.reset();
+    return;
   };
 
   const handleChange = ({ target: { name, value } }) => {
@@ -80,6 +82,12 @@ const OperationsForm = () => {
     setCategory('');
     setAmount('');
   };
+
+  useEffect(() => {
+    if (value) {
+      resetForm();
+    }
+  }, [value]);
 
   let actualOptions = '';
   if (type === 'expenses') {

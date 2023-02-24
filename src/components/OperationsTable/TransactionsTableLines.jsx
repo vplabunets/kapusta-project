@@ -5,6 +5,7 @@ import { NumericFormat } from 'react-number-format';
 import icon from 'images/icons-sprite.svg';
 import { deleteTransaction } from 'redux/transaction/operations';
 import ConfirmModal from '../ConfirmModal/ConfirmModal';
+
 import {
   Tabletr,
   Data,
@@ -16,23 +17,22 @@ import {
   Delete,
 } from './TransactionsTableLines.styled';
 
-
 const getSumStyle = operation => {
-switch (operation) {
-  case 'expenses':
-    return {
-      color: '#E7192E',
-    };
+  switch (operation) {
+    case 'expenses':
+      return {
+        color: '#E7192E',
+      };
     case 'income':
-    return {
-      color: '#407946',
-    };
+      return {
+        color: '#407946',
+      };
     default:
       return {};
-}
+  }
 };
 
-const TransactionsTableLines = ({ id, operation, date, description, category, sum }) => {
+ const TransactionsTableLines = ({ id, operation, date, description, category, sum }) => {
   const [modalOpen, setModalOpen] = useState(false);  
   const dispatch = useDispatch();
   
@@ -47,9 +47,11 @@ const TransactionsTableLines = ({ id, operation, date, description, category, su
 
 const sumStyle = getSumStyle(operation);
 
+
   return (
     <>
       <Tabletr>
+ 
       {modalOpen && (
         <ConfirmModal
           setModalOpen={setModalOpen}
@@ -57,6 +59,7 @@ const sumStyle = getSumStyle(operation);
           onClick={() =>  onDelete(id)}
         />
       )}
+ 
         <Data>{date}</Data>
         <Description>{description}</Description>
         <Category>{category}</Category>
@@ -74,7 +77,9 @@ const sumStyle = getSumStyle(operation);
           />
         </Sum>
         <Btn>
+ 
           <BtnStyle type="button" onClick={() => setModalOpen(true)}>
+ 
             <Delete alt="delete" width={18} height={18}>
               <use href={`${icon}#icon-basket`}></use>
             </Delete>

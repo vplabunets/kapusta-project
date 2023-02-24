@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { useSelector } from 'react-redux';
+import { selectSummary } from 'redux/transaction/selectors';
 import {
   Wrapper,
   Table,
@@ -9,35 +12,24 @@ import {
 } from './OperationsSummary.styled';
 
 const OperationsSummary = () => {
+  const getSummary = useSelector(selectSummary);
+
+  const summary = [...getSummary];
+  summary.sort((a, b) => b.monthNumber - a.monthNumber);
+
   return (
     <Wrapper>
       <Table>
         <Title> Summary </Title>
         <Body>
-          <Row>
-            <Cell>November</Cell>
-            <Cell>10 000.00</Cell>
-          </Row>
-          <Row>
-            <Cell>October</Cell>
-            <Cell>30 000.00</Cell>
-          </Row>
-          <Row>
-            <Cell>September</Cell>
-            <Cell>30 000.00</Cell>
-          </Row>
-          <Row>
-            <Cell>August</Cell>
-            <Cell>20 000.00</Cell>
-          </Row>
-          <Row>
-            <Cell>July</Cell>
-            <Cell>15 000.00</Cell>
-          </Row>
-          <Row>
-            <Cell>June</Cell>
-            <Cell>18 000.00</Cell>
-          </Row>
+          {summary.map(item => {
+            return (
+              <Row key={item.month}>
+                <Cell>{item.month}</Cell>
+                <Cell>{item.sum}.00</Cell>
+              </Row>
+            );
+          })}
         </Body>
       </Table>
     </Wrapper>

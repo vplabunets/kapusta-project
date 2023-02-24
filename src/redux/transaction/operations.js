@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { changeBalance } from '../auth/slice';
+import { toast } from 'react-toastify';
 
 export const getSummary = createAsyncThunk(
   'transactions/summary',
@@ -9,6 +10,9 @@ export const getSummary = createAsyncThunk(
       const result = await axios.post('/transaction/summary', credentials);
       return result.data;
     } catch (error) {
+      if (error.message === 'Network Error') {
+        toast.error('Something went wrong, please try again later');
+      }
       return rejectWithValue(error.response.data);
     }
   }
@@ -22,6 +26,7 @@ export const getTransactionsByOperation = createAsyncThunk(
       const result = await axios.post('/transaction/operation', credentials);
       return result.data;
     } catch (error) {
+      toast.error('Something went wrong, please try again later');
       return rejectWithValue(error.response.data);
     }
   }
@@ -33,8 +38,10 @@ export const addTransaction = createAsyncThunk(
       const result = await axios.post('/transaction/new', credentials);
 
       dispatch(changeBalance(result.data));
+      toast.success('Operation added successfully');
       return result.data;
     } catch (error) {
+      toast.error('Something went wrong, please try again later');
       return rejectWithValue(error.response.data);
     }
   }
@@ -46,8 +53,10 @@ export const deleteTransaction = createAsyncThunk(
     try {
       const result = await axios.delete(`/transaction/delete/${transactionId}`);
       dispatch(changeBalance(result.data));
+      toast.info('Operation deleted successfully');
       return result.data;
     } catch (error) {
+      toast.error('Something went wrong, please try again later');
       return rejectWithValue(error.response.data);
     }
   }

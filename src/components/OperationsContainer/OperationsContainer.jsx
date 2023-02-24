@@ -6,7 +6,7 @@ import { Wrapper, WrapperTableSummary } from './OperationsContainer.styled';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-const OperationsContainer = ({ type }) => {
+const OperationsContainer = ({ value }) => {
   const isScreenMorePhone = useMediaQuery('(min-width: 768px)');
   const middle = useMediaQuery('(max-width: 1279px)');
   const isScreenLaptop = useMediaQuery('(min-width: 1280px)');
@@ -20,7 +20,7 @@ const OperationsContainer = ({ type }) => {
   return (
     <>
       <Wrapper>
-        {isScreenMorePhone && <OperationsForm />}
+        {isScreenMorePhone && <OperationsForm value={value} />}
         <WrapperTableSummary>
           <OperationsTable />
           {isScreenLaptop && <OperationsSummary />}

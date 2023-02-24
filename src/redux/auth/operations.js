@@ -10,32 +10,22 @@ export const register = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       await axios.post('/users/register', credentials);
-      toast.info('Registration successful! Please confirm your email', {
-        position: toast.POSITION.TOP_RIGHT,
-        theme: 'colored',
-        pauseOnHover: true,
-      });
+      toast.info('Registration successful! Please confirm your email');
     } catch (error) {
       console.log(error);
       const errNot = error.response.data.message;
 
       if (errNot === 'Email verified, and already registered') {
-        toast.error('This email is already used', {
-          position: toast.POSITION.TOP_RIGHT,
-          theme: 'colored',
-          pauseOnHover: true,
-        });
+        toast.error('This email is already used');
       }
 
       if (errNot === 'Email is not verified, but already registered') {
         toast.warning(
-          'Your email is not verified, but already registered. To complete registration please check your email',
-          {
-            position: toast.POSITION.TOP_RIGHT,
-            theme: 'colored',
-            pauseOnHover: true,
-          }
+          'Your email is not verified, but already registered. To complete registration please check your email'
         );
+      }
+      if (error.message === 'Network Error') {
+        toast.error('Something went wrong, please try again later');
       }
       return rejectWithValue(error.response.data);
     }
@@ -55,21 +45,16 @@ export const logIn = createAsyncThunk(
       console.log(error);
       const errNot = error.response.data.message;
       if (errNot === 'Invalid email address or password') {
-        toast.error('Your email or password is wrong, check it and try again', {
-          position: toast.POSITION.TOP_RIGHT,
-          theme: 'colored',
-          pauseOnHover: true,
-        });
+        toast.error('Your email or password is wrong, check it and try again');
       }
       if (errNot.includes('Please confirm the mail')) {
         toast.warning(
-          'Your email has not been verified, please confirm you email and try again',
-          {
-            position: toast.POSITION.TOP_RIGHT,
-            theme: 'colored',
-            pauseOnHover: true,
-          }
+          'Your email has not been verified, please confirm you email and try again'
         );
+      }
+      if (error.message === 'Network Error') {
+
+        toast.error('Something went wrong, please try again later');
       }
       return rejectWithValue(error.response.data);
     }
@@ -83,6 +68,9 @@ export const logOut = createAsyncThunk(
       await axios.patch('/users/logout');
       clearAuthHeader();
     } catch (error) {
+      if (error.message === 'Network Error') {
+        toast.error('Something went wrong, please try again later');
+      }
       return rejectWithValue(error.response.data);
     }
   }
@@ -103,6 +91,9 @@ export const refreshUser = createAsyncThunk(
       const res = await axios.get('/users/get-user');
       return res.data;
     } catch (error) {
+      if (error.message === 'Network Error') {
+        toast.error('Something went wrong, please try again later');
+      }
       return rejectWithValue(error.response.data);
     }
   }
@@ -113,8 +104,10 @@ export const setBalance = createAsyncThunk(
   async (balance, { rejectWithValue }) => {
     try {
       const result = await axios.patch('/users/balance', balance);
+      toast.success('Balance added successfully');
       return result.data;
     } catch (error) {
+      toast.error('Something went wrong, please try again later');
       return rejectWithValue(error.response.data);
     }
   }

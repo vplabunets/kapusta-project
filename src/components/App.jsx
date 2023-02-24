@@ -16,7 +16,7 @@ const OperationsPage = lazy(() =>
   import('../pages/OperationsPage/OperationsPage')
 );
 const ReportsPage = lazy(() => import('../pages/ReportsPage/ReportsPage'));
-//  <Route path="*" element={<Navigate to="/" />} />
+       //  <Route path="*" element={<Navigate to="/" />} />
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
@@ -41,15 +41,7 @@ export const App = () => {
                 />
               }
             />
-            <Route
-              path="google-redirect"
-              element={
-                <RestrictedRoute
-                  redirectTo="/operations"
-                  component={<GooglePage />}
-                />
-              }
-            />
+            <Route path="/google-redirect" component={GooglePage} />
             <Route
               path="/operations"
               element={

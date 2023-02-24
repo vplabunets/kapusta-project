@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { format, subMonths, addMonths } from 'date-fns';
 import {
   Title,
@@ -9,9 +10,21 @@ import {
 } from './ReportsCurrentPeriod.styled';
 import LeftIcon from 'images/icons-sprite.svg';
 import RightIcon from 'images/icons-sprite.svg';
+import { setCurrentPeriod } from 'redux/reports/slice';
 
 const CurrentPeriod = () => {
   const [newDate, setNewDate] = useState(() => new Date());
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      setCurrentPeriod({
+        month: format(newDate, 'MMMM'),
+        year: format(newDate, 'yyyy'),
+      })
+    );
+  }, [dispatch, newDate]);
 
   const monthChangeLeft = () => {
     const prevDate = subMonths(newDate, 1);

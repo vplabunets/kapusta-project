@@ -114,7 +114,7 @@ export const Button = styled.button`
   height: 44px;
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.17;
   display: flex;
   justify-content: center;
@@ -144,6 +144,7 @@ export const Button = styled.button`
 `;
 export const Label = styled.label`
   position: absolute;
+  top: 16px;
   right: 15px;
   font-weight: 700;
   font-style: normal;
@@ -157,7 +158,7 @@ export const Label = styled.label`
 `;
 export const InputContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   position: relative;
 `;

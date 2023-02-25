@@ -20,12 +20,16 @@
 
 "button": {
  "CONFIRM": "ПІДТВЕРДИТИ",
- "CANCEL": " СКАСУВАТИ"
+ "CANCEL": " СКАСУВАТИ",
+  "Expenses": "Витрати",
+"Income": "Дохід"
 },
 
 "Balance":"Баланс",
 "UAH": "ГРН",
 "Reports": "Звіти",
+"Current period": "Поточний період",
+"Main page": "Головна сторінка",
 
 "registration":{
 "Google text" : "Ви можете увійти за допомогою свого облікового запису Google",
@@ -34,6 +38,40 @@
 "Password": "Пароль",
 "LOG IN": "УВІЙТИ",
 "REGISTRATION": "РЕЄСТРАЦІЯ"
+ },
+  
+ "balanceModalTitle": " Привіт! Для початку введіть поточний баланс вашого рахунку",
+ "balanceModalText" : "Ви не можете витрачати гроші, поки їх у вас немає",
+
+  "product": {
+    "Product description" : "Опис продукту",
+      "Product category": "Категорія продукту",
+  "Products": "Продукти" ,
+   "Health" : "Здоров'я",
+    "Alcohol": "Алкоголь",
+   "Entertainment" : "Розваги",
+  "Housing" : "Житло",
+   "Communal, communication" : "Комуналка, комунікації",
+  "Sports, hobbies" : "Спорт, хобі",
+ "Education" : "Освіта",
+  "Other" : "Інше"
+ },
+
+  "Date" : "Дата",
+ "Description": "Опис",
+ "Category": "Категорія",
+ "Sum": "Сума",
+ "Summary": "Підсумок",
+
+  "month": {
+  "November": "Листопад",
+  "October": "Жовтень",
+  "September": "Вересень",
+  "August": "Серпень",
+  "July": "Липень",
+  "June": "Червень"
  }
+ 
+
     
 }

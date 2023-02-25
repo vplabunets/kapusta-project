@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { selectSummary } from 'redux/transaction/selectors';
 import {
@@ -13,14 +13,14 @@ import {
 
 const OperationsSummary = () => {
   const getSummary = useSelector(selectSummary);
-
+ const { t } = useTranslation();
   const summary = [...getSummary];
   summary.sort((a, b) => b.monthNumber - a.monthNumber);
 
   return (
     <Wrapper>
       <Table>
-        <Title> Summary </Title>
+        <Title> { t('Summary') } </Title>
         <Body>
           {summary.map(item => {
             return (

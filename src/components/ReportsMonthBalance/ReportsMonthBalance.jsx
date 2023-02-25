@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectallSummaryReports } from 'redux/reports/selectors';
+import { selectAllSummaryReports } from 'redux/reports/selectors';
 import {
   Wrapper,
   Text,
@@ -10,7 +10,7 @@ import {
 } from './ReportsMonthBalance.styled';
 
 const ReportsMonthBalance = () => {
-  const summaryReports = useSelector(selectallSummaryReports);
+  const summaryReports = useSelector(selectAllSummaryReports);
 
   return (
     <Wrapper>

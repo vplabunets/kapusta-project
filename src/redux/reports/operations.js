@@ -9,6 +9,7 @@ export const getAllSummaryReports = createAsyncThunk(
         '/transaction/all-summary-reports',
         credentials
       );
+
       return result.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -23,6 +24,7 @@ export const getCategoryReports = createAsyncThunk(
         '/transaction/category-reports',
         credentials
       );
+
       return result.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

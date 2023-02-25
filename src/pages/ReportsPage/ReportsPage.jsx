@@ -17,6 +17,7 @@ const ReportsPage = () => {
   const currentPeriod = useSelector(selectCurrentPeriod);
   const operation = useSelector(selectOperationType);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getAllSummaryReports(currentPeriod));
     dispatch(getCategoryReports({ ...currentPeriod, operation }));

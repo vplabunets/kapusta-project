@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+import { selectallSummaryReports } from 'redux/reports/selectors';
 import {
   Wrapper,
   Text,
@@ -8,17 +10,39 @@ import {
 } from './ReportsMonthBalance.styled';
 
 const ReportsMonthBalance = () => {
+  const summaryReports = useSelector(selectallSummaryReports);
+
   return (
     <Wrapper>
-      <ExpensesContainer>
-        <Text>Expenses:</Text>
-        <Sum color="negative"> - 18 000.00 UAH.</Sum>
-      </ExpensesContainer>
+      {summaryReports.map((item, index) => {
+        if (item.operation === 'expenses') {
+          return (
+            <ExpensesContainer key={index}>
+              <Text>Expenses:</Text>
+              <Sum color="negative">
+                - {item.sum === 0 ? '00' : item.sum}.00 UAH.
+              </Sum>
+            </ExpensesContainer>
+          );
+        }
+        return null;
+      })}
+
       <Line></Line>
-      <IncomeContainer>
-        <Text>Income:</Text>
-        <Sum color="positive"> + 45 000.00 UAH.</Sum>
-      </IncomeContainer>
+
+      {summaryReports.map((item, index) => {
+        if (item.operation === 'income') {
+          return (
+            <IncomeContainer key={index}>
+              <Text>Income:</Text>
+              <Sum color="positive">
+                + {item.sum === 0 ? '00' : item.sum}.00 UAH.
+              </Sum>
+            </IncomeContainer>
+          );
+        }
+        return null;
+      })}
     </Wrapper>
   );
 };

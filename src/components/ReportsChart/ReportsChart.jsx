@@ -18,6 +18,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement);
 
 const ReportsChart = () => {
   const [state, setState] = useState([]);
+  const [maxCount, setMaxCount] = useState('');
   const isScreenMorePhone = useMediaQuery('(min-width: 768px)');
   const ticksFontSize = isScreenMorePhone ? 12 : 10;
   const itemsByCategory = useSelector(selectItemsByCategory);
@@ -28,7 +29,8 @@ const ReportsChart = () => {
       const sortArray = [...itemsByCategory].sort((a, b) =>
         a.sum < b.sum ? 1 : -1
       );
-      setState(sortArray);
+      setMaxCount(sortArray[0].sum);
+      setState(sortArray.slice(0, 9));
       return;
     }
   }, [itemsByCategory]);
@@ -70,7 +72,7 @@ const ReportsChart = () => {
       },
 
       datalabels: {
-        align: !isScreenMorePhone ? '240' : 'end',
+        align: !isScreenMorePhone ? '0' : 'end',
         anchor: 'end',
         offset: !isScreenMorePhone ? '8' : '',
         font: {
@@ -87,6 +89,7 @@ const ReportsChart = () => {
 
     scales: {
       x: {
+        suggestedMax: maxCount * 1.01,
         stacked: true,
         border: {
           display: false,
@@ -105,6 +108,7 @@ const ReportsChart = () => {
         },
       },
       y: {
+        suggestedMax: maxCount * 1.04,
         stacked: true,
         border: {
           display: false,

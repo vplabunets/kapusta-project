@@ -19,6 +19,10 @@ const Balance = () => {
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    setValue(currentBalance.toFixed(2));
+  }, [currentBalance]);
+
   const { t } = useTranslation();
 
   const onSubmit = e => {
@@ -30,10 +34,6 @@ const Balance = () => {
     setValue(e.target.value);
   };
 
-  useEffect(() => {
-    console.log(currentBalance);
-  });
-
   return (
     <Wrapper>
       <Title> {t('Balance')}:</Title>
@@ -44,7 +44,7 @@ const Balance = () => {
             name="balance"
             placeholder={`${currentBalance.toFixed(2)}`}
             pattern="[0-9, .UAH]*"
-            value={value}
+            value={value > 0 ? value : ''}
             onChange={onChange}
           />
           <Label>{t('UAH')} </Label>

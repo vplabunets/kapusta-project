@@ -30,7 +30,7 @@ const ReportsChart = () => {
         a.sum < b.sum ? 1 : -1
       );
       setMaxCount(sortArray[0].sum);
-      setState(sortArray.slice(0, 9));
+      setState(sortArray.slice(0, 10));
       return;
     }
   }, [itemsByCategory]);

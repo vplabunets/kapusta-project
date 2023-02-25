@@ -4,12 +4,17 @@ import Header from './Header/Header';
 import LoaderCabbage from './LoaderCabbage/LoaderCabbage';
 import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { CongratulationsModal } from './CongratulationsModal/CongratulationsModal';
+import { useSelector } from 'react-redux';
+import { selectFirstVisit } from 'redux/auth/selectors';
 
 const Layout = () => {
+  let firstVisit = useSelector(selectFirstVisit);
+  console.log(firstVisit);
   return (
     <div>
       <Header />
-
+      {!firstVisit && <CongratulationsModal />}
       <Suspense fallback={<LoaderCabbage />}>
         <ToastContainer
           position="top-right"

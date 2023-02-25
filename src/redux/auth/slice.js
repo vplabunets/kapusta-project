@@ -6,6 +6,8 @@ import {
   refreshUser,
   setBalance,
   resetPassword,
+  changeFirstVisit,
+  changeFirstBalance,
 } from './operations';
 
 const initialState = {
@@ -17,6 +19,8 @@ const initialState = {
   error: null,
   isLoading: false,
   isRefreshing: false,
+  firstVisit: false,
+  firstBalance: false,
 };
 
 const authSlice = createSlice({
@@ -47,6 +51,8 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
       state.error = false;
       state.isLoading = false;
+      state.firstVisit = action.payload.firstVisit;
+      state.firstBalance = action.payload.firstBalance;
     },
     [logIn.rejected](state, action) {
       state.error = action.payload.message;
@@ -75,6 +81,8 @@ const authSlice = createSlice({
       state.name = action.payload.userName;
       state.isLoggedIn = true;
       state.isRefreshing = false;
+      state.firstVisit = action.payload.firstVisit;
+      state.firstBalance = action.payload.firstBalance;
     },
     [refreshUser.rejected](state, action) {
       state.error = action.payload.message;
@@ -85,6 +93,7 @@ const authSlice = createSlice({
     },
     [setBalance.fulfilled](state, action) {
       state.balance = action.payload.balance;
+      state.firstBalance = action.payload.firstBalance;
       state.isLoading = false;
     },
     [setBalance.rejected](state, action) {
@@ -98,6 +107,26 @@ const authSlice = createSlice({
       state.isLoading = false;
     },
     [resetPassword.rejected](state) {
+      state.isLoading = false;
+    },
+    [changeFirstVisit.pending](state) {
+      state.isLoading = true;
+    },
+    [changeFirstVisit.fulfilled](state) {
+      state.firstVisit = true;
+      state.isLoading = false;
+    },
+    [changeFirstVisit.rejected](state) {
+      state.isLoading = false;
+    },
+    [changeFirstBalance.pending](state) {
+      state.isLoading = true;
+    },
+    [changeFirstBalance.fulfilled](state) {
+      state.firstBalance = true;
+      state.isLoading = false;
+    },
+    [changeFirstBalance.rejected](state) {
       state.isLoading = false;
     },
   },

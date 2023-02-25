@@ -5,3 +5,5 @@ export const selectIsLoading = state => state.auth.isLoading;
 export const selectIsRefreshing = state => state.auth.isRefreshing;
 export const selectError = state => state.auth.error;
 export const selectEmail = state => state.auth.email;
+export const selectFirstVisit = state => state.auth.firstVisit;
+export const selectFirstBalance = state => state.auth.firstBalance;

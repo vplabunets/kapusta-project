@@ -50,7 +50,7 @@ export const TypeButton = styled.button`
       : `${p.theme.lightTheme.tableHeadBackgroundColor}`};
   color: ${p =>
     p.active
-      ? `${p.theme.lightTheme.headerColor}`
+      ? `${p.theme.lightTheme.whiteTextColor}`
       : `${p.theme.lightTheme.tableHeadTextColor}`};
 
   &:first-child {

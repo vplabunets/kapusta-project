@@ -11,6 +11,7 @@ const theme = {
     expensesTextColor: '#E7192E',
     incomesTextColor: '#407946',
     headerColor: '#FFFFFF',
+    whiteTextColor: '#FFFFFF',
     chartLight: '#FFDAC0',
     iconColor: '#071F41',
     modalBackgroundColor:

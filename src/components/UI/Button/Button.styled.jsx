@@ -70,7 +70,7 @@ export const Btn = styled.button`
     if (p.color === 'accent') return `${p.theme.lightTheme.accentColor}`;
     if (p.color === 'grey')
       return `${p.theme.lightTheme.tableHeadBackgroundColor}`;
-    return `${p.theme.lightTheme.headerColor}`;
+    return `${p.theme.lightTheme.whiteTextColor}`;
   }};
 
   color: ${p => {

@@ -133,7 +133,7 @@ export const Button = styled.button`
 
   &:focus,
   &:hover {
-    color: ${p => p.theme.lightTheme.headerColor};
+    color: ${p => p.theme.lightTheme.whiteTextColor};
     background-color: ${p => p.theme.lightTheme.accentColor};
     border-color: ${p => p.theme.lightTheme.accentColor};
   }

@@ -56,7 +56,7 @@ export const Title = styled.h2`
   font-size: 14px;
   line-height: 1.43;
   margin-bottom: 20px;
-  color: ${p => p.theme.lightTheme.headerColor};
+  color: ${p => p.theme.lightTheme.whiteTextColor};
 
   @media ${DEVICE.tablet} {
     padding-left: 29px;
@@ -71,7 +71,7 @@ export const Text = styled.p`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
-  color: ${p => p.theme.lightTheme.headerColor};
+  color: ${p => p.theme.lightTheme.whiteTextColor};
 
   @media ${DEVICE.tablet} {
     padding-left: 29px;

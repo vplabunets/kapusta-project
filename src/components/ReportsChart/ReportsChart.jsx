@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {
@@ -11,138 +12,33 @@ import {
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Wrapper } from './ReportsChart.styled';
-import { selectCurrentPeriod } from 'redux/reports/selectors';
-import { selectOperationType } from 'redux/transaction/selectors';
-import { getItemsCategoryReports } from 'redux/reports/operations';
+import { selectItemsByCategory } from 'redux/reports/selectors';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
-const incomeData = [
-  {
-    id: 1,
-    mail: 'email@mail.com',
-    date: 2011,
-    cashFlowType: 'credit',
-    category: 'food',
-    description: 'milk',
-    value: 50,
-  },
-  {
-    id: 2,
-    mail: 'email2@mail.com',
-    date: 2013,
-    cashFlowType: 'credit',
-    category: 'food',
-    description: 'meat',
-    value: 150,
-  },
-  {
-    id: 3,
-    mail: 'email3@mail.com',
-    date: 2016,
-    cashFlowType: 'credit',
-    category: 'food',
-    description: 'cheese',
-    value: 180,
-  },
-  {
-    id: 3,
-    mail: 'email3@mail.com',
-    date: 2016,
-    cashFlowType: 'credit',
-    category: 'food',
-    description: 'cheese',
-    value: 190,
-  },
-  {
-    id: 1,
-    mail: 'email@mail.com',
-    date: 2011,
-    cashFlowType: 'credit',
-    category: 'food',
-    description: 'milk',
-    value: 50,
-  },
-  {
-    id: 2,
-    mail: 'email2@mail.com',
-    date: 2013,
-    cashFlowType: 'credit',
-    category: 'food',
-    description: 'meat',
-    value: 150,
-  },
-  {
-    id: 3,
-    mail: 'email3@mail.com',
-    date: 2016,
-    cashFlowType: 'credit',
-    category: 'food',
-    description: 'cheese',
-    value: 180,
-  },
-  {
-    id: 3,
-    mail: 'email3@mail.com',
-    date: 2016,
-    cashFlowType: 'credit',
-    category: 'food',
-    description: 'cheese',
-    value: 190,
-  },
-  {
-    id: 3,
-    mail: 'email3@mail.com',
-    date: 2016,
-    cashFlowType: 'credit',
-    category: 'food',
-    description: 'cheese',
-    value: 190,
-  },
-];
-
-const UserData = incomeData.sort((a, b) => (a.value > b.value ? 1 : -1));
-
 const ReportsChart = () => {
-  const currentPeriod = useSelector(selectCurrentPeriod);
-  const operation = useSelector(selectOperationType);
-  const dispatch = useDispatch();
+  const [state, setState] = useState([]);
+  const isScreenMorePhone = useMediaQuery('(min-width: 768px)');
+  const ticksFontSize = isScreenMorePhone ? 12 : 10;
+  const itemsByCategory = useSelector(selectItemsByCategory);
 
   useEffect(() => {
-    dispatch(
-      getItemsCategoryReports({
-        ...currentPeriod,
-        operation,
-        category: 'Products',
-      })
-    );
-  }, [dispatch, currentPeriod, operation]);
-  const isScreenMorePhone = useMediaQuery('(min-width: 768px)');
-
-  const ticksFontSize = isScreenMorePhone ? 12 : 10;
-
-  // const [userData, setUserData] = useState({
-  //   labels: UserData.map(data => data.description),
-  //   datasets: [
-  //     {
-  //       label: '',
-  //       data: UserData.map(data => data.value),
-  //       backgroundColor: ['#FF751D', '#FFDAC0'],
-  //       borderRadius: 10,
-  //       borderWidth: 1,
-  //       barMargin: 1,
-  //     },
-  //   ],
-  // });
-
-  // useEffect(() => setUserData(), []);
+    console.log(itemsByCategory);
+    if (itemsByCategory.length > 0) {
+      const sortArray = [...itemsByCategory].sort((a, b) =>
+        a.sum < b.sum ? 1 : -1
+      );
+      setState(sortArray);
+      return;
+    }
+  }, [itemsByCategory]);
 
   const userData = {
-    labels: UserData.map(data => data.description),
+    labels: state.map(data => data.description),
     datasets: [
       {
         label: '',
-        data: UserData.map(data => data.value),
+        data: state.map(data => data.sum),
         backgroundColor: ['#FF751D', '#FFDAC0'],
         borderRadius: 10,
         borderWidth: 1,

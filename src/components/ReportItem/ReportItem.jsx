@@ -40,7 +40,7 @@ export const ReportItem = ({ sum, category, type, setIsActive, isActive }) => {
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isActive]);
+  }, [isActive, currentPeriod]);
 
   const getIconKey = category => {
     if (category.toLowerCase() === 'communal, communication') {

@@ -39,7 +39,6 @@ export const getItemsCategoryReports = createAsyncThunk(
         '/transaction/items-category-reports',
         credentials
       );
-      console.log(result.data);
       return result.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

@@ -12,16 +12,20 @@ import {
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Wrapper } from './ReportsChart.styled';
-import { selectItemsByCategory } from 'redux/reports/selectors';
+import {
+  selectCurrentPeriod,
+  selectItemsByCategory,
+} from 'redux/reports/selectors';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
 const ReportsChart = () => {
-  const [state, setState] = useState([]);
+  const [items, setItems] = useState([]);
   const [maxCount, setMaxCount] = useState('');
   const isScreenMorePhone = useMediaQuery('(min-width: 768px)');
   const ticksFontSize = isScreenMorePhone ? 12 : 10;
   const itemsByCategory = useSelector(selectItemsByCategory);
+  const currentPeriod = useSelector(selectCurrentPeriod);
 
   useEffect(() => {
     if (itemsByCategory.length > 0) {
@@ -29,17 +33,16 @@ const ReportsChart = () => {
         a.sum < b.sum ? 1 : -1
       );
       setMaxCount(sortArray[0].sum);
-      setState(sortArray.slice(0, 10));
-      return;
-    }
-  }, [itemsByCategory]);
+      setItems(sortArray.slice(0, 10));
+    } else setItems([]);
+  }, [itemsByCategory, currentPeriod]);
 
   const userData = {
-    labels: state.map(data => data.description),
+    labels: items.map(data => data.description),
     datasets: [
       {
         label: '',
-        data: state.map(data => data.sum),
+        data: items.map(data => data.sum),
         backgroundColor: ['#FF751D', '#FFDAC0'],
         borderRadius: 10,
         borderWidth: 1,

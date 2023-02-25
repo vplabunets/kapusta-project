@@ -76,14 +76,13 @@ const transactionSlice = createSlice({
     },
     [deleteTransaction.fulfilled]: (state, action) => {
       const index = state.transactions.findIndex(
-        transaction => transaction._id === action.payload.id
+        transaction => transaction._id === action.payload.data._id
       );
       state.transactions.splice(index, 1);
 
       const res = state.summary.every(
         itm => itm.month !== action.payload.data.month
       );
-
       if (!res) {
         state.summary.map(item => {
           if (item.month !== action.payload.data.month) {
@@ -91,6 +90,12 @@ const transactionSlice = createSlice({
           }
           return (item.sum = item.sum - action.payload.data.sum);
         });
+      }
+
+      const summaryIndex = state.summary.findIndex(item => item.sum === 0);
+
+      if (!summaryIndex) {
+        state.summary.splice(summaryIndex, 1);
       }
 
       state.isLoading = false;

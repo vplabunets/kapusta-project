@@ -52,7 +52,7 @@ export const TextGroup = styled.div`
     line-height: 1.15;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #52555f;
+    color: ${p => p.theme.lightTheme.mainTextColor};
 
     @media ${DEVICE.tablet} {
       font-size: 16px;

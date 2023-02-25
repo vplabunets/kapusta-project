@@ -1,6 +1,7 @@
-//  import styled from 'styled-components';
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
 
 export const Wrapper = styled.div`
   margin-top: 32px;
@@ -11,7 +12,7 @@ export const Wrapper = styled.div`
     justify-content: start;
     align-items: baseline;
     flex-direction: row;
-    /* margin-left: 32px; */
+
     margin-top: 0px;
   }
   @media ${DEVICE.laptop} {
@@ -48,8 +49,6 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  //padding-left: 20px;
-  //padding-right: 20px;
   margin-top: 8px;
 
   @media ${DEVICE.tablet} {
@@ -60,7 +59,7 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  font-family: 'Roboto';
+  font-family: inherit;
   font-weight: 700;
   font-size: 12px;
   line-height: 1.17;
@@ -115,20 +114,27 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
+  font-family: inherit;
   line-height: 1.17;
   display: flex;
   justify-content: center;
   align-items: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  /* padding-left: 16px; */
+
   color: rgba(82, 85, 95, 0.7);
   border: 2px solid ${p => p.theme.lightTheme.headerColor};
   border-left: none;
   border-radius: 0 20px 20px 0;
   cursor: pointer;
   background-color: transparent;
-  :focus {
+
+  transition: color ${duration} ${timing} ${delay},
+    background-color ${duration} ${timing} ${delay},
+    border-color ${duration} ${timing} ${delay};
+
+  &:focus,
+  &:hover {
     color: ${p => p.theme.lightTheme.headerColor};
     background-color: ${p => p.theme.lightTheme.accentColor};
     border-color: ${p => p.theme.lightTheme.accentColor};
@@ -150,7 +156,7 @@ export const Label = styled.label`
   font-size: 12px;
   line-height: 14px;
   text-transform: none;
-  /* margin-right: 15px; */
+
   @media ${DEVICE.tablet} {
     margin-right: 20px;
   }

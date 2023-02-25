@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
 
 export const Title = styled.h2`
   font-weight: 400;
@@ -32,4 +34,10 @@ export const Button = styled.button`
   border: white;
   cursor: pointer;
   background-color: transparent;
+  transition: transform ${duration} ${timing} ${delay};
+
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
+  }
 `;

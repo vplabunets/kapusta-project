@@ -48,14 +48,14 @@ export const DateWrapper = styled.div`
 `;
 
 export const DateSelection = styled.input`
-  outline-color: #ff751d;
+  outline-color: ${p => p.theme.lightTheme.accentColor};
   vertical-align: middle;
   font-family: inherit;
   display: inline-block;
   font-weight: 400;
   font-size: 10px;
   line-height: 14px;
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
   background-color: transparent;
   border: none;
   width: 140px;
@@ -124,11 +124,11 @@ export const DescriptionInput = styled.input`
   text-align: start;
   background-color: transparent;
   padding-left: 30px;
-  outline-color: #ff751d;
+  outline-color: ${p => p.theme.lightTheme.accentColor};
 
-  border: 2px solid #ffffff;
+  border: 2px solid ${p => p.theme.lightTheme.headerColor};
   border-bottom: none;
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
 
   &::placeholder {
     font-weight: 400;
@@ -154,7 +154,7 @@ export const SelectInput = styled(Select)`
   height: 44px;
   border: 2px solid #ffffff;
   border-bottom-right-radius: 16px;
-  outline-color: #ff751d;
+  outline-color: '#FF751D';
   color: #c7ccdc;
   @media ${DEVICE.tablet} {
     border: 2px solid #f6f7fc;
@@ -167,12 +167,13 @@ export const SelectInput = styled(Select)`
 export const CountWrapper = styled.div`
   position: relative;
   width: 183px;
+
   @media ${DEVICE.tablet} {
     display: flex;
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     width: 110px;
-    border: 2px solid #f5f6fb;
+    border: 2px solid ${p => p.theme.lightTheme.tableHeadBackgroundColor};
   }
   @media ${DEVICE.laptop} {
     width: 121px;
@@ -184,7 +185,7 @@ export const CalculatorIcon = styled.svg`
   top: 34px;
   right: 12px;
   padding: 8px;
-  border-left: 2px solid #ffffff;
+  border-left: 2px solid ${p => p.theme.lightTheme.headerColor};
 
   @media ${DEVICE.tablet} {
     border: none;
@@ -200,7 +201,7 @@ export const CalculatorIcon = styled.svg`
 
 export const CountInput = styled.input`
   font-family: inherit;
-  outline-color: #ff751d;
+  outline-color: ${p => p.theme.lightTheme.accentColor};
   width: 183px;
   height: 44px;
   padding-right: 55px;
@@ -211,9 +212,10 @@ export const CountInput = styled.input`
   line-height: 1.14;
   text-align: center;
   margin-top: 32px;
-  color: #52555f;
-  border: 2px solid #ffffff;
+  color: ${p => p.theme.lightTheme.mainTextColor};
+  border: 2px solid ${p => p.theme.lightTheme.headerColor};
   background-color: transparent;
+
   @media ${DEVICE.tablet} {
     height: 40px;
     border: 2px solid #f6f7fc;

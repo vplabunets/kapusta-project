@@ -4,11 +4,22 @@ import styled from 'styled-components';
 
 import DEVICE from 'constants/deviceSize';
 
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
+
 export const BackLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
   margin-bottom: 16px;
+  color: rgba(82, 85, 95, 0.7);
+
+  transition: color ${duration} ${timing} ${delay};
+
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.lightTheme.mainTextColor};
+  }
 
   @media ${DEVICE.tablet} {
     margin-bottom: 0px;

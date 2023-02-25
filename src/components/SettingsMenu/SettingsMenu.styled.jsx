@@ -36,7 +36,7 @@ const Menu = styled.div`
 `;
 
 const Title = styled.p`
-  font-family: 'Roboto';
+  font-family: inherit;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: ${p => p.theme.lightTheme.tableHeadTextColor};
@@ -120,7 +120,7 @@ const Settings = styled.p`
   border: none;
   outline: none;
   cursor: pointer;
-  font-family: 'Roboto';
+  font-family: inherit;
   font-size: 11px;
   line-height: 1.17;
   letter-spacing: 0.04em;
@@ -135,7 +135,7 @@ const LanguageWrapper = styled.div`
 `;
 
 const LanguageSelect = styled.p`
-  font-family: 'Roboto';
+  font-family: inherit;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: rgba(82, 85, 95, 1);

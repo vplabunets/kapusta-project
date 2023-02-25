@@ -1,11 +1,13 @@
 //   import styled from 'styled-components';
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
 
 export const Section = styled.div`
   margin: 0 auto;
 
-  background-color: #ffffff;
+  background-color: ${p => p.theme.lightTheme.headerColor};
 
   width: 100%;
   margin-bottom: 32px;
@@ -46,6 +48,11 @@ export const BtnArrow = styled.button`
 
   background-color: transparent;
   border: none;
+  transition: transform ${duration} ${timing} ${delay};
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
+  }
 `;
 
 export const Title = styled.p`
@@ -57,7 +64,7 @@ export const Title = styled.p`
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
-  color: #000000;
+  color: ${p => p.theme.lightTheme.tableHeadTextColor};
 `;
 
 export const ReportList = styled.ul`

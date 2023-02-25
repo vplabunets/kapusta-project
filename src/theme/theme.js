@@ -15,6 +15,9 @@ const theme = {
     iconColor: '#071F41',
     modalBackgroundColor:
       'linear-gradient(117.84deg, #1D346A 2.84%, #031634 67.28%)',
+    lightGreyColor: 'rgba(82, 85, 95, 0.7)',
+    googleBtnColor: '#f6f7fb',
+    tableBodyColor: '#f2f8f8',
   },
 
   darkTheme: {},

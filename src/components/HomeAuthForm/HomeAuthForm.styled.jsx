@@ -3,9 +3,12 @@ import { Field } from 'formik';
 
 import DEVICE from 'constants/deviceSize';
 
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
+
 export const MainWrapper = styled.div`
   margin: 0 auto;
-  background-color: #ffffff;
+  background-color: ${p => p.theme.lightTheme.headerColor};
   max-width: 426px;
 
   padding: 40px 20px;
@@ -32,7 +35,7 @@ export const GoogleText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
 
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
 
   @media ${DEVICE.laptop} {
     width: 100%;
@@ -47,7 +50,7 @@ export const GoogleButton = styled.a`
   width: 122px;
   height: 40px;
   margin: 0 auto 32px;
-  background-color: #f6f7fb;
+  background-color: ${p => p.theme.lightTheme.googleBtnColor};
   border: none;
   border-radius: 26px;
 
@@ -57,8 +60,10 @@ export const GoogleButton = styled.a`
   text-decoration: none;
 
   letter-spacing: 0.02em;
-  color: #000000;
-  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: ${p => p.theme.lightTheme.tableHeadTextColor};
+
+  transition: transform ${duration} ${timing} ${delay};
+
   filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
 
   &:hover,
@@ -81,7 +86,7 @@ export const LoginText = styled.p`
   line-height: 1.17;
   letter-spacing: 0.04em;
 
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
 
   @media ${DEVICE.laptop} {
     width: 250px;
@@ -92,11 +97,11 @@ export const LoginText = styled.p`
 export const AuthFormLabel = styled.label`
   position: relative;
   display: block;
-  /* margin-bottom: 12px; */
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: 0.04em;
-  color: #000000;
+
+  color: ${p => p.theme.lightTheme.tableHeadTextColor};
   :nth-of-type(2) {
     margin-top: 20px;
   }
@@ -119,11 +124,12 @@ export const Input = styled(Field)`
   outline: none;
   border: none;
   border-radius: 30px;
-  background-color: #f6f7fb;
+  background-color: ${p => p.theme.lightTheme.googleBtnColor};
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.04em;
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
+
   ::placeholder {
     font-size: 14px;
     line-height: 1.14;
@@ -152,7 +158,7 @@ export const EyeWrapper = styled.div`
   & svg {
     width: 20px;
     height: 20px;
-    fill: #52555f;
+    fill: ${p => p.theme.lightTheme.mainTextColor};
   }
   & button {
     position: absolute;
@@ -181,7 +187,7 @@ export const ReminderButton = styled.button`
   font-size: 10px;
   line-height: 1, 2;
   letter-spacing: 0.04em;
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -193,6 +199,6 @@ export const ReminderButton = styled.button`
   &:hover,
   &:focus {
     transform: scale(0.9);
-    color: #000000;
+    color: ${p => p.theme.lightTheme.tableHeadTextColor};
   }
 `;

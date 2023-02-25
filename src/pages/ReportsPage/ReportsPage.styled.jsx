@@ -12,7 +12,6 @@ const ReportsPageWrapper = styled.div`
   }
   @media ${DEVICE.laptop} {
     margin: 40px 91px 83px 91px;
-    /* width: 1280px; */
   }
 `;
 export default ReportsPageWrapper;

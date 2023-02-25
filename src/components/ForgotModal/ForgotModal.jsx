@@ -1,6 +1,6 @@
 import { Formik, Form } from 'formik';
 import { Button } from 'components/UI/Button/Button';
-import Spiner from 'components/UI/Loader/Loader';
+import Spinner from 'components/UI/Loader/Loader';
 import { useAuth } from 'hooks/useAuth';
 import icon from 'images/icons-sprite.svg';
 import * as Yup from 'yup';
@@ -81,7 +81,7 @@ export const ForgotModal = ({ closeModal }) => {
                 design={'home'}
                 disabled={isSubmitting}
               >
-                {isLoading ? <Spiner width={30} height={30} /> : 'Send'}
+                {isLoading ? <Spinner width={30} height={30} /> : 'Send'}
               </Button>
             </ButtonContainer>
           </Form>

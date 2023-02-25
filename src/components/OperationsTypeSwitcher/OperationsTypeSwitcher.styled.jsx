@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
 
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
+
 export const Wrapper = styled.div`
   position: fixed;
   z-index: 2;
@@ -34,8 +37,21 @@ export const TypeButton = styled.button`
   justify-content: center;
   border: none;
   cursor: pointer;
-  background-color: ${p => (p.active ? '#FF751D' : '#F5F6FB')};
-  color: ${p => (p.active ? '#FFFFFF' : '#000000')};
+  transition: color ${duration} ${timing} ${delay};
+
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.lightTheme.accentColor};
+  }
+
+  background-color: ${p =>
+    p.active
+      ? `${p.theme.lightTheme.accentColor}`
+      : `${p.theme.lightTheme.tableHeadBackgroundColor}`};
+  color: ${p =>
+    p.active
+      ? `${p.theme.lightTheme.headerColor}`
+      : `${p.theme.lightTheme.tableHeadTextColor}`};
 
   &:first-child {
     margin-right: 4px;
@@ -43,7 +59,10 @@ export const TypeButton = styled.button`
 
   @media ${DEVICE.tablet} {
     background-color: ${p => (p.active ? '#FEFEFE' : '#FAFBFD')};
-    color: ${p => (p.active ? '#FF751D' : '#000000')};
+    color: ${p =>
+      p.active
+        ? `${p.theme.lightTheme.accentColor}`
+        : `${p.theme.lightTheme.tableHeadTextColor}`};
     width: 138px;
     height: 40px;
     border: none;

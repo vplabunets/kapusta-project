@@ -14,6 +14,9 @@ import {
 import { useSelector } from 'react-redux';
 import { selectCategoryReports } from 'redux/reports/selectors';
 
+import { Cabbage } from 'components/UI/Cabbage/Cabbage';
+import { Message } from 'components/UI/Message/Message';
+
 const ReportsMonthSummary = ({ reportType, toggleType }) => {
   const [array, setArray] = useState([]);
   const categoryItems = useSelector(selectCategoryReports);
@@ -45,18 +48,34 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
             </svg>
           </BtnArrow>
         </Switcher>
-        <ReportList>
-          {array.map(item => (
-            <ReportItem
-              key={item.category}
-              sum={item.sum}
-              category={item.category}
-              type={reportType.toLowerCase()}
-              setIsActive={setIsActive}
-              isActive={isActive === item.category.toLowerCase() ? true : false}
-            />
-          ))}
-        </ReportList>
+        {!array.length ? (
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Message text={`You have no ${reportType} for this period.`} />
+            <Cabbage />
+          </div>
+        ) : (
+          <ReportList>
+            {array.map(item => (
+              <ReportItem
+                key={item.category}
+                sum={item.sum}
+                category={item.category}
+                type={reportType.toLowerCase()}
+                setIsActive={setIsActive}
+                isActive={
+                  isActive === item.category.toLowerCase() ? true : false
+                }
+              />
+            ))}
+          </ReportList>
+        )}
       </Wrapper>
     </Section>
   );

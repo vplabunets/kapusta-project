@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <ContainerHeader>
-      <Link>
+      <Link to="/">
         <svg alt="logo" width={90} height={31}>
           <use href={`${Logo}#icon-logo`}></use>
         </svg>

@@ -10,8 +10,12 @@ import {
   Title,
   ReportList,
 } from './ReportsMonthSummary.styled';
+import { useSelector } from 'react-redux';
+import { selectCategoryReports } from 'redux/reports/selectors';
 
-const ReportsMonthSummary = ({ reportType = 'Incomes' }) => {
+const ReportsMonthSummary = ({ reportType = 'Expenses' }) => {
+  const categoryItems = useSelector(selectCategoryReports);
+
   return (
     <Section>
       <Wrapper>
@@ -29,8 +33,15 @@ const ReportsMonthSummary = ({ reportType = 'Incomes' }) => {
           </BtnArrow>
         </Switcher>
         <ReportList>
-          <ReportItem sum={45000.0} icon={'salary'} type={'salary'} />
-          <ReportItem sum={1500.0} icon={'add'} type={'add.income'} />
+          {categoryItems.map(item => (
+            <ReportItem
+              key={item.category}
+              sum={item.sum}
+              icon={item.category.toLowerCase()}
+              category={item.category}
+              type={reportType.toLowerCase()}
+            />
+          ))}
         </ReportList>
       </Wrapper>
     </Section>

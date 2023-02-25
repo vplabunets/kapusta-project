@@ -8,7 +8,7 @@ import {
   Type,
 } from './ReportItem.styled';
 
-export const ReportItem = ({ sum, icon, type }) => {
+export const ReportItem = ({ sum, icon, category, type }) => {
   const sumToFixed = sum.toFixed(2);
 
   return (
@@ -17,12 +17,12 @@ export const ReportItem = ({ sum, icon, type }) => {
       <Wrapper>
         <ButtonReport>
           <svg width="60" height="60">
-            <use href={`${Icons}#icon-income-${icon}`}></use>
+            <use href={`${Icons}#icon-${type}-${icon}`}></use>
           </svg>
           <div></div>
         </ButtonReport>
       </Wrapper>
-      <Type>{type}</Type>
+      <Type>{category}</Type>
     </ReportItemButton>
   );
 };

@@ -5,7 +5,7 @@ import ReportsMonthBalance from 'components/ReportsMonthBalance/ReportsMonthBala
 import ReportsMonthSummary from 'components/ReportsMonthSummary/ReportsMonthSummary';
 import ReportsChart from 'components/ReportsChart/ReportsChart';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCurrentPeriod, selectIsLoading } from 'redux/reports/selectors';
+import { selectCurrentPeriod } from 'redux/reports/selectors';
 import { useEffect } from 'react';
 import OPERATION_TYPES from 'constants/constants';
 import {
@@ -14,10 +14,8 @@ import {
 } from 'redux/reports/operations';
 import { selectOperationType } from 'redux/transaction/selectors';
 import { setOperationType } from 'redux/transaction/slice';
-import Spinner from 'components/UI/Loader/Loader';
 
 const ReportsPage = () => {
-  const isLoading = useSelector(selectIsLoading);
   const currentPeriod = useSelector(selectCurrentPeriod);
   const operation = useSelector(selectOperationType);
 
@@ -41,7 +39,6 @@ const ReportsPage = () => {
       <ReportsPageWrapper>
         <ReportsNav />
         <ReportsMonthBalance />
-        {isLoading && <Spinner />}
         <ReportsMonthSummary reportType={operation} toggleType={toggleType} />
         <ReportsChart />
       </ReportsPageWrapper>

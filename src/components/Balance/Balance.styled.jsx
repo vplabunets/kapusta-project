@@ -61,22 +61,37 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  font-family: inherit;
+  font-family: 'Roboto';
   font-weight: 700;
   font-size: 12px;
+   line-height: 1.17;
   width: 140px;
   height: 44px;
   padding: 0;
   padding-right: 45px;
-  color: #000;
-  text-align: right;
+   color: ${p => p.theme.lightTheme.tableHeadTextColor};
+ text-align: right;
   border: 2px solid ${p => p.theme.lightTheme.headerColor};
   border-radius: 20px 0 0 20px;
   background-color: transparent;
   outline: none;
 
+   ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  ::-moz-outer-spin-button,
+  ::-moz-inner-spin-button {
+    -moz-appearance: none;
+  }
+  ::-ms-outer-spin-button,
+  ::-ms-inner-spin-button {
+    -ms-appearance: none;
+  }
+
   @media ${DEVICE.tablet} {
     margin-right: 15px;
+      padding-right: 45px;
     border-radius: 16px;
     width: 121px;
   }
@@ -88,7 +103,7 @@ export const Input = styled.input`
 
   &::placeholder {
     font-weight: 700;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.17;
     letter-spacing: 0.02em;
     color: ${p => p.theme.lightTheme.tableHeadTextColor};
@@ -130,14 +145,15 @@ export const Button = styled.button`
 `;
 export const Label = styled.label`
   position: absolute;
-  right: 0;
+  right: 15px;
   font-weight: 700;
+  font-style: normal;
   font-size: 12px;
   line-height: 14px;
-  text-transform: uppercase;
-  margin-right: 15px;
+ text-transform: none;
+  /* margin-right: 15px; */
   @media ${DEVICE.tablet} {
-    margin-right: 30px;
+    margin-right: 20px;
   }
 `;
 export const InputContainer = styled.div`

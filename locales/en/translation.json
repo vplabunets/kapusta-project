@@ -19,11 +19,16 @@
 
 "button": {
  "CONFIRM": "CONFIRM",
- "CANCEL": "CANCEL"
+ "CANCEL": "CANCEL",
+ "Expenses": "Expenses",
+"Income": "Income"
 },
+
 "Balance":"Balance",
 "UAH": "UAH",
  "Reports": "Reports",
+ "Current period": "Current period",
+"Main page": "Main page",
 
  "registration":{
 "Google text" : "You can log in with your Google Account",
@@ -32,5 +37,37 @@
 "Password": "Password",
 "LOG IN": " LOG IN",
  "REGISTRATION": " REGISTRATION"
- }  
+ } ,
+
+   "balanceModalTitle": " Hello! To get started, enter the current balance of your account",
+ "balanceModalText" : "You can't spend money until you have it",
+
+  "product": {
+  "Product description" : "Product description",
+  "Product category": "Product category",
+  "Products": "Products" ,
+   "Health" : "Health",
+    "Alcohol": "Alcohol",
+   "Entertainment" : "Entertainment",
+  "Housing" : "Housing",
+   "Communal, communication" : "Communal, communication",
+  "Sports, hobbies" : "Sports, hobbies",
+ "Education" : "Education",
+  "Other" : "Other"
+ }, 
+
+ "Date" : "Date",
+ "Description": "Description",
+ "Category": "Category",
+ "Sum": "Sum",
+ "Summary": "Summary",
+
+ "month": {
+  "November": "November",
+  "October": "October",
+  "September": "September",
+  "August": "August",
+  "July": "July",
+  "June": "June"
+ }
 }

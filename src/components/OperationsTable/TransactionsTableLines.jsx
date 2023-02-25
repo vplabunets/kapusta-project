@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { toast } from 'react-toastify';
 import { NumericFormat } from 'react-number-format';
 import icon from 'images/icons-sprite.svg';
 import { deleteTransaction } from 'redux/transaction/operations';
@@ -32,34 +31,35 @@ const getSumStyle = operation => {
   }
 };
 
- const TransactionsTableLines = ({ id, operation, date, description, category, sum }) => {
-  const [modalOpen, setModalOpen] = useState(false);  
+const TransactionsTableLines = ({
+  id,
+  operation,
+  date,
+  description,
+  category,
+  sum,
+}) => {
+  const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
-  
-  const onDelete = (_id) => {
-  dispatch(deleteTransaction(_id))
-  toast.warning(`The transaction "${description}" was successfully deleted`, {
-    position: toast.POSITION.TOP_RIGHT,
-    theme: 'colored',
-    pauseOnHover: true,
-  });;
-}
 
-const sumStyle = getSumStyle(operation);
+  const onDelete = _id => {
+    dispatch(deleteTransaction(_id));
+    return;
+  };
 
+  const sumStyle = getSumStyle(operation);
 
   return (
     <>
       <Tabletr>
- 
-      {modalOpen && (
-        <ConfirmModal
-          setModalOpen={setModalOpen}
-          text={'Are you sure?'}
-          onClick={() =>  onDelete(id)}
-        />
-      )}
- 
+        {modalOpen && (
+          <ConfirmModal
+            setModalOpen={setModalOpen}
+            text={'Are you sure?'}
+            onClick={() => onDelete(id)}
+          />
+        )}
+
         <Data>{date}</Data>
         <Description>{description}</Description>
         <Category>{category}</Category>
@@ -77,9 +77,7 @@ const sumStyle = getSumStyle(operation);
           />
         </Sum>
         <Btn>
- 
           <BtnStyle type="button" onClick={() => setModalOpen(true)}>
- 
             <Delete alt="delete" width={18} height={18}>
               <use href={`${icon}#icon-basket`}></use>
             </Delete>

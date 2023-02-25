@@ -34,6 +34,7 @@ const ReportsPage = () => {
     dispatch(getAllSummaryReports(currentPeriod));
     dispatch(getCategoryReports({ ...currentPeriod, operation }));
   }, [dispatch, currentPeriod, operation]);
+
   return (
     <>
       <Background />

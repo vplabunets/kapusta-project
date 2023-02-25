@@ -3,6 +3,7 @@ import DEVICE from 'constants/deviceSize';
 
 export const Wrapper = styled.div`
   position: fixed;
+  z-index: 2;
   bottom: 0;
   left: 0;
   display: flex;
@@ -11,6 +12,7 @@ export const Wrapper = styled.div`
   width: 100%;
 
   @media ${DEVICE.tablet} {
+    z-index: 0;
     position: static;
     display: flex;
     margin-top: 60px;

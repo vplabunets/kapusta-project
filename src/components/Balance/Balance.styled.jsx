@@ -5,7 +5,6 @@ import DEVICE from 'constants/deviceSize';
 export const Wrapper = styled.div`
   margin-top: 32px;
   z-index: 3;
- 
 
   @media ${DEVICE.tablet} {
     display: flex;
@@ -64,19 +63,19 @@ export const Input = styled.input`
   font-family: 'Roboto';
   font-weight: 700;
   font-size: 12px;
-   line-height: 1.17;
+  line-height: 1.17;
   width: 140px;
   height: 44px;
   padding: 0;
   padding-right: 45px;
-   color: ${p => p.theme.lightTheme.tableHeadTextColor};
- text-align: right;
+  color: ${p => p.theme.lightTheme.tableHeadTextColor};
+  text-align: right;
   border: 2px solid ${p => p.theme.lightTheme.headerColor};
   border-radius: 20px 0 0 20px;
   background-color: transparent;
   outline: none;
 
-   ::-webkit-outer-spin-button,
+  ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
@@ -91,14 +90,14 @@ export const Input = styled.input`
 
   @media ${DEVICE.tablet} {
     margin-right: 15px;
-      padding-right: 45px;
+    padding-right: 45px;
     border-radius: 16px;
     width: 121px;
   }
 
   @media ${DEVICE.laptop} {
     margin-right: 16px;
-     padding-right: 44px;
+    padding-right: 44px;
   }
 
   &::placeholder {
@@ -150,7 +149,7 @@ export const Label = styled.label`
   font-style: normal;
   font-size: 12px;
   line-height: 14px;
- text-transform: none;
+  text-transform: none;
   /* margin-right: 15px; */
   @media ${DEVICE.tablet} {
     margin-right: 20px;

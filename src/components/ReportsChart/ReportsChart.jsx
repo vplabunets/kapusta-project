@@ -136,9 +136,15 @@ const ReportsChart = () => {
   };
 
   return (
-    <Wrapper>
-      <Bar data={userData} options={options} plugins={[ChartDataLabels]} />
-    </Wrapper>
+    <>
+      {items.length > 0 ? (
+        <Wrapper>
+          <Bar data={userData} options={options} plugins={[ChartDataLabels]} />
+        </Wrapper>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 

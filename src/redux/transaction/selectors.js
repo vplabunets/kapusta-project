@@ -11,8 +11,6 @@ export const getSelectTransactions = createSelector(
     transactions => {
         const sortedTransactions = [...transactions].sort((a, b) => 
          b.createdAt.localeCompare(a.createdAt));
-         const sortedSumTransactions = [...sortedTransactions].sort((a, b) => 
-         b.sum - a.sum);
-        return sortedSumTransactions;
+        return sortedTransactions;
     }
 );

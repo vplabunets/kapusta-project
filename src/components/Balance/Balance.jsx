@@ -11,15 +11,17 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { setBalance } from 'redux/auth/operations';
-
 import { selectBalance } from 'redux/auth/selectors';
 
 const Balance = () => {
   const currentBalance = useSelector(selectBalance);
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
-
   const { t } = useTranslation();
+
+  useEffect(() => {
+    setValue(currentBalance);
+  }, [currentBalance]);
 
   const onSubmit = e => {
     e.preventDefault();
@@ -30,10 +32,6 @@ const Balance = () => {
     setValue(e.target.value);
   };
 
-  useEffect(() => {
-    console.log(currentBalance);
-  });
-
   return (
     <Wrapper>
       <Title> {t('Balance')}:</Title>
@@ -41,15 +39,17 @@ const Balance = () => {
         <InputContainer>
           <Input
             type="number"
+            readOnly={currentBalance !== 0 ? true : false}
             name="balance"
-            placeholder={`${currentBalance.toFixed(2)}`}
             pattern="[0-9, .UAH]*"
             value={value}
             onChange={onChange}
           />
           <Label>{t('UAH')} </Label>
         </InputContainer>
-        <Button type="submit">{t('button.CONFIRM')}</Button>
+        {currentBalance === 0 && (
+          <Button type="submit">{t('button.CONFIRM')}</Button>
+        )}
       </Form>
     </Wrapper>
   );

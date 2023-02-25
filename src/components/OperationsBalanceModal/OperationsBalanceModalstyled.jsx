@@ -39,7 +39,7 @@ export const Modal = styled.div`
   @media ${DEVICE.laptop} {
     max-width: 288px;
     top: 154px;
-    left: 52%;
+    left: 51%;
   }
   &:before {
     content: '';

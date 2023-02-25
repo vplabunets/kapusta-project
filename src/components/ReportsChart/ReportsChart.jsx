@@ -91,7 +91,7 @@ const ReportsChart = () => {
 
     scales: {
       x: {
-        suggestedMax: maxCount * 1.01,
+        suggestedMax: maxCount * 1.04,
         stacked: true,
         border: {
           display: false,

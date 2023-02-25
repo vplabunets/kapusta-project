@@ -17,11 +17,14 @@ const Balance = () => {
   const currentBalance = useSelector(selectBalance);
   const [value, setValue] = useState('');
   const dispatch = useDispatch();
-  const { t } = useTranslation();
 
   useEffect(() => {
-    setValue(currentBalance);
+    setValue(currentBalance.toFixed(2));
   }, [currentBalance]);
+ 
+  const { t } = useTranslation();
+
+ 
 
   const onSubmit = e => {
     e.preventDefault();
@@ -42,7 +45,7 @@ const Balance = () => {
             readOnly={currentBalance !== 0 ? true : false}
             name="balance"
             pattern="[0-9, .UAH]*"
-            value={value}
+            value={value > 0 ? value : ''}
             onChange={onChange}
           />
           <Label>{t('UAH')} </Label>

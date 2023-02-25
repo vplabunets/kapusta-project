@@ -140,7 +140,10 @@ const HomeAuthForm = () => {
                   <ErrorValidation>
                     {errors.password && touched.password && errors.password}
                   </ErrorValidation>
-                  <ReminderButton onClick={() => setOpenForgotModal(true)}>
+                  <ReminderButton
+                    type="button"
+                    onClick={() => setOpenForgotModal(true)}
+                  >
                     Forgot your password?
                   </ReminderButton>
                 </AuthFormLabel>

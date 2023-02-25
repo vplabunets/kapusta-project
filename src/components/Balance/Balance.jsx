@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Form,
   Title,
@@ -14,11 +14,9 @@ import { setBalance } from 'redux/auth/operations';
 
 import { selectBalance } from 'redux/auth/selectors';
 
-
-
 const Balance = () => {
   const currentBalance = useSelector(selectBalance);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const dispatch = useDispatch();
 
   const { t } = useTranslation();
@@ -26,12 +24,15 @@ const Balance = () => {
   const onSubmit = e => {
     e.preventDefault();
     dispatch(setBalance({ balance: e.target.elements.balance.value }));
-
   };
 
   const onChange = e => {
     setValue(e.target.value);
   };
+
+  useEffect(() => {
+    console.log(currentBalance);
+  });
 
   return (
     <Wrapper>
@@ -55,4 +56,3 @@ const Balance = () => {
 };
 
 export default Balance;
-

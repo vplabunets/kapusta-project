@@ -13,15 +13,11 @@ import {
   getSummary,
   getTransactionsByOperation,
 } from 'redux/transaction/operations';
-// import { setOperationType } from 'redux/transaction/slice';
+import { selectBalance } from 'redux/auth/selectors';
 import { selectOperationType } from 'redux/transaction/selectors';
 
 const OperationsPage = () => {
-  // const [type, setType] = useState(operationTypes.expenses);
-
-  // const [balance, setBalance] = useState(null);
-  // const addBalance = xxx => setBalance(xxx);
-
+  const balance = useSelector(selectBalance);
   const [constants, setConstants] = useState(0);
   const handleChange = value => {
     setConstants(prevState => (prevState += 1));
@@ -43,11 +39,8 @@ const OperationsPage = () => {
 
       <OperationsPageWrapper>
         <OperationsBalanceContainer addBalance={0} />
-        {false && <OperationsBalanceModal />}
-        <OperationsTypeSwitcher
-          onChange={handleChange}
-          // type={type} setType={setType}
-        />
+        {!balance && <OperationsBalanceModal />}
+        <OperationsTypeSwitcher onChange={handleChange} />
         <OperationsContainer value={constants} />
       </OperationsPageWrapper>
     </div>

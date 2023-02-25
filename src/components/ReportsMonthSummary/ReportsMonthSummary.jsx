@@ -15,13 +15,17 @@ import { useSelector } from 'react-redux';
 import { selectCategoryReports } from 'redux/reports/selectors';
 
 const ReportsMonthSummary = ({ reportType, toggleType }) => {
-  const [items, setItem] = useState([]);
+  const [array, setArray] = useState([]);
   const categoryItems = useSelector(selectCategoryReports);
+  const [isActive, setIsActive] = useState('');
 
   useEffect(() => {
     if (categoryItems.length > 0) {
-      console.log(categoryItems);
-      setItem(categoryItems);
+      const sortArray = [...categoryItems].sort((a, b) =>
+        a.sum < b.sum ? 1 : -1
+      );
+      setArray(sortArray);
+      setIsActive(sortArray[0].category.toLowerCase());
     }
   }, [categoryItems]);
 
@@ -42,14 +46,14 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
           </BtnArrow>
         </Switcher>
         <ReportList>
-          {items.map(item => (
+          {array.map(item => (
             <ReportItem
               key={item.category}
               sum={item.sum}
-              icon={item.category.toLowerCase()}
               category={item.category}
               type={reportType.toLowerCase()}
-              btn={item.category.toLowerCase()}
+              setIsActive={setIsActive}
+              isActive={isActive === item.category.toLowerCase() ? true : false}
             />
           ))}
         </ReportList>
@@ -57,25 +61,5 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
     </Section>
   );
 };
-
-// const ReportIcons = {
-//   incomes: {
-//     salary: `${Icons}#icon-income-salary`,
-//     additional: `${Icons}#icon-income-add`,
-//   },
-//   expenses: {
-//     products: `${Icons}#icon-expenses-products`,
-//     alcohol: `${Icons}#icon-expenses-alcohol`,
-//     entertainment: `${Icons}#icon-expenses-entertainment`,
-//     health: `${Icons}#icon-expenses-health`,
-//     transport: `${Icons}#icon-expenses-transport`,
-//     housing: `${Icons}#icon-expenses-housing`,
-//     technique: `${Icons}#icon-expenses-technique`,
-//     communal: `${Icons}#icon-expenses-communal`,
-//     sports: `${Icons}#icon-expenses-sports`,
-//     education: `${Icons}#icon-expenses-education`,
-//     other: `${Icons}#icon-expenses-other`,
-//   },
-// };
 
 export default ReportsMonthSummary;

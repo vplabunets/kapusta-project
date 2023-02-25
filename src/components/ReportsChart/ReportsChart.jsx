@@ -23,7 +23,6 @@ const ReportsChart = () => {
   const itemsByCategory = useSelector(selectItemsByCategory);
 
   useEffect(() => {
-    console.log(itemsByCategory);
     if (itemsByCategory.length > 0) {
       const sortArray = [...itemsByCategory].sort((a, b) =>
         a.sum < b.sum ? 1 : -1

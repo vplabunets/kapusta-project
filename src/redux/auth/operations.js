@@ -136,3 +136,46 @@ export const resetPassword = createAsyncThunk(
     }
   }
 );
+
+// export const logOut = createAsyncThunk(
+//   'auth/logout',
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       await axios.patch('/users/logout');
+//       clearAuthHeader();
+//     } catch (error) {
+//       if (error.message === 'Network Error') {
+//         toast.error('Something went wrong, please try again later');
+//       }
+//       return rejectWithValue(error.response.data);
+//     }
+//   }
+// );
+
+export const changeFirstVisit = createAsyncThunk(
+  'auth/changeFirstVisit',
+  async (_, { rejectWithValue }) => {
+    try {
+      const result = await axios.post('/users/first-visit');
+      toast.success('First visit done');
+      return result.data;
+    } catch (error) {
+      toast.error('Something went wrong, please try again later');
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const changeFirstBalance = createAsyncThunk(
+  'auth/changeFirstBalance',
+  async (_, { rejectWithValue }) => {
+    try {
+      const result = await axios.post('/users/first-balance');
+      toast.success('Fist balance entered');
+      return result.data;
+    } catch (error) {
+      toast.error('Something went wrong, please try again later');
+      return rejectWithValue(error.response.data);
+    }
+  }
+);

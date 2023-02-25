@@ -26,7 +26,7 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
       );
       setArray(sortArray);
       setIsActive(sortArray[0].category.toLowerCase());
-    }
+    } else setArray([]);
   }, [categoryItems]);
 
   return (

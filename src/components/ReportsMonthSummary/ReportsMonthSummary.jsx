@@ -1,6 +1,7 @@
 import Icons from 'images/icons-sprite.svg';
 
 import { ReportItem } from 'components/ReportItem/ReportItem';
+import { useEffect, useState } from 'react';
 
 import {
   Section,
@@ -13,33 +14,42 @@ import {
 import { useSelector } from 'react-redux';
 import { selectCategoryReports } from 'redux/reports/selectors';
 
-const ReportsMonthSummary = ({ reportType = 'Expenses' }) => {
+const ReportsMonthSummary = ({ reportType, toggleType }) => {
+  const [items, setItem] = useState([]);
   const categoryItems = useSelector(selectCategoryReports);
+
+  useEffect(() => {
+    if (categoryItems.length > 0) {
+      console.log(categoryItems);
+      setItem(categoryItems);
+    }
+  }, [categoryItems]);
 
   return (
     <Section>
       <Wrapper>
         <Switcher>
-          <BtnArrow>
+          <BtnArrow onClick={() => toggleType()}>
             <svg width="10" height="15">
               <use href={`${Icons}#icon-arrow-left`}></use>
             </svg>
           </BtnArrow>
           <Title>{reportType}</Title>
-          <BtnArrow>
+          <BtnArrow onClick={() => toggleType()}>
             <svg width="10" height="15">
               <use href={`${Icons}#icon-arrow-right`}></use>
             </svg>
           </BtnArrow>
         </Switcher>
         <ReportList>
-          {categoryItems.map(item => (
+          {items.map(item => (
             <ReportItem
               key={item.category}
               sum={item.sum}
               icon={item.category.toLowerCase()}
               category={item.category}
               type={reportType.toLowerCase()}
+              btn={item.category.toLowerCase()}
             />
           ))}
         </ReportList>

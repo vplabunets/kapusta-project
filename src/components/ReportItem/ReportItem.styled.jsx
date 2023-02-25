@@ -50,7 +50,7 @@ export const ButtonReport = styled.button`
     display: block;
     width: 59px;
     height: 46px;
-    background-color: #f5f6fb;
+    background-color: ${p => (p.isActive ? '#FFDAC0' : '#f5f6fb')};
     border-radius: 20px;
     position: absolute;
     bottom: 0;
@@ -59,6 +59,7 @@ export const ButtonReport = styled.button`
 
   & > svg {
     z-index: 1;
+    fill: ${p => (p.isActive ? '#FF751D' : '#071F41')};
   }
 `;
 

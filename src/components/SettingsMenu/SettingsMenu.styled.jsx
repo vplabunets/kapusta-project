@@ -11,17 +11,29 @@ const barrelRoll = keyframes`
 const invertBarrelRoll = keyframes`0% {transform: rotate(0deg); }
     100% { transform: rotate(-360deg); }`;
 ///////////////////////////////////////////////////////////////////////////
+
+const Backdrop = styled.div`
+  z-index: 4;
+  position: fixed;
+  left: 0;
+  top: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+`;
+
 const Menu = styled.div`
   height: 80px;
   width: 100%;
-  /* background-color: rgba(255, 107, 8, 0.9); */
-  /* background-color: rgba(255, 117, 29, 0.9); */
   background-color: rgb(255 165 108 / 93%);
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
     0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
   position: absolute;
-  z-index: 4;
-  top: 56px;
+  z-index: 5;
+  top: 0px;
   right: 0px;
   border-radius: 0px 0px 0px 24px;
   padding: 10px;
@@ -29,7 +41,7 @@ const Menu = styled.div`
   @media ${DEVICE.tablet} {
     height: 260px;
     width: 280px;
-    top: 56px;
+    top: 0px;
     padding: 15px;
     right: 0px;
   }
@@ -42,7 +54,7 @@ const Title = styled.p`
   color: ${p => p.theme.lightTheme.tableHeadTextColor};
   font-size: 12px;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   @media ${DEVICE.tablet} {
     margin-bottom: 33px;
     font-size: 18px;
@@ -62,7 +74,9 @@ const Container = styled.div`
 const SettingsWrapper = styled.button`
   display: flex;
   flex-direction: column;
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
   background-color: transparent;
   outline: none;
   border: none;
@@ -77,7 +91,17 @@ const SettingsWrapper = styled.button`
     animation-play-state: running;
   }
   @media ${DEVICE.tablet} {
-    margin-bottom: 45px;
+    margin-bottom: 50px;
+  }
+`;
+
+const GearsWrapper = styled.div`
+  height: 1px;
+  position: relative;
+  width: 80px;
+
+  @media ${DEVICE.tablet} {
+    width: 280px;
   }
 `;
 
@@ -86,26 +110,26 @@ const Gear = styled.i`
   position: absolute;
   width: 15px;
   height: 15px;
-  top: 12px;
-  left: 35px;
+  top: 0px;
+  left: 49%;
   background: url(http://i.imgur.com/lOBxb.png);
   background-size: contain;
   background-repeat: no-repeat;
   animation: ${barrelRoll} 2s linear infinite;
   animation-play-state: running;
   &:last-of-type {
-    top: 20px;
-    left: 23px;
+    top: 7px;
+    left: 30%;
     animation-name: ${invertBarrelRoll};
   }
   @media ${DEVICE.tablet} {
     width: 25px;
     height: 25px;
-    top: 20px;
-    left: 55px;
+    top: 0px;
+    left: 49%;
     &:last-of-type {
-      top: 27px;
-      left: 32px;
+      top: 15px;
+      left: 41.5%;
       animation-name: ${invertBarrelRoll};
     }
   }
@@ -187,4 +211,6 @@ export {
   SettingsWrapper,
   LanguageWrapper,
   Container,
+  Backdrop,
+  GearsWrapper,
 };

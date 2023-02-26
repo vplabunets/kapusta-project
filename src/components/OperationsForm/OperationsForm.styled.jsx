@@ -190,12 +190,12 @@ export const CalculatorIcon = styled.svg`
   @media ${DEVICE.tablet} {
     border: none;
     right: 16px;
-    top: 10px;
+    top: 9px;
     padding: 0;
   }
   @media ${DEVICE.laptop} {
     right: 17px;
-    top: 12px;
+    top: 10px;
   }
 `;
 

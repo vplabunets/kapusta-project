@@ -1,5 +1,5 @@
 // import OPERATION_TYPE from 'constants/constants';
-
+import { motion } from 'framer-motion';
 import OperationsBalanceContainer from 'components/OperationsBalanceContainer/OperationsBalanceContainer';
 import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';
 import OperationsContainer from 'components/OperationsContainer/OperationsContainer';
@@ -41,12 +41,17 @@ const OperationsPage = () => {
       {!firstVisit && <CongratulationsModal />}
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Background />
-
         <OperationsPageWrapper>
           <OperationsBalanceContainer addBalance={0} />
           {!balance && <OperationsBalanceModal />}
-          <OperationsTypeSwitcher onChange={handleChange} />
-          <OperationsContainer value={constants} />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            <OperationsTypeSwitcher onChange={handleChange} />
+            <OperationsContainer value={constants} />
+          </motion.div>
         </OperationsPageWrapper>
       </div>
     </>

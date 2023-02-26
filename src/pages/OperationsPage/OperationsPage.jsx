@@ -6,6 +6,7 @@ import OperationsContainer from 'components/OperationsContainer/OperationsContai
 import OperationsTypeSwitcher from 'components/OperationsTypeSwitcher/OperationsTypeSwitcher';
 
 import { Background } from 'components/UI/Background/Background';
+import { CongratulationsModal } from 'components/CongratulationsModal/CongratulationsModal';
 import OperationsPageWrapper from './OperationsPages.styled';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,12 +14,14 @@ import {
   getSummary,
   getTransactionsByOperation,
 } from 'redux/transaction/operations';
-import { selectBalance } from 'redux/auth/selectors';
+import { selectBalance, selectFirstVisit } from 'redux/auth/selectors';
 import { selectOperationType } from 'redux/transaction/selectors';
 
 const OperationsPage = () => {
+  let firstVisit = useSelector(selectFirstVisit);
   const balance = useSelector(selectBalance);
   const [constants, setConstants] = useState(0);
+
   const handleChange = value => {
     setConstants(prevState => (prevState += 1));
   };
@@ -34,16 +37,19 @@ const OperationsPage = () => {
   }, [dispatch, operationType]);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <Background />
+    <>
+      {!firstVisit && <CongratulationsModal />}
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Background />
 
-      <OperationsPageWrapper>
-        <OperationsBalanceContainer addBalance={0} />
-        {!balance && <OperationsBalanceModal />}
-        <OperationsTypeSwitcher onChange={handleChange} />
-        <OperationsContainer value={constants} />
-      </OperationsPageWrapper>
-    </div>
+        <OperationsPageWrapper>
+          <OperationsBalanceContainer addBalance={0} />
+          {!balance && <OperationsBalanceModal />}
+          <OperationsTypeSwitcher onChange={handleChange} />
+          <OperationsContainer value={constants} />
+        </OperationsPageWrapper>
+      </div>
+    </>
   );
 };
 

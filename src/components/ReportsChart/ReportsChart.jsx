@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { Bar } from 'react-chartjs-2';
@@ -14,8 +15,10 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { Wrapper } from './ReportsChart.styled';
 import {
   selectCurrentPeriod,
+  selectIsLoading,
   selectItemsByCategory,
 } from 'redux/reports/selectors';
+import LoaderCabbage from 'components/LoaderCabbage/LoaderCabbage';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
@@ -26,6 +29,7 @@ const ReportsChart = () => {
   const ticksFontSize = isScreenMorePhone ? 12 : 10;
   const itemsByCategory = useSelector(selectItemsByCategory);
   const currentPeriod = useSelector(selectCurrentPeriod);
+  const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
     if (itemsByCategory.length > 0) {
@@ -34,7 +38,9 @@ const ReportsChart = () => {
       );
       setMaxCount(sortArray[0].sum);
       setItems(sortArray.slice(0, 10));
-    } else setItems([]);
+    } else {
+      setItems([]);
+    }
   }, [itemsByCategory, currentPeriod]);
 
   const userData = {
@@ -140,15 +146,21 @@ const ReportsChart = () => {
   };
 
   return (
-    <>
-      {items.length > 0 ? (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.7 }}
+    >
+      {isLoading ? (
+        <LoaderCabbage />
+      ) : items.length > 0 ? (
         <Wrapper>
           <Bar data={userData} options={options} plugins={[ChartDataLabels]} />
         </Wrapper>
       ) : (
         <></>
       )}
-    </>
+    </motion.div>
   );
 };
 

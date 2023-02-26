@@ -1,4 +1,5 @@
 import { Formik, Form } from 'formik';
+import { motion } from 'framer-motion';
 import * as Yup from 'yup';
 import { Button } from 'components/UI/Button/Button';
 import { ForgotModal } from 'components/ForgotModal/ForgotModal';
@@ -68,123 +69,129 @@ const HomeAuthForm = () => {
   };
 
   return (
-    <MainWrapper>
-      {!openForgotModal ? (
-        <div>
-          <GoogleText>{t('registration.GoogleText')}:</GoogleText>
-          <GoogleButton href="https://kapusta-project-back-production.up.railway.app/auth/google">
-            <svg>
-              <use href={`${icon}#icon-google-icon`}></use>
-            </svg>
-            Google
-          </GoogleButton>
-          <LoginText>
-            {t('registration.loginText')}, <br /> {t('registration.after')}:
-          </LoginText>
-          <Formik
-            initialValues={initialValues}
-            onSubmit={values => dispatch(logIn(values))}
-            validationSchema={ValidationSchema}
-          >
-            {({
-              values,
-              errors,
-              touched,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              isSubmitting,
-              handleReset,
-            }) => (
-              <Form autoComplete="off" onSubmit={handleSubmit}>
-                <AuthFormLabel htmlFor="Email">
-                  Email:
-                  <Input
-                    type="email"
-                    name="email"
-                    placeholder="your@email.com"
-                    values={values.email}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                  <ErrorValidation>
-                    {errors.email && touched.email && errors.email}
-                  </ErrorValidation>
-                </AuthFormLabel>
-                <AuthFormLabel htmlFor="password">
-                  {t('registration.Password')}:
-                  <EyeWrapper>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.7 }}
+    >
+      <MainWrapper>
+        {!openForgotModal ? (
+          <div>
+            <GoogleText>{t('registration.GoogleText')}:</GoogleText>
+            <GoogleButton href="https://kapusta-project-back-production.up.railway.app/auth/google">
+              <svg>
+                <use href={`${icon}#icon-google-icon`}></use>
+              </svg>
+              Google
+            </GoogleButton>
+            <LoginText>
+              {t('registration.loginText')}, <br /> {t('registration.after')}:
+            </LoginText>
+            <Formik
+              initialValues={initialValues}
+              onSubmit={values => dispatch(logIn(values))}
+              validationSchema={ValidationSchema}
+            >
+              {({
+                values,
+                errors,
+                touched,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                isSubmitting,
+                handleReset,
+              }) => (
+                <Form autoComplete="off" onSubmit={handleSubmit}>
+                  <AuthFormLabel htmlFor="Email">
+                    Email:
                     <Input
-                      type={showHidePassword ? 'text' : 'password'}
-                      name="password"
-                      placeholder={t('registration.Password')}
-                      values={values.password}
+                      type="email"
+                      name="email"
+                      placeholder="your@email.com"
+                      values={values.email}
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
-                    <button
+                    <ErrorValidation>
+                      {errors.email && touched.email && errors.email}
+                    </ErrorValidation>
+                  </AuthFormLabel>
+                  <AuthFormLabel htmlFor="password">
+                    {t('registration.Password')}:
+                    <EyeWrapper>
+                      <Input
+                        type={showHidePassword ? 'text' : 'password'}
+                        name="password"
+                        placeholder={t('registration.Password')}
+                        values={values.password}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowHidePassword(!showHidePassword)}
+                      >
+                        <svg>
+                          <use
+                            href={
+                              showHidePassword
+                                ? `${icon}#icon-eye-closed`
+                                : `${icon}#icon-eye`
+                            }
+                          ></use>
+                        </svg>
+                      </button>
+                    </EyeWrapper>
+                    <ErrorValidation>
+                      {errors.password && touched.password && errors.password}
+                    </ErrorValidation>
+                    <ReminderButton
                       type="button"
-                      onClick={() => setShowHidePassword(!showHidePassword)}
+                      onClick={() => setOpenForgotModal(true)}
                     >
-                      <svg>
-                        <use
-                          href={
-                            showHidePassword
-                              ? `${icon}#icon-eye-closed`
-                              : `${icon}#icon-eye`
-                          }
-                        ></use>
-                      </svg>
-                    </button>
-                  </EyeWrapper>
-                  <ErrorValidation>
-                    {errors.password && touched.password && errors.password}
-                  </ErrorValidation>
-                  <ReminderButton
-                    type="button"
-                    onClick={() => setOpenForgotModal(true)}
-                  >
-                    {t('registration.Forgot your password')}?
-                  </ReminderButton>
-                </AuthFormLabel>
-                <ButtonContainer>
-                  <Button
-                    type={'submit'}
-                    color={'accent'}
-                    design={'home'}
-                    disabled={isSubmitting}
-                  >
-                    {isLoading ? (
-                      <Spinner width={30} height={30} />
-                    ) : (
-                      t('registration.LOG IN')
-                    )}
-                  </Button>
-                  <Button
-                    type={'button'}
-                    color={'grey'}
-                    design={'home'}
-                    disabled={isSubmitting}
-                    onClick={() => onClick(errors, values, handleReset)}
-                  >
-                    {isLoading ? (
-                      <Spinner width={30} height={30} />
-                    ) : (
-                      t('registration.REGISTRATION')
-                    )}
-                  </Button>
-                </ButtonContainer>
-              </Form>
-            )}
-          </Formik>
-        </div>
-      ) : (
-        <ForgotModal
-          ValidationSchema={ValidationSchema.email}
-          closeModal={setOpenForgotModal}
-        />
-      )}
-    </MainWrapper>
+                      {t('registration.Forgot your password')}?
+                    </ReminderButton>
+                  </AuthFormLabel>
+                  <ButtonContainer>
+                    <Button
+                      type={'submit'}
+                      color={'accent'}
+                      design={'home'}
+                      disabled={isSubmitting}
+                    >
+                      {isLoading ? (
+                        <Spinner width={30} height={30} />
+                      ) : (
+                        t('registration.LOG IN')
+                      )}
+                    </Button>
+                    <Button
+                      type={'button'}
+                      color={'grey'}
+                      design={'home'}
+                      disabled={isSubmitting}
+                      onClick={() => onClick(errors, values, handleReset)}
+                    >
+                      {isLoading ? (
+                        <Spinner width={30} height={30} />
+                      ) : (
+                        t('registration.REGISTRATION')
+                      )}
+                    </Button>
+                  </ButtonContainer>
+                </Form>
+              )}
+            </Formik>
+          </div>
+        ) : (
+          <ForgotModal
+            ValidationSchema={ValidationSchema.email}
+            closeModal={setOpenForgotModal}
+          />
+        )}
+      </MainWrapper>
+    </motion.div>
   );
 };
 

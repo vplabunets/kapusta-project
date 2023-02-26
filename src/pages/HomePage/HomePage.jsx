@@ -1,4 +1,5 @@
 import Icon from 'images/icons-sprite.svg';
+import { motion } from 'framer-motion';
 
 import HomeAuthForm from 'components/HomeAuthForm/HomeAuthForm';
 import { Cabbage } from 'components/UI/Cabbage/Cabbage';
@@ -37,12 +38,18 @@ const HomePage = () => {
     <>
       <AnimateBackground />
       <HomePageWrapper>
-        <TextGroup>
-          <svg alt="mainLogo">
-            <use href={`${Icon}#icon-logo-main`}></use>
-          </svg>
-          <p>Smart Finance</p>
-        </TextGroup>
+        <motion.div
+          initial={{ opacity: 0, translateX: -500, tra: 360 }}
+          animate={{ opacity: 1, translateX: 0, rotate: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <TextGroup>
+            <svg alt="mainLogo">
+              <use href={`${Icon}#icon-logo-main`}></use>
+            </svg>
+            <p>Smart Finance</p>
+          </TextGroup>
+        </motion.div>
         <HomeAuthForm />
       </HomePageWrapper>
       <CabbageContainer>

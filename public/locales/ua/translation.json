@@ -22,7 +22,9 @@
  "CONFIRM": "ПІДТВЕРДИТИ",
  "CANCEL": " СКАСУВАТИ",
   "Expenses": "Витрати",
-"Income": "Дохід"
+"Income": "Дохід",
+"Clear" : "Видалити",
+"Input" : "Ввести"
 },
 
 "Balance":"Баланс",
@@ -61,7 +63,8 @@
 ],
 
 "Product description" : "Опис продукту",
-"Product category": "Категорія продукту",    
+"Product category": "Категорія продукту",
+"Type of income": "Вид доходу",    
 
   "Date" : "Дата",
  "Description": "Опис",

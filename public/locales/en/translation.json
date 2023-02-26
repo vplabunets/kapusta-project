@@ -21,7 +21,9 @@
  "CONFIRM": "CONFIRM",
  "CANCEL": "CANCEL",
  "Expenses": "Expenses",
-"Income": "Income"
+"Income": "Income",
+"Clear" : "Clear",
+"Input" : "Input"
 },
 
 "Balance":"Balance",
@@ -61,6 +63,7 @@
   
     "Product description" : "Product description",
   "Product category": "Product category",
+  "Type of income": "Type of income",
 
  "Date" : "Date",
  "Description": "Description",

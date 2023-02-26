@@ -4,6 +4,7 @@ import OperationsBalanceContainer from 'components/OperationsBalanceContainer/Op
 import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';
 import OperationsContainer from 'components/OperationsContainer/OperationsContainer';
 import OperationsTypeSwitcher from 'components/OperationsTypeSwitcher/OperationsTypeSwitcher';
+import LoaderOperationPage  from 'components/LoaderOperationPageSkeleton/LoaderOperationPage';
 
 import { Background } from 'components/UI/Background/Background';
 import { CongratulationsModal } from 'components/CongratulationsModal/CongratulationsModal';

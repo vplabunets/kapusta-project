@@ -1,5 +1,7 @@
-import Icons from 'images/icons-sprite.svg';
 import { useTranslation } from 'react-i18next';
+
+import Icons from 'images/icons-sprite.svg';
+
 import { BackLink } from './ReportsReturnBack.styled';
 
 const ReportsReturnBack = () => {

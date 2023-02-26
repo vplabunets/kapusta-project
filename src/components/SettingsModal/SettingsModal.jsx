@@ -1,8 +1,13 @@
-import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 
-import PropTypes from 'prop-types';
+import axios from 'axios';
+
+import { useTranslation } from 'react-i18next';
+
+import { changeUserName } from 'redux/auth/slice';
 
 import { Button } from 'components/UI/Button/Button';
 import icon from 'images/icons-sprite.svg';
@@ -21,9 +26,7 @@ import {
   Input,
   DragFileElement,
 } from './SettingsModal.styled';
-import { useTranslation } from 'react-i18next';
-import axios from 'axios';
-import { changeUserName } from 'redux/auth/slice';
+
 const modalRoot = document.querySelector('#modal-root');
 
 const SettingsModal = ({ onClose }) => {
@@ -183,7 +186,7 @@ const SettingsModal = ({ onClose }) => {
 };
 
 SettingsModal.propTypes = {
-  onClose: PropTypes.func,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default SettingsModal;

@@ -1,7 +1,13 @@
-import Icons from 'images/icons-sprite.svg';
+import { useEffect, useState } from 'react';
+import { PropTypes } from 'prop-types';
+import { useSelector } from 'react-redux';
+import { selectCategoryReports } from 'redux/reports/selectors';
 
 import { ReportItem } from 'components/ReportItem/ReportItem';
-import { useEffect, useState } from 'react';
+import { Cabbage } from 'components/UI/Cabbage/Cabbage';
+import { Message } from 'components/UI/Message/Message';
+
+import Icons from 'images/icons-sprite.svg';
 
 import {
   Section,
@@ -11,11 +17,6 @@ import {
   Title,
   ReportList,
 } from './ReportsMonthSummary.styled';
-import { useSelector } from 'react-redux';
-import { selectCategoryReports } from 'redux/reports/selectors';
-
-import { Cabbage } from 'components/UI/Cabbage/Cabbage';
-import { Message } from 'components/UI/Message/Message';
 
 const ReportsMonthSummary = ({ reportType, toggleType }) => {
   const [array, setArray] = useState([]);
@@ -79,6 +80,11 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
       </Wrapper>
     </Section>
   );
+};
+
+ReportsMonthSummary.propTypes = {
+  reportType: PropTypes.string.isRequired,
+  toggleType: PropTypes.func.isRequired,
 };
 
 export default ReportsMonthSummary;

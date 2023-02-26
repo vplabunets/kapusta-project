@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Avatar } from '@mui/material';
-import { useState } from 'react';
+
 import ExitIcon from 'images/icons-sprite.svg';
 
 import ConfirmModal from 'components/ConfirmModal/ConfirmModal';
 import SettingsMenu from 'components/SettingsMenu/SettingsMenu';
 import { useTranslation } from 'react-i18next';
+
+import { logOut } from 'redux/auth/operations';
+import { selectEmail, selectName } from 'redux/auth/selectors';
+
 import {
   Container,
   ExitBtn,
@@ -14,8 +19,6 @@ import {
   LogoutBtn,
   MenuBtn,
 } from './NavBar.styles';
-import { logOut } from 'redux/auth/operations';
-import { selectEmail, selectName } from 'redux/auth/selectors';
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -23,7 +26,7 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const email = useSelector(selectEmail);
   const name = useSelector(selectName);
- const { t } = useTranslation();
+  const { t } = useTranslation();
   const toCutName = email => {
     const firstLetter = email.slice(0, 1).toUpperCase();
     return firstLetter;
@@ -58,7 +61,7 @@ const NavBar = () => {
         </MenuBtn>
         <ExitContainer>
           <UserName onClick={onUserClick}>{name ? name : email}</UserName>
-          <ExitBtn onClick={() => setModalOpen(true)}>{ t('Exit') }</ExitBtn>
+          <ExitBtn onClick={() => setModalOpen(true)}>{t('Exit')}</ExitBtn>
         </ExitContainer>
         <LogoutBtn onClick={() => setModalOpen(true)}>
           <svg alt="exit" width={16} height={16}>

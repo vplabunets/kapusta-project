@@ -1,3 +1,5 @@
+import { PropTypes } from 'prop-types';
+
 import { styled } from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -64,4 +66,8 @@ export const CustomizedSwitcher = ({ themeToggler }) => {
       />
     </FormGroup>
   );
+};
+
+CustomizedSwitcher.propTypes = {
+  themeToggler: PropTypes.func.isRequired,
 };

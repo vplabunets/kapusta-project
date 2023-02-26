@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
+import { PropTypes } from 'prop-types';
+
 import Icons from 'images/icons-sprite.svg';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentPeriod } from 'redux/reports/selectors';
 import { getItemsCategoryReports } from 'redux/reports/operations';
+
 import {
   ReportItemButton,
   Sum,
@@ -9,7 +14,6 @@ import {
   ButtonReport,
   Type,
 } from './ReportItem.styled';
-import { useEffect } from 'react';
 
 export const ReportItem = ({ sum, category, type, setIsActive, isActive }) => {
   const sumToFixed = sum.toFixed(2);
@@ -70,4 +74,12 @@ export const ReportItem = ({ sum, category, type, setIsActive, isActive }) => {
       <Type>{category}</Type>
     </ReportItemButton>
   );
+};
+
+ReportItem.propTypes = {
+  sum: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  setIsActive: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
 };

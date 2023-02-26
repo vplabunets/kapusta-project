@@ -20,6 +20,7 @@ const Layout = () => {
   };
 
   return (
+
     <ThemeProvider theme={theme === 'light' ? themeLight : themeDark}>
       <Header themeToggler={themeToggler} />
 

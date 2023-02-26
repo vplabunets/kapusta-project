@@ -8,8 +8,26 @@ import {
   TextGroup,
   CabbageContainer,
 } from './HomePage.styled';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setToken } from 'redux/auth/slice';
+import { refreshUser } from 'redux/auth/operations';
+import { selectAccessToken } from 'redux/auth/selectors';
 
 const HomePage = () => {
+  const dispatch = useDispatch();
+  const reduxAccessToken = useSelector(selectAccessToken);
+  const search = useLocation().search;
+  if (reduxAccessToken === '') {
+    const accessToken = new URLSearchParams(search).get('accessToken');
+    dispatch(setToken(accessToken));
+  }
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <>
       <AnimateBackground />

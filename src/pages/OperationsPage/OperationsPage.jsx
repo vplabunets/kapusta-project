@@ -22,6 +22,7 @@ const OperationsPage = () => {
   let firstVisit = useSelector(selectFirstVisit);
   const balance = useSelector(selectBalance);
   const [constants, setConstants] = useState(0);
+  const skelet = useSelector((state) => state.transactions.skelet);
 
   const handleChange = value => {
     setConstants(prevState => (prevState += 1));
@@ -30,7 +31,7 @@ const OperationsPage = () => {
   const operationType = useSelector(selectOperationType);
 
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     // dispatch(setOperationType(type));
     dispatch(getSummary({ operation: operationType }));
@@ -43,12 +44,12 @@ const OperationsPage = () => {
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Background />
 
-        <OperationsPageWrapper>
+        {skelet ? <LoaderOperationPage /> : <OperationsPageWrapper>
           <OperationsBalanceContainer addBalance={0} />
           {!balance && <OperationsBalanceModal />}
           <OperationsTypeSwitcher onChange={handleChange} />
           <OperationsContainer value={constants} />
-        </OperationsPageWrapper>
+        </OperationsPageWrapper>}
       </div>
     </>
   );

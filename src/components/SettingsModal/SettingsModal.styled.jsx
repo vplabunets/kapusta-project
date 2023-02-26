@@ -10,6 +10,7 @@ const Backdrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
@@ -17,8 +18,8 @@ const Backdrop = styled.div`
 
 const Modal = styled.div`
   position: relative;
-  width: 280px;
-  height: 500px;
+  min-width: 280px;
+  height: 650px;
 
   background-color: #ffffff;
   border-radius: 30px;
@@ -81,7 +82,7 @@ const Label = styled.label`
   }
 `;
 
-const NameInput = styled.input`
+const Input = styled.input`
   margin-bottom: 20px;
   width: 100%;
   height: 52px;
@@ -133,24 +134,22 @@ const DropFiles = styled.div`
 
 const DropFilesTitle = styled.span`
   font-family: 'Roboto';
-  color: #444;
+  color: ${p => p.theme.lightTheme.mainTextColor};
   font-size: 15px;
   font-weight: bold;
   text-align: center;
   transition: color ${TRANSITION.duration} ${TRANSITION.timing};
   @media ${DEVICE.tablet} {
-    font-size: 20px;
+    font-size: 15px;
   }
 `;
 
 const DropFilesInput = styled.input`
   width: 350px;
   max-width: 100%;
-  color: #444;
+  color: ${p => p.theme.lightTheme.mainTextColor};
   padding: 3px;
-  /* background: #fff; */
   border-radius: 10px;
-  /* border: 1px solid #555; */
   border: none;
   &.dragover {
     background: #f6f7fb;
@@ -208,6 +207,6 @@ export {
   DropFilesInput,
   Form,
   Label,
-  NameInput,
+  Input,
   DragFileElement,
 };

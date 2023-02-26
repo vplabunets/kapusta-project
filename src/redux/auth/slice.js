@@ -21,6 +21,7 @@ const initialState = {
   isRefreshing: false,
   firstVisit: false,
   firstBalance: false,
+  avatarUrl: null,
 };
 
 const authSlice = createSlice({
@@ -29,6 +30,12 @@ const authSlice = createSlice({
   reducers: {
     changeBalance(state, action) {
       state.balance = action.payload.user.balance;
+    },
+    changeUserName(state, action) {
+      state.name = action.payload.userName;
+    },
+    changeAvatar(state, action) {
+      state.avatarUrl = action.payload;
     },
   },
   extraReducers: {
@@ -133,4 +140,4 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-export const { changeBalance } = authSlice.actions;
+export const { changeBalance, changeUserName } = authSlice.actions;

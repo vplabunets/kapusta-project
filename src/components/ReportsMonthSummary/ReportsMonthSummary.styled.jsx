@@ -6,7 +6,7 @@ const { duration, timing, delay } = TRANSITION;
 
 export const Section = styled.div`
   margin: 0 auto;
-
+  border-radius: 30px;
   background-color: ${p => p.theme.headerColor};
 
   width: 100%;
@@ -15,7 +15,6 @@ export const Section = styled.div`
   @media ${DEVICE.tablet} {
     padding: 20px 0;
     box-shadow: 0px 10px 60px ${p => p.theme.sectionShadow};
-    border-radius: 30px;
   }
   @media ${DEVICE.laptop} {
     margin-bottom: 37px;

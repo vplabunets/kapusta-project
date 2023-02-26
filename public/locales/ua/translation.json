@@ -43,19 +43,25 @@
  "balanceModalTitle": " Привіт! Для початку введіть поточний баланс вашого рахунку",
  "balanceModalText" : "Ви не можете витрачати гроші, поки їх у вас немає",
 
-  "product": {
-    "Product description" : "Опис продукту",
-      "Product category": "Категорія продукту",
-  "Products": "Продукти" ,
-   "Health" : "Здоров'я",
-    "Alcohol": "Алкоголь",
-   "Entertainment" : "Розваги",
-  "Housing" : "Житло",
-   "Communal, communication" : "Комуналка, комунікації",
-  "Sports, hobbies" : "Спорт, хобі",
- "Education" : "Освіта",
-  "Other" : "Інше"
- },
+"expensesCategory":  [
+    { "value": "Products", "label": "Продукти" },
+    { "value": "Health", "label": "Здоров'я" },
+    { "value": "Alcohol", "label": "Алкоголь" },
+    { "value": "Entertainment", "label": "Розваги" },
+    { "value": "Housing", "label": "Житло" },
+    { "value": "Communal, communication", "label": "Комуналка, комунікації" },
+    { "value": "Sports, hobbies", "label": "Спорт, хобі" },
+    { "value": "Education", "label": "Освіта" },
+    { "value": "Other", "label": "Інше" }
+],
+
+  "incomeCategory": [
+    { "value": "salary", "label": "Зарплата" },
+    { "value": "Add.income", "label": "Додатковий дохід" }
+],
+
+"Product description" : "Опис продукту",
+"Product category": "Категорія продукту",    
 
   "Date" : "Дата",
  "Description": "Опис",

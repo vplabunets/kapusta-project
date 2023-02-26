@@ -1,6 +1,6 @@
 import OperationsForm from 'components/OperationsForm/OperationsForm';
 import OperationsSummary from 'components/OperationsSummary/OperationsSummary';
-import OperationsTable from 'components/OperationsTable/OperationsTable';
+// import OperationsTable from 'components/OperationsTable/OperationsTable';
 import React from 'react';
 import { Wrapper, WrapperTableSummary } from './OperationsContainer.styled';
 

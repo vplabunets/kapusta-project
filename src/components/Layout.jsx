@@ -9,7 +9,6 @@ const Layout = () => {
   return (
     <div>
       <Header />
-
       <Suspense fallback={<LoaderCabbage />}>
         <ToastContainer
           position="top-right"

@@ -22,6 +22,7 @@ const initialState = {
   firstVisit: false,
   firstBalance: false,
   avatarUrl: null,
+  token: '',
 };
 
 const authSlice = createSlice({
@@ -36,6 +37,11 @@ const authSlice = createSlice({
     },
     changeAvatar(state, action) {
       state.avatarUrl = action.payload;
+    },
+    setToken(state, action) {
+      state.accessToken = action.payload;
+      console.dir('state', state);
+      console.log('action', action);
     },
   },
   extraReducers: {
@@ -140,4 +146,4 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-export const { changeBalance, changeUserName } = authSlice.actions;
+export const { changeBalance, changeUserName, setToken } = authSlice.actions;

@@ -4,12 +4,12 @@ import DEVICE from '../../constants/deviceSize';
 export const Tabletr = styled.tr`
   position: relative;
   height: 40px;
-  font-family: Roboto, sans-serif;
+  font-family: inherit;
   font-size: 8px;
   line-height: 1.16;
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
 
-  border-bottom: 2px solid #f2f8f8;
+  border-bottom: 2px solid ${p => p.theme.lightTheme.tableBodyColor};
   display: flex;
 
   @media ${DEVICE.tablet} {
@@ -20,7 +20,7 @@ export const Tabletr = styled.tr`
     width: calc(100% - 2px);
     height: 40px;
     text-align: center;
-    border-left: 2px solid #f2f8f8;
+    border-left: 2px solid ${p => p.theme.lightTheme.tableBodyColor};
   }
 
   @media ${DEVICE.laptop} {
@@ -132,7 +132,7 @@ export const Btn = styled.td`
 
 export const BtnStyle = styled.button`
   padding: none;
-  background-color: #fff;
+  background-color: transparent;
   cursor: pointer;
   border: none;
 
@@ -141,7 +141,7 @@ export const BtnStyle = styled.button`
     height: 32px;
 
     :hover {
-      background-color: #f5f6fb;
+      background-color: ${p => p.theme.lightTheme.tableHeadBackgroundColor};
       cursor: pointer;
       border-radius: 50%;
     }

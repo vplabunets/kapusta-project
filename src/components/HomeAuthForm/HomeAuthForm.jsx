@@ -21,7 +21,7 @@ import { logIn, register } from 'redux/auth/operations';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from 'hooks/useAuth';
-import Spiner from 'components/UI/Loader/Loader';
+import Spinner from 'components/UI/Loader/Loader';
 
 const ValidationSchema = Yup.object().shape({
   email: Yup.string()
@@ -155,7 +155,7 @@ const HomeAuthForm = () => {
                     disabled={isSubmitting}
                   >
                     {isLoading ? (
-                      <Spiner width={30} height={30} />
+                      <Spinner width={30} height={30} />
                     ) : (
                       t('registration.LOG IN')
                     )}
@@ -168,7 +168,7 @@ const HomeAuthForm = () => {
                     onClick={() => onClick(errors, values, handleReset)}
                   >
                     {isLoading ? (
-                      <Spiner width={25} height={25} />
+                      <Spinner width={30} height={30} />
                     ) : (
                       t('registration.REGISTRATION')
                     )}

@@ -21,7 +21,7 @@ const Modal = styled.div`
   min-width: 280px;
   height: 650px;
 
-  background-color: #ffffff;
+  background-color: ${p => p.theme.lightTheme.headerColor};
   border-radius: 30px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   padding: 40px 40px 50px;
@@ -58,7 +58,7 @@ const Text = styled.p`
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
   margin-bottom: 30px;
 `;
 
@@ -74,7 +74,7 @@ const Label = styled.label`
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: 0.04em;
-  color: #000000;
+  color: ${p => p.theme.lightTheme.tableHeadTextColor};
 
   @media ${DEVICE.tablet} {
     font-size: 12px;
@@ -90,7 +90,7 @@ const Input = styled.input`
   outline: none;
   border: none;
   border-radius: 30px;
-  background-color: #f6f7fb;
+  background-color: ${p => p.theme.lightTheme.googleBtnColor};
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.04em;
@@ -121,7 +121,7 @@ const DropFiles = styled.div`
   transition: background ${TRANSITION.duration} ${TRANSITION.timing};
 
   &:hover {
-    background: #f6f7fb;
+    background: ${p => p.theme.lightTheme.googleBtnColor};
     border-color: ${p => p.theme.lightTheme.tableHeadTextColor};
   }
 
@@ -133,8 +133,8 @@ const DropFiles = styled.div`
 `;
 
 const DropFilesTitle = styled.span`
-  font-family: 'Roboto';
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  font-family: inherit;
+  color: #444;
   font-size: 15px;
   font-weight: bold;
   text-align: center;
@@ -152,18 +152,18 @@ const DropFilesInput = styled.input`
   border-radius: 10px;
   border: none;
   &.dragover {
-    background: #f6f7fb;
+    background: ${p => p.theme.lightTheme.googleBtnColor};
     border-color: ${p => p.theme.lightTheme.tableHeadTextColor};
   }
   &::file-selector-button {
-    font-family: 'Roboto';
+    font-family: inherit;
     margin-right: 10px;
     border: none;
     background: ${p => p.theme.lightTheme.accentColor};
     padding: 10px 20px;
     border-radius: 10px;
     font-size: 10px;
-    color: #fff;
+    color: ${p => p.theme.lightTheme.whiteTextColor};
     cursor: pointer;
     transition: transform ${TRANSITION.duration} ${TRANSITION.timing};
     @media ${DEVICE.tablet} {

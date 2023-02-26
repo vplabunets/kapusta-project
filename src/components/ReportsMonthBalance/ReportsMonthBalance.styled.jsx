@@ -3,7 +3,7 @@ import DEVICE from 'constants/deviceSize';
 
 const Wrapper = styled.div`
   height: 85px;
-  background: #ffffff;
+  background: ${p => p.theme.lightTheme.headerColor};
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
   border-radius: 20px;
   display: flex;
@@ -19,7 +19,6 @@ const Wrapper = styled.div`
   }
 `;
 const Text = styled.p`
-  font-family: 'Roboto';
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -33,8 +32,6 @@ const Text = styled.p`
 `;
 
 const Sum = styled.p`
-  font-family: 'Roboto';
-  font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -42,11 +39,11 @@ const Sum = styled.p`
   color: ${p => {
     switch (p.color) {
       case 'positive':
-        return '#407946';
+        return `${p.theme.lightTheme.incomesTextColor}`;
       case 'negative':
         return '#E53935';
       default:
-        return '00000';
+        return `${p.theme.lightTheme.tableHeadTextColor}`;
     }
   }};
 `;
@@ -54,6 +51,7 @@ const Sum = styled.p`
 const ExpensesContainer = styled.div`
   width: 100%;
   text-align: center;
+
   @media ${DEVICE.tablet} {
     justify-content: right;
     display: flex;

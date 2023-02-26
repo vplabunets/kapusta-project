@@ -5,11 +5,10 @@ const OperationsPageWrapper = styled.div`
   position: relative;
   min-height: 100%;
   width: 320px;
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  /* justify-content: center; */
+
   margin: 19px 20px 0 20px;
 
   @media ${DEVICE.tablet} {

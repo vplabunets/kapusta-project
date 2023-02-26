@@ -14,8 +14,7 @@ export const ContainerHeader = styled.header`
 
   padding: 12px 20px 13px;
 
-  background-color: #ffffff;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: ${p => p.theme.lightTheme.headerColor};
 
   /* It will be delete */
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),

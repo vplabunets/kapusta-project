@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
-import { Link } from 'react-router-dom';
+
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
 
 export const Wrap = styled.div`
   display: flex;
-  /* margin-left: auto; */
   justify-content: center;
   @media ${DEVICE.laptop} {
     padding-left: 4px;
@@ -17,25 +19,28 @@ export const Title = styled.h2`
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  color: rgba(82, 85, 95, 0.7);
+  color: ${p => p.theme.lightTheme.lightGreyColor};
+
   @media ${DEVICE.tablet} {
     margin-bottom: 0;
     justify-content: end;
   }
-  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
-  &:hover {
-    color: #555;
+  transition: color ${duration} ${timing} ${delay};
+
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.lightTheme.mainTextColor};
   }
 `;
 
 export const ReportLink = styled(Link)`
-  color: rgba(82, 85, 95, 0.7);
+  color: ${p => p.theme.lightTheme.lightGreyColor};
   display: flex;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   align-items: center;
   text-align: center;

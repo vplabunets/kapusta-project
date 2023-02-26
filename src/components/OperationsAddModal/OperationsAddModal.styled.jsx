@@ -8,7 +8,7 @@ export const Backdrop = styled.div`
 
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: ${p => p.theme.lightTheme.headerColor};
 `;
 
 export const Modal = styled.div`
@@ -22,7 +22,7 @@ export const Background = styled.div`
 
   position: absolute;
   top: 0;
-  background-color: #f5f6fb;
+  background-color: ${p => p.theme.lightTheme.tableHeadBackgroundColor};
   border-bottom-left-radius: 20%;
 
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),

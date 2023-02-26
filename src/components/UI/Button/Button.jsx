@@ -28,7 +28,6 @@ export const Button = ({
 );
 
 Button.propTypes = {
-  children: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   design: PropTypes.string.isRequired,

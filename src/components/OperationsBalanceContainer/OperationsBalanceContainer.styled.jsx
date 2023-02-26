@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
 
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,18 +37,18 @@ export const OperationsModalOpenButton = styled.button`
   width: 150px;
   margin-top: 32px;
   margin-bottom: 32px;
-  background-color: #ff751d;
-  color: #ffffff;
+  background-color: ${p => p.theme.lightTheme.accentColor};
+  color: ${p => p.theme.lightTheme.whiteTextColor};
   text-transform: uppercase;
   border: none;
   font-family: inherit;
   font-weight: 700;
   filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
 
-  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: transform ${duration} ${timing} ${delay};
 
   svg {
-    fill: #ffffff;
+    fill: ${p => p.theme.lightTheme.whiteTextColor};
   }
 
   &:focus {

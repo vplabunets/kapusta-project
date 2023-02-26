@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
 
 export const Title = styled.h2`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.143;
-  color: rgba(82, 85, 95, 0.7);
+  color: ${p => p.theme.lightTheme.lightGreyColor};
   text-align: center;
 `;
 export const ContainerPeriod = styled.div`
@@ -32,4 +34,10 @@ export const Button = styled.button`
   border: white;
   cursor: pointer;
   background-color: transparent;
+  transition: transform ${duration} ${timing} ${delay};
+
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
+  }
 `;

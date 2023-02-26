@@ -10,13 +10,7 @@ export const Backdrop = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: rgba(0, 0, 0, 0.4); */
   overflow: hidden;
-  @media ${DEVICE.tablet} {
-    /* top: 142px; */
-  }
-  @media ${DEVICE.laptop} {
-  }
 `;
 
 export const Modal = styled.div`
@@ -27,7 +21,7 @@ export const Modal = styled.div`
   max-width: 280px;
   max-height: 163px;
   width: 100%;
-  background: linear-gradient(117.84deg, #1d346a 2.84%, #031634 67.28%);
+  background: ${p => p.theme.lightTheme.modalBackgroundColor};
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 30px;
   @media ${DEVICE.tablet} {
@@ -62,7 +56,8 @@ export const Title = styled.h2`
   font-size: 14px;
   line-height: 1.43;
   margin-bottom: 20px;
-  color: ${p => p.theme.lightTheme.headerColor};
+  color: ${p => p.theme.lightTheme.whiteTextColor};
+
   @media ${DEVICE.tablet} {
     padding-left: 29px;
     padding-right: 29px;
@@ -76,7 +71,8 @@ export const Text = styled.p`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
-  color: ${p => p.theme.lightTheme.headerColor};
+  color: ${p => p.theme.lightTheme.whiteTextColor};
+
   @media ${DEVICE.tablet} {
     padding-left: 29px;
     padding-right: 29px;

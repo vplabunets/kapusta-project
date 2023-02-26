@@ -7,8 +7,8 @@ export const Empty = styled.tr`
   @media ${DEVICE.tablet} {
     position: relative;
     height: 40px;
-    border-left: 2px solid #f2f8f8;
-    border-bottom: 2px solid #f2f8f8;
+    border-left: 2px solid ${p => p.theme.lightTheme.tableBodyColor};
+    border-bottom: 2px solid ${p => p.theme.lightTheme.tableBodyColor};
     width: calc(100% - 2px);
     display: table;
   }

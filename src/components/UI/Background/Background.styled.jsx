@@ -9,7 +9,7 @@ export const BackgroundGrey = styled.div`
 
   position: absolute;
   top: 0;
-  background-color: #f5f6fb;
+  background-color: ${p => p.theme.lightTheme.tableHeadBackgroundColor};
   border-bottom-left-radius: 20%;
 
   overflow: hidden;

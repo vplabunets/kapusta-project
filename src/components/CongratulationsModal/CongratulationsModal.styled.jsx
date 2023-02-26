@@ -18,7 +18,7 @@ export const Modal = styled.div`
   position: relative;
   width: 280px;
 
-  background-color: #ffffff;
+  background-color: ${p => p.theme.lightTheme.headerColor};
   border-radius: 30px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   padding: 40px 40px 50px;
@@ -37,7 +37,7 @@ export const Text = styled.h2`
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-align: center;
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
   margin-bottom: 20px;
 `;
 
@@ -47,7 +47,7 @@ export const SubText = styled.p`
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
 
   margin-bottom: 20px;
 `;

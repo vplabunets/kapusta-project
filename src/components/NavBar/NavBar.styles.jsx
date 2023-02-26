@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 import DEVICE from 'constants/deviceSize';
 
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -28,7 +31,7 @@ export const ExitContainer = styled.div`
 
 export const UserName = styled.button`
   margin-right: 40px;
-  font-family: 'Roboto';
+  font-family: inherit;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
@@ -37,6 +40,13 @@ export const UserName = styled.button`
   cursor: pointer;
   border: none;
   background-color: transparent;
+
+  transition: color ${duration} ${timing} ${delay};
+
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.lightTheme.accentColor};
+  }
 
   @media ${DEVICE.tablet} {
     &::after {
@@ -72,7 +82,14 @@ export const ExitBtn = styled.button`
   border: none;
   outline: none;
   text-decoration: underline;
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
+
+  transition: color ${duration} ${timing} ${delay};
+
+  &:hover,
+  &:focus {
+    color: ${p => p.theme.lightTheme.accentColor};
+  }
 `;
 
 export const LogoutBtn = styled.button`

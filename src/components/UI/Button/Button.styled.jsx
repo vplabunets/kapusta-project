@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 import DEVICE from 'constants/deviceSize';
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
 
 export const Btn = styled.button`
   cursor: pointer;
@@ -17,7 +19,7 @@ export const Btn = styled.button`
   font-weight: 700;
   height: 44px;
   border: none;
-  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: transform ${duration} ${timing} ${delay};
 
   &:hover,
   &:focus {
@@ -65,18 +67,19 @@ export const Btn = styled.button`
   }};
 
   background-color: ${p => {
-    if (p.color === 'accent') return '#FF751D';
-    if (p.color === 'grey') return '#F5F6FB';
-    return '#FFFFFF';
+    if (p.color === 'accent') return `${p.theme.lightTheme.accentColor}`;
+    if (p.color === 'grey')
+      return `${p.theme.lightTheme.tableHeadBackgroundColor}`;
+    return `${p.theme.lightTheme.whiteTextColor}`;
   }};
 
   color: ${p => {
-    if (p.color === 'accent') return '#FFFFFF';
-    return '#52555F';
+    if (p.color === 'accent') return `${p.theme.lightTheme.headerColor}`;
+    return `${p.theme.lightTheme.mainTextColor}`;
   }};
 
   border: ${p => {
     if (p.color === 'accent') return;
-    return '2px solid #f6f7fc;';
+    return `2px solid ${p.theme.lightTheme.borderColor}`;
   }};
 `;

@@ -1,6 +1,7 @@
-//  import styled from 'styled-components';
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
 
 export const Wrapper = styled.div`
   margin-top: 32px;
@@ -11,7 +12,7 @@ export const Wrapper = styled.div`
     justify-content: start;
     align-items: baseline;
     flex-direction: row;
-    /* margin-left: 32px; */
+
     margin-top: 0px;
   }
   @media ${DEVICE.laptop} {
@@ -31,7 +32,7 @@ export const Title = styled.h2`
   justify-content: space-between;
   flex-direction: column;
   letter-spacing: 0.02em;
-  color: rgba(82, 85, 95, 0.7);
+  color: ${p => p.theme.lightTheme.lightGreyColor};
 
   @media ${DEVICE.tablet} {
     margin-right: 21px;
@@ -48,8 +49,6 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  //padding-left: 20px;
-  //padding-right: 20px;
   margin-top: 8px;
 
   @media ${DEVICE.tablet} {
@@ -60,7 +59,7 @@ export const Form = styled.form`
 `;
 
 export const Input = styled.input`
-  font-family: 'Roboto';
+  font-family: inherit;
   font-weight: 700;
   font-size: 12px;
   line-height: 1.17;
@@ -112,8 +111,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   width: 140px;
   height: 44px;
-  font-style: normal;
-  font-weight: 400;
+  font-family: inherit;
   font-size: 13px;
   line-height: 1.17;
   display: flex;
@@ -121,15 +119,21 @@ export const Button = styled.button`
   align-items: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  /* padding-left: 16px; */
-  color: rgba(82, 85, 95, 0.7);
+
+  color: ${p => p.theme.lightTheme.lightGreyColor};
   border: 2px solid ${p => p.theme.lightTheme.headerColor};
   border-left: none;
   border-radius: 0 20px 20px 0;
   cursor: pointer;
   background-color: transparent;
-  :focus {
-    color: ${p => p.theme.lightTheme.headerColor};
+
+  transition: color ${duration} ${timing} ${delay},
+    background-color ${duration} ${timing} ${delay},
+    border-color ${duration} ${timing} ${delay};
+
+  &:focus,
+  &:hover {
+    color: ${p => p.theme.lightTheme.whiteTextColor};
     background-color: ${p => p.theme.lightTheme.accentColor};
     border-color: ${p => p.theme.lightTheme.accentColor};
   }
@@ -151,7 +155,7 @@ export const Label = styled.label`
   font-size: 12px;
   line-height: 14px;
   text-transform: none;
-  /* margin-right: 15px; */
+
   @media ${DEVICE.tablet} {
     margin-right: 20px;
   }

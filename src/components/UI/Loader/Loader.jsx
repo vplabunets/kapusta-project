@@ -1,7 +1,7 @@
 import { Oval } from 'react-loader-spinner';
 import { LoaderBox } from './Loader.styled';
 
-const Spiner = ({ width = 40, height = 40 }) => {
+const Spinner = ({ width = 40, height = 40 }) => {
   return (
     <LoaderBox>
       <Oval
@@ -16,4 +16,4 @@ const Spiner = ({ width = 40, height = 40 }) => {
   );
 };
 
-export default Spiner;
+export default Spinner;

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
 
 export const Backdrop = styled.div`
   z-index: 10;
@@ -19,7 +21,7 @@ export const Modal = styled.div`
   position: relative;
   width: 280px;
 
-  background-color: #ffffff;
+  background-color: ${p => p.theme.lightTheme.headerColor};
   border-radius: 30px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   padding: 40px 40px 50px;
@@ -40,7 +42,7 @@ export const ButtonClose = styled.button`
   background-color: transparent;
   border: none;
 
-  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: transform ${duration} ${timing} ${delay};
 
   & svg {
     width: 12px;
@@ -60,7 +62,7 @@ export const Text = styled.p`
   line-height: 1.14;
   letter-spacing: 0.02em;
 
-  color: #52555f;
+  color: ${p => p.theme.lightTheme.mainTextColor};
 
   margin-bottom: 20px;
 `;

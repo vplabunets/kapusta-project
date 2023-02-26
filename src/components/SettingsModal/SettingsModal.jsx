@@ -3,13 +3,9 @@ import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 
-
 import axios from 'axios';
 
 import { useTranslation } from 'react-i18next';
-
-import { changeUserName } from 'redux/auth/slice';
-
 
 import { Button } from 'components/UI/Button/Button';
 import { userUpdate } from 'redux/auth/operations';

@@ -31,16 +31,17 @@
 "Main page": "Main page",
 
  "registration":{
-"Google text" : "You can log in with your Google Account",
+"GoogleText" : "You can log in with your Google Account",
 "loginText": " Or log in using an email and password",
 "after": "after registering",
 "Password": "Password",
 "LOG IN": " LOG IN",
- "REGISTRATION": " REGISTRATION"
+ "REGISTRATION": " REGISTRATION",
+ "Forgot your password": "Forgot your password"
  } ,
 
    "balanceModalTitle": " Hello! To get started, enter the current balance of your account",
- "balanceModalText" : "You can't spend money until you have it",
+ "balanceModalText" : "You can't spend money until you have it :)",
 
 "expensesCategory":  [
     { "value": "Products", "label": "Products" },
@@ -75,5 +76,19 @@
   "August": "August",
   "July": "July",
   "June": "June"
- }
+ },
+
+"firstModal" :{
+  "welcome": "Welcome to our Smart Finance App",
+  "subText": "Is your money flying away like cabbage in our background",
+  "subtext2": "It's not a problem anymore",
+  "subtext3": "Because now we will help you control your finances ",
+  "subText4": "Don't thank",
+   "start" : "Let's start" 
+           
+            
+
+}
+
+
 }

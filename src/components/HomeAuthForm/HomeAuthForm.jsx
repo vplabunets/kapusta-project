@@ -71,7 +71,7 @@ const HomeAuthForm = () => {
     <MainWrapper>
       {!openForgotModal ? (
         <div>
-          <GoogleText>{t('registration.Google Text')}:</GoogleText>
+          <GoogleText>{t('registration.GoogleText')}:</GoogleText>
           <GoogleButton href="https://kapusta-project-back-production.up.railway.app/auth/google">
             <svg>
               <use href={`${icon}#icon-google-icon`}></use>
@@ -144,7 +144,7 @@ const HomeAuthForm = () => {
                     type="button"
                     onClick={() => setOpenForgotModal(true)}
                   >
-                    Forgot your password?
+                    {t('registration.Forgot your password')}?
                   </ReminderButton>
                 </AuthFormLabel>
                 <ButtonContainer>

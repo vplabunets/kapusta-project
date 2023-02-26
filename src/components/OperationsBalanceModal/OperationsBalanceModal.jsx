@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 import { Backdrop, Text, Title, Modal } from './OperationsBalanceModalstyled';
+import { useTranslation } from 'react-i18next';
 const body = document.querySelector('body');
 
 const OperationsBalanceModal = () => {
   useEffect(() => {
     body.style.cssText = `overflow: hidden`;
   }, []);
-
+const { t } = useTranslation();
   return (
     <Backdrop>
       <Modal>
         <Title>
-          Hello! To get started, enter the current balance of your account!
+         {t('balanceModalTitle')}!
         </Title>
-        <Text>You can't spend money until you have it</Text>
+        <Text>{t('balanceModalText')} </Text>
       </Modal>
     </Backdrop>
   );

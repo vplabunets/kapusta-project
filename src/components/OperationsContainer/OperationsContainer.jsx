@@ -22,7 +22,7 @@ const OperationsContainer = ({ value }) => {
       <Wrapper>
         {isScreenMorePhone && <OperationsForm value={value} />}
         <WrapperTableSummary>
-          <OperationsTable />
+          {/* <OperationsTable /> */}
           {isScreenLaptop && <OperationsSummary />}
         </WrapperTableSummary>
       </Wrapper>

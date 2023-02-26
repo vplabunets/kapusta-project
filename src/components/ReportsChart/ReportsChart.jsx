@@ -38,7 +38,11 @@ const ReportsChart = () => {
   }, [itemsByCategory, currentPeriod]);
 
   const userData = {
-    labels: items.map(data => data.description),
+    labels: items.map(data =>
+      data.description.length > 15
+        ? `${data.description.slice(0, 11)}...`
+        : data.description
+    ),
     datasets: [
       {
         label: '',

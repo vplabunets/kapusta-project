@@ -15,7 +15,7 @@ import {
   MenuBtn,
 } from './NavBar.styles';
 import { logOut } from 'redux/auth/operations';
-import { selectEmail, selectName } from 'redux/auth/selectors';
+import { selectEmail, selectName, selectAvatar } from 'redux/auth/selectors';
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,8 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const email = useSelector(selectEmail);
   const name = useSelector(selectName);
- const { t } = useTranslation();
+  const avatar = useSelector(selectAvatar);
+  const { t } = useTranslation();
   const toCutName = email => {
     const firstLetter = email.slice(0, 1).toUpperCase();
     return firstLetter;
@@ -52,13 +53,14 @@ const NavBar = () => {
               cursor: 'pointer',
               lineHeight: 1.17,
             }}
+            src={`https://kapusta-project-back-production.up.railway.app${avatar}`}
           >
-            {name ? toCutName(name) : toCutName(email)}
+            {!avatar && name ? toCutName(name) : toCutName(email)}
           </Avatar>
         </MenuBtn>
         <ExitContainer>
           <UserName onClick={onUserClick}>{name ? name : email}</UserName>
-          <ExitBtn onClick={() => setModalOpen(true)}>{ t('Exit') }</ExitBtn>
+          <ExitBtn onClick={() => setModalOpen(true)}>{t('Exit')}</ExitBtn>
         </ExitContainer>
         <LogoutBtn onClick={() => setModalOpen(true)}>
           <svg alt="exit" width={16} height={16}>

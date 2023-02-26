@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 
+
 import axios from 'axios';
 
 import { useTranslation } from 'react-i18next';
 
 import { changeUserName } from 'redux/auth/slice';
 
+
 import { Button } from 'components/UI/Button/Button';
+import { userUpdate } from 'redux/auth/operations';
 import icon from 'images/icons-sprite.svg';
 
 import {
@@ -32,6 +35,7 @@ const modalRoot = document.querySelector('#modal-root');
 const SettingsModal = ({ onClose }) => {
   const { t } = useTranslation();
   const [dragActive, setDragActive] = useState(false);
+  const [image, setImage] = useState(null);
   // const [isUpload, setIsUpload] = useState(false);
   // const [fileName, setFileName] = useState('');
 
@@ -59,6 +63,7 @@ const SettingsModal = ({ onClose }) => {
 
   const onUpload = files => {
     console.log(files[0].name);
+    // dispatch(userUpdate({ avatarUrl: image }));
     // setFileName(files[0].name);
     // setIsUpload(true);
   };
@@ -86,25 +91,34 @@ const SettingsModal = ({ onClose }) => {
     }
   };
 
-  const onFormSubmit = async evt => {
+  const handleChangeImage = async evt => {
+    try {
+      const formData = new FormData();
+      formData.append('image', evt.target.files[0]);
+
+      const res = await axios.post(
+        'https://kapusta-project-back-production.up.railway.app/upload',
+        formData
+      );
+      console.log(res.data.url);
+      setImage(res.data.url);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const onFormSubmit = evt => {
     evt.preventDefault();
-    // console.log(evt.target.elements);
+    const newImage = evt.target.elements.avatar.value;
     const newName = evt.target.elements.name.value;
-    if (newName !== '') {
-      const res = await axios.patch('/users/update-user', {
-        userName: newName,
-      });
-      dispatch(changeUserName(res.data));
+    if (newName) {
+      dispatch(userUpdate({ userName: newName }));
     }
 
-    // const image = evt.target.elements.avatar.files[0].name;
-    // if (image) {
-    //   const res = await axios.post(
-    //     'https://kapusta-project-back-production.up.railway.app/upload',
-    //     { url: image }
-    //   );
-    //   console.log(res);
-    // }
+    if (newImage) {
+      dispatch(userUpdate({ avatarUrl: image }));
+    }
+
     onClose();
   };
 
@@ -155,6 +169,7 @@ const SettingsModal = ({ onClose }) => {
                 name="avatar"
                 id="avatar"
                 accept="image/*"
+                onChange={handleChangeImage}
               />
             </DropFiles>
           </Label>

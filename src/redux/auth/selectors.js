@@ -8,3 +8,4 @@ export const selectEmail = state => state.auth.email;
 export const selectFirstVisit = state => state.auth.firstVisit;
 export const selectFirstBalance = state => state.auth.firstBalance;
 export const selectAccessToken = state => state.auth.accessToken;
+export const selectAvatar = state => state.auth.avatarUrl;

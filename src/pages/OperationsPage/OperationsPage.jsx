@@ -1,10 +1,10 @@
 // import OPERATION_TYPE from 'constants/constants';
-
+import { motion } from 'framer-motion';
 import OperationsBalanceContainer from 'components/OperationsBalanceContainer/OperationsBalanceContainer';
 import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';
 import OperationsContainer from 'components/OperationsContainer/OperationsContainer';
 import OperationsTypeSwitcher from 'components/OperationsTypeSwitcher/OperationsTypeSwitcher';
-
+import LoaderOperationPage from 'components/LoaderOperationPageSkeleton/LoaderOperationPage';
 import { Background } from 'components/UI/Background/Background';
 import { CongratulationsModal } from 'components/CongratulationsModal/CongratulationsModal';
 import OperationsPageWrapper from './OperationsPages.styled';
@@ -21,6 +21,7 @@ const OperationsPage = () => {
   let firstVisit = useSelector(selectFirstVisit);
   const balance = useSelector(selectBalance);
   const [constants, setConstants] = useState(0);
+  const skelet = useSelector(state => state.transactions.skelet);
 
   const handleChange = value => {
     setConstants(prevState => (prevState += 1));
@@ -41,13 +42,22 @@ const OperationsPage = () => {
       {!firstVisit && <CongratulationsModal />}
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Background />
-
-        <OperationsPageWrapper>
-          <OperationsBalanceContainer addBalance={0} />
-          {!balance && <OperationsBalanceModal />}
-          <OperationsTypeSwitcher onChange={handleChange} />
-          <OperationsContainer value={constants} />
-        </OperationsPageWrapper>
+        {skelet ? (
+          <LoaderOperationPage />
+        ) : (
+          <OperationsPageWrapper>
+            <OperationsBalanceContainer addBalance={0} />
+            {!balance && <OperationsBalanceModal />}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7 }}
+            >
+              <OperationsTypeSwitcher onChange={handleChange} />
+              <OperationsContainer value={constants} />
+            </motion.div>
+          </OperationsPageWrapper>
+        )}
       </div>
     </>
   );

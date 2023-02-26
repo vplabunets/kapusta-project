@@ -173,6 +173,8 @@ export const Box5 = styled.h1`
    }
 
    @media ${DEVICE.tablet} {
+    border-radius: 25px;
+    overflow: hidden;
     display: block;
     width: 700px;
     margin-top: 50px;

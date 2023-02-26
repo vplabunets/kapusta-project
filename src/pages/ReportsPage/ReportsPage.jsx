@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { motion } from 'framer-motion';
+
 import ReportsPageWrapper from './ReportsPage.styled';
 import ReportsNav from 'components/ReportsNav/ReportsNav';
 import { Background } from 'components/UI/Background/Background';
@@ -14,6 +17,8 @@ import {
 } from 'redux/reports/operations';
 import { selectOperationType } from 'redux/transaction/selectors';
 import { setOperationType } from 'redux/transaction/slice';
+
+// import LoaderCabbage from 'components/LoaderCabbage/LoaderCabbage';
 
 const ReportsPage = () => {
   const currentPeriod = useSelector(selectCurrentPeriod);
@@ -38,9 +43,15 @@ const ReportsPage = () => {
       <Background />
       <ReportsPageWrapper>
         <ReportsNav />
-        <ReportsMonthBalance />
-        <ReportsMonthSummary reportType={operation} toggleType={toggleType} />
-        <ReportsChart />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+        >
+          <ReportsMonthBalance />
+          <ReportsMonthSummary reportType={operation} toggleType={toggleType} />
+          <ReportsChart />
+        </motion.div>
       </ReportsPageWrapper>
     </>
   );

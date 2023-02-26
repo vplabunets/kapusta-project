@@ -20,12 +20,18 @@ import {
   MenuBtn,
 } from './NavBar.styles';
 
+import { logOut } from 'redux/auth/operations';
+import { selectEmail, selectName, selectAvatar } from 'redux/auth/selectors';
+
+
 const NavBar = () => {
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const email = useSelector(selectEmail);
   const name = useSelector(selectName);
+  const avatar = useSelector(selectAvatar);
+
   const { t } = useTranslation();
   const toCutName = email => {
     const firstLetter = email.slice(0, 1).toUpperCase();
@@ -55,8 +61,9 @@ const NavBar = () => {
               cursor: 'pointer',
               lineHeight: 1.17,
             }}
+            src={`https://kapusta-project-back-production.up.railway.app${avatar}`}
           >
-            {name ? toCutName(name) : toCutName(email)}
+            {!avatar && name ? toCutName(name) : toCutName(email)}
           </Avatar>
         </MenuBtn>
         <ExitContainer>

@@ -1,6 +1,6 @@
 import Layout from 'components/Layout';
 
-import { lazy, useEffect } from 'react';
+import { lazy  } from 'react';
 
 // import { useSelector } from 'react-redux';
 // import { useDispatch } from 'react-redux';

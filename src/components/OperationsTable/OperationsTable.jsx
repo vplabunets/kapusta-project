@@ -43,7 +43,6 @@ const TransactionsTable = () => {
             />
           ))} 
           <EmptyLines />
-          {transactions.length === 4 ? <></> : <EmptyLines/>}
         </TableBody>
       </Table>
     </>

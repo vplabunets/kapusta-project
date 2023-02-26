@@ -88,10 +88,11 @@
   "subtext3": "Because now we will help you control your finances ",
   "subText4": "Don't thank",
    "start" : "Let's start" 
-           
-            
+},
 
-}
+"Exit": "Exit",
+"exitText" : "Do you really want to leave?",
+"Are you sure" : "Are you sure?"
 
 
 }

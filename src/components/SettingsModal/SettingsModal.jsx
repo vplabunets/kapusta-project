@@ -1,10 +1,15 @@
-import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 
-import { useTranslation } from 'react-i18next';
+
 import axios from 'axios';
-import PropTypes from 'prop-types';
+
+import { useTranslation } from 'react-i18next';
+
+import { changeUserName } from 'redux/auth/slice';
+
 
 import { Button } from 'components/UI/Button/Button';
 import { userUpdate } from 'redux/auth/operations';
@@ -196,7 +201,7 @@ const SettingsModal = ({ onClose }) => {
 };
 
 SettingsModal.propTypes = {
-  onClose: PropTypes.func,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default SettingsModal;

@@ -1,15 +1,17 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { PropTypes } from 'prop-types';
+import { useMediaQuery } from '@mui/material';
 
 import Balance from 'components/Balance/Balance';
+
+import OperationsForwardToReports from 'components/OperationsForwardToReports/OperationsForwardToReports';
+import IconPlus from 'images/icons-sprite.svg';
+import OperationsAddModal from 'components/OperationsAddModal/OperationsAddModal';
+
 import {
   OperationsModalOpenButton,
   Wrapper,
 } from 'components/OperationsBalanceContainer/OperationsBalanceContainer.styled';
-import OperationsForwardToReports from 'components/OperationsForwardToReports/OperationsForwardToReports';
-import React, { useState } from 'react';
-import IconPlus from 'images/icons-sprite.svg';
-import OperationsAddModal from 'components/OperationsAddModal/OperationsAddModal';
-import { useMediaQuery } from '@mui/material';
 
 const OperationsBalanceContainer = ({ addBalance }) => {
   const [isOpenOperationsAddModal, setIsOperationsAddModal] = useState(false);
@@ -35,6 +37,10 @@ const OperationsBalanceContainer = ({ addBalance }) => {
       )}
     </Wrapper>
   );
+};
+
+OperationsBalanceContainer.propTypes = {
+  addBalance: PropTypes.number.isRequired,
 };
 
 export default OperationsBalanceContainer;

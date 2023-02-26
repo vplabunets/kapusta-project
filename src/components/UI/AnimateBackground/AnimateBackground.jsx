@@ -1,4 +1,7 @@
+import { PropTypes } from 'prop-types';
+
 import { CabbageList } from '../Cabbage/Cabbage';
+
 import { BackgroundGrey, BackgroundWhite } from './AnimateBackground.styled';
 
 export const AnimateBackground = ({ white }) => {
@@ -14,4 +17,8 @@ export const AnimateBackground = ({ white }) => {
       <CabbageList />
     </BackgroundGrey>
   );
+};
+
+AnimateBackground.propTypes = {
+  white: PropTypes.bool.isRequired,
 };

@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
-import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
+import { createPortal } from 'react-dom';
+
 import { Button } from 'components/UI/Button/Button';
 import icon from 'images/icons-sprite.svg';
 import {
@@ -10,7 +12,6 @@ import {
   Text,
   ButtonWrapper,
 } from './ConfirmModal.styled';
-import React, { useEffect } from 'react';
 
 const body = document.querySelector('body');
 

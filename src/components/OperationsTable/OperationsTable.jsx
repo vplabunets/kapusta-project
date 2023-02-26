@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { useSelector } from 'react-redux';
 import {
   getSelectTransactions,
   selectIsLoading,
 } from 'redux/transaction/selectors';
+
 import TransactionsTableLines from './TransactionsTableLines';
 import EmptyLines from './EmptyLines';
 import LoaderCabbage from '../LoaderCabbage/LoaderCabbage';
+
 import {
   Table,
   TableHead,
   TableHeadTitle,
   TableBody,
 } from './OperationsTable.styled';
-import { useTranslation } from 'react-i18next';
+
 const TransactionsTable = () => {
   const IsLoading = useSelector(selectIsLoading);
   const { t } = useTranslation();
@@ -51,6 +55,7 @@ const TransactionsTable = () => {
               />
             ))}
           <EmptyLines />
+
         </TableBody>
       </Table>
     </>

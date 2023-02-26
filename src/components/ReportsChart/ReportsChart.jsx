@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
-import { Bar } from 'react-chartjs-2';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { motion } from 'framer-motion';
+import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,14 +13,14 @@ import {
   BarElement,
 } from 'chart.js/auto';
 
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { Wrapper } from './ReportsChart.styled';
 import {
   selectCurrentPeriod,
   selectIsLoading,
   selectItemsByCategory,
 } from 'redux/reports/selectors';
 import LoaderCabbage from 'components/LoaderCabbage/LoaderCabbage';
+
+import { Wrapper } from './ReportsChart.styled';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 

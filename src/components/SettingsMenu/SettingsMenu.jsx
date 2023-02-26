@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { PropTypes } from 'prop-types';
 
 import { useTranslation } from 'react-i18next';
 
@@ -98,6 +99,10 @@ const SettingsMenu = ({ setMenuOpen }) => {
       </Menu>
     </Backdrop>
   );
+};
+
+SettingsMenu.propTypes = {
+  setMenuOpen: PropTypes.func.isRequired,
 };
 
 export default SettingsMenu;

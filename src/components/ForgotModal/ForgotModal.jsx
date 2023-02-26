@@ -1,24 +1,25 @@
+import { useDispatch } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import { Formik, Form } from 'formik';
-import { Button } from 'components/UI/Button/Button';
-import Spinner from 'components/UI/Loader/Loader';
-import { useAuth } from 'hooks/useAuth';
-import icon from 'images/icons-sprite.svg';
 import * as Yup from 'yup';
+
+import { useAuth } from 'hooks/useAuth';
+import { resetPassword } from 'redux/auth/operations';
+import Spinner from 'components/UI/Loader/Loader';
+import { Button } from 'components/UI/Button/Button';
+import icon from 'images/icons-sprite.svg';
 
 import {
   Input,
   AuthFormLabel,
   ErrorValidation,
 } from '../HomeAuthForm/HomeAuthForm.styled';
-
 import {
   ButtonBack,
   Text,
   Wrapper,
   ButtonContainer,
 } from './ForgotModal.styled';
-import { useDispatch } from 'react-redux';
-import { resetPassword } from 'redux/auth/operations';
 
 const ValidationSchema = Yup.object().shape({
   email: Yup.string()
@@ -89,4 +90,8 @@ export const ForgotModal = ({ closeModal }) => {
       </Formik>
     </Wrapper>
   );
+};
+
+ForgotModal.propTypes = {
+  closeModal: PropTypes.func,
 };

@@ -1,15 +1,15 @@
-import Layout from 'components/Layout';
-
 import { lazy, useEffect } from 'react';
-
-// import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import RestrictedRoute from 'routes/RestrictedRoutes';
-import PrivateRoutes from 'routes/PrivateRoutes';
+
+import Layout from 'components/Layout';
 
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
+
+import RestrictedRoute from 'routes/RestrictedRoutes';
+import PrivateRoutes from 'routes/PrivateRoutes';
+
 import { Loader } from './LoaderCabbage/LoaderCabbage.styled';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));

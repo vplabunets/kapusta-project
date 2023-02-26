@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import moment from 'moment';
-import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
-// import PRODUCT_CATEGORY from '../../constants/productCategory';
+import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { Button } from 'components/UI/Button/Button';
+import { customStyles } from './SelectorCustomStyle';
+import { addTransaction } from 'redux/transaction/operations';
+
+import { selectOperationType } from '../../redux/transaction/selectors';
 
 import icon from 'images/icons-sprite.svg';
 import {
@@ -20,11 +26,6 @@ import {
   InputWrapper,
   SelectInput,
 } from './OperationsForm.styled';
-import { Button } from 'components/UI/Button/Button';
-import { customStyles } from './SelectorCustomStyle';
-import { addTransaction } from 'redux/transaction/operations';
-
-import { selectOperationType } from '../../redux/transaction/selectors';
 
 const OperationsForm = ({ value }) => {
   const isScreenMoreTablet = useMediaQuery('(min-width: 768px)');
@@ -181,6 +182,10 @@ const OperationsForm = ({ value }) => {
       </ButtonWrapper>
     </FormWrapper>
   );
+};
+
+OperationsForm.propTypes = {
+  value: PropTypes.number.isRequired,
 };
 
 export default OperationsForm;

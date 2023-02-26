@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { Btn } from './Button.styled';
 
 // children - text in the button
@@ -31,4 +32,7 @@ Button.propTypes = {
   color: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   design: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  onSubmit: PropTypes.func,
+  disabled: PropTypes.bool,
 };

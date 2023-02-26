@@ -49,6 +49,7 @@ export const ButtonReport = styled.button`
 
   &:hover > div {
     background-color: ${p => p.theme.lightTheme.chartLight};
+    transform: scale(1.1);
   }
 
   &:focus,
@@ -61,7 +62,8 @@ export const ButtonReport = styled.button`
     display: block;
     width: 59px;
     height: 46px;
-    transition: background-color ${duration} ${timing} ${delay};
+    transition: background-color ${duration} ${timing} ${delay},
+      transform ${duration} ${timing} ${delay};
 
     background-color: ${p =>
       p.isActive

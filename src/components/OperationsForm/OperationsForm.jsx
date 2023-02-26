@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import moment from 'moment';
 import { toast } from 'react-toastify';
-
-import PRODUCT_CATEGORY from '../../constants/productCategory';
+import { useTranslation } from 'react-i18next';
+// import PRODUCT_CATEGORY from '../../constants/productCategory';
 
 import icon from 'images/icons-sprite.svg';
 import {
@@ -28,7 +28,7 @@ import { selectOperationType } from '../../redux/transaction/selectors';
 
 const OperationsForm = ({ value }) => {
   const isScreenMoreTablet = useMediaQuery('(min-width: 768px)');
-
+const { t } = useTranslation();
   const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'));
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -75,7 +75,8 @@ const OperationsForm = ({ value }) => {
         break;
     }
   };
-
+const expensesCategory = t('expensesCategory', { returnObjects: true });
+const incomeCategory = t('incomeCategory', { returnObjects: true });
   const resetForm = () => {
     setDate(moment(new Date()).format('YYYY-MM-DD'));
     setDescription('');
@@ -91,9 +92,9 @@ const OperationsForm = ({ value }) => {
 
   let actualOptions = '';
   if (type === 'expenses') {
-    actualOptions = PRODUCT_CATEGORY.expenses;
+    actualOptions = expensesCategory;
   } else {
-    actualOptions = PRODUCT_CATEGORY.income;
+    actualOptions = incomeCategory;
   }
 
   let actualPlaceholder = '';

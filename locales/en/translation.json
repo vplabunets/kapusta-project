@@ -42,19 +42,25 @@
    "balanceModalTitle": " Hello! To get started, enter the current balance of your account",
  "balanceModalText" : "You can't spend money until you have it",
 
-  "product": {
-  "Product description" : "Product description",
+"expensesCategory":  [
+    { "value": "Products", "label": "Products" },
+    { "value": "Health", "label": "Health" },
+    { "value": "Alcohol", "label": "Alcohol" },
+    { "value": "Entertainment", "label": "Entertainment" },
+    { "value": "Housing", "label": "Housing" },
+    { "value": "Communal, communication", "label": "Communal, communication" },
+    { "value": "Sports, hobbies", "label": "Sports, hobbies" },
+    { "value": "Education", "label": "Education" },
+    { "value": "Other", "label": "Other" }
+  ], 
+
+  "incomeCategory": [
+    { "value": "salary", "label": "Salary" },
+    { "value": "Add.income", "label": "Add.income" }
+  ],
+  
+    "Product description" : "Product description",
   "Product category": "Product category",
-  "Products": "Products" ,
-   "Health" : "Health",
-    "Alcohol": "Alcohol",
-   "Entertainment" : "Entertainment",
-  "Housing" : "Housing",
-   "Communal, communication" : "Communal, communication",
-  "Sports, hobbies" : "Sports, hobbies",
- "Education" : "Education",
-  "Other" : "Other"
- }, 
 
  "Date" : "Date",
  "Description": "Description",

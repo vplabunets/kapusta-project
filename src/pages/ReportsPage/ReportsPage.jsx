@@ -23,7 +23,6 @@ import { setOperationType } from 'redux/transaction/slice';
 const ReportsPage = () => {
   const currentPeriod = useSelector(selectCurrentPeriod);
   const operation = useSelector(selectOperationType);
-  // const isLoading = useSelector(selectIsLoading);
 
   const dispatch = useDispatch();
 

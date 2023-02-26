@@ -12,6 +12,7 @@ const initialState = {
   currentPeriod: { month: '', year: '' },
   error: null,
   isLoading: false,
+  skelet: false,
 };
 
 const reportsSlice = createSlice({
@@ -26,13 +27,15 @@ const reportsSlice = createSlice({
     [getAllSummaryReports.fulfilled]: (state, action) => {
       state.allSummaryReports = action.payload;
       state.isLoading = false;
+      state.skelet = false;
     },
     [getAllSummaryReports.rejected](state, action) {
       state.error = action.payload.message;
       state.isLoading = false;
     },
     [getAllSummaryReports.pending](state) {
-      state.isLoading = true;
+      // state.isLoading = true;
+      state.skelet = true;
     },
     [getCategoryReports.fulfilled]: (state, action) => {
       state.categoryReports = action.payload;

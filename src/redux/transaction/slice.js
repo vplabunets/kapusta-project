@@ -12,6 +12,7 @@ const initialState = {
   error: null,
   isLoading: false,
   operationType: 'expenses',
+  skelet: false,
 };
 
 const transactionSlice = createSlice({
@@ -37,13 +38,15 @@ const transactionSlice = createSlice({
     [getTransactionsByOperation.fulfilled]: (state, action) => {
       state.transactions = action.payload;
       state.isLoading = false;
+      state.skelet = false;
     },
     [getTransactionsByOperation.rejected](state, action) {
       state.error = action.payload.message;
       state.isLoading = false;
     },
     [getTransactionsByOperation.pending](state) {
-      state.isLoading = true;
+      // state.isLoading = true;
+      state.skelet = true;
     },
     [addTransaction.fulfilled]: (state, action) => {
       state.transactions.push(action.payload.data);

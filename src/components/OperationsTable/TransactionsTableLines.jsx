@@ -5,6 +5,7 @@ import icon from 'images/icons-sprite.svg';
 import { deleteTransaction } from 'redux/transaction/operations';
 import ConfirmModal from '../ConfirmModal/ConfirmModal';
 
+import { useTranslation } from 'react-i18next';
 import {
   Tabletr,
   Data,
@@ -46,7 +47,7 @@ const TransactionsTableLines = ({
     dispatch(deleteTransaction(_id));
     return;
   };
-
+const { t } = useTranslation();
   const sumStyle = getSumStyle(operation);
 
   return (
@@ -55,7 +56,7 @@ const TransactionsTableLines = ({
         {modalOpen && (
           <ConfirmModal
             setModalOpen={setModalOpen}
-            text={'Are you sure?'}
+            text={t('Are you sure')}
             onClick={() => onDelete(id)}
           />
         )}

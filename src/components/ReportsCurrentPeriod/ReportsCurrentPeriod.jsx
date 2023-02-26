@@ -11,10 +11,10 @@ import {
 import LeftIcon from 'images/icons-sprite.svg';
 import RightIcon from 'images/icons-sprite.svg';
 import { setCurrentPeriod } from 'redux/reports/slice';
-
+import { useTranslation } from 'react-i18next';
 const CurrentPeriod = () => {
   const [newDate, setNewDate] = useState(() => new Date());
-
+const { t } = useTranslation();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const CurrentPeriod = () => {
 
   return (
     <div>
-      <Title>Current period:</Title>
+      <Title>{t('Current period')}:</Title>
       <ContainerPeriod>
         <Button type="button" onClick={monthChangeLeft}>
           <svg alt="exit" width={16} height={16}>

@@ -4,7 +4,7 @@ import OperationsBalanceContainer from 'components/OperationsBalanceContainer/Op
 import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';
 import OperationsContainer from 'components/OperationsContainer/OperationsContainer';
 import OperationsTypeSwitcher from 'components/OperationsTypeSwitcher/OperationsTypeSwitcher';
-import LoaderOperationPage from 'components/LoaderOperationPage/LoaderOperationPage';
+//import LoaderOperationPage from 'components/LoaderOperationPage/LoaderOperationPage';
 import { Background } from 'components/UI/Background/Background';
 import { CongratulationsModal } from 'components/CongratulationsModal/CongratulationsModal';
 import OperationsPageWrapper from './OperationsPages.styled';
@@ -42,7 +42,7 @@ const OperationsPage = () => {
       {!firstVisit && <CongratulationsModal />}
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Background />
-        {false ? <LoaderOperationPage /> : <OperationsPageWrapper>
+        {false ? "Hello" : (<OperationsPageWrapper>
           <OperationsBalanceContainer addBalance={0} />
           {!balance && <OperationsBalanceModal />}
            <motion.div
@@ -53,7 +53,7 @@ const OperationsPage = () => {
           <OperationsTypeSwitcher onChange={handleChange} />
           <OperationsContainer value={constants} />
            </motion.div>         
-        </OperationsPageWrapper>}
+        </OperationsPageWrapper>)}
 
       </div>
     </>

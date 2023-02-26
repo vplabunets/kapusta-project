@@ -5,10 +5,10 @@ import TransactionsTableLines from './TransactionsTableLines';
 import EmptyLines from './EmptyLines'
 import LoaderCabbage  from '../LoaderCabbage/LoaderCabbage';
 import { Table, TableHead, TableHeadTitle, TableBody } from './OperationsTable.styled';
-
+import { useTranslation } from 'react-i18next';
 const TransactionsTable = () => {
   const IsLoading = useSelector(selectIsLoading);
-  
+  const { t } = useTranslation();
   const [transactions, setTransactions] = useState();
   const sortedTransactions = useSelector(getSelectTransactions);
 
@@ -22,10 +22,10 @@ const TransactionsTable = () => {
       <Table>
         <TableHead>
           <tr>
-            <TableHeadTitle>Date</TableHeadTitle>
-            <TableHeadTitle>Description</TableHeadTitle>
-            <TableHeadTitle>Category</TableHeadTitle>
-            <TableHeadTitle>Sum</TableHeadTitle>
+            <TableHeadTitle>{ t('Date') }</TableHeadTitle>
+            <TableHeadTitle>{ t('Description') }</TableHeadTitle>
+            <TableHeadTitle>{ t('Category') }</TableHeadTitle>
+            <TableHeadTitle>{ t('Sum') }</TableHeadTitle>
             <TableHeadTitle></TableHeadTitle>
           </tr>
         </TableHead>

@@ -58,7 +58,10 @@ export const TypeButton = styled.button`
   }
 
   @media ${DEVICE.tablet} {
-    background-color: ${p => (p.active ? '#FEFEFE' : '#FAFBFD')};
+    background-color: ${p =>
+      p.active
+        ? p.theme.lightTheme.operationTypeSwitchBg
+        : p.theme.lightTheme.operationTypeSwitchBg2};
     color: ${p =>
       p.active
         ? `${p.theme.lightTheme.accentColor}`

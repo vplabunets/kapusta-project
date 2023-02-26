@@ -17,10 +17,35 @@ const theme = {
     modalBackgroundColor:
       'linear-gradient(117.84deg, #1D346A 2.84%, #031634 67.28%)',
     lightGreyColor: 'rgba(82, 85, 95, 0.7)',
+    userNameColor: ' rgba(82, 85, 95, 1)',
     googleBtnColor: '#f6f7fb',
     tableBodyColor: '#f2f8f8',
+    operationTypeSwitchBg: '#FEFEFE',
+    operationTypeSwitchBg2: '#FAFBFD',
+    borderColor: '#f6f7fc',
   },
-
-  darkTheme: {},
 };
 export default theme;
+
+// lightTheme: {
+//   mainBackgroundColor: '#202225',
+//   secondaryBackgroundColor: '#E5E5E5',
+//   backgroundCabbageColor: '#DFE2EB',
+//   accentColor: '#FF751D',
+//   tableHeadBackgroundColor: '	#40444b',
+//   tableHeadTextColor: '#FFFFFF',
+//   mainTextColor: '#FFFFFF',
+//   balanceTextColor: '#52555FB2',
+//   expensesTextColor: '#E7192E',
+//   incomesTextColor: '#407946',
+//   headerColor: '#2f3136',
+//   whiteTextColor: '#FFFFFF',
+//   chartLight: '#FFDAC0',
+//   iconColor: '#071F41',
+//   modalBackgroundColor:
+//     'linear-gradient(117.84deg, #1D346A 2.84%, #031634 67.28%)',
+//   lightGreyColor: 'rgba(82, 85, 95, 0.7)',
+//   googleBtnColor: '#202225',
+//   tableBodyColor: '#f2f8f8',
+// },
+// darkTheme: {},

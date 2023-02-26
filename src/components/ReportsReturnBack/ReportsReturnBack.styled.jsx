@@ -12,7 +12,7 @@ export const BackLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   margin-bottom: 16px;
-  color: rgba(82, 85, 95, 0.7);
+  color: ${p => p.theme.lightTheme.lightGreyColor};
 
   transition: color ${duration} ${timing} ${delay};
 
@@ -35,7 +35,7 @@ export const BackLink = styled(Link)`
 
       letter-spacing: 0.04em;
 
-      color: rgba(82, 85, 95, 0.7);
+      color: ${p => p.theme.lightTheme.lightGreyColor};
       display: block;
       margin-left: 15px;
     }

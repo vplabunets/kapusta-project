@@ -32,7 +32,7 @@ export const Title = styled.h2`
   justify-content: space-between;
   flex-direction: column;
   letter-spacing: 0.02em;
-  color: rgba(82, 85, 95, 0.7);
+  color: ${p => p.theme.lightTheme.lightGreyColor};
 
   @media ${DEVICE.tablet} {
     margin-right: 21px;
@@ -120,7 +120,7 @@ export const Button = styled.button`
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
-  color: rgba(82, 85, 95, 0.7);
+  color: ${p => p.theme.lightTheme.lightGreyColor};
   border: 2px solid ${p => p.theme.lightTheme.headerColor};
   border-left: none;
   border-radius: 0 20px 20px 0;

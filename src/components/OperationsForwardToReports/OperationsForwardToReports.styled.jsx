@@ -19,7 +19,7 @@ export const Title = styled.h2`
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  color: rgba(82, 85, 95, 0.7);
+  color: ${p => p.theme.lightTheme.lightGreyColor};
 
   @media ${DEVICE.tablet} {
     margin-bottom: 0;
@@ -35,7 +35,7 @@ export const Title = styled.h2`
 `;
 
 export const ReportLink = styled(Link)`
-  color: rgba(82, 85, 95, 0.7);
+  color: ${p => p.theme.lightTheme.lightGreyColor};
   display: flex;
   font-style: normal;
   font-weight: normal;

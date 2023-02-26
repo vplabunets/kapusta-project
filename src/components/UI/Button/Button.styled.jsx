@@ -80,6 +80,6 @@ export const Btn = styled.button`
 
   border: ${p => {
     if (p.color === 'accent') return;
-    return '2px solid #f6f7fc;';
+    return `2px solid ${p.theme.lightTheme.borderColor}`;
   }};
 `;

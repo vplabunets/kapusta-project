@@ -132,7 +132,7 @@ export const Btn = styled.td`
 
 export const BtnStyle = styled.button`
   padding: none;
-  background-color: #fff;
+  background-color: transparent;
   cursor: pointer;
   border: none;
 

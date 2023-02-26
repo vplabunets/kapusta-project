@@ -164,7 +164,7 @@ const DropFilesInput = styled.input`
     padding: 10px 20px;
     border-radius: 10px;
     font-size: 10px;
-    color: #fff;
+    color: ${p => p.theme.lightTheme.whiteTextColor};
     cursor: pointer;
     transition: transform ${TRANSITION.duration} ${TRANSITION.timing};
     @media ${DEVICE.tablet} {

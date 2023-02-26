@@ -63,7 +63,7 @@ export const DateSelection = styled.input`
   margin: 0 auto;
   text-align: center;
   position: relative;
-  border: 2px solid #fff;
+  border: 2px solid ${p => p.theme.lightTheme.headerColor};
   border-radius: 16px;
 
   @media ${DEVICE.tablet} {
@@ -137,7 +137,7 @@ export const DescriptionInput = styled.input`
 
   @media ${DEVICE.tablet} {
     border-top-right-radius: 0px;
-    border: 2px solid #f6f7fc;
+    border: 2px solid ${p => p.theme.lightTheme.borderColor};
     display: flex;
     padding-left: 12px;
   }
@@ -154,7 +154,7 @@ export const SelectInput = styled(Select)`
   height: 44px;
   border: 2px solid #ffffff;
   border-bottom-right-radius: 16px;
-  outline-color: '#FF751D';
+  outline-color: #ff751d;
   color: #c7ccdc;
   @media ${DEVICE.tablet} {
     border: 2px solid #f6f7fc;
@@ -218,7 +218,7 @@ export const CountInput = styled.input`
 
   @media ${DEVICE.tablet} {
     height: 40px;
-    border: 2px solid #f6f7fc;
+    border: 2px solid ${p => p.theme.lightTheme.borderColor};
     width: 110px;
     margin-top: 0;
     padding-right: 45px;

@@ -6,7 +6,7 @@ export const Title = styled.h2`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.143;
-  color: rgba(82, 85, 95, 0.7);
+  color: ${p => p.theme.lightTheme.lightGreyColor};
   text-align: center;
 `;
 export const ContainerPeriod = styled.div`

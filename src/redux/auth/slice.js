@@ -8,6 +8,7 @@ import {
   resetPassword,
   changeFirstVisit,
   changeFirstBalance,
+  userUpdate,
 } from './operations';
 
 const initialState = {
@@ -96,6 +97,7 @@ const authSlice = createSlice({
       state.isRefreshing = false;
       state.firstVisit = action.payload.firstVisit;
       state.firstBalance = action.payload.firstBalance;
+      state.avatarUrl = action.payload.avatarUrl;
     },
     [refreshUser.rejected](state, action) {
       state.error = action.payload.message;
@@ -142,8 +144,20 @@ const authSlice = createSlice({
     [changeFirstBalance.rejected](state) {
       state.isLoading = false;
     },
+
+    [userUpdate.fulfilled](state, action) {
+      state.avatarUrl = action.payload.avatarUrl;
+      state.name = action.payload.userName;
+    },
+    [userUpdate.pending](state) {
+      state.isLoading = true;
+    },
+    [userUpdate.rejected](state) {
+      state.isLoading = false;
+    },
   },
 });
 
 export const authReducer = authSlice.reducer;
-export const { changeBalance, changeUserName, setToken } = authSlice.actions;
+export const { changeBalance, changeUserName, setToken, changeAvatar } =
+  authSlice.actions;

@@ -179,3 +179,17 @@ export const changeFirstBalance = createAsyncThunk(
     }
   }
 );
+
+export const userUpdate = createAsyncThunk(
+  'auth/userUpdate',
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const result = await axios.patch('/users/update-user', credentials);
+      toast.success('The user information was successfully updated!');
+      return result.data;
+    } catch (error) {
+      toast.error('Something went wrong, please try again later');
+      return rejectWithValue(error.response.data);
+    }
+  }
+);

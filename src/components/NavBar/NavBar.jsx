@@ -61,7 +61,7 @@ const NavBar = () => {
             <use href={`${ExitIcon}#icon-logout`}></use>
           </svg>
         </LogoutBtn>
-        {isMenuOpen === true && <SettingsMenu />}
+        {isMenuOpen === true && <SettingsMenu setMenuOpen={onUserClick} />}
       </Container>
       {modalOpen && (
         <ConfirmModal

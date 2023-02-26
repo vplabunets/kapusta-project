@@ -22,7 +22,6 @@ export const getTransactionsByOperation = createAsyncThunk(
   'transactions/operation',
   async (credentials, { rejectWithValue }) => {
     try {
-      console.log(credentials);
       const result = await axios.post('/transaction/operation', credentials);
       return result.data;
     } catch (error) {

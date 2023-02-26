@@ -1,5 +1,6 @@
 import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
 
@@ -17,18 +18,21 @@ import {
   DropFilesInput,
   Form,
   Label,
-  NameInput,
+  Input,
   DragFileElement,
 } from './SettingsModal.styled';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
+import { changeUserName } from 'redux/auth/slice';
 const modalRoot = document.querySelector('#modal-root');
 
 const SettingsModal = ({ onClose }) => {
   const { t } = useTranslation();
-
   const [dragActive, setDragActive] = useState(false);
   // const [isUpload, setIsUpload] = useState(false);
   // const [fileName, setFileName] = useState('');
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.addEventListener('keydown', onKeyDown);
@@ -79,8 +83,26 @@ const SettingsModal = ({ onClose }) => {
     }
   };
 
-  const onFormSubmit = evt => {
+  const onFormSubmit = async evt => {
     evt.preventDefault();
+    // console.log(evt.target.elements);
+    const newName = evt.target.elements.name.value;
+    if (newName !== '') {
+      const res = await axios.patch('/users/update-user', {
+        userName: newName,
+      });
+      dispatch(changeUserName(res.data));
+    }
+
+    // const image = evt.target.elements.avatar.files[0].name;
+    // if (image) {
+    //   const res = await axios.post(
+    //     'https://kapusta-project-back-production.up.railway.app/upload',
+    //     { url: image }
+    //   );
+    //   console.log(res);
+    // }
+    onClose();
   };
 
   return createPortal(
@@ -94,7 +116,7 @@ const SettingsModal = ({ onClose }) => {
         <Text>{t('menu.Profile Settings')}</Text>
         <Form onDragEnter={handleDrag} onSubmit={onFormSubmit}>
           <Label htmlFor="name"> {t('modal.Change Name')}</Label>
-          <NameInput
+          <Input
             id="name"
             type="text"
             name="name"
@@ -102,7 +124,23 @@ const SettingsModal = ({ onClose }) => {
             maxlength="16"
             minlength="2"
           />
-
+          <Label htmlFor="password"> Change password</Label>
+          <Input
+            id="old-password"
+            type="password"
+            name="old-password"
+            placeholder="Old password"
+            maxlength="50"
+            minlength="6"
+          />
+          <Input
+            id="new-password"
+            type="password"
+            name="old-password"
+            placeholder="New password"
+            maxlength="50"
+            minlength="6"
+          />
           <Label htmlFor="avatar">
             {t('modal.Set/Change Avatar')}
             <DropFiles dragActive={dragActive}>
@@ -117,18 +155,14 @@ const SettingsModal = ({ onClose }) => {
               />
             </DropFiles>
           </Label>
-
           <ButtonWrapper>
-            <Button type={'submit'} color={'accent'} design={'modal'}>
-              {t('button.CONFIRM')}
-            </Button>
             <Button
-              onClick={onClose}
-              type={'button'}
-              color={'white'}
+              type={'submit'}
+              color={'accent'}
               design={'modal'}
+              // onSubmit={onFormSubmit}
             >
-              {t('button.CANCEL')}
+              {t('button.CONFIRM')}
             </Button>
           </ButtonWrapper>
           {dragActive && (

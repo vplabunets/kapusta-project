@@ -21,7 +21,7 @@ const OperationsPage = () => {
   let firstVisit = useSelector(selectFirstVisit);
   const balance = useSelector(selectBalance);
   const [constants, setConstants] = useState(0);
-  const skelet = useSelector((state) => state.transactions.skelet);
+//   const skelet = useSelector((state) => state.transactions.skelet);
 
   const handleChange = value => {
     setConstants(prevState => (prevState += 1));
@@ -42,7 +42,7 @@ const OperationsPage = () => {
       {!firstVisit && <CongratulationsModal />}
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Background />
-        {skelet ? <LoaderOperationPage /> : <OperationsPageWrapper>
+        {false ? <LoaderOperationPage /> : <OperationsPageWrapper>
           <OperationsBalanceContainer addBalance={0} />
           {!balance && <OperationsBalanceModal />}
            <motion.div

@@ -96,12 +96,14 @@ const incomeCategory = t('incomeCategory', { returnObjects: true });
   } else {
     actualOptions = incomeCategory;
   }
+  const ProductCateg = t('Product category', { returnObjects: true });
+  const Typeofincome = t('Type of income', { returnObjects: true });
 
   let actualPlaceholder = '';
   if (type === 'expenses') {
-    actualPlaceholder = 'Product category';
+    actualPlaceholder = ProductCateg;
   } else {
-    actualPlaceholder = 'Type of income';
+    actualPlaceholder = Typeofincome;
   }
 
   return (
@@ -121,7 +123,7 @@ const incomeCategory = t('incomeCategory', { returnObjects: true });
           </CalendarIcon>
         </DateWrapper>
         <DescriptionInput
-          placeholder="Product description"
+          placeholder={ t('Product description') }
           name="description"
           aria-label="Text"
           onChange={handleChange}
@@ -166,7 +168,7 @@ const incomeCategory = t('incomeCategory', { returnObjects: true });
       </InputWrapper>
       <ButtonWrapper>
         <Button type="submit" color="accent" design="operation">
-          Input
+          {t('button.Input')}
         </Button>
         <Button
           type="button"
@@ -174,7 +176,7 @@ const incomeCategory = t('incomeCategory', { returnObjects: true });
           design="operation"
           onClick={resetForm}
         >
-          Clear
+           {t('button.Clear')} 
         </Button>
       </ButtonWrapper>
     </FormWrapper>

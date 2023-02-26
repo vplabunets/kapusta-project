@@ -55,30 +55,3 @@ export const themeDark = {
   btnGreyColor: '#f6f7fc',
   sectionShadow: 'rgb(255, 255, 255, 0.3)',
 };
-
-// const theme = {
-//   mainBackgroundColor: mode === 'light' ? '#F2F5FC' : '#202225',
-//   accentColor: '#FF751D',
-//   tableHeadBackgroundColor: mode === 'light' ? '#F5F6FB' : '#40444b',
-//   tableHeadTextColor: mode === 'light' ? '#000000' : '#FFFFFF',
-//   mainTextColor: mode === 'light' ? '#52555F' : '#FFFFFF',
-//   expensesTextColor: '#E7192E',
-//   incomesTextColor: '#407946',
-//   headerColor: mode === 'light' ? '#FFFFFF' : '#2f3136',
-//   whiteTextColor: '#FFFFFF',
-//   chartLight: '#FFDAC0',
-//   iconColor: mode === 'light' ? '#071F41' : '#f2f8f8',
-//   modalBackgroundColor:
-//     'linear-gradient(117.84deg, #1D346A 2.84%, #031634 67.28%)',
-//   lightGreyColor: mode === 'light' ? 'rgba(82, 85, 95, 0.7)' : '#FFFFFF',
-//   userNameColor: ' rgba(82, 85, 95, 1)',
-//   googleBtnColor: mode === 'light' ? '#f6f7fb' : '#202225',
-//   tableBodyColor: '#f2f8f8',
-//   operationTypeSwitchBg: mode === 'light' ? '#FEFEFE' : '#2f3136',
-//   operationTypeSwitchBg2: mode === 'light' ? '#FAFBFD' : '#202225',
-//   borderColor: '#f6f7fc',
-//   cabbageSvgColor: '#DBDBDB',
-//   btnWhiteText: mode === 'light' ? '#52555F' : '#202225',
-//   headerBoxShadow:
-//     '0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)',
-// };

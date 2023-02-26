@@ -1,6 +1,7 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Outlet } from 'react-router-dom';
+import { useLocalStorage } from 'hooks/useLocalStorage';
 import Header from './Header/Header';
 import LoaderCabbage from './LoaderCabbage/LoaderCabbage';
 import { themeLight, themeDark } from 'theme/theme';
@@ -9,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const body = document.querySelector('body');
 
 const Layout = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
 
   const themeToggler = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');

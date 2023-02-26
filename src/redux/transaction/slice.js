@@ -62,6 +62,7 @@ const transactionSlice = createSlice({
         state.summary.push({
           month: action.payload.data.month,
           sum: action.payload.data.sum,
+          monthNumber: +action.payload.data.date.slice(5, 7),
         });
       }
 
@@ -93,8 +94,8 @@ const transactionSlice = createSlice({
       }
 
       const summaryIndex = state.summary.findIndex(item => item.sum === 0);
-
-      if (!summaryIndex) {
+      console.log(summaryIndex);
+      if (summaryIndex >= 0) {
         state.summary.splice(summaryIndex, 1);
       }
 

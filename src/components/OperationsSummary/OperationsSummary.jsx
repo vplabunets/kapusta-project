@@ -13,14 +13,14 @@ import {
 
 const OperationsSummary = () => {
   const getSummary = useSelector(selectSummary);
- const { t } = useTranslation();
+  const { t } = useTranslation();
   const summary = [...getSummary];
   summary.sort((a, b) => b.monthNumber - a.monthNumber);
 
   return (
     <Wrapper>
       <Table>
-        <Title> { t('Summary') } </Title>
+        <Title> {t('Summary')} </Title>
         <Body>
           {summary.map(item => {
             return (

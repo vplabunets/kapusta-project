@@ -33,6 +33,10 @@ const NavBar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const getRandomHexColor = () => {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  };
+
   return (
     <>
       <Container>
@@ -42,7 +46,7 @@ const NavBar = () => {
               width: 32,
               height: 32,
               color: 'rgba(82, 85, 95, 1)',
-              backgroundColor: 'rgba(245, 246, 250, 1)',
+              backgroundColor: getRandomHexColor(),
               fontWeight: 700,
               fontSize: '12px',
               cursor: 'pointer',

@@ -21,7 +21,7 @@ const Modal = styled.div`
   min-width: 280px;
   height: 650px;
 
-  background-color: ${p => p.theme.lightTheme.headerColor};
+  background-color: ${p => p.theme.headerColor};
   border-radius: 30px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   padding: 40px 40px 50px;
@@ -58,7 +58,7 @@ const Text = styled.p`
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
   margin-bottom: 30px;
 `;
 
@@ -74,7 +74,7 @@ const Label = styled.label`
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: 0.04em;
-  color: ${p => p.theme.lightTheme.tableHeadTextColor};
+  color: ${p => p.theme.tableHeadTextColor};
 
   @media ${DEVICE.tablet} {
     font-size: 12px;
@@ -90,11 +90,11 @@ const Input = styled.input`
   outline: none;
   border: none;
   border-radius: 30px;
-  background-color: ${p => p.theme.lightTheme.googleBtnColor};
+  background-color: ${p => p.theme.googleBtnColor};
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.04em;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
   ::placeholder {
     font-size: 14px;
     line-height: 1.14;
@@ -121,8 +121,8 @@ const DropFiles = styled.div`
   transition: background ${TRANSITION.duration} ${TRANSITION.timing};
 
   &:hover {
-    background: ${p => p.theme.lightTheme.googleBtnColor};
-    border-color: ${p => p.theme.lightTheme.tableHeadTextColor};
+    background: ${p => p.theme.googleBtnColor};
+    border-color: ${p => p.theme.tableHeadTextColor};
   }
 
   @media ${DEVICE.tablet} {
@@ -147,23 +147,23 @@ const DropFilesTitle = styled.span`
 const DropFilesInput = styled.input`
   width: 350px;
   max-width: 100%;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
   padding: 3px;
   border-radius: 10px;
   border: none;
   &.dragover {
-    background: ${p => p.theme.lightTheme.googleBtnColor};
-    border-color: ${p => p.theme.lightTheme.tableHeadTextColor};
+    background: ${p => p.theme.googleBtnColor};
+    border-color: ${p => p.theme.tableHeadTextColor};
   }
   &::file-selector-button {
     font-family: inherit;
     margin-right: 10px;
     border: none;
-    background: ${p => p.theme.lightTheme.accentColor};
+    background: ${p => p.theme.accentColor};
     padding: 10px 20px;
     border-radius: 10px;
     font-size: 10px;
-    color: ${p => p.theme.lightTheme.whiteTextColor};
+    color: ${p => p.theme.whiteTextColor};
     cursor: pointer;
     transition: transform ${TRANSITION.duration} ${TRANSITION.timing};
     @media ${DEVICE.tablet} {

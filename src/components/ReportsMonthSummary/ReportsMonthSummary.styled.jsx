@@ -7,14 +7,14 @@ const { duration, timing, delay } = TRANSITION;
 export const Section = styled.div`
   margin: 0 auto;
 
-  background-color: ${p => p.theme.lightTheme.headerColor};
+  background-color: ${p => p.theme.headerColor};
 
   width: 100%;
   margin-bottom: 32px;
 
   @media ${DEVICE.tablet} {
     padding: 20px 0;
-    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+    box-shadow: 0px 10px 60px ${p => p.theme.sectionShadow};
     border-radius: 30px;
   }
   @media ${DEVICE.laptop} {
@@ -64,7 +64,7 @@ export const Title = styled.p`
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
-  color: ${p => p.theme.lightTheme.tableHeadTextColor};
+  color: ${p => p.theme.tableHeadTextColor};
 `;
 
 export const ReportList = styled.ul`

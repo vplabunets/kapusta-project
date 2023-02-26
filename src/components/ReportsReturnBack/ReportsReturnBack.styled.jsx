@@ -12,13 +12,13 @@ export const BackLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   margin-bottom: 16px;
-  color: ${p => p.theme.lightTheme.lightGreyColor};
+  color: ${p => p.theme.lightGreyColor};
 
   transition: color ${duration} ${timing} ${delay};
 
   &:hover,
   &:focus {
-    color: ${p => p.theme.lightTheme.mainTextColor};
+    color: ${p => p.theme.mainTextColor};
   }
 
   @media ${DEVICE.tablet} {
@@ -35,7 +35,7 @@ export const BackLink = styled(Link)`
 
       letter-spacing: 0.04em;
 
-      color: ${p => p.theme.lightTheme.lightGreyColor};
+      color: ${p => p.theme.lightGreyColor};
       display: block;
       margin-left: 15px;
     }

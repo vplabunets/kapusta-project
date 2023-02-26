@@ -29,8 +29,8 @@ const Menu = styled.div`
   height: 80px;
   width: 100%;
   background-color: rgb(255 165 108 / 93%);
-  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
-    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  box-shadow: ${p => p.theme.headerBoxShadow}, 0px 4px 5px 0px rgb(0 0 0 / 14%),
+    0px 1px 10px 0px rgb(0 0 0 / 12%);
   position: absolute;
   z-index: 5;
   top: 0px;
@@ -51,7 +51,7 @@ const Title = styled.p`
   font-family: inherit;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: ${p => p.theme.lightTheme.tableHeadTextColor};
+  color: ${p => p.theme.tableHeadTextColor};
   font-size: 12px;
   text-align: center;
   margin-bottom: 10px;
@@ -85,7 +85,7 @@ const SettingsWrapper = styled.button`
   transition: color ${TRANSITION.duration} ${TRANSITION.timing};
   &:hover,
   &:focus {
-    color: ${p => p.theme.lightTheme.tableHeadTextColor};
+    color: ${p => p.theme.tableHeadTextColor};
   }
   &:hover i {
     animation-play-state: running;
@@ -193,7 +193,7 @@ const FlagImg = styled.img`
 
   &:hover,
   &:focus {
-    filter: drop-shadow(1px 3px 10px ${p => p.theme.lightTheme.accentColor});
+    filter: drop-shadow(1px 3px 10px ${p => p.theme.accentColor});
   }
   @media ${DEVICE.tablet} {
     width: 32px;

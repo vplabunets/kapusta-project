@@ -21,8 +21,8 @@ export const Modal = styled.div`
   max-width: 280px;
   max-height: 163px;
   width: 100%;
-  background: ${p => p.theme.lightTheme.modalBackgroundColor};
-  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  background: ${p => p.theme.modalBackgroundColor};
+  box-shadow: 0px 10px 60px ${p => p.theme.sectionShadow};
   border-radius: 30px;
   @media ${DEVICE.tablet} {
     z-index: 20;
@@ -56,7 +56,7 @@ export const Title = styled.h2`
   font-size: 14px;
   line-height: 1.43;
   margin-bottom: 20px;
-  color: ${p => p.theme.lightTheme.whiteTextColor};
+  color: ${p => p.theme.whiteTextColor};
 
   @media ${DEVICE.tablet} {
     padding-left: 29px;
@@ -71,7 +71,7 @@ export const Text = styled.p`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
-  color: ${p => p.theme.lightTheme.whiteTextColor};
+  color: ${p => p.theme.whiteTextColor};
 
   @media ${DEVICE.tablet} {
     padding-left: 29px;

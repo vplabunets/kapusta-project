@@ -50,12 +50,16 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export const CustomizedSwitcher = () => {
+export const CustomizedSwitcher = ({ themeToggler }) => {
   return (
     <FormGroup sx={{ marginLeft: 'auto' }}>
       <FormControlLabel
         control={
-          <MaterialUISwitch size={'small'} sx={{ m: 1 }} defaultChecked />
+          <MaterialUISwitch
+            size={'small'}
+            sx={{ m: 1 }}
+            onChange={themeToggler}
+          />
         }
       />
     </FormGroup>

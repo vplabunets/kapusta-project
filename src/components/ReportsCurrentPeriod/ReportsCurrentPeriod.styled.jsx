@@ -6,7 +6,7 @@ export const Title = styled.h2`
   font-weight: 400;
   font-size: 12px;
   line-height: 1.143;
-  color: ${p => p.theme.lightTheme.lightGreyColor};
+  color: ${p => p.theme.lightGreyColor};
   text-align: center;
 `;
 export const ContainerPeriod = styled.div`
@@ -24,6 +24,7 @@ export const Text = styled.p`
   text-transform: uppercase;
   width: 134px;
   text-align: center;
+  color: ${p => p.theme.tableHeadTextColor};
 `;
 
 export const Button = styled.button`

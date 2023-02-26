@@ -1,5 +1,6 @@
 import Layout from 'components/Layout';
 import { lazy, useEffect } from 'react';
+
 // import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
@@ -16,7 +17,7 @@ const OperationsPage = lazy(() =>
   import('../pages/OperationsPage/OperationsPage')
 );
 const ReportsPage = lazy(() => import('../pages/ReportsPage/ReportsPage'));
-       //  <Route path="*" element={<Navigate to="/" />} />
+//  <Route path="*" element={<Navigate to="/" />} />
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();

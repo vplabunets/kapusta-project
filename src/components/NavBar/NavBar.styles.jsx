@@ -45,7 +45,7 @@ export const UserName = styled.button`
 
   &:hover,
   &:focus {
-    color: ${p => p.theme.lightTheme.accentColor};
+    color: ${p => p.theme.accentColor};
   }
 
   @media ${DEVICE.tablet} {
@@ -82,13 +82,13 @@ export const ExitBtn = styled.button`
   border: none;
   outline: none;
   text-decoration: underline;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
 
   transition: color ${duration} ${timing} ${delay};
 
   &:hover,
   &:focus {
-    color: ${p => p.theme.lightTheme.accentColor};
+    color: ${p => p.theme.accentColor};
   }
 `;
 

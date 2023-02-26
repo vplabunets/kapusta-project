@@ -1,14 +1,14 @@
 import Layout from 'components/Layout';
 
-import { lazy  } from 'react';
+import { lazy, useEffect } from 'react';
 
 // import { useSelector } from 'react-redux';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import RestrictedRoute from 'routes/RestrictedRoutes';
 import PrivateRoutes from 'routes/PrivateRoutes';
 
-// import { refreshUser } from 'redux/auth/operations';
+import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 import { Loader } from './LoaderCabbage/LoaderCabbage.styled';
 
@@ -20,12 +20,12 @@ const OperationsPage = lazy(() =>
 const ReportsPage = lazy(() => import('../pages/ReportsPage/ReportsPage'));
 //  <Route path="*" element={<Navigate to="/" />} />
 export const App = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
-  // useEffect(() => {
-  //   dispatch(refreshUser());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
   return (
     <>
@@ -43,7 +43,7 @@ export const App = () => {
                 />
               }
             />
-            {/* <Route path="/google-redirect" element={<GooglePage />} /> */}
+            <Route path="/google-redirect" element={<HomePage />} />
             <Route
               path="/operations"
               element={

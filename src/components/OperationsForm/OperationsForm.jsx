@@ -28,7 +28,7 @@ import { selectOperationType } from '../../redux/transaction/selectors';
 
 const OperationsForm = ({ value }) => {
   const isScreenMoreTablet = useMediaQuery('(min-width: 768px)');
-const { t } = useTranslation();
+  const { t } = useTranslation();
   const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'));
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -75,8 +75,8 @@ const { t } = useTranslation();
         break;
     }
   };
-const expensesCategory = t('expensesCategory', { returnObjects: true });
-const incomeCategory = t('incomeCategory', { returnObjects: true });
+  const expensesCategory = t('expensesCategory', { returnObjects: true });
+  const incomeCategory = t('incomeCategory', { returnObjects: true });
   const resetForm = () => {
     setDate(moment(new Date()).format('YYYY-MM-DD'));
     setDescription('');
@@ -123,7 +123,7 @@ const incomeCategory = t('incomeCategory', { returnObjects: true });
           </CalendarIcon>
         </DateWrapper>
         <DescriptionInput
-          placeholder={ t('Product description') }
+          placeholder={t('Product description')}
           name="description"
           aria-label="Text"
           onChange={handleChange}
@@ -176,7 +176,7 @@ const incomeCategory = t('incomeCategory', { returnObjects: true });
           design="operation"
           onClick={resetForm}
         >
-           {t('button.Clear')} 
+          {t('button.Clear')}
         </Button>
       </ButtonWrapper>
     </FormWrapper>

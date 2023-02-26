@@ -48,14 +48,14 @@ export const DateWrapper = styled.div`
 `;
 
 export const DateSelection = styled.input`
-  outline-color: ${p => p.theme.lightTheme.accentColor};
+  outline-color: ${p => p.theme.accentColor};
   vertical-align: middle;
   font-family: inherit;
   display: inline-block;
   font-weight: 400;
   font-size: 10px;
   line-height: 14px;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
   background-color: transparent;
   border: none;
   width: 140px;
@@ -63,7 +63,7 @@ export const DateSelection = styled.input`
   margin: 0 auto;
   text-align: center;
   position: relative;
-  border: 2px solid ${p => p.theme.lightTheme.headerColor};
+  border: 2px solid ${p => p.theme.borderColor};
   border-radius: 16px;
 
   @media ${DEVICE.tablet} {
@@ -124,11 +124,11 @@ export const DescriptionInput = styled.input`
   text-align: start;
   background-color: transparent;
   padding-left: 30px;
-  outline-color: ${p => p.theme.lightTheme.accentColor};
+  outline-color: ${p => p.theme.accentColor};
 
-  border: 2px solid ${p => p.theme.lightTheme.headerColor};
+  border: 2px solid ${p => p.theme.borderColor};
   border-bottom: none;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
 
   &::placeholder {
     font-weight: 400;
@@ -137,7 +137,7 @@ export const DescriptionInput = styled.input`
 
   @media ${DEVICE.tablet} {
     border-top-right-radius: 0px;
-    border: 2px solid ${p => p.theme.lightTheme.borderColor};
+    border: 2px solid ${p => p.theme.borderColor};
     display: flex;
     padding-left: 12px;
   }
@@ -173,7 +173,7 @@ export const CountWrapper = styled.div`
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     width: 110px;
-    border: 2px solid ${p => p.theme.lightTheme.tableHeadBackgroundColor};
+    border: 2px solid ${p => p.theme.borderColor};
   }
   @media ${DEVICE.laptop} {
     width: 121px;
@@ -185,7 +185,7 @@ export const CalculatorIcon = styled.svg`
   top: 34px;
   right: 12px;
   padding: 8px;
-  border-left: 2px solid ${p => p.theme.lightTheme.headerColor};
+  border-left: 2px solid ${p => p.theme.borderColor};
 
   @media ${DEVICE.tablet} {
     border: none;
@@ -201,7 +201,7 @@ export const CalculatorIcon = styled.svg`
 
 export const CountInput = styled.input`
   font-family: inherit;
-  outline-color: ${p => p.theme.lightTheme.accentColor};
+  outline-color: ${p => p.theme.accentColor};
   width: 183px;
   height: 44px;
   padding-right: 55px;
@@ -212,13 +212,13 @@ export const CountInput = styled.input`
   line-height: 1.14;
   text-align: center;
   margin-top: 32px;
-  color: ${p => p.theme.lightTheme.mainTextColor};
-  border: 2px solid ${p => p.theme.lightTheme.headerColor};
+  color: ${p => p.theme.mainTextColor};
+  border: 2px solid ${p => p.theme.borderColor};
   background-color: transparent;
 
   @media ${DEVICE.tablet} {
     height: 40px;
-    border: 2px solid ${p => p.theme.lightTheme.borderColor};
+    border: 2px solid ${p => p.theme.borderColor};
     width: 110px;
     margin-top: 0;
     padding-right: 45px;

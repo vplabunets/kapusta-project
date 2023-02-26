@@ -3,7 +3,7 @@ import DEVICE from 'constants/deviceSize';
 
 const Wrapper = styled.div`
   height: 85px;
-  background: ${p => p.theme.lightTheme.headerColor};
+  background: ${p => p.theme.headerColor};
   box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
   border-radius: 20px;
   display: flex;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
   @media ${DEVICE.tablet} {
     height: 50px;
-    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+    box-shadow: 0px 10px 60px ${p => p.theme.sectionShadow};
     border-radius: 30px;
   }
 `;
@@ -23,7 +23,7 @@ const Text = styled.p`
   font-size: 14px;
   line-height: 1.14;
   margin-bottom: 4px;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
 
   @media ${DEVICE.tablet} {
     margin-right: 15px;
@@ -39,11 +39,11 @@ const Sum = styled.p`
   color: ${p => {
     switch (p.color) {
       case 'positive':
-        return `${p.theme.lightTheme.incomesTextColor}`;
+        return `${p.theme.incomesTextColor}`;
       case 'negative':
         return '#E53935';
       default:
-        return `${p.theme.lightTheme.tableHeadTextColor}`;
+        return `${p.theme.tableHeadTextColor}`;
     }
   }};
 `;

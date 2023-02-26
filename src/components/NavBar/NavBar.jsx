@@ -5,7 +5,7 @@ import ExitIcon from 'images/icons-sprite.svg';
 
 import ConfirmModal from 'components/ConfirmModal/ConfirmModal';
 import SettingsMenu from 'components/SettingsMenu/SettingsMenu';
-
+import { useTranslation } from 'react-i18next';
 import {
   Container,
   ExitBtn,
@@ -23,7 +23,7 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const email = useSelector(selectEmail);
   const name = useSelector(selectName);
-
+ const { t } = useTranslation();
   const toCutName = email => {
     const firstLetter = email.slice(0, 1).toUpperCase();
     return firstLetter;
@@ -31,6 +31,10 @@ const NavBar = () => {
 
   const onUserClick = evt => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const getRandomHexColor = () => {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
   };
 
   return (
@@ -42,7 +46,7 @@ const NavBar = () => {
               width: 32,
               height: 32,
               color: 'rgba(82, 85, 95, 1)',
-              backgroundColor: 'rgba(245, 246, 250, 1)',
+              backgroundColor: getRandomHexColor(),
               fontWeight: 700,
               fontSize: '12px',
               cursor: 'pointer',
@@ -54,7 +58,7 @@ const NavBar = () => {
         </MenuBtn>
         <ExitContainer>
           <UserName onClick={onUserClick}>{name ? name : email}</UserName>
-          <ExitBtn onClick={() => setModalOpen(true)}>Exit</ExitBtn>
+          <ExitBtn onClick={() => setModalOpen(true)}>{ t('Exit') }</ExitBtn>
         </ExitContainer>
         <LogoutBtn onClick={() => setModalOpen(true)}>
           <svg alt="exit" width={16} height={16}>
@@ -66,7 +70,7 @@ const NavBar = () => {
       {modalOpen && (
         <ConfirmModal
           setModalOpen={setModalOpen}
-          text={'Do you really want to leave?'}
+          text={t('exitText')}
           onClick={() => dispatch(logOut())}
         />
       )}

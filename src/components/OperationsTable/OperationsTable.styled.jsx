@@ -29,8 +29,8 @@ export const TableHead = styled.thead`
     align-items: center;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: ${p => p.theme.lightTheme.tableHeadTextColor};
-    background-color: ${p => p.theme.lightTheme.tableHeadBackgroundColor};
+    color: ${p => p.theme.tableHeadTextColor};
+    background-color: ${p => p.theme.tableHeadBackgroundColor};
     border-radius: 20px 20px 0 0;
   }
 
@@ -103,12 +103,12 @@ export const TableBody = styled.tbody`
 
     ::-webkit-scrollbar {
       width: 6px;
-      background-color: ${p => p.theme.lightTheme.tableBodyColor};
+      background-color: ${p => p.theme.tableBodyColor};
     }
 
     ::-webkit-scrollbar-thumb {
       border-radius: 2px;
-      background-color: ${p => p.theme.lightTheme.accentColor};
+      background-color: ${p => p.theme.accentColor};
     }
   }
 `;

@@ -19,7 +19,7 @@ export const Title = styled.h2`
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  color: ${p => p.theme.lightTheme.lightGreyColor};
+  color: ${p => p.theme.lightGreyColor};
 
   @media ${DEVICE.tablet} {
     margin-bottom: 0;
@@ -30,12 +30,12 @@ export const Title = styled.h2`
 
   &:hover,
   &:focus {
-    color: ${p => p.theme.lightTheme.mainTextColor};
+    color: ${p => p.theme.mainTextColor};
   }
 `;
 
 export const ReportLink = styled(Link)`
-  color: ${p => p.theme.lightTheme.lightGreyColor};
+  color: ${p => p.theme.lightGreyColor};
   display: flex;
   font-style: normal;
   font-weight: normal;
@@ -45,4 +45,7 @@ export const ReportLink = styled(Link)`
   align-items: center;
   text-align: center;
   text-decoration: none;
+  & > svg {
+    stroke: ${p => p.theme.lightGreyColor};
+  }
 `;

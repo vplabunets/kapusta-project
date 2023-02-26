@@ -45,7 +45,7 @@ export const RightCol = styled.div`
   flex: 1;
   height: 350px;
   border-radius: 30px;
-  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  box-shadow: 0px 10px 60px ${p => p.theme.sectionShadow};
 
   @media ${DEVICE.mobile} {
     width: 300px;

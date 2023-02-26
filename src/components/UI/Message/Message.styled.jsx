@@ -10,5 +10,5 @@ export const MessageText = styled.p`
   text-align: center;
   letter-spacing: 0.02em;
 
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
 `;

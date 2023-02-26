@@ -88,12 +88,6 @@ const bubble = keyframes`
         transform: translateY(0) rotate(0deg);
         opacity: 1;
         border-radius: 0;
- stroke: #DFE2EB;
-    }
-
-    50% {
-     
-    stroke: #DBDBDB;
     }
 
     100%{
@@ -110,6 +104,7 @@ export const Item = styled.li`
   animation: ${bubble} 20s linear infinite;
   bottom: -85px;
   opacity: 0;
+  stroke: ${p => p.theme.cabbageSvgColor};
 
   &:nth-child(1) {
     transform: rotate(-90deg);

@@ -41,17 +41,15 @@ export const TypeButton = styled.button`
 
   &:hover,
   &:focus {
-    color: ${p => p.theme.lightTheme.accentColor};
+    color: ${p => p.theme.accentColor};
   }
 
   background-color: ${p =>
     p.active
-      ? `${p.theme.lightTheme.accentColor}`
-      : `${p.theme.lightTheme.tableHeadBackgroundColor}`};
+      ? `${p.theme.accentColor}`
+      : `${p.theme.tableHeadBackgroundColor}`};
   color: ${p =>
-    p.active
-      ? `${p.theme.lightTheme.whiteTextColor}`
-      : `${p.theme.lightTheme.tableHeadTextColor}`};
+    p.active ? `${p.theme.whiteTextColor}` : `${p.theme.tableHeadTextColor}`};
 
   &:first-child {
     margin-right: 4px;
@@ -60,12 +58,10 @@ export const TypeButton = styled.button`
   @media ${DEVICE.tablet} {
     background-color: ${p =>
       p.active
-        ? p.theme.lightTheme.operationTypeSwitchBg
-        : p.theme.lightTheme.operationTypeSwitchBg2};
+        ? p.theme.operationTypeSwitchBg
+        : p.theme.operationTypeSwitchBg2};
     color: ${p =>
-      p.active
-        ? `${p.theme.lightTheme.accentColor}`
-        : `${p.theme.lightTheme.tableHeadTextColor}`};
+      p.active ? `${p.theme.accentColor}` : `${p.theme.tableHeadTextColor}`};
     width: 138px;
     height: 40px;
     border: none;

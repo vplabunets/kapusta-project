@@ -49,7 +49,7 @@ export const Text = styled.h2`
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.04em;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
 `;
 
 export const ButtonContainer = styled.div`

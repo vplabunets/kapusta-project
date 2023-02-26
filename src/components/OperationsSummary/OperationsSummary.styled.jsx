@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   display: none;
   width: 230px;
   height: 280px;
-  background-color: ${p => p.theme.lightTheme.tableHeadBackgroundColor};
+  background-color: ${p => p.theme.tableHeadBackgroundColor};
   border-radius: 20px 20px 20px 0;
 
   @media ${DEVICE.tablet} {
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 const Title = styled.caption`
   font-family: inherit;
   padding-top: 12px;
-  color: ${p => p.theme.lightTheme.tableHeadTextColor};
+  color: ${p => p.theme.tableHeadTextColor};
   padding-bottom: 12px;
   font-weight: 700;
   font-size: 12px;
@@ -36,7 +36,7 @@ const Table = styled.table`
   width: 100%;
   height: 100%;
   &:first-of-type {
-    border-top: 4px solid ${p => p.theme.lightTheme.headerColor};
+    border-top: 4px solid ${p => p.theme.headerColor};
   }
   border-collapse: collapse;
 `;
@@ -48,12 +48,12 @@ const Body = styled.tbody`
   flex-direction: column;
   ::-webkit-scrollbar {
     width: 4px;
-    background-color: ${p => p.theme.lightTheme.tableBodyColor};
+    background-color: ${p => p.theme.tableBodyColor};
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 2px;
-    background-color: ${p => p.theme.lightTheme.accentColor};
+    background-color: ${p => p.theme.accentColor};
   }
 `;
 
@@ -72,7 +72,7 @@ const Cell = styled.td`
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.04em;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
   text-transform: uppercase;
 `;
 

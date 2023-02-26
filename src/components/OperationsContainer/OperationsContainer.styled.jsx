@@ -8,14 +8,14 @@ export const Wrapper = styled.div`
   @media ${DEVICE.tablet} {
     margin-bottom: 40px;
     padding: 32px 32px 42px 32px;
-    background-color: ${p => p.theme.lightTheme.headerColor};
-    box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+    background-color: ${p => p.theme.headerColor};
+    box-shadow: 0px 10px 60px ${p => p.theme.sectionShadow};
     border-radius: 0px 30px 30px 30px;
   }
   @media ${DEVICE.laptop} {
     height: 579px;
     padding: 32px 32px 32px 32px;
-    background-color: ${p => p.theme.lightTheme.headerColor};
+    background-color: ${p => p.theme.headerColor};
     margin-bottom: 0;
   }
 `;

@@ -8,7 +8,7 @@ export const Backdrop = styled.div`
 
   width: 100vw;
   height: 100vh;
-  background-color: ${p => p.theme.lightTheme.headerColor};
+  background-color: ${p => p.theme.headerColor};
 `;
 
 export const Modal = styled.div`
@@ -22,11 +22,11 @@ export const Background = styled.div`
 
   position: absolute;
   top: 0;
-  background-color: ${p => p.theme.lightTheme.tableHeadBackgroundColor};
+  background-color: ${p => p.theme.tableHeadBackgroundColor};
   border-bottom-left-radius: 20%;
 
-  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
-    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  box-shadow: ${p => p.theme.headerBoxShadow}, 0px 4px 5px 0px rgb(0 0 0 / 14%),
+    0px 1px 10px 0px rgb(0 0 0 / 12%);
 `;
 
 export const BackBtn = styled.button`

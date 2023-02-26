@@ -8,9 +8,6 @@ import ConfirmModal from 'components/ConfirmModal/ConfirmModal';
 import SettingsMenu from 'components/SettingsMenu/SettingsMenu';
 import { useTranslation } from 'react-i18next';
 
-import { logOut } from 'redux/auth/operations';
-import { selectEmail, selectName } from 'redux/auth/selectors';
-
 import {
   Container,
   ExitBtn,

@@ -1,5 +1,7 @@
 import Layout from 'components/Layout';
-import { lazy } from 'react';
+
+import { lazy, useEffect } from 'react';
+
 // import { useSelector } from 'react-redux';
 // import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';

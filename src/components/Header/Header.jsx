@@ -9,7 +9,7 @@ import Logo from 'images/icons-sprite.svg';
 import { ContainerHeader } from './Header.styled';
 import { CustomizedSwitcher } from 'components/UI/CustomizedSwitcher';
 
-const Header = () => {
+const Header = ({ themeToggler }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
@@ -19,7 +19,7 @@ const Header = () => {
           <use href={`${Logo}#icon-logo`}></use>
         </svg>
       </Link>
-      <CustomizedSwitcher />
+      <CustomizedSwitcher themeToggler={themeToggler} />
       {isLoggedIn && <NavBar />}
     </ContainerHeader>
   );

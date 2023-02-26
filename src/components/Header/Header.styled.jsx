@@ -14,11 +14,11 @@ export const ContainerHeader = styled.header`
 
   padding: 12px 20px 13px;
 
-  background-color: ${p => p.theme.lightTheme.headerColor};
+  background-color: ${p => p.theme.headerColor};
 
   /* It will be delete */
-  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
-    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  box-shadow: ${p => p.theme.headerBoxShadow}, 0px 4px 5px 0px rgb(0 0 0 / 14%),
+    0px 1px 10px 0px rgb(0 0 0 / 12%);
 
   @media ${DEVICE.tablet} {
     padding: 12px 32px 13px;

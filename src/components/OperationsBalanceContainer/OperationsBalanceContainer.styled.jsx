@@ -37,8 +37,8 @@ export const OperationsModalOpenButton = styled.button`
   width: 150px;
   margin-top: 32px;
   margin-bottom: 32px;
-  background-color: ${p => p.theme.lightTheme.accentColor};
-  color: ${p => p.theme.lightTheme.whiteTextColor};
+  background-color: ${p => p.theme.accentColor};
+  color: ${p => p.theme.whiteTextColor};
   text-transform: uppercase;
   border: none;
   font-family: inherit;
@@ -48,7 +48,7 @@ export const OperationsModalOpenButton = styled.button`
   transition: transform ${duration} ${timing} ${delay};
 
   svg {
-    fill: ${p => p.theme.lightTheme.whiteTextColor};
+    fill: ${p => p.theme.whiteTextColor};
   }
 
   &:focus {

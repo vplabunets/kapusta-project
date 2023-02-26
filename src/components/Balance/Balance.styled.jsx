@@ -32,7 +32,7 @@ export const Title = styled.h2`
   justify-content: space-between;
   flex-direction: column;
   letter-spacing: 0.02em;
-  color: ${p => p.theme.lightTheme.lightGreyColor};
+  color: ${p => p.theme.lightGreyColor};
 
   @media ${DEVICE.tablet} {
     margin-right: 21px;
@@ -67,9 +67,9 @@ export const Input = styled.input`
   height: 44px;
   padding: 0;
   padding-right: 45px;
-  color: ${p => p.theme.lightTheme.tableHeadTextColor};
+  color: ${p => p.theme.tableHeadTextColor};
   text-align: right;
-  border: 2px solid ${p => p.theme.lightTheme.headerColor};
+  border: 2px solid ${p => p.theme.headerColor};
   border-radius: 20px 0 0 20px;
   background-color: transparent;
   outline: none;
@@ -104,7 +104,7 @@ export const Input = styled.input`
     font-size: 13px;
     line-height: 1.17;
     letter-spacing: 0.02em;
-    color: ${p => p.theme.lightTheme.tableHeadTextColor};
+    color: ${p => p.theme.tableHeadTextColor};
   }
 `;
 
@@ -120,8 +120,8 @@ export const Button = styled.button`
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
-  color: ${p => p.theme.lightTheme.lightGreyColor};
-  border: 2px solid ${p => p.theme.lightTheme.headerColor};
+  color: ${p => p.theme.lightGreyColor};
+  border: 2px solid ${p => p.theme.headerColor};
   border-left: none;
   border-radius: 0 20px 20px 0;
   cursor: pointer;
@@ -133,15 +133,15 @@ export const Button = styled.button`
 
   &:focus,
   &:hover {
-    color: ${p => p.theme.lightTheme.whiteTextColor};
-    background-color: ${p => p.theme.lightTheme.accentColor};
-    border-color: ${p => p.theme.lightTheme.accentColor};
+    color: ${p => p.theme.whiteTextColor};
+    background-color: ${p => p.theme.accentColor};
+    border-color: ${p => p.theme.accentColor};
   }
 
   @media ${DEVICE.tablet} {
     width: 125px;
     border-radius: 16px;
-    border: 2px solid ${p => p.theme.lightTheme.headerColor};
+    border: 2px solid ${p => p.theme.headerColor};
     justify-content: center;
     padding: 0;
   }
@@ -155,6 +155,7 @@ export const Label = styled.label`
   font-size: 12px;
   line-height: 14px;
   text-transform: none;
+  color: ${p => p.theme.tableHeadTextColor};
 
   @media ${DEVICE.tablet} {
     margin-right: 20px;

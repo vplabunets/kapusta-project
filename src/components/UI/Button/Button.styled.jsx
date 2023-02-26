@@ -53,7 +53,7 @@ export const Btn = styled.button`
         return 'drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35))';
       }
       if (p.design === 'operation' && p.color === 'white') {
-        return 'drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15))';
+        return `drop-shadow(1px 3px 5px ${p.theme.buttonShadow})`;
       }
     }};
   }
@@ -62,24 +62,24 @@ export const Btn = styled.button`
     if (p.design === 'home' && p.color === 'accent')
       return 'drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35))';
     if (p.design === 'home' && p.color === 'grey')
-      return 'drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15))';
+      return `drop-shadow(1px 3px 5px ${p.theme.buttonShadow})`;
     return;
   }};
 
   background-color: ${p => {
-    if (p.color === 'accent') return `${p.theme.lightTheme.accentColor}`;
-    if (p.color === 'grey')
-      return `${p.theme.lightTheme.tableHeadBackgroundColor}`;
-    return `${p.theme.lightTheme.whiteTextColor}`;
+    if (p.color === 'accent') return `${p.theme.accentColor}`;
+    if (p.color === 'grey') return `${p.theme.tableHeadBackgroundColor}`;
+    return `${p.theme.whiteTextColor}`;
   }};
 
   color: ${p => {
-    if (p.color === 'accent') return `${p.theme.lightTheme.headerColor}`;
-    return `${p.theme.lightTheme.mainTextColor}`;
+    if (p.color === 'accent') return `${p.theme.headerColor}`;
+    if (p.color === 'grey') return `${p.theme.btnGreyColor}`;
+    return `${p.theme.btnWhiteText}`;
   }};
 
   border: ${p => {
     if (p.color === 'accent') return;
-    return `2px solid ${p.theme.lightTheme.borderColor}`;
+    return `2px solid ${p.theme.borderColor}`;
   }};
 `;

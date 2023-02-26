@@ -7,9 +7,9 @@ export const Tabletr = styled.tr`
   font-family: inherit;
   font-size: 8px;
   line-height: 1.16;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
 
-  border-bottom: 2px solid ${p => p.theme.lightTheme.tableBodyColor};
+  border-bottom: 2px solid ${p => p.theme.tableBodyColor};
   display: flex;
 
   @media ${DEVICE.tablet} {
@@ -20,7 +20,7 @@ export const Tabletr = styled.tr`
     width: calc(100% - 2px);
     height: 40px;
     text-align: center;
-    border-left: 2px solid ${p => p.theme.lightTheme.tableBodyColor};
+    border-left: 2px solid ${p => p.theme.tableBodyColor};
   }
 
   @media ${DEVICE.laptop} {
@@ -141,7 +141,7 @@ export const BtnStyle = styled.button`
     height: 32px;
 
     :hover {
-      background-color: ${p => p.theme.lightTheme.tableHeadBackgroundColor};
+      background-color: ${p => p.theme.tableHeadBackgroundColor};
       cursor: pointer;
       border-radius: 50%;
     }
@@ -151,4 +151,5 @@ export const BtnStyle = styled.button`
 export const Delete = styled.svg`
   z-index: 2;
   cursor: pointer;
+  stroke: ${p => p.theme.mainTextColor};
 `;

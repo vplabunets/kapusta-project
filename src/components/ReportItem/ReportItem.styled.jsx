@@ -29,7 +29,7 @@ export const Sum = styled.p`
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
   margin-bottom: 5px;
 `;
 
@@ -48,13 +48,14 @@ export const ButtonReport = styled.button`
   margin-bottom: 5px;
 
   &:hover > div {
-    background-color: ${p => p.theme.lightTheme.chartLight};
+    background-color: ${p => p.theme.chartLight};
     transform: scale(1.1);
   }
 
   &:focus,
   &:hover svg {
-    fill: ${p => p.theme.lightTheme.accentColor};
+    transform: scale(1.1);
+    fill: ${p => p.theme.accentColor};
   }
 
   & > div {
@@ -67,8 +68,8 @@ export const ButtonReport = styled.button`
 
     background-color: ${p =>
       p.isActive
-        ? `${p.theme.lightTheme.chartLight}`
-        : `${p.theme.lightTheme.tableHeadBackgroundColor}`};
+        ? `${p.theme.chartLight}`
+        : `${p.theme.tableHeadBackgroundColor}`};
     border-radius: 20px;
     position: absolute;
     bottom: 0;
@@ -76,13 +77,12 @@ export const ButtonReport = styled.button`
   }
 
   & > svg {
-    transition: fill ${duration} ${timing} ${delay};
+    transition: fill ${duration} ${timing} ${delay},
+      transform ${duration} ${timing} ${delay};
     z-index: 1;
 
     fill: ${p =>
-      p.isActive
-        ? `${p.theme.lightTheme.accentColor}`
-        : `${p => p.theme.lightTheme.iconColor}`};
+      p.isActive ? `${p.theme.accentColor}` : `${p.theme.iconColor}`};
   }
 `;
 
@@ -95,5 +95,5 @@ export const Type = styled.p`
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
 `;

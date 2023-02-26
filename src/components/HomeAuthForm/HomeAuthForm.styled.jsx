@@ -8,7 +8,7 @@ const { duration, timing, delay } = TRANSITION;
 
 export const MainWrapper = styled.div`
   margin: 0 auto;
-  background-color: ${p => p.theme.lightTheme.headerColor};
+  background-color: ${p => p.theme.headerColor};
   max-width: 426px;
 
   padding: 40px 20px;
@@ -35,7 +35,7 @@ export const GoogleText = styled.p`
   text-align: center;
   letter-spacing: 0.04em;
 
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
 
   @media ${DEVICE.laptop} {
     width: 100%;
@@ -50,7 +50,7 @@ export const GoogleButton = styled.a`
   width: 122px;
   height: 40px;
   margin: 0 auto 32px;
-  background-color: ${p => p.theme.lightTheme.googleBtnColor};
+  background-color: ${p => p.theme.googleBtnColor};
   border: none;
   border-radius: 26px;
 
@@ -60,11 +60,11 @@ export const GoogleButton = styled.a`
   text-decoration: none;
 
   letter-spacing: 0.02em;
-  color: ${p => p.theme.lightTheme.tableHeadTextColor};
+  color: ${p => p.theme.tableHeadTextColor};
 
   transition: transform ${duration} ${timing} ${delay};
 
-  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+  filter: drop-shadow(1px 3px 5px ${p => p.theme.buttonShadow});
 
   &:hover,
   &:focus {
@@ -86,7 +86,7 @@ export const LoginText = styled.p`
   line-height: 1.17;
   letter-spacing: 0.04em;
 
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
 
   @media ${DEVICE.laptop} {
     width: 250px;
@@ -101,7 +101,7 @@ export const AuthFormLabel = styled.label`
   line-height: 1.2;
   letter-spacing: 0.04em;
 
-  color: ${p => p.theme.lightTheme.tableHeadTextColor};
+  color: ${p => p.theme.tableHeadTextColor};
   :nth-of-type(2) {
     margin-top: 20px;
   }
@@ -115,7 +115,7 @@ export const AuthFormLabel = styled.label`
 `;
 
 export const Input = styled(Field)`
-  outline-color: ${p => p.theme.lightTheme.accentColor};
+  outline-color: ${p => p.theme.accentColor};
   font-family: inherit;
   margin-top: 12px;
   width: 100%;
@@ -124,11 +124,11 @@ export const Input = styled(Field)`
   outline: none;
   border: none;
   border-radius: 30px;
-  background-color: ${p => p.theme.lightTheme.googleBtnColor};
+  background-color: ${p => p.theme.googleBtnColor};
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.04em;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
 
   ::placeholder {
     font-size: 14px;
@@ -158,7 +158,7 @@ export const EyeWrapper = styled.div`
   & svg {
     width: 20px;
     height: 20px;
-    fill: ${p => p.theme.lightTheme.mainTextColor};
+    fill: ${p => p.theme.mainTextColor};
   }
   & button {
     position: absolute;
@@ -187,18 +187,18 @@ export const ReminderButton = styled.button`
   font-size: 10px;
   line-height: 1, 2;
   letter-spacing: 0.04em;
-  color: ${p => p.theme.lightTheme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
   border: none;
   background-color: transparent;
   cursor: pointer;
   padding: 5px;
 
   transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+  filter: drop-shadow(1px 3px 5px ${p => p.theme.buttonShadow});
 
   &:hover,
   &:focus {
     transform: scale(0.9);
-    color: ${p => p.theme.lightTheme.tableHeadTextColor};
+    color: ${p => p.theme.tableHeadTextColor};
   }
 `;

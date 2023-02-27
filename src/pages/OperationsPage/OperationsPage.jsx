@@ -8,7 +8,7 @@ import {
   getTransactionsByOperation,
 } from 'redux/transaction/operations';
 
-import { selectBalance, selectFirstVisit } from 'redux/auth/selectors';
+import { selectFirstVisit, selectFirstBalance } from 'redux/auth/selectors';
 import { selectOperationType } from 'redux/transaction/selectors';
 
 import OperationsBalanceContainer from 'components/OperationsBalanceContainer/OperationsBalanceContainer';
@@ -23,7 +23,7 @@ import OperationsPageWrapper from './OperationsPages.styled';
 
 const OperationsPage = () => {
   let firstVisit = useSelector(selectFirstVisit);
-  const balance = useSelector(selectBalance);
+  let firstBalance = useSelector(selectFirstBalance);
   const [constants, setConstants] = useState(0);
   const skelet = useSelector(state => state.transactions.skelet);
 
@@ -50,7 +50,7 @@ const OperationsPage = () => {
         ) : (
           <OperationsPageWrapper>
             <OperationsBalanceContainer addBalance={0} />
-            {!balance && <OperationsBalanceModal />}
+            {!firstBalance && <OperationsBalanceModal />}
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}

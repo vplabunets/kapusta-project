@@ -57,8 +57,19 @@
     { "value": "Education", "label": "Освіта" },
     { "value": "Other", "label": "Інше" }
 ],
+"Products" : "Продукти" ,
+"Health": "Здоров'я" ,
+"Alcohol" : "Алкоголь" ,
+"Entertainment" : "Розваги",
+"Housing" : "Житло" ,
+"Communal, communication" : "Комуналка, комунікації" ,
+"Sports, hobbies" : "Спорт, хобі",
+"Education" : "Освіта" ,
+"Other": "Інше",
+"Salary": "Зарплата",
+"Add.income": "Додатковий дохід",
 
-  "incomeCategory": [
+"incomeCategory": [
     { "value": "salary", "label": "Зарплата" },
     { "value": "Add.income", "label": "Додатковий дохід" }
 ],
@@ -67,20 +78,25 @@
 "Product category": "Категорія продукту",
 "Type of income": "Вид доходу",    
 
-  "Date" : "Дата",
- "Description": "Опис",
- "Category": "Категорія",
- "Sum": "Сума",
- "Summary": "Підсумок",
+"Date" : "Дата",
+"Description": "Опис",
+"Category": "Категорія",
+"Sum": "Сума",
+"Summary": "Підсумок",
 
-  "month": {
-  "November": "Листопад",
-  "October": "Жовтень",
-  "September": "Вересень",
-  "August": "Серпень",
-  "July": "Липень",
-  "June": "Червень"
- },
+"January" : "Січень",
+"February" : "Лютий",
+"March" : "Березень",
+"April" : "Квітень",
+"May" : "Травень",
+"June": "Червень",
+"July": "Липень",
+"August": "Черпень",
+"September": "Вересень",
+"October": "Жовтень",
+"November": "Листопад",
+"December" : "Грудень",
+
 
  "firstModal" :{
   "welcome": "Ласкаво просимо в наш додаток Smart Finance",
@@ -93,7 +109,14 @@
 
 "Exit": "Вихід",
 "exitText" : "Ви справді хочете піти?",
- "Are you sure" : "Ви впевнені?"
+"Are you sure" : "Ви впевнені?",
+
+"reportsTextExpenses" : "У вас немає витрат за цей період",
+ "reportsTextIncome" : "У вас немає доходів за цей період",
+ "Expenses": "Витрати",
+ "Income": "Дохід"
+
+
 
     
 }

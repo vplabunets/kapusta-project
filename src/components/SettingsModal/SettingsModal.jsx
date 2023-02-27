@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
+
+import PropTypes from 'prop-types';
 
 import axios from 'axios';
 
@@ -10,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'components/UI/Button/Button';
 import { userUpdate } from 'redux/auth/operations';
 import icon from 'images/icons-sprite.svg';
+import NewPasswordModal from './NewPasswordModal';
 
 import {
   Backdrop,
@@ -24,6 +26,7 @@ import {
   Label,
   Input,
   DragFileElement,
+  ChangePasswordBtn,
 } from './SettingsModal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -32,6 +35,8 @@ const SettingsModal = ({ onClose }) => {
   const { t } = useTranslation();
   const [dragActive, setDragActive] = useState(false);
   const [image, setImage] = useState(null);
+  const [picture, setPicture] = useState(null);
+  const [showModalPassword, setShowModalPassword] = useState(false);
   // const [isUpload, setIsUpload] = useState(false);
   // const [fileName, setFileName] = useState('');
 
@@ -59,11 +64,14 @@ const SettingsModal = ({ onClose }) => {
 
   const onUpload = files => {
     console.log(files[0].name);
+    setImage(files[0].name);
     // dispatch(userUpdate({ avatarUrl: image }));
     // setFileName(files[0].name);
     // setIsUpload(true);
   };
-
+  const onPasswordModalToggle = () => {
+    setShowModalPassword(prevState => !prevState);
+  };
   // handle drag events
   const handleDrag = function (e) {
     e.preventDefault();
@@ -91,7 +99,8 @@ const SettingsModal = ({ onClose }) => {
     try {
       const formData = new FormData();
       formData.append('image', evt.target.files[0]);
-
+      // const img = URL.createObjectURL(evt.target.files[0]);
+      setPicture(URL.createObjectURL(evt.target.files[0]));
       const res = await axios.post(
         'https://kapusta-project-back-production.up.railway.app/upload',
         formData
@@ -105,13 +114,14 @@ const SettingsModal = ({ onClose }) => {
 
   const onFormSubmit = evt => {
     evt.preventDefault();
-    const newImage = evt.target.elements.avatar.value;
+
+    // const newImage = evt.target.elements.avatar.value;
     const newName = evt.target.elements.name.value;
     if (newName) {
       dispatch(userUpdate({ userName: newName }));
     }
 
-    if (newImage) {
+    if (image) {
       dispatch(userUpdate({ avatarUrl: image }));
     }
 
@@ -137,38 +147,31 @@ const SettingsModal = ({ onClose }) => {
             maxlength="16"
             minlength="2"
           />
-          <Label htmlFor="password"> {t('Change password')}</Label>
-          <Input
-            id="old-password"
-            type="password"
-            name="old-password"
-            placeholder={t('Old password')}
-            maxlength="50"
-            minlength="6"
-          />
-          <Input
-            id="new-password"
-            type="password"
-            name="old-password"
-            placeholder={t('New password')}
-            maxlength="50"
-            minlength="6"
-          />
           <Label htmlFor="avatar">
             {t('modal.Set/Change Avatar')}
             <DropFiles dragActive={dragActive}>
-              <DropFilesTitle> {t('modal.Drop image here')}</DropFilesTitle>
-              {t('modal.or')}
-              {/* <p>click to select file</p> */}
-              <DropFilesInput
-                type="file"
-                name="avatar"
-                id="avatar"
-                accept="image/*"
-                onChange={handleChangeImage}
-              />
+              {image ? (
+                <p>Done</p>
+              ) : (
+                <>
+                  <DropFilesTitle> {t('modal.Drop image here')}</DropFilesTitle>
+                  {t('modal.or')}
+                  {/* <p>click to select file</p> */}
+                  <DropFilesInput
+                    type="file"
+                    name="avatar"
+                    id="avatar"
+                    accept="image/*"
+                    onChange={handleChangeImage}
+                  />
+                </>
+              )}
             </DropFiles>
           </Label>
+
+          <ChangePasswordBtn type="button" onClick={onPasswordModalToggle}>
+            Change password
+          </ChangePasswordBtn>
           <ButtonWrapper>
             <Button
               type={'submit'}
@@ -190,6 +193,9 @@ const SettingsModal = ({ onClose }) => {
           )}
         </Form>
       </Modal>
+      {showModalPassword && (
+        <NewPasswordModal onClose={onPasswordModalToggle} />
+      )}
     </Backdrop>,
 
     modalRoot

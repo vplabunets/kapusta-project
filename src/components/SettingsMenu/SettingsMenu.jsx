@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next';
 
 import { selectName } from 'redux/auth/selectors';
 
-import ukrainian from 'images/flags/ua.png';
-import english from 'images/flags/en.png';
+// import ukrainian from 'images/flags/ua.png';
+// import english from 'images/flags/en.png';
 
 import SettingsModal from 'components/SettingsModal/SettingsModal';
 

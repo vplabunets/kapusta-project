@@ -148,7 +148,7 @@ export const Button = styled.button`
 `;
 export const Label = styled.label`
   position: absolute;
-  top: 16px;
+  top: 15px;
   right: 15px;
   font-weight: 700;
   font-style: normal;

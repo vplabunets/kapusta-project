@@ -74,9 +74,9 @@ const TransactionsTableLines = ({
         <Sum style={sumStyle}>
           <NumericFormat
             value={sum}
-            placeholder={'00.00 UAH'}
+            placeholder={t('00.00UAH')}
             prefix={operation === 'expenses' ? '- ' : ''}
-            suffix={' UAH'}
+            suffix={t('UAH')}
             displayType={'text'}
             disabled={true}
             fixedDecimalScale={'true'}

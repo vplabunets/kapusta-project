@@ -8,7 +8,7 @@ const body = document.querySelector('body');
 
 const OperationsBalanceModal = () => {
   useEffect(() => {
-    body.style.cssText = `overflow: hidden`;
+    body.classList.add('no-scroll');
   }, []);
 
   const { t } = useTranslation();

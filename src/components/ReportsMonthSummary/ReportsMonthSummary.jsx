@@ -11,8 +11,6 @@ import { ReportItem } from 'components/ReportItem/ReportItem';
 import { Cabbage } from 'components/UI/Cabbage/Cabbage';
 import { Message } from 'components/UI/Message/Message';
 
-import Icons from 'images/icons-sprite.svg';
-
 import {
   Section,
   Wrapper,

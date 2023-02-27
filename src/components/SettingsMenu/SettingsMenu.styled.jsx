@@ -13,7 +13,7 @@ const invertBarrelRoll = keyframes`0% {transform: rotate(0deg); }
 ///////////////////////////////////////////////////////////////////////////
 
 const Backdrop = styled.div`
-  z-index: 4;
+  z-index: 10;
   position: fixed;
   left: 0;
   top: 55px;
@@ -32,7 +32,7 @@ const Menu = styled.div`
   box-shadow: ${p => p.theme.headerBoxShadow}, 0px 4px 5px 0px rgb(0 0 0 / 14%),
     0px 1px 10px 0px rgb(0 0 0 / 12%);
   position: absolute;
-  z-index: 5;
+  z-index: 11;
   top: 0px;
   right: 0px;
   border-radius: 0px 0px 0px 24px;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
-import TRANSITION from 'constants/constants';
+import { TRANSITION } from 'constants/constants';
+const { duration, timing } = TRANSITION;
 
 const Backdrop = styled.div`
   z-index: 6;
@@ -19,7 +20,7 @@ const Backdrop = styled.div`
 const Modal = styled.div`
   position: relative;
   min-width: 280px;
-  height: 650px;
+  height: 550px;
 
   background-color: ${p => p.theme.headerColor};
   border-radius: 30px;
@@ -103,6 +104,32 @@ const Input = styled.input`
   }
 `;
 
+const ChangePasswordBtn = styled.button`
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: inherit;
+  line-height: 1.17;
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 700;
+  height: 44px;
+  border: none;
+  margin-bottom: 30px;
+  background-color: ${p => p.theme.tableHeadBackgroundColor};
+  color: ${p => p.theme.btnGreyColor};
+  transition: transform ${duration} ${timing};
+
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
+  }
+`;
+
 const DropFiles = styled.div`
   position: relative;
   display: flex;
@@ -113,12 +140,12 @@ const DropFiles = styled.div`
   height: 120px;
   padding: 10px;
 
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border-radius: 10px;
   border: 2px dashed #555;
   color: #444;
   cursor: pointer;
-  transition: background ${TRANSITION.duration} ${TRANSITION.timing};
+  transition: background ${duration} ${timing};
 
   &:hover {
     background: ${p => p.theme.googleBtnColor};
@@ -138,7 +165,7 @@ const DropFilesTitle = styled.span`
   font-size: 15px;
   font-weight: bold;
   text-align: center;
-  transition: color ${TRANSITION.duration} ${TRANSITION.timing};
+  transition: color ${duration} ${timing};
   @media ${DEVICE.tablet} {
     font-size: 15px;
   }
@@ -165,7 +192,7 @@ const DropFilesInput = styled.input`
     font-size: 10px;
     color: ${p => p.theme.whiteTextColor};
     cursor: pointer;
-    transition: transform ${TRANSITION.duration} ${TRANSITION.timing};
+    transition: transform ${duration} ${timing};
     @media ${DEVICE.tablet} {
       font-size: 12px;
       padding: 10px 20px;
@@ -209,4 +236,5 @@ export {
   Label,
   Input,
   DragFileElement,
+  ChangePasswordBtn,
 };

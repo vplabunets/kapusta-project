@@ -62,6 +62,7 @@ const authSlice = createSlice({
       state.isLoading = false;
       state.firstVisit = action.payload.firstVisit;
       state.firstBalance = action.payload.firstBalance;
+      state.avatarUrl = action.payload.avatarUrl;
     },
     [logIn.rejected](state, action) {
       state.error = action.payload.message;

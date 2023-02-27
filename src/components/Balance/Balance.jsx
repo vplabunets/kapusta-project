@@ -20,6 +20,7 @@ const Balance = () => {
   const [value, setValue] = useState('');
   const currentBalance = useSelector(selectBalance);
   const firstBalance = useSelector(selectFirstBalance);
+  const body = document.querySelector('body');
 
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -31,6 +32,7 @@ const Balance = () => {
   const onSubmit = e => {
     e.preventDefault();
     dispatch(setBalance({ balance: e.target.elements.balance.value }));
+    body.classList.remove('no-scroll');
   };
 
   const onChange = e => {
@@ -46,7 +48,6 @@ const Balance = () => {
             type="number"
             readOnly={firstBalance}
             name="balance"
-            // placeholder={`${currentBalance.toFixed(2)}`}
             pattern="[0-9, .UAH]*"
             value={value}
             onChange={onChange}

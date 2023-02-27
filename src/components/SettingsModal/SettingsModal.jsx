@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
 import { userUpdate } from 'redux/auth/operations';
 
@@ -131,72 +132,81 @@ const SettingsModal = ({ onClose }) => {
 
   return createPortal(
     <Backdrop onClick={onBackdropClick}>
-      <Modal>
-        <ButtonClose onClick={onClose}>
-          <svg>
-            <use href={`${icon}#icon-close`}></use>
-          </svg>
-        </ButtonClose>
-        <Text>{t('menu.Profile Settings')}</Text>
-        <Form onDragEnter={handleDrag} onSubmit={onFormSubmit}>
-          <Label htmlFor="name"> {t('modal.Change Name')}</Label>
-          <Input
-            id="name"
-            type="text"
-            name="name"
-            placeholder={t('modal.Write your new name')}
-            maxlength="16"
-            minlength="2"
-          />
-          <Label htmlFor="avatar">
-            {t('modal.Set/Change Avatar')}
-            <DropFiles dragActive={dragActive}>
-              {image ? (
-                <p>Done</p>
-              ) : (
-                <>
-                  <DropFilesTitle> {t('modal.Drop image here')}</DropFilesTitle>
-                  {t('modal.or')}
-                  {/* <p>click to select file</p> */}
-                  <DropFilesInput
-                    type="file"
-                    name="avatar"
-                    id="avatar"
-                    accept="image/*"
-                    onChange={handleChangeImage}
-                  />
-                </>
-              )}
-            </DropFiles>
-          </Label>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        <Modal>
+          <ButtonClose onClick={onClose}>
+            <svg>
+              <use href={`${icon}#icon-close`}></use>
+            </svg>
+          </ButtonClose>
+          <Text>{t('menu.Profile Settings')}</Text>
+          <Form onDragEnter={handleDrag} onSubmit={onFormSubmit}>
+            <Label htmlFor="name"> {t('modal.Change Name')}</Label>
+            <Input
+              id="name"
+              type="text"
+              name="name"
+              placeholder={t('modal.Write your new name')}
+              maxlength="16"
+              minlength="2"
+            />
+            <Label htmlFor="avatar">
+              {t('modal.Set/Change Avatar')}
+              <DropFiles dragActive={dragActive}>
+                {image ? (
+                  <p>Done</p>
+                ) : (
+                  <>
+                    <DropFilesTitle>
+                      {' '}
+                      {t('modal.Drop image here')}
+                    </DropFilesTitle>
+                    {t('modal.or')}
+                    {/* <p>click to select file</p> */}
+                    <DropFilesInput
+                      type="file"
+                      name="avatar"
+                      id="avatar"
+                      accept="image/*"
+                      onChange={handleChangeImage}
+                    />
+                  </>
+                )}
+              </DropFiles>
+            </Label>
 
-          <ChangePasswordBtn type="button" onClick={onPasswordModalToggle}>
-            Change password
-          </ChangePasswordBtn>
-          <ButtonWrapper>
-            <Button
-              type={'submit'}
-              color={'accent'}
-              design={'modal'}
-              // onSubmit={onFormSubmit}
-            >
-              {t('button.CONFIRM')}
-            </Button>
-          </ButtonWrapper>
-          {dragActive && (
-            <DragFileElement
-              id="drag-file-element"
-              onDragEnter={handleDrag}
-              onDragLeave={handleDrag}
-              onDragOver={handleDrag}
-              onDrop={handleDrop}
-            ></DragFileElement>
-          )}
-        </Form>
-      </Modal>
-      {showModalPassword && (
-        <NewPasswordModal onClose={onPasswordModalToggle} />
-      )}
+            <ChangePasswordBtn type="button" onClick={onPasswordModalToggle}>
+              Change password
+            </ChangePasswordBtn>
+            <ButtonWrapper>
+              <Button
+                type={'submit'}
+                color={'accent'}
+                design={'modal'}
+                // onSubmit={onFormSubmit}
+              >
+                {t('button.CONFIRM')}
+              </Button>
+            </ButtonWrapper>
+            {dragActive && (
+              <DragFileElement
+                id="drag-file-element"
+                onDragEnter={handleDrag}
+                onDragLeave={handleDrag}
+                onDragOver={handleDrag}
+                onDrop={handleDrop}
+              ></DragFileElement>
+            )}
+          </Form>
+        </Modal>
+        {showModalPassword && (
+          <NewPasswordModal onClose={onPasswordModalToggle} />
+        )}
+      </motion.div>
     </Backdrop>,
 
     modalRoot

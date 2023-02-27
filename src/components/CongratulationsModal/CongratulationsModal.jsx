@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createPortal } from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -13,13 +14,28 @@ import Spinner from 'components/UI/Loader/Loader';
 import { Button } from 'components/UI/Button/Button';
 
 import { Backdrop, Modal, Text, SubText } from './CongratulationsModal.styled';
+import { useEffect } from 'react';
 
 export const CongratulationsModal = () => {
   const { width, height } = useWindowSize();
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const { t } = useTranslation();
+
   const Start = t('firstModal.start');
+
+  const body = document.querySelector('body');
+
+  useEffect(() => {
+    body.classList.add('no-scroll');
+  }, []);
+
+  const onConfirm = () => {
+    dispatch(changeFirstVisit());
+    body.classList.remove('no-scroll');
+  };
+
+
   return createPortal(
     <>
       <Backdrop>
@@ -38,7 +54,7 @@ export const CongratulationsModal = () => {
                 type="button"
                 design="home"
                 color="accent"
-                onClick={() => dispatch(changeFirstVisit())}
+                onClick={onConfirm}
               >
                 {isLoading ? <Spinner width={25} height={25} /> : Start}
               </Button>

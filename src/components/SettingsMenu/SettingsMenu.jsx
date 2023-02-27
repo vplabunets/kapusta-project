@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
 import { selectName } from 'redux/auth/selectors';
 
@@ -66,26 +67,32 @@ const SettingsMenu = ({ setMenuOpen }) => {
 
   return (
     <Backdrop onClick={onBackdropClick}>
-      <Menu>
-        <Title>
-          {t('menu.Hello')}, {toCutName(userName)}!
-        </Title>
-        {/* max 16 symbols*/}
-        <Container>
-          <SettingsWrapper onClick={toggleModal}>
-            <Settings>{t('menu.Profile Settings')}</Settings>
-            <GearsWrapper>
-              <Gear></Gear>
-              <Gear></Gear>
-            </GearsWrapper>
-          </SettingsWrapper>
-          <LanguageWrapper>
-            <LanguageSelect>{t('menu.Select language')}:</LanguageSelect>
-            <LanguageSwitcher position="menu" />
-          </LanguageWrapper>
-          {showModal && <SettingsModal onClose={toggleModal} />}
-        </Container>
-      </Menu>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        <Menu>
+          <Title>
+            {t('menu.Hello')}, {toCutName(userName)}!
+          </Title>
+          {/* max 16 symbols*/}
+          <Container>
+            <SettingsWrapper onClick={toggleModal}>
+              <Settings>{t('menu.Profile Settings')}</Settings>
+              <GearsWrapper>
+                <Gear></Gear>
+                <Gear></Gear>
+              </GearsWrapper>
+            </SettingsWrapper>
+            <LanguageWrapper>
+              <LanguageSelect>{t('menu.Select language')}:</LanguageSelect>
+              <LanguageSwitcher position="menu" />
+            </LanguageWrapper>
+            {showModal && <SettingsModal onClose={toggleModal} />}
+          </Container>
+        </Menu>
+      </motion.div>
     </Backdrop>
   );
 };

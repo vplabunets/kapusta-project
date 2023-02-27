@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
 
+import { useTranslation } from 'react-i18next';
 import { Formik, Form } from 'formik';
 import { motion } from 'framer-motion';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
 
 import { useAuth } from 'hooks/useAuth';
-import { ForgotModal } from 'components/ForgotModal/ForgotModal';
 import { logIn, register } from 'redux/auth/operations';
 
+import { ForgotModal } from 'components/ForgotModal/ForgotModal';
 import { Button } from 'components/UI/Button/Button';
 import Spinner from 'components/UI/Loader/Loader';
 import icon from 'images/icons-sprite.svg';

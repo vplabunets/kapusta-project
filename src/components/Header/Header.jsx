@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import NavBar from 'components/NavBar/NavBar';
 import { CustomizedSwitcher } from 'components/UI/CustomizedSwitcher';
+
 import Logo from 'images/icons-sprite.svg';
 
 import { selectIsLoggedIn } from 'redux/auth/selectors';

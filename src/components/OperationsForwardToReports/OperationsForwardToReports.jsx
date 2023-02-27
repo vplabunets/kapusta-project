@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { useTranslation } from 'react-i18next';
+
 import Chart from 'images/icons-sprite.svg';
 
 import { Title, Wrap, ReportLink } from './OperationsForwardToReports.styled';

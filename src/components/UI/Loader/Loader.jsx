@@ -1,6 +1,7 @@
 import { PropTypes } from 'prop-types';
 
 import { Oval } from 'react-loader-spinner';
+
 import { LoaderBox } from './Loader.styled';
 
 const Spinner = ({ width = 40, height = 40 }) => {

@@ -1,6 +1,10 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+
 import { ToastContainer, Zoom } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { ThemeProvider } from 'styled-components';
 
 import { useLocalStorage } from 'hooks/useLocalStorage';
 
@@ -8,8 +12,6 @@ import Header from './Header/Header';
 import LoaderCabbage from './LoaderCabbage/LoaderCabbage';
 
 import { themeLight, themeDark } from 'theme/theme';
-import { ThemeProvider } from 'styled-components';
-import 'react-toastify/dist/ReactToastify.css';
 
 const body = document.querySelector('body');
 

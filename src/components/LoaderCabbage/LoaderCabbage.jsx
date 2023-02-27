@@ -1,8 +1,14 @@
 import React from 'react';
-import { Loader } from './LoaderCabbage.styled';
 
 import icon from 'images/icons-sprite.svg';
-import { BtnStyle1, BtnStyle2, BtnStyle3, Load } from './LoaderCabbage.styled';
+
+import {
+  BtnStyle1,
+  BtnStyle2,
+  BtnStyle3,
+  Load,
+  Loader,
+} from './LoaderCabbage.styled';
 
 const LoaderCabbage = () => {
   return (

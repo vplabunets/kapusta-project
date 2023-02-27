@@ -5,15 +5,18 @@ import * as Yup from 'yup';
 
 import { useAuth } from 'hooks/useAuth';
 import { resetPassword } from 'redux/auth/operations';
+
+import icon from 'images/icons-sprite.svg';
+
 import Spinner from 'components/UI/Loader/Loader';
 import { Button } from 'components/UI/Button/Button';
-import icon from 'images/icons-sprite.svg';
 
 import {
   Input,
   AuthFormLabel,
   ErrorValidation,
 } from '../HomeAuthForm/HomeAuthForm.styled';
+
 import {
   ButtonBack,
   Text,

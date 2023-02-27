@@ -1,8 +1,7 @@
-import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useTranslation } from 'react-i18next';
-
 import { useDispatch, useSelector } from 'react-redux';
+
 import { setOperationType } from 'redux/transaction/slice';
 import { selectOperationType } from 'redux/transaction/selectors';
 

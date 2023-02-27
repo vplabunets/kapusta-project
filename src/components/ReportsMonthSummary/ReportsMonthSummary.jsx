@@ -1,11 +1,12 @@
-
 import { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { useSelector } from 'react-redux';
-import { selectCategoryReports } from 'redux/reports/selectors';
- 
-import Icons from 'images/icons-sprite.svg';
+
 import { useTranslation } from 'react-i18next';
+
+import { selectCategoryReports } from 'redux/reports/selectors';
+
+import Icons from 'images/icons-sprite.svg';
 
 import { ReportItem } from 'components/ReportItem/ReportItem';
 import { Cabbage } from 'components/UI/Cabbage/Cabbage';
@@ -37,7 +38,7 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
 
   const expenses = t('Expenses', { returnObjects: true });
   const income = t('Income', { returnObjects: true });
-  
+
   const reportsTextIncome = t('reportsTextIncome', { returnObjects: true });
   const reportsTextExpenses = t('reportsTextExpenses', { returnObjects: true });
 
@@ -66,7 +67,13 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
               alignItems: 'center',
             }}
           >
-            <Message text={reportType === 'expenses' ? reportsTextExpenses : reportsTextIncome}/>
+            <Message
+              text={
+                reportType === 'expenses'
+                  ? reportsTextExpenses
+                  : reportsTextIncome
+              }
+            />
             <Cabbage />
           </div>
         ) : (

@@ -114,7 +114,11 @@
 "reportsTextExpenses" : "У вас немає витрат за цей період",
  "reportsTextIncome" : "У вас немає доходів за цей період",
  "Expenses": "Витрати",
- "Income": "Дохід"
+ "Income": "Дохід",
+
+ "Change password" : "Змінити пароль",
+ "Old password" : "Старий пароль",
+ "New password" : "Новий пароль"
 
 
 

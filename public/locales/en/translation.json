@@ -115,7 +115,11 @@
 "reportsTextExpenses" : "You have no expenses for this period",
 "reportsTextIncome" : "You have no income for this period",
 "Expenses": "Expenses",
-"Income": "Income"
+"Income": "Income",
+
+"Change password" : "Change password",
+"Old password" : "Old password",
+"New password" : "New password"
 
 
 }

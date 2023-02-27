@@ -41,6 +41,7 @@ export const App = () => {
                 />
               }
             />
+ 
             <Route
               path="/google-redirect"
               element={
@@ -52,6 +53,7 @@ export const App = () => {
                   component={<OperationsPage />}
                 />
               } />
+ 
             <Route
               path="/operations"
               element={

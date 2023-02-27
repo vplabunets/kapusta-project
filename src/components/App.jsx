@@ -43,7 +43,12 @@ export const App = () => {
                 />
               }
             />
-            <Route path="/google-redirect" element={<HomePage />} />
+            <Route path="/google-redirect" element={
+                <RestrictedRoute
+                  redirectTo="/"
+                  component={<HomePage />}
+                />
+              } />
             <Route
               path="/operations"
               element={

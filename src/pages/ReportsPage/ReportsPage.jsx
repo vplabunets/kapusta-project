@@ -36,13 +36,14 @@ const ReportsPage = () => {
   };
 
   useEffect(() => {
+    if (!currentPeriod.month && !currentPeriod.year) return;
+
     dispatch(getAllSummaryReports(currentPeriod));
     dispatch(getCategoryReports({ ...currentPeriod, operation }));
   }, [dispatch, currentPeriod, operation]);
 
   return (
     <>
-      <Background />
       <ReportsPageWrapper>
         <ReportsNav />
         <motion.div
@@ -55,6 +56,7 @@ const ReportsPage = () => {
           <ReportsChart />
         </motion.div>
       </ReportsPageWrapper>
+      <Background />
     </>
   );
 };

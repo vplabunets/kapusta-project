@@ -1,5 +1,16 @@
-// import OPERATION_TYPE from 'constants/constants';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { motion } from 'framer-motion';
+
+import {
+  getSummary,
+  getTransactionsByOperation,
+} from 'redux/transaction/operations';
+
+import { selectBalance, selectFirstVisit } from 'redux/auth/selectors';
+import { selectOperationType } from 'redux/transaction/selectors';
+
 import OperationsBalanceContainer from 'components/OperationsBalanceContainer/OperationsBalanceContainer';
 import OperationsBalanceModal from 'components/OperationsBalanceModal/OperationsBalanceModal';
 import OperationsContainer from 'components/OperationsContainer/OperationsContainer';
@@ -7,15 +18,8 @@ import OperationsTypeSwitcher from 'components/OperationsTypeSwitcher/Operations
 import LoaderOperationPage from 'components/LoaderOperationPageSkeleton/LoaderOperationPage';
 import { Background } from 'components/UI/Background/Background';
 import { CongratulationsModal } from 'components/CongratulationsModal/CongratulationsModal';
+
 import OperationsPageWrapper from './OperationsPages.styled';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  getSummary,
-  getTransactionsByOperation,
-} from 'redux/transaction/operations';
-import { selectBalance, selectFirstVisit } from 'redux/auth/selectors';
-import { selectOperationType } from 'redux/transaction/selectors';
 
 const OperationsPage = () => {
   let firstVisit = useSelector(selectFirstVisit);

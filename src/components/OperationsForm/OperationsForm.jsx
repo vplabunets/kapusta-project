@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { PropTypes } from 'prop-types';
+
 import useMediaQuery from '@mui/material/useMediaQuery';
 import moment from 'moment';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { Button } from 'components/UI/Button/Button';
-import { customStyles } from './SelectorCustomStyle';
-import { addTransaction } from 'redux/transaction/operations';
-
-import { selectOperationType } from '../../redux/transaction/selectors';
 
 import icon from 'images/icons-sprite.svg';
+
+import { addTransaction } from 'redux/transaction/operations';
+import { selectOperationType } from 'redux/transaction/selectors';
+
+import { Button } from 'components/UI/Button/Button';
+
+import { customStyles } from './SelectorCustomStyle';
+
 import {
   ButtonWrapper,
   CalculatorIcon,

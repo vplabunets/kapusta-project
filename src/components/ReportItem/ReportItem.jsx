@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { PropTypes } from 'prop-types';
+
+import { useTranslation } from 'react-i18next';
 
 import Icons from 'images/icons-sprite.svg';
 
-import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentPeriod } from 'redux/reports/selectors';
 import { getItemsCategoryReports } from 'redux/reports/operations';
 
-
 import categoryName from 'helpers/categoryName';
-import { useTranslation } from 'react-i18next';
 
 import {
   ReportItemButton,
@@ -18,9 +18,6 @@ import {
   ButtonReport,
   Type,
 } from './ReportItem.styled';
-
-
-
 
 export const ReportItem = ({ sum, category, type, setIsActive, isActive }) => {
   const sumToFixed = sum.toFixed(2);
@@ -84,9 +81,9 @@ export const ReportItem = ({ sum, category, type, setIsActive, isActive }) => {
 };
 
 ReportItem.propTypes = {
-  sum: PropTypes.string.isRequired,
+  sum: PropTypes.number.isRequired,
   category: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  setIsActive: PropTypes.string.isRequired,
+  setIsActive: PropTypes.func.isRequired,
   isActive: PropTypes.bool.isRequired,
 };

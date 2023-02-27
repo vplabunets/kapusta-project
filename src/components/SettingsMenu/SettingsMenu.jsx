@@ -4,8 +4,12 @@ import { PropTypes } from 'prop-types';
 
 import { useTranslation } from 'react-i18next';
 
-import SettingsModal from 'components/SettingsModal/SettingsModal';
 import { selectName } from 'redux/auth/selectors';
+
+import ukrainian from 'images/flags/ua.png';
+import english from 'images/flags/en.png';
+
+import SettingsModal from 'components/SettingsModal/SettingsModal';
 
 import {
   Menu,

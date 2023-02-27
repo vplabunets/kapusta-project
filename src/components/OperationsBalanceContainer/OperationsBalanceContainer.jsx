@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { PropTypes } from 'prop-types';
+
 import { useMediaQuery } from '@mui/material';
 
-import Balance from 'components/Balance/Balance';
-
-import OperationsForwardToReports from 'components/OperationsForwardToReports/OperationsForwardToReports';
 import IconPlus from 'images/icons-sprite.svg';
+
+import Balance from 'components/Balance/Balance';
+import OperationsForwardToReports from 'components/OperationsForwardToReports/OperationsForwardToReports';
+
 import OperationsAddModal from 'components/OperationsAddModal/OperationsAddModal';
 
 import {

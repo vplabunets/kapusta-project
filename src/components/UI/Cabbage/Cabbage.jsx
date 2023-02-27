@@ -1,4 +1,4 @@
-import Icons from 'images/icons-sprite.svg';
+import icons from 'images/icons-sprite.svg';
 
 import {
   LeftCabbageWrapper,
@@ -11,7 +11,7 @@ export const Cabbage = ({ position }) => {
     return (
       <RightCabbageWrapper>
         <svg alt="cabbage">
-          <use href={`${Icons}#icon-cabbage-right`}></use>
+          <use href={`${icons}#icon-cabbage-right`}></use>
         </svg>
         <div></div>
       </RightCabbageWrapper>
@@ -21,7 +21,7 @@ export const Cabbage = ({ position }) => {
   return (
     <LeftCabbageWrapper>
       <svg alt="cabbage">
-        <use href={`${Icons}#icon-cabbage-left`}></use>
+        <use href={`${icons}#icon-cabbage-left`}></use>
       </svg>
       <div></div>
     </LeftCabbageWrapper>
@@ -33,82 +33,82 @@ export const CabbageList = () => {
     <ul>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
       <Item>
         <svg width="83" height="85">
-          <use href={`${Icons}#icon-cabbage-left`}></use>
+          <use href={`${icons}#icon-cabbage-left`}></use>
         </svg>
       </Item>
     </ul>

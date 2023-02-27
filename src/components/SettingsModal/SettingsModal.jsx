@@ -4,12 +4,13 @@ import { createPortal } from 'react-dom';
 import { useDispatch } from 'react-redux';
 
 import axios from 'axios';
-
 import { useTranslation } from 'react-i18next';
 
-import { Button } from 'components/UI/Button/Button';
 import { userUpdate } from 'redux/auth/operations';
+
 import icon from 'images/icons-sprite.svg';
+
+import { Button } from 'components/UI/Button/Button';
 
 import {
   Backdrop,

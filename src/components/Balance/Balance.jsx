@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useTranslation } from 'react-i18next';
+
 import { setBalance } from 'redux/auth/operations';
 import { selectBalance, selectFirstBalance } from 'redux/auth/selectors';
 

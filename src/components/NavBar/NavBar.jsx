@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { useTranslation } from 'react-i18next';
 import { Avatar } from '@mui/material';
 
 import ExitIcon from 'images/icons-sprite.svg';
 
+import { selectEmail, selectName, selectAvatar } from 'redux/auth/selectors';
+import { logOut } from 'redux/auth/operations';
+
 import ConfirmModal from 'components/ConfirmModal/ConfirmModal';
 import SettingsMenu from 'components/SettingsMenu/SettingsMenu';
-import { useTranslation } from 'react-i18next';
 
 import {
   Container,
@@ -16,10 +20,6 @@ import {
   LogoutBtn,
   MenuBtn,
 } from './NavBar.styles';
-
-import { logOut } from 'redux/auth/operations';
-import { selectEmail, selectName, selectAvatar } from 'redux/auth/selectors';
-
 
 const NavBar = () => {
   const dispatch = useDispatch();

@@ -3,8 +3,12 @@ import { PropTypes } from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 
-import { Button } from 'components/UI/Button/Button';
+import { motion } from 'framer-motion';
+
 import icon from 'images/icons-sprite.svg';
+
+import { Button } from 'components/UI/Button/Button';
+
 import {
   Backdrop,
   Modal,
@@ -43,35 +47,41 @@ const ConfirmModal = ({ text, setModalOpen, onClick }) => {
 
   return createPortal(
     <Backdrop onClick={handleBackDropClose}>
-      <Modal>
-        <ButtonClose onClick={closeModal}>
-          <svg>
-            <use href={`${icon}#icon-close`}></use>
-          </svg>
-        </ButtonClose>
-        <div>
-          <Text>{text}</Text>
-          <ButtonWrapper>
-            <Button
-              closeModal={closeModal}
-              type={'button'}
-              color={'accent'}
-              design={'modal'}
-              onClick={onClick}
-            >
-              {t('modal.YES')}
-            </Button>
-            <Button
-              onClick={closeModal}
-              type={'button'}
-              color={'white'}
-              design={'modal'}
-            >
-              {t('modal.NO')}
-            </Button>
-          </ButtonWrapper>
-        </div>
-      </Modal>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        <Modal>
+          <ButtonClose onClick={closeModal}>
+            <svg>
+              <use href={`${icon}#icon-close`}></use>
+            </svg>
+          </ButtonClose>
+          <div>
+            <Text>{text}</Text>
+            <ButtonWrapper>
+              <Button
+                closeModal={closeModal}
+                type={'button'}
+                color={'accent'}
+                design={'modal'}
+                onClick={onClick}
+              >
+                {t('modal.YES')}
+              </Button>
+              <Button
+                onClick={closeModal}
+                type={'button'}
+                color={'white'}
+                design={'modal'}
+              >
+                {t('modal.NO')}
+              </Button>
+            </ButtonWrapper>
+          </div>
+        </Modal>
+      </motion.div>
     </Backdrop>,
     document.querySelector('#modal-root')
   );

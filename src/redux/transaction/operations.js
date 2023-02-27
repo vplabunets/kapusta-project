@@ -1,6 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import axios from 'axios';
+
 import { changeBalance } from '../auth/slice';
+
 import { toast } from 'react-toastify';
 
 export const getSummary = createAsyncThunk(

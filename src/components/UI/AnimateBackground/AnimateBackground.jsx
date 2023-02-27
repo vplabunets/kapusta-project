@@ -20,5 +20,5 @@ export const AnimateBackground = ({ white }) => {
 };
 
 AnimateBackground.propTypes = {
-  white: PropTypes.bool.isRequired,
+  white: PropTypes.bool,
 };

@@ -1,4 +1,3 @@
-//   import styled from 'styled-components';
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
 import { TRANSITION } from 'constants/constants';

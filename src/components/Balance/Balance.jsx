@@ -46,7 +46,6 @@ const Balance = () => {
             type="number"
             readOnly={firstBalance}
             name="balance"
-            // placeholder={`${currentBalance.toFixed(2)}`}
             pattern="[0-9, .UAH]*"
             value={value}
             onChange={onChange}

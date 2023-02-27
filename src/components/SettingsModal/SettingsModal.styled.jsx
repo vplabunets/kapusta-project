@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
 import { TRANSITION } from 'constants/constants';
-const { duration, timing } = TRANSITION;
+const { duration, timing, delay } = TRANSITION;
 
 const Backdrop = styled.div`
   z-index: 12;
@@ -40,7 +40,7 @@ const ButtonClose = styled.button`
   right: 20px;
   background-color: transparent;
   border: none;
-  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: transform ${duration} ${timing} ${delay};
 
   & svg {
     width: 12px;
@@ -122,7 +122,7 @@ const ChangePasswordBtn = styled.button`
   margin-bottom: 30px;
   background-color: ${p => p.theme.tableHeadBackgroundColor};
   color: ${p => p.theme.btnGreyColor};
-  transition: transform ${duration} ${timing};
+  transition: transform ${duration} ${timing} ${delay};
 
   &:hover,
   &:focus {
@@ -145,7 +145,7 @@ const DropFiles = styled.div`
   border: 2px dashed #555;
   color: #444;
   cursor: pointer;
-  transition: background ${duration} ${timing};
+  transition: background ${duration} ${timing} ${delay};
 
   &:hover {
     background: ${p => p.theme.googleBtnColor};
@@ -165,7 +165,7 @@ const DropFilesTitle = styled.span`
   font-size: 15px;
   font-weight: bold;
   text-align: center;
-  transition: color ${duration} ${timing};
+  transition: color ${duration} ${timing} ${delay};
   @media ${DEVICE.tablet} {
     font-size: 15px;
   }
@@ -192,7 +192,7 @@ const DropFilesInput = styled.input`
     font-size: 10px;
     color: ${p => p.theme.whiteTextColor};
     cursor: pointer;
-    transition: transform ${duration} ${timing};
+    transition: transform ${duration} ${timing} ${delay};
     @media ${DEVICE.tablet} {
       font-size: 12px;
       padding: 10px 20px;

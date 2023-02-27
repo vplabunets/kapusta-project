@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
+import { TRANSITION } from 'constants/constants';
+const { duration, timing, delay } = TRANSITION;
 
 const Backdrop = styled.div`
-  z-index: 8;
+  z-index: 13;
   position: fixed;
   left: 0;
   top: 0;
@@ -37,7 +39,7 @@ const ButtonClose = styled.button`
   right: 20px;
   background-color: transparent;
   border: none;
-  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: transform ${duration} ${timing} ${delay};
 
   & svg {
     width: 12px;

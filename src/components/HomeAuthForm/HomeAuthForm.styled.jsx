@@ -193,7 +193,7 @@ export const ReminderButton = styled.button`
   cursor: pointer;
   padding: 5px;
 
-  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: transform ${duration} ${timing} ${delay};
   filter: drop-shadow(1px 3px 5px ${p => p.theme.buttonShadow});
 
   &:hover,

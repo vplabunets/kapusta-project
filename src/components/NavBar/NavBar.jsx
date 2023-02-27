@@ -28,6 +28,7 @@ const NavBar = () => {
   const email = useSelector(selectEmail);
   const name = useSelector(selectName);
   const avatar = useSelector(selectAvatar);
+  const body = document.querySelector('body');
 
   const { t } = useTranslation();
   const toCutName = email => {
@@ -37,6 +38,7 @@ const NavBar = () => {
 
   const onUserClick = evt => {
     setIsMenuOpen(!isMenuOpen);
+    body.classList.toggle('no-scroll');
   };
 
   const getRandomHexColor = () => {

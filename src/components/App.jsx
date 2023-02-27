@@ -43,12 +43,7 @@ export const App = () => {
                 />
               }
             />
-            <Route path="/google-redirect" element={
-                <PrivateRoutes 
-                  redirectTo="/operations"
-                  component={<OperationsPage />}
-                />
-              } />
+             <Route path="/google-redirect" element={<HomePage />} />
             <Route
               path="/operations"
               element={

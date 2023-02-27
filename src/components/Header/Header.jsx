@@ -12,7 +12,7 @@ import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 import { ContainerHeader } from './Header.styled';
 
-const Header = ({ themeToggler }) => {
+const Header = ({ themeToggler, theme }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
@@ -22,7 +22,7 @@ const Header = ({ themeToggler }) => {
           <use href={`${Logo}#icon-logo`}></use>
         </svg>
       </Link>
-      <CustomizedSwitcher themeToggler={themeToggler} />
+      <CustomizedSwitcher themeToggler={themeToggler} theme={theme} />
       {isLoggedIn && <NavBar />}
     </ContainerHeader>
   );

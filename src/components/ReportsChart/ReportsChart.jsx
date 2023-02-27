@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
+import { useTranslation } from 'react-i18next';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { motion } from 'framer-motion';
@@ -32,7 +32,7 @@ const ReportsChart = () => {
   const itemsByCategory = useSelector(selectItemsByCategory);
   const currentPeriod = useSelector(selectCurrentPeriod);
   const isLoading = useSelector(selectIsLoading);
-
+  const { t } = useTranslation();
   useEffect(() => {
     if (itemsByCategory.length > 0) {
       const sortArray = [...itemsByCategory].sort((a, b) =>
@@ -62,7 +62,7 @@ const ReportsChart = () => {
       },
     ],
   };
-
+  const uah = t('UAH', { returnObjects: true });
   let delayed;
   const options = {
     maintainAspectRatio: false,
@@ -95,7 +95,7 @@ const ReportsChart = () => {
 
         clamp: false,
         formatter: function (value) {
-          return `${value} UAH`;
+          return `${value} ${uah}`;
         },
       },
     },

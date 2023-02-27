@@ -24,7 +24,7 @@ const ReportsMonthBalance = () => {
             <ExpensesContainer key={index}>
               <Text>{t('button.Expenses')}:</Text>
               <Sum color="negative">
-                - {item.sum === 0 ? '00' : item.sum}.00 UAH.
+                - {item.sum === 0 ? '00' : item.sum}.00 {t('UAH')}.
               </Sum>
             </ExpensesContainer>
           );
@@ -40,7 +40,7 @@ const ReportsMonthBalance = () => {
             <IncomeContainer key={index}>
               <Text>{t('button.Income')}:</Text>
               <Sum color="positive">
-                + {item.sum === 0 ? '00' : item.sum}.00 UAH.
+                + {item.sum === 0 ? '00' : item.sum}.00 {t('UAH')}.
               </Sum>
             </IncomeContainer>
           );

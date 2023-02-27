@@ -1,7 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { useSelector } from 'react-redux';
 import { selectSummary } from 'redux/transaction/selectors';
+
 import {
   Wrapper,
   Table,

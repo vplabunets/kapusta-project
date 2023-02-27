@@ -1,7 +1,9 @@
-import OperationsForm from 'components/OperationsForm/OperationsForm';
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { createPortal } from 'react-dom';
 import Icons from 'images/icons-sprite.svg';
+
+import OperationsForm from 'components/OperationsForm/OperationsForm';
 
 import {
   Backdrop,
@@ -25,6 +27,10 @@ const OperationsAddModal = ({ setIsOpen }) => {
     </Backdrop>,
     document.querySelector('#modal-root')
   );
+};
+
+OperationsAddModal.propTypes = {
+  setIsOpen: PropTypes.func,
 };
 
 export default OperationsAddModal;

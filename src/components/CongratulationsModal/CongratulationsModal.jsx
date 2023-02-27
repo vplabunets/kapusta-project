@@ -1,27 +1,28 @@
 import { createPortal } from 'react-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import useWindowSize from 'react-use/lib/useWindowSize';
 import Confetti from 'react-confetti';
-import { changeFirstVisit } from 'redux/auth/operations';
 import { useTranslation } from 'react-i18next';
-import { Backdrop, Modal, Text, SubText } from './CongratulationsModal.styled';
-import { Button } from 'components/UI/Button/Button';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoading } from 'redux/auth/selectors';
+
 import Spiner from 'components/UI/Loader/Loader';
+import { Button } from 'components/UI/Button/Button';
+import { changeFirstVisit } from 'redux/auth/operations';
+import { selectIsLoading } from 'redux/auth/selectors';
+import { Backdrop, Modal, Text, SubText } from './CongratulationsModal.styled';
 
 export const CongratulationsModal = () => {
   const { width, height } = useWindowSize();
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
-const { t } = useTranslation();
+  const { t } = useTranslation();
   return createPortal(
     <>
       <Backdrop>
         <Modal>
           <Text>{t('firstModal.welcome')}!</Text>
           <SubText>
-            {t('firstModal.subText')}? {t('firstModal.subText2')}! {t('firstModal.subText3')}.
-            {t('firstModal.subText4')}
+            {t('firstModal.subText')}? {t('firstModal.subText2')}!{' '}
+            {t('firstModal.subText3')}.{t('firstModal.subText4')}
           </SubText>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Button

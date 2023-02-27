@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import { PropTypes } from 'prop-types';
+import { useTranslation } from 'react-i18next';
+
 import { useDispatch } from 'react-redux';
 import { NumericFormat } from 'react-number-format';
-import icon from 'images/icons-sprite.svg';
 import { deleteTransaction } from 'redux/transaction/operations';
-import ConfirmModal from '../ConfirmModal/ConfirmModal';
+
 import categoryName from 'helpers/categoryName';
-import { useTranslation } from 'react-i18next';
+
+import ConfirmModal from '../ConfirmModal/ConfirmModal';
+import icon from 'images/icons-sprite.svg';
+
+ 
 import {
   Tabletr,
   Data,
@@ -47,7 +53,7 @@ const TransactionsTableLines = ({
     dispatch(deleteTransaction(_id));
     return;
   };
-const { t } = useTranslation();
+  const { t } = useTranslation();
   const sumStyle = getSumStyle(operation);
 
 
@@ -89,6 +95,15 @@ const { t } = useTranslation();
       </Tabletr>
     </>
   );
+};
+
+ConfirmModal.propTypes = {
+  id: PropTypes.string.isRequired,
+  operation: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired.isRequired,
+  category: PropTypes.string.isRequired,
+  sum: PropTypes.string.isRequired,
 };
 
 export default TransactionsTableLines;

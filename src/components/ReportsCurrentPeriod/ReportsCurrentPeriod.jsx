@@ -1,22 +1,24 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+
+import { setCurrentPeriod } from 'redux/reports/slice';
+
 import { format, subMonths, addMonths } from 'date-fns';
+import changeMonth from 'helpers/changeMonth';
+import LeftIcon from 'images/icons-sprite.svg';
+import RightIcon from 'images/icons-sprite.svg';
+
 import {
   Title,
   Button,
   ContainerPeriod,
   Text,
 } from './ReportsCurrentPeriod.styled';
-import LeftIcon from 'images/icons-sprite.svg';
-import RightIcon from 'images/icons-sprite.svg';
-import { setCurrentPeriod } from 'redux/reports/slice';
-import { useTranslation } from 'react-i18next';
-import changeMonth from 'helpers/changeMonth';
 
 const CurrentPeriod = () => {
   const [newDate, setNewDate] = useState(() => new Date());
-const { t } = useTranslation();
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   useEffect(() => {

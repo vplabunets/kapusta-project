@@ -137,12 +137,12 @@ const SettingsModal = ({ onClose }) => {
             maxlength="16"
             minlength="2"
           />
-          <Label htmlFor="password"> Change password</Label>
+          <Label htmlFor="password"> {t('Change password')}</Label>
           <Input
             id="old-password"
             type="password"
             name="old-password"
-            placeholder="Old password"
+            placeholder={t('Old password')}
             maxlength="50"
             minlength="6"
           />
@@ -150,7 +150,7 @@ const SettingsModal = ({ onClose }) => {
             id="new-password"
             type="password"
             name="old-password"
-            placeholder="New password"
+            placeholder={t('New password')}
             maxlength="50"
             minlength="6"
           />

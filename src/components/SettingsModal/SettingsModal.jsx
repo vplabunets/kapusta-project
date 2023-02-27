@@ -36,7 +36,7 @@ const SettingsModal = ({ onClose }) => {
   const { t } = useTranslation();
   const [dragActive, setDragActive] = useState(false);
   const [image, setImage] = useState(null);
-  const [picture, setPicture] = useState(null);
+ // const [picture, setPicture] = useState(null);
   const [showModalPassword, setShowModalPassword] = useState(false);
   // const [isUpload, setIsUpload] = useState(false);
   // const [fileName, setFileName] = useState('');

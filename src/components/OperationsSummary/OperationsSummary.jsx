@@ -1,18 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { useTranslation } from 'react-i18next';
 
-import { useSelector } from 'react-redux';
 import { selectSummary } from 'redux/transaction/selectors';
+import OperationsSummaryLines from './OperationsSummaryLines';
 
-import {
-  Wrapper,
-  Table,
-  Row,
-  Cell,
-  Title,
-  Body,
-} from './OperationsSummary.styled';
+import { Wrapper, Table, Title, Body } from './OperationsSummary.styled';
 
 const OperationsSummary = () => {
   const getSummary = useSelector(selectSummary);
@@ -27,10 +21,11 @@ const OperationsSummary = () => {
         <Body>
           {summary.map(item => {
             return (
-              <Row key={item.month}>
-                <Cell>{item.month}</Cell>
-                <Cell>{item.sum}.00</Cell>
-              </Row>
+              <OperationsSummaryLines
+                key={item.sum}
+                month={item.month}
+                sum={item.sum}
+              />
             );
           })}
         </Body>

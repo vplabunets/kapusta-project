@@ -37,7 +37,7 @@ const categoryName = (categories) => {
         result = 'Other'       
         break;
 
-        case 'Salary':
+        case 'salary':
         result = 'Salary'       
         break;
 

@@ -16,8 +16,6 @@ import {
   Title,
   Settings,
   LanguageSelect,
-  FlagImg,
-  LanguageButton,
   SettingsWrapper,
   LanguageWrapper,
   Container,
@@ -25,15 +23,12 @@ import {
   Backdrop,
   GearsWrapper,
 } from './SettingsMenu.styled';
+import LanguageButtons from './LanguageButtons';
 
 const SettingsMenu = ({ setMenuOpen }) => {
+  const { t } = useTranslation();
+
   const [showModal, setShowModal] = useState(false);
-
-  const changeLanguage = language => {
-    i18n.changeLanguage(language);
-  };
-
-  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     window.addEventListener('keydown', onKeyDown);
@@ -84,19 +79,12 @@ const SettingsMenu = ({ setMenuOpen }) => {
               <Gear></Gear>
             </GearsWrapper>
           </SettingsWrapper>
-
           <LanguageWrapper>
             <LanguageSelect>{t('menu.Select language')}:</LanguageSelect>
-            <LanguageButton onClick={() => changeLanguage('en')}>
-              <FlagImg src={english} alt="english" />
-            </LanguageButton>
-            <LanguageButton onClick={() => changeLanguage('ua')}>
-              <FlagImg src={ukrainian} alt="ukrainian" />
-            </LanguageButton>
+            <LanguageButtons position="menu" />
           </LanguageWrapper>
+          {showModal && <SettingsModal onClose={toggleModal} />}
         </Container>
-
-        {showModal && <SettingsModal onClose={toggleModal} />}
       </Menu>
     </Backdrop>
   );

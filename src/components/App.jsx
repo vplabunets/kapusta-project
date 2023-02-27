@@ -44,7 +44,7 @@ export const App = () => {
               }
             />
             <Route path="/google-redirect" element={
-                <RestrictedRoute
+                <PrivateRoutes 
                   redirectTo="/"
                   component={<HomePage />}
                 />

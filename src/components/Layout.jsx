@@ -27,7 +27,7 @@ const Layout = () => {
 
   return (
     <ThemeProvider theme={theme === 'light' ? themeLight : themeDark}>
-      <Header themeToggler={themeToggler} />
+      <Header themeToggler={themeToggler} theme={theme} />
 
       <Suspense fallback={<LoaderCabbage />}>
         <ToastContainer

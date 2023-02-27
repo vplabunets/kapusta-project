@@ -21,6 +21,9 @@ export const CongratulationsModal = () => {
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
   const { t } = useTranslation();
+
+  const Start = t('firstModal.start');
+
   const body = document.querySelector('body');
 
   useEffect(() => {
@@ -31,6 +34,7 @@ export const CongratulationsModal = () => {
     dispatch(changeFirstVisit());
     body.classList.remove('no-scroll');
   };
+
 
   return createPortal(
     <>
@@ -43,8 +47,7 @@ export const CongratulationsModal = () => {
           <Modal>
             <Text>{t('firstModal.welcome')}!</Text>
             <SubText>
-              {t('firstModal.subText')}? {t('firstModal.subText2')}!{' '}
-              {t('firstModal.subText3')}.{t('firstModal.subText4')}
+              {t('firstModal.subText')}😎
             </SubText>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <Button
@@ -53,7 +56,7 @@ export const CongratulationsModal = () => {
                 color="accent"
                 onClick={onConfirm}
               >
-                {isLoading ? <Spinner width={25} height={25} /> : "Let's start"}
+                {isLoading ? <Spinner width={25} height={25} /> : Start}
               </Button>
             </div>
           </Modal>

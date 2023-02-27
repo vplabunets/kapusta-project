@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
 import { selectName } from 'redux/auth/selectors';
 
@@ -87,7 +87,7 @@ const SettingsMenu = ({ setMenuOpen }) => {
             </SettingsWrapper>
             <LanguageWrapper>
               <LanguageSelect>{t('menu.Select language')}:</LanguageSelect>
-              <LanguageButtons position="menu" />
+              <LanguageSwitcher position="menu" />
             </LanguageWrapper>
             {showModal && <SettingsModal onClose={toggleModal} />}
           </Container>

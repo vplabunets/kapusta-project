@@ -11,7 +11,7 @@ import {
   LanguageBtnWrapper,
 } from './SettingsMenu.styled';
 
-const LanguageButtons = ({ position }) => {
+const LanguageSwitcher = ({ position }) => {
   const { i18n } = useTranslation();
   const changeLanguage = language => {
     i18n.changeLanguage(language);
@@ -28,8 +28,8 @@ const LanguageButtons = ({ position }) => {
   );
 };
 
-LanguageButtons.propTypes = {
+LanguageSwitcher.propTypes = {
   position: PropTypes.string.isRequired,
 };
 
-export default LanguageButtons;
+export default LanguageSwitcher;

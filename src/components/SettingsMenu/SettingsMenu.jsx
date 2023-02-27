@@ -19,7 +19,7 @@ import {
   Backdrop,
   GearsWrapper,
 } from './SettingsMenu.styled';
-import LanguageButtons from './LanguageButtons';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const SettingsMenu = ({ setMenuOpen }) => {
   const { t } = useTranslation();
@@ -77,7 +77,7 @@ const SettingsMenu = ({ setMenuOpen }) => {
           </SettingsWrapper>
           <LanguageWrapper>
             <LanguageSelect>{t('menu.Select language')}:</LanguageSelect>
-            <LanguageButtons position="menu" />
+            <LanguageSwitcher position="menu" />
           </LanguageWrapper>
           {showModal && <SettingsModal onClose={toggleModal} />}
         </Container>

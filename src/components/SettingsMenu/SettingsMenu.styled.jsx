@@ -171,6 +171,10 @@ const LanguageSelect = styled.p`
   }
 `;
 
+const LanguageBtnWrapper = styled.div`
+  /* display: flex; */
+`;
+
 const LanguageButton = styled.button`
   border-radius: 50%;
   cursor: pointer;
@@ -187,8 +191,26 @@ const LanguageButton = styled.button`
 
 const FlagImg = styled.img`
   display: block;
-  width: 25px;
-  height: 25px;
+  width: ${p => {
+    switch (p.position) {
+      case 'menu':
+        return `25px`;
+      case 'header':
+        return '35px';
+      default:
+        return `32px`;
+    }
+  }};
+  height: ${p => {
+    switch (p.position) {
+      case 'menu':
+        return `25px`;
+      case 'header':
+        return '35px';
+      default:
+        return `32px`;
+    }
+  }};
   transition: filter ${TRANSITION.duration} ${TRANSITION.timing};
 
   &:hover,
@@ -196,8 +218,8 @@ const FlagImg = styled.img`
     filter: drop-shadow(1px 3px 10px ${p => p.theme.accentColor});
   }
   @media ${DEVICE.tablet} {
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
   }
 `;
 export {
@@ -213,4 +235,5 @@ export {
   Container,
   Backdrop,
   GearsWrapper,
+  LanguageBtnWrapper,
 };

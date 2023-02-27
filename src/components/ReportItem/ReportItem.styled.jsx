@@ -74,6 +74,7 @@ export const ButtonReport = styled.button`
     position: absolute;
     bottom: 0;
     left: 0;
+    margin-bottom: 5px;
   }
 
   & > svg {

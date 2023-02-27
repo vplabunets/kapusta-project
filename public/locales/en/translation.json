@@ -102,10 +102,7 @@
 
 "firstModal" :{
   "welcome": "Welcome to our Smart Finance App",
-  "subText": "Is your money flying away like cabbage in our background",
-  "subtext2": "It's not a problem anymore",
-  "subtext3": "Because now we will help you control your finances ",
-  "subText4": "Don't thank",
+  "subText": "Is your money flying away like cabbage in our background? It's not a problem anymore! Because now we will help you control your finances. Don't thank",
    "start" : "Let's start" 
 },
 
@@ -120,7 +117,8 @@
 
 "Change password" : "Change password",
 "Old password" : "Old password",
-"New password" : "New password"
+"New password" : "New password",
+"Add new operation" : "Add new operation"
 
 
 }

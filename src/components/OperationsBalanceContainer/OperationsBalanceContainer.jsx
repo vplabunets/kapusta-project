@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 import { useMediaQuery } from '@mui/material';
 
 import IconPlus from 'images/icons-sprite.svg';
-
+import { useTranslation } from 'react-i18next';
 import Balance from 'components/Balance/Balance';
 import OperationsForwardToReports from 'components/OperationsForwardToReports/OperationsForwardToReports';
 
@@ -19,7 +19,7 @@ const OperationsBalanceContainer = ({ addBalance }) => {
   const [isOpenOperationsAddModal, setIsOperationsAddModal] = useState(false);
   const openModal = () => setIsOperationsAddModal(true);
   const isScreenMorePhone = useMediaQuery('(max-width: 767px)');
-
+  const { t } = useTranslation();
   useEffect(() => {
     if (!isScreenMorePhone) return setIsOperationsAddModal(false);
   }, [isScreenMorePhone]);
@@ -29,7 +29,7 @@ const OperationsBalanceContainer = ({ addBalance }) => {
       <OperationsForwardToReports />
       <Balance addBalance={addBalance} />
       <OperationsModalOpenButton onClick={openModal}>
-        Add new operation
+        {t('Add new operation')}
         <svg alt="plus" width={25} height={25}>
           <use href={`${IconPlus}#icon-plus`}></use>
         </svg>

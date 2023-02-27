@@ -36,7 +36,7 @@ const SettingsModal = ({ onClose }) => {
   const { t } = useTranslation();
   const [dragActive, setDragActive] = useState(false);
   const [image, setImage] = useState(null);
- // const [picture, setPicture] = useState(null);
+  //const [picture, setPicture] = useState(null);
   const [showModalPassword, setShowModalPassword] = useState(false);
   // const [isUpload, setIsUpload] = useState(false);
   // const [fileName, setFileName] = useState('');
@@ -101,7 +101,7 @@ const SettingsModal = ({ onClose }) => {
       const formData = new FormData();
       formData.append('image', evt.target.files[0]);
       // const img = URL.createObjectURL(evt.target.files[0]);
-      setPicture(URL.createObjectURL(evt.target.files[0]));
+      // setPicture(URL.createObjectURL(evt.target.files[0]));
       const res = await axios.post(
         'https://kapusta-project-back-production.up.railway.app/upload',
         formData

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useTranslation } from 'react-i18next';
 
 import changeMonth from 'helpers/changeMonth';
@@ -13,6 +15,11 @@ const OperationsSummaryLines = ({ month, sum }) => {
       <Cell>{sum}.00</Cell>
     </Row>
   );
+};
+
+OperationsSummaryLines.propTypes = {
+  month: PropTypes.string.isRequired,
+  sum: PropTypes.number.isRequired,
 };
 
 export default OperationsSummaryLines;

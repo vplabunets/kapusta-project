@@ -24,7 +24,7 @@ import {
   Backdrop,
   GearsWrapper,
 } from './SettingsMenu.styled';
-import LanguageButtons from './LanguageButtons';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const SettingsMenu = ({ setMenuOpen }) => {
   const { t } = useTranslation();

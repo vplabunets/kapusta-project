@@ -38,10 +38,12 @@ const ConfirmModal = ({ text, setModalOpen, onClick }) => {
   };
 
   useEffect(() => {
+    body.classList.add('no-scroll-modal');
     window.addEventListener('keydown', handleEscapeClose);
+
     return () => {
       window.removeEventListener('keydown', handleEscapeClose);
-      body.classList.toggle('no-scroll');
+      body.classList.remove('no-scroll-modal');
     };
   });
 

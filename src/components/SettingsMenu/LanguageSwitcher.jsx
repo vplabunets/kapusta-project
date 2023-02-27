@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useTranslation } from 'react-i18next';
 
 import ukrainian from '../../images/flags/ua.png';
@@ -9,7 +11,7 @@ import {
   LanguageBtnWrapper,
 } from './SettingsMenu.styled';
 
-const LanguageButtons = ({ position }) => {
+const LanguageSwitcher = ({ position }) => {
   const { i18n } = useTranslation();
   const changeLanguage = language => {
     i18n.changeLanguage(language);
@@ -26,4 +28,8 @@ const LanguageButtons = ({ position }) => {
   );
 };
 
-export default LanguageButtons;
+LanguageSwitcher.propTypes = {
+  position: PropTypes.string.isRequired,
+};
+
+export default LanguageSwitcher;

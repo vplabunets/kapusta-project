@@ -36,7 +36,6 @@ const OperationsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(setOperationType(type));
     dispatch(getSummary({ operation: operationType }));
     dispatch(getTransactionsByOperation({ operation: operationType }));
   }, [dispatch, operationType]);

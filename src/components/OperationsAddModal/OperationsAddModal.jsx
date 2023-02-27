@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { PropTypes } from 'prop-types';
 
@@ -16,6 +17,18 @@ import {
 } from './OperationsAddModal.styled';
 
 const OperationsAddModal = ({ setIsOpen }) => {
+  const body = document.querySelector('body');
+
+  useEffect(() => {
+    body.classList.add('no-scroll-addModal');
+  }, []);
+
+  const onClose = () => {
+    setIsOpen(false);
+    body.classList.remove('no-scroll-addModal');
+    return;
+  };
+
   return createPortal(
     <Backdrop>
       <Background />
@@ -26,7 +39,7 @@ const OperationsAddModal = ({ setIsOpen }) => {
         transition={{ duration: 0.7 }}
       >
         <Modal>
-          <BackBtn onClick={() => setIsOpen(false)}>
+          <BackBtn onClick={onClose}>
             <svg width="24" height="24">
               <use href={`${Icons}#icon-arrow-back`}></use>
             </svg>

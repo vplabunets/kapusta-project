@@ -44,3 +44,15 @@ ul {
 button {
   padding: 0;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.no-scroll-modal {
+  overflow: hidden;
+}
+
+.no-scroll-addModal {
+  overflow: hidden;
+}

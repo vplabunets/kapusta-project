@@ -25,6 +25,9 @@ const TransactionsTable = () => {
   const sortedTransactions = useSelector(getSelectTransactions);
 
   useEffect(() => {
+    if (!sortedTransactions.length) {
+      return;
+    }
     setTransactions(sortedTransactions);
   }, [sortedTransactions]);
 
@@ -54,7 +57,8 @@ const TransactionsTable = () => {
                 sum={transaction.sum}
               />
             ))}
-          <EmptyLines />
+          {transactions.length < 5 && <EmptyLines />}
+          {transactions.length < 9 && <EmptyLines />}
         </TableBody>
       </Table>
     </>

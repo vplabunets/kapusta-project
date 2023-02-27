@@ -6,9 +6,12 @@ import { useDispatch } from 'react-redux';
 import { NumericFormat } from 'react-number-format';
 import { deleteTransaction } from 'redux/transaction/operations';
 
+import categoryName from 'helpers/categoryName';
+
 import ConfirmModal from '../ConfirmModal/ConfirmModal';
 import icon from 'images/icons-sprite.svg';
 
+ 
 import {
   Tabletr,
   Data,
@@ -53,6 +56,8 @@ const TransactionsTableLines = ({
   const { t } = useTranslation();
   const sumStyle = getSumStyle(operation);
 
+
+
   return (
     <>
       <Tabletr>
@@ -66,7 +71,7 @@ const TransactionsTableLines = ({
 
         <Data>{date}</Data>
         <Description>{description}</Description>
-        <Category>{category}</Category>
+        <Category>{t(categoryName(category))}</Category>
         <Sum style={sumStyle}>
           <NumericFormat
             value={sum}

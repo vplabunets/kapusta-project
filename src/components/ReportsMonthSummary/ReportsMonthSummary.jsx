@@ -1,7 +1,11 @@
+
 import { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { useSelector } from 'react-redux';
 import { selectCategoryReports } from 'redux/reports/selectors';
+ 
+import Icons from 'images/icons-sprite.svg';
+import { useTranslation } from 'react-i18next';
 
 import { ReportItem } from 'components/ReportItem/ReportItem';
 import { Cabbage } from 'components/UI/Cabbage/Cabbage';
@@ -22,7 +26,7 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
   const [array, setArray] = useState([]);
   const categoryItems = useSelector(selectCategoryReports);
   const [isActive, setIsActive] = useState('');
-
+  const { t } = useTranslation();
   useEffect(() => {
     if (categoryItems.length > 0) {
       const sortArray = [...categoryItems].sort((a, b) =>
@@ -33,6 +37,12 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
     } else setArray([]);
   }, [categoryItems]);
 
+  const expenses = t('Expenses', { returnObjects: true });
+  const income = t('Income', { returnObjects: true });
+  
+  const reportsTextIncome = t('reportsTextIncome', { returnObjects: true });
+  const reportsTextExpenses = t('reportsTextExpenses', { returnObjects: true });
+
   return (
     <Section>
       <Wrapper>
@@ -42,7 +52,7 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
               <use href={`${Icons}#icon-arrow-left`}></use>
             </svg>
           </BtnArrow>
-          <Title>{reportType}</Title>
+          <Title>{reportType === 'expenses' ? expenses : income}</Title>
           <BtnArrow onClick={() => toggleType()}>
             <svg width="10" height="15">
               <use href={`${Icons}#icon-arrow-right`}></use>
@@ -58,7 +68,7 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
               alignItems: 'center',
             }}
           >
-            <Message text={`You have no ${reportType} for this period.`} />
+            <Message text={reportType === 'expenses' ? reportsTextExpenses : reportsTextIncome}/>
             <Cabbage />
           </div>
         ) : (

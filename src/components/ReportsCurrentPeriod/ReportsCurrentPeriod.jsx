@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { setCurrentPeriod } from 'redux/reports/slice';
 
 import { format, subMonths, addMonths } from 'date-fns';
-
+import changeMonth from 'helpers/changeMonth';
 import LeftIcon from 'images/icons-sprite.svg';
 import RightIcon from 'images/icons-sprite.svg';
 
@@ -39,6 +39,10 @@ const CurrentPeriod = () => {
     setNewDate(nextDate);
   };
 
+  const year = format(newDate, ' yyyy');
+  const month = format(newDate, 'MMMM');
+
+ 
   return (
     <div>
       <Title>{t('Current period')}:</Title>
@@ -48,7 +52,7 @@ const CurrentPeriod = () => {
             <use href={`${LeftIcon}#icon-arrow-left`}></use>
           </svg>
         </Button>
-        <Text>{format(newDate, 'MMMM yyyy')}</Text>
+        <Text>{`${t(changeMonth(month))}${year}`}</Text>
         <Button type="button" onClick={monthChangeRight}>
           <svg alt="exit" width={16} height={16}>
             <use href={`${RightIcon}#icon-arrow-right`}></use>

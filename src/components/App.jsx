@@ -46,7 +46,7 @@ export const App = () => {
             <Route path="/google-redirect" element={
                 <PrivateRoutes 
                   redirectTo="/"
-                  component={<HomePage />}
+                  component={<OperationsPage />}
                 />
               } />
             <Route

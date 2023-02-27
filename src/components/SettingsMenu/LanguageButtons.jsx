@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useTranslation } from 'react-i18next';
 
 import ukrainian from '../../images/flags/ua.png';
@@ -24,6 +26,10 @@ const LanguageButtons = ({ position }) => {
       </LanguageButton>
     </LanguageBtnWrapper>
   );
+};
+
+LanguageButtons.propTypes = {
+  position: PropTypes.string.isRequired,
 };
 
 export default LanguageButtons;

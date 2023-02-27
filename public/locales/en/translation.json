@@ -1,8 +1,8 @@
 {
 "menu": {
-  "Hello": "Hello",
-   "Select language": "Select language",
-  "Profile Settings": "Profile Settings"
+"Hello": "Hello",
+"Select language": "Select language",
+"Profile Settings": "Profile Settings"
 } ,
 
 "modal":{
@@ -18,9 +18,9 @@
 },
 
 "button": {
- "CONFIRM": "CONFIRM",
- "CANCEL": "CANCEL",
- "Expenses": "Expenses",
+"CONFIRM": "CONFIRM",
+"CANCEL": "CANCEL",
+"Expenses": "Expenses",
 "Income": "Income",
 "Clear" : "Clear",
 "Input" : "Input"
@@ -28,22 +28,22 @@
 
 "Balance":"Balance",
 "UAH": "UAH",
- "Reports": "Reports",
- "Current period": "Current period",
+"Reports": "Reports",
+"Current period": "Current period",
 "Main page": "Main page",
 
- "registration":{
+"registration":{
 "GoogleText" : "You can log in with your Google Account",
 "loginText": " Or log in using an email and password",
 "after": "after registering",
 "Password": "Password",
 "LOG IN": " LOG IN",
- "REGISTRATION": " REGISTRATION",
- "Forgot your password": "Forgot your password"
+"REGISTRATION": " REGISTRATION",
+"Forgot your password": "Forgot your password"
  } ,
 
-   "balanceModalTitle": " Hello! To get started, enter the current balance of your account",
- "balanceModalText" : "You can't spend money until you have it :)",
+"balanceModalTitle": " Hello! To get started, enter the current balance of your account",
+"balanceModalText" : "You can't spend money until you have it :)",
 
 "expensesCategory":  [
     { "value": "Products", "label": "Products" },
@@ -57,29 +57,47 @@
     { "value": "Other", "label": "Other" }
   ], 
 
-  "incomeCategory": [
+  "Products" : "Products" ,
+  "Health": "Health" ,
+  "Alcohol" : "Alcohol" ,
+  "Entertainment" : "Entertainment",
+  "Housing" : "Housing" ,
+  "Communal, communication" : "Communal, communication" ,
+  "Sports, hobbies" : "Sports, hobbies",
+  "Education" : "Education" ,
+  "Other": "Other",
+  "Salary": "Salary",
+  "Add.income": "Add.income",
+
+"incomeCategory": [
     { "value": "salary", "label": "Salary" },
     { "value": "Add.income", "label": "Add.income" }
   ],
   
-    "Product description" : "Product description",
-  "Product category": "Product category",
-  "Type of income": "Type of income",
+"Product description" : "Product description",
+"Product category": "Product category",
+"Type of income": "Type of income",
 
- "Date" : "Date",
- "Description": "Description",
- "Category": "Category",
- "Sum": "Sum",
- "Summary": "Summary",
+"Date" : "Date",
+"Description": "Description",
+"Category": "Category",
+"Sum": "Sum",
+"Summary": "Summary",
 
- "month": {
-  "November": "November",
-  "October": "October",
-  "September": "September",
-  "August": "August",
-  "July": "July",
-  "June": "June"
- },
+"January" : "January",
+"February" : "February",
+"March" : "March",
+"April" : "April",
+"May" : "May",
+"June": "June",
+"July": "July",
+"August": "August",
+"September": "September",
+"October": "October",
+"November": "November",
+"December" : "December",
+
+
 
 "firstModal" :{
   "welcome": "Welcome to our Smart Finance App",
@@ -92,7 +110,12 @@
 
 "Exit": "Exit",
 "exitText" : "Do you really want to leave?",
-"Are you sure" : "Are you sure?"
+"Are you sure" : "Are you sure?",
+
+"reportsTextExpenses" : "You have no expenses for this period",
+"reportsTextIncome" : "You have no income for this period",
+"Expenses": "Expenses",
+"Income": "Income"
 
 
 }

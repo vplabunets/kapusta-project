@@ -10,6 +10,8 @@ import {
   Type,
 } from './ReportItem.styled';
 import { useEffect } from 'react';
+import categoryName from 'helpers/categoryName';
+import { useTranslation } from 'react-i18next';
 
 export const ReportItem = ({ sum, category, type, setIsActive, isActive }) => {
   const sumToFixed = sum.toFixed(2);
@@ -41,7 +43,7 @@ export const ReportItem = ({ sum, category, type, setIsActive, isActive }) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive, currentPeriod]);
-
+  const { t } = useTranslation();
   const getIconKey = category => {
     if (category.toLowerCase() === 'communal, communication') {
       return 'communal';
@@ -67,7 +69,7 @@ export const ReportItem = ({ sum, category, type, setIsActive, isActive }) => {
           <div></div>
         </ButtonReport>
       </Wrapper>
-      <Type>{category}</Type>
+      <Type>{t(categoryName(category))}</Type>
     </ReportItemButton>
   );
 };

@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
 
-import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
@@ -30,6 +29,7 @@ import {
   DragFileElement,
   ChangePasswordBtn,
 } from './SettingsModal.styled';
+import { instans } from 'utils/axiosDefault';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -103,7 +103,7 @@ const SettingsModal = ({ onClose }) => {
       formData.append('image', evt.target.files[0]);
       // const img = URL.createObjectURL(evt.target.files[0]);
       // setPicture(URL.createObjectURL(evt.target.files[0]));
-      const res = await axios.post(
+      const res = await instans.post(
         'https://kapusta-project-back-production.up.railway.app/upload',
         formData
       );

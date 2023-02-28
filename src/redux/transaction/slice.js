@@ -29,7 +29,7 @@ const transactionSlice = createSlice({
       state.isLoading = false;
     },
     [getSummary.rejected](state, action) {
-      state.error = action.payload.message;
+      state.error = action.payload?.message;
       state.isLoading = false;
     },
     [getSummary.pending](state) {
@@ -41,7 +41,7 @@ const transactionSlice = createSlice({
       state.skelet = false;
     },
     [getTransactionsByOperation.rejected](state, action) {
-      state.error = action.payload.message;
+      state.error = action.payload?.message;
       state.isLoading = false;
     },
     [getTransactionsByOperation.pending](state) {
@@ -72,7 +72,7 @@ const transactionSlice = createSlice({
       state.isLoading = false;
     },
     [addTransaction.rejected](state, action) {
-      state.error = action.payload.message;
+      state.error = action.payload?.message;
       state.isLoading = false;
     },
     [addTransaction.pending](state) {
@@ -105,7 +105,7 @@ const transactionSlice = createSlice({
       state.isLoading = false;
     },
     [deleteTransaction.rejected](state, action) {
-      state.error = action.payload.message;
+      state.error = action.payload?.message;
       state.isLoading = false;
     },
     [deleteTransaction.pending](state) {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { useTranslation } from 'react-i18next';
@@ -20,39 +20,39 @@ const LanguageSwitcher = ({ position }) => {
   const changeLanguage = language => {
     i18n.changeLanguage(language);
   };
+  const item = localStorage.getItem('i18nextLng');
 
-  const onChange = (lang, evt) => {
-    changeLanguage(lang);
-    setCurrent(evt.target.dataset.set);
-  };
+  useEffect(() => {
+    setCurrent(item);
+  }, [item]);
 
   return (
     <LanguageBtnWrapper position={position}>
-      <LanguageButton onClick={evt => onChange('en', evt)}>
+      <LanguageButton onClick={() => changeLanguage('en')}>
         <FlagImg
           src={english}
           alt="english"
           position={position}
           isActive={current === 'en'}
-          data-set={'en'}
+          language="en"
         />
       </LanguageButton>
-      <LanguageButton onClick={evt => onChange('ua', evt)}>
+      <LanguageButton onClick={() => changeLanguage('ua')}>
         <FlagImg
           src={ukrainian}
           alt="ukrainian"
           position={position}
           isActive={current === 'ua'}
-          data-set="ua"
+          language="ua"
         />
       </LanguageButton>
-      <LanguageButton onClick={evt => onChange('tr', evt)}>
+      <LanguageButton onClick={() => changeLanguage('tr')}>
         <FlagImg
           src={turkish}
           alt="turkish"
           position={position}
           isActive={current === 'tr'}
-          data-set="tr"
+          language="tr"
         />
       </LanguageButton>
     </LanguageBtnWrapper>

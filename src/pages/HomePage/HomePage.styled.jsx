@@ -36,6 +36,7 @@ export const TextGroup = styled.div`
   & > svg {
     width: 183px;
     height: 46.34px;
+    fill: ${p => p.theme.tableHeadTextColor};
 
     @media ${DEVICE.tablet} {
       width: 306.52px;

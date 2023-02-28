@@ -117,7 +117,6 @@ const HomeAuthForm = () => {
                 handleChange,
                 handleBlur,
                 handleSubmit,
-                isSubmitting,
                 handleReset,
               }) => (
                 <Form autoComplete="off" onSubmit={handleSubmit}>
@@ -176,7 +175,7 @@ const HomeAuthForm = () => {
                       type={'submit'}
                       color={'accent'}
                       design={'home'}
-                      disabled={isSubmitting}
+                      disabled={isLoading ? true : false}
                     >
                       {loading === 'submit' ? (
                         <Spinner width={30} height={30} />
@@ -188,7 +187,7 @@ const HomeAuthForm = () => {
                       type={'button'}
                       color={'grey'}
                       design={'home'}
-                      disabled={isSubmitting}
+                      disabled={isLoading ? true : false}
                       onClick={() => onClick(errors, values, handleReset)}
                     >
                       {loading === 'click' ? (

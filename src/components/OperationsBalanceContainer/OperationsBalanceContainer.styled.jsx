@@ -5,6 +5,8 @@ import { TRANSITION } from 'constants/constants';
 const { duration, timing, delay } = TRANSITION;
 
 export const Wrapper = styled.div`
+  position: fixed;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +14,8 @@ export const Wrapper = styled.div`
   margin-top: 45px;
 
   @media ${DEVICE.tablet} {
+    z-index: 0;
+    position: static;
     margin-top: 0px;
     width: 100%;
     flex-direction: row-reverse;

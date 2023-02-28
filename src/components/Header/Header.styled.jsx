@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
 
 export const ContainerHeader = styled.header`
+  position: fixed;
+  z-index: 4;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -21,6 +23,8 @@ export const ContainerHeader = styled.header`
     0px 1px 10px 0px rgb(0 0 0 / 12%);
 
   @media ${DEVICE.tablet} {
+    position: static;
+    z-index: 0;
     padding: 12px 32px 13px;
   }
 

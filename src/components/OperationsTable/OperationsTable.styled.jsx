@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import DEVICE from '../../constants/deviceSize';
 
 export const Table = styled.table`
+  z-index: -3;
   width: 100%;
   max-height: 500px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 372px auto 20px;
   overflow-y: scroll;
 
   @media ${DEVICE.tablet} {
+    z-index: 0;
     width: 100%;
     margin: 48px 0 0 0;
   }

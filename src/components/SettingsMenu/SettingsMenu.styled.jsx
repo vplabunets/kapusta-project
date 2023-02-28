@@ -147,10 +147,12 @@ const Settings = styled.p`
   font-family: inherit;
   font-size: 11px;
   line-height: 1.17;
+  margin-bottom: 2px;
   letter-spacing: 0.04em;
 
   @media ${DEVICE.tablet} {
     font-size: 16px;
+    margin-bottom: 3px;
   }
 `;
 
@@ -181,10 +183,9 @@ const LanguageBtnWrapper = styled.div`
       case 'header':
         return '16px';
       default:
-        return `0px`;
+        return;
     }
   }};
-  /* margin-bottom: 16px; */
 `;
 
 const LanguageButton = styled.button`
@@ -224,15 +225,26 @@ const FlagImg = styled.img`
     }
   }};
   filter: ${p => {
-    if (p.isActive) return `drop-shadow(1px 3px 10px ${p.theme.accentColor})`;
+    if (p.isActive && p.language === 'en')
+      return `drop-shadow(1px 3px 10px #3f51b5)`;
+    if (p.isActive && p.language === 'ua')
+      return `drop-shadow(1px 3px 10px #fdd835)`;
+    if (p.isActive && p.language === 'tr')
+      return `drop-shadow(1px 3px 10px #E7192E)`;
+
     return;
   }};
   transition: filter ${TRANSITION.duration} ${TRANSITION.timing};
 
   &:hover,
-  &:focus,
-  &:active {
-    filter: drop-shadow(1px 3px 10px ${p => p.theme.accentColor});
+  &:focus {
+    filter: ${p => {
+      if (p.language === 'en') return `drop-shadow(1px 3px 10px #3f51b5)`;
+      if (p.language === 'ua') return `drop-shadow(1px 3px 10px #fdd835)`;
+      if (p.language === 'tr') return `drop-shadow(1px 3px 10px #E7192E)`;
+
+      return;
+    }};
   }
   @media ${DEVICE.tablet} {
     width: 35px;

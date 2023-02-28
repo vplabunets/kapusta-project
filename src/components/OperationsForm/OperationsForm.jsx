@@ -56,9 +56,9 @@ const OperationsForm = ({ value }) => {
       year: moment(date).format('YYYY'),
       currency: 'UAH',
     };
+    console.log(userEnteredData);
     dispatch(addTransaction(userEnteredData));
     resetForm();
-    evt.target.reset();
     return;
   };
 
@@ -71,7 +71,7 @@ const OperationsForm = ({ value }) => {
         setDescription(value);
         break;
       case 'amount':
-        setAmount(Number(value));
+        setAmount(value);
         break;
 
       default:
@@ -160,6 +160,7 @@ const OperationsForm = ({ value }) => {
             name="amount"
             placeholder="00.00"
             min={0}
+            value={amount}
           />
           <CalculatorIcon
             width={isScreenMoreTablet ? 20 : 40}

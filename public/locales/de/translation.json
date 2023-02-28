@@ -26,8 +26,8 @@
   },
 
   "Balance": "Balance",
-  "UAH": "EURO",
-  "00.00 UAH": "00.00 EURO",
+  "UAH": "UAH",
+  "00.00 UAH": "00.00 UAH",
   "Reports": "Berichte",
   "Current period": "Derzeitige Periode",
   "Main page": "Main page",
@@ -39,7 +39,7 @@
     "Password": "Passwort",
     "LOG IN": "EINLOGGEN",
     "REGISTRATION": "ANMELDUNG",
-    "Forgot your password": "Haben Sie Ihr Passwort vergessen?"
+    "Forgot your password": "Haben Sie Ihr Passwort vergessen"
   },
 
   "balanceModalTitle": " Hallo! Geben Sie zunächst den aktuellen Kontostand Ihres Kontos ein",
@@ -85,7 +85,7 @@
 
   "January": "Januar",
   "February": "Februar",
-  "March": "Marsch",
+  "March": "März",
   "April": "April",
   "May": "Mai",
   "June": "Juni",

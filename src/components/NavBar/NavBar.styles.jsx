@@ -35,7 +35,7 @@ export const UserName = styled.button`
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: rgba(82, 85, 95, 1);
+  color: ${p => p.theme.userName};
   display: block;
   cursor: pointer;
   border: none;

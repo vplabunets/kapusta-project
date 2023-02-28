@@ -13,6 +13,7 @@ import { logIn, register } from 'redux/auth/operations';
 import { ForgotModal } from 'components/ForgotModal/ForgotModal';
 import { Button } from 'components/UI/Button/Button';
 import Spinner from 'components/UI/Loader/Loader';
+import LanguageSwitcher from 'components/SettingsMenu/LanguageSwitcher';
 import icon from 'images/icons-sprite.svg';
 import {
   MainWrapper,
@@ -80,6 +81,7 @@ const HomeAuthForm = () => {
       <MainWrapper>
         {!openForgotModal ? (
           <div>
+            <LanguageSwitcher position="header" />
             <GoogleText>{t('registration.GoogleText')}:</GoogleText>
             <GoogleButton href="https://kapusta-project-back-production.up.railway.app/auth/google">
               <svg>
@@ -88,7 +90,7 @@ const HomeAuthForm = () => {
               Google
             </GoogleButton>
             <LoginText>
-              {t('registration.loginText')}, <br /> {t('registration.after')}:
+              {t('registration.loginText')}, {t('registration.after')}:
             </LoginText>
             <Formik
               initialValues={initialValues}

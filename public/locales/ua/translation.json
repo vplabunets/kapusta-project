@@ -117,9 +117,10 @@
  "Change password" : "Змінити пароль",
  "Old password" : "Старий пароль",
  "New password" : "Новий пароль",
- "Add new operation" : "Додати нову операцію"
+ "Add new operation" : "Додати нову операцію",
 
 
+"Forgot modal text" : "Забули пароль? Будь-ласка введіть ваш email",
+"Send": "Відправити"
 
-    
 }

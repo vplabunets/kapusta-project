@@ -1,0 +1,127 @@
+{
+"menu": {
+"Hello": "Merhaba",
+"Select language": "Dil seçimi",
+"Profile Settings": "Profil Ayarları"
+} ,
+
+"modal":{
+"Change Name": "İsim Değiştirme",
+"Write your new name": "Sizin yeni adınız yazın",
+"Set/Change Avatar": "Seçimi/Değiştirme Avatar",
+"Drop image here": "Resmi buraya bırakın",
+"or": "veya",
+"YES": "EVET",
+"NO": "HAYIR",
+"leaveText": "Gerçekten gitmek istiyor musunuz?"
+
+},
+
+"button": {
+"CONFIRM": "ONAYLAMAK",
+"CANCEL": "İPTAL ETMEK",
+"Expenses": "Masraflar",
+"Income": "Gelirler",
+"Clear" : "Temizlemek",
+"Input" : "Girmek"
+},
+
+"Balance":"Bakiye",
+"UAH": "UAH",
+"00.00 UAH" : "00.00 UAH",
+"Reports": "Raporlar",
+"Current period": "Cari dönem",
+"Main page": "Ana sayfa",
+
+"registration":{
+"GoogleText" : "Google Hesabınız ile giriş yapabilirsiniz",
+"loginText": " Veya e-mailiniz ve şifreniz ile giriş yapabilirsiniz",
+"after": "kayıt olduktan sonra",
+"Password": "Şifre",
+"LOG IN": " GİRİŞ YAPMAK",
+"REGISTRATION": " KAYIT",
+"Forgot your password": "Şifrenizi unuttunuz mu"
+ } ,
+
+"balanceModalTitle": " Merhaba! Başlatmak için, cari hesap bakiyenizi girin",
+"balanceModalText" : "Paranız olana kadar harcayamazsınız :)",
+
+"expensesCategory":  [
+    { "value": "Products", "label": "Yiyecek" },
+    { "value": "Health", "label": "Sağlık" },
+    { "value": "Alcohol", "label": "Alkol" },
+    { "value": "Entertainment", "label": "Eğlence" },
+    { "value": "Housing", "label": "Ev harcaması" },
+    { "value": "Communal, communication", "label": "Kamu hizmetleri, iletişim" },
+    { "value": "Sports, hobbies", "label": "Spor, hobi" },
+    { "value": "Education", "label": "Eğitim" },
+    { "value": "Other", "label": "Diğer" }
+  ], 
+
+  "Products" : "Yiyecek" ,
+  "Health": "Sağlık" ,
+  "Alcohol" : "Alkol" ,
+  "Entertainment" : "Eğlence",
+  "Housing" : "Ev harcaması" ,
+  "Communal, communication" : "Kamu hizmetleri, iletişim" ,
+  "Sports, hobbies" : "Spor, hobi",
+  "Education" : "Eğitim" ,
+  "Other": "Diğer",
+  "Salary": "Maaş",
+  "Add.income": "Ek gelir",
+
+"incomeCategory": [
+    { "value": "salary", "label": "Maaş" },
+    { "value": "Add.income", "label": "Ek gelir" }
+  ],
+  
+"Product description" : "Ürün Açıklaması",
+"Product category": "Ürün kategorisi",
+"Type of income": "Gelir türü",
+
+"Date" : "Tarih",
+"Description": "Açıklama",
+"Category": "Kategori",
+"Sum": "Miktar",
+"Summary": "Toplam",
+
+"January" : "Ocak",
+"February" : "Şubat",
+"March" : "Mart",
+"April" : "Nisan",
+"May" : "Mayıs",
+"June": "Haziran",
+"July": "Temmuz",
+"August": "Ağustos",
+"September": "Eylül",
+"October": "Ekim",
+"November": "Kasım",
+"December" : "Aralık",
+
+
+
+"firstModal" :{
+  "welcome": "Akıllı Finans Uygulamamıza Hoş Geldiniz",
+  "subText": "Paranız arka planımızda ki lahana gibi uçup gidiyor mu? Artık problem değil! Çünkü uygulamamız kontrol etmenize yardımcı olacak. Çünkü artık mali durumunuzu kontrol etmenize yardımcı olacağız. Teşekkür etmenize gerek yok",
+   "start" : "Let's start" 
+},
+
+"Exit": "Çıkış",
+"exitText" : "Gerçekten gitmek istiyor musunuz?",
+"Are you sure" : "Emin misiniz?",
+
+"reportsTextExpenses" : "Bu dönem için her hangi bir masraflarınız bulanamadı",
+"reportsTextIncome" : "Bu dönem için her hangi bir geliriniz bulanamadı",
+"Expenses": "Masraflar",
+"Income": "Gelirler",
+
+"Change password" : "Şifre değiştirme",
+"Old password" : "Eski şifre",
+"New password" : "Yeni şifre",
+"Add new operation" : "Yeni bir işlem ekleme",
+
+"Forgot modal text" : "Şifrenizi unuttunuz mu? Lütfen emailinizi girin",
+"Send": "Gönder"
+
+
+}

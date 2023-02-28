@@ -172,7 +172,19 @@ const LanguageSelect = styled.p`
 `;
 
 const LanguageBtnWrapper = styled.div`
-  /* display: flex; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: ${p => {
+    switch (p.position) {
+      case 'menu':
+        return `0px`;
+      case 'header':
+        return '16px';
+      default:
+        return `0px`;
+    }
+  }};
+  /* margin-bottom: 16px; */
 `;
 
 const LanguageButton = styled.button`
@@ -211,10 +223,15 @@ const FlagImg = styled.img`
         return `32px`;
     }
   }};
+  filter: ${p => {
+    if (p.isActive) return `drop-shadow(1px 3px 10px ${p.theme.accentColor})`;
+    return;
+  }};
   transition: filter ${TRANSITION.duration} ${TRANSITION.timing};
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     filter: drop-shadow(1px 3px 10px ${p => p.theme.accentColor});
   }
   @media ${DEVICE.tablet} {

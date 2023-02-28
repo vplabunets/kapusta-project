@@ -126,7 +126,7 @@ export const DescriptionInput = styled.input`
   padding-left: 30px;
   outline-color: ${p => p.theme.accentColor};
 
-  border: 2px solid ${p => p.theme.borderColor};
+  border: 2px solid ${p => p.theme.borderColorMin};
   border-bottom: none;
   color: ${p => p.theme.mainTextColor};
 

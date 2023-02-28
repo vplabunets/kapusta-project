@@ -19,6 +19,7 @@ export const themeLight = {
   operationTypeSwitchBg: '#FEFEFE',
   operationTypeSwitchBg2: '#FAFBFD',
   borderColor: '#f6f7fc',
+  borderColorMin: '#FFFFFF',
   cabbageSvgColor: '#DBDBDB',
   btnWhiteText: '#52555F',
   headerBoxShadow:
@@ -49,6 +50,7 @@ export const themeDark = {
   operationTypeSwitchBg: '#2f3136',
   operationTypeSwitchBg2: '#202225',
   borderColor: '#f6f7fc',
+  borderColorMin: '#f6f7fc',
   cabbageSvgColor: '#407946',
   btnWhiteText: '#202225',
   headerBoxShadow: '5px 10px 20px rgb(170 178 197 / 40%)',

@@ -1,7 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
+
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { useTranslation } from 'react-i18next';
 
 import { useAuth } from 'hooks/useAuth';
 import { resetPassword } from 'redux/auth/operations';
@@ -38,6 +40,9 @@ export const ForgotModal = ({ closeModal }) => {
   const { isLoading } = useAuth();
   const dispatch = useDispatch();
 
+  const { t } = useTranslation();
+  const send = t('Send');
+
   return (
     <Wrapper>
       <ButtonBack onClick={() => closeModal(false)}>
@@ -45,7 +50,7 @@ export const ForgotModal = ({ closeModal }) => {
           <use href={`${icon}#icon-arrow-back`}></use>
         </svg>
       </ButtonBack>
-      <Text> Forgot your password? Please enter your email</Text>
+      <Text> {t('Forgot modal text')}</Text>
       <Formik
         initialValues={initialValues}
         onSubmit={values => {
@@ -85,7 +90,7 @@ export const ForgotModal = ({ closeModal }) => {
                 design={'home'}
                 disabled={isSubmitting}
               >
-                {isLoading ? <Spinner width={30} height={30} /> : 'Send'}
+                {isLoading ? <Spinner width={30} height={30} /> : send}
               </Button>
             </ButtonContainer>
           </Form>

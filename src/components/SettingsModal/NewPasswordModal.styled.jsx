@@ -86,7 +86,16 @@ const Input = styled.input`
   height: 52px;
   padding: 17px 19px;
   outline: none;
-  border: none;
+  border: ${p => {
+    switch (p.status) {
+      case false:
+        return ` 2px solid ${p.theme.expensesTextColor}`;
+      case true:
+        return `2px solid ${p.theme.incomesTextColor}`;
+      default:
+        return `none`;
+    }
+  }};
   border-radius: 30px;
   background-color: ${p => p.theme.googleBtnColor};
   font-size: 14px;

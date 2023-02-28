@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
 
 import { Button } from 'components/UI/Button/Button';
 import { Cabbage } from 'components/UI/Cabbage/Cabbage';
@@ -34,7 +35,6 @@ const NewPasswordModal = ({ onClose }) => {
 
   const onHandleOldPassword = async evt => {
     const oldPassword = evt.currentTarget.value;
-    // console.log(oldPassword);
     const res = await axios.post('/users/password-verification', {
       password: oldPassword,
     });
@@ -45,7 +45,6 @@ const NewPasswordModal = ({ onClose }) => {
   const onFormSubmit = evt => {
     evt.preventDefault();
     const newPassword = evt.target.elements.newPassword.value;
-    console.log(newPassword);
     if (status) {
       dispatch(userUpdate({ password: newPassword }));
       onClose();
@@ -53,7 +52,7 @@ const NewPasswordModal = ({ onClose }) => {
       return;
     }
 
-    return alert('Wrong old password');
+    return toast.error('Old password is wrong. Please try again');
   };
 
   return createPortal(
@@ -80,6 +79,7 @@ const NewPasswordModal = ({ onClose }) => {
               maxlength="50"
               minlength="6"
               onBlur={onHandleOldPassword}
+              status={status}
             />
             <Input
               id="newPassword"

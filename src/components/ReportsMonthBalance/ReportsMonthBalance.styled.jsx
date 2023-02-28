@@ -41,7 +41,7 @@ const Sum = styled.p`
       case 'positive':
         return `${p.theme.incomesTextColor}`;
       case 'negative':
-        return '#E53935';
+        return `${p.theme.expensesTextColor}`;
       default:
         return `${p.theme.tableHeadTextColor}`;
     }

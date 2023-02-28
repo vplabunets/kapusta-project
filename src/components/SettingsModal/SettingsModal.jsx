@@ -162,7 +162,6 @@ const SettingsModal = ({ onClose }) => {
                 ) : (
                   <>
                     <DropFilesTitle>
-                      {' '}
                       {t('modal.Drop image here')}
                     </DropFilesTitle>
                     {t('modal.or')}
@@ -180,7 +179,7 @@ const SettingsModal = ({ onClose }) => {
             </Label>
 
             <ChangePasswordBtn type="button" onClick={onPasswordModalToggle}>
-              Change password
+              {t('Change password')}
             </ChangePasswordBtn>
             <ButtonWrapper>
               <Button

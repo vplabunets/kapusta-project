@@ -187,7 +187,7 @@ const OperationsForm = ({ value }) => {
 };
 
 OperationsForm.propTypes = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number,
 };
 
 export default OperationsForm;

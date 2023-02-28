@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import ukrainian from 'images/flags/ua.png';
 import english from 'images/flags/en.png';
 import turkish from 'images/flags/tr.png';
+// import deutsch from 'images/flags/de.png';
 
 import {
   FlagImg,

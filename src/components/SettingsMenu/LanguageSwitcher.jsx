@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import ukrainian from 'images/flags/ua.png';
 import english from 'images/flags/en.png';
 import turkish from 'images/flags/tr.png';
-// import deutsch from 'images/flags/de.png';
+import deutsch from 'images/flags/de.png';
 
 import {
   FlagImg,
@@ -29,15 +29,6 @@ const LanguageSwitcher = ({ position }) => {
 
   return (
     <LanguageBtnWrapper position={position}>
-      <LanguageButton onClick={() => changeLanguage('en')}>
-        <FlagImg
-          src={english}
-          alt="english"
-          position={position}
-          isActive={current === 'en'}
-          language="en"
-        />
-      </LanguageButton>
       <LanguageButton onClick={() => changeLanguage('ua')}>
         <FlagImg
           src={ukrainian}
@@ -54,6 +45,24 @@ const LanguageSwitcher = ({ position }) => {
           position={position}
           isActive={current === 'tr'}
           language="tr"
+        />
+      </LanguageButton>
+      <LanguageButton onClick={() => changeLanguage('en')}>
+        <FlagImg
+          src={english}
+          alt="english"
+          position={position}
+          isActive={current === 'en'}
+          language="en"
+        />
+      </LanguageButton>
+      <LanguageButton onClick={() => changeLanguage('de')}>
+        <FlagImg
+          src={deutsch}
+          alt="deutsch"
+          position={position}
+          isActive={current === 'de'}
+          language="de"
         />
       </LanguageButton>
     </LanguageBtnWrapper>

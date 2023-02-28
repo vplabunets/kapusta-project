@@ -236,10 +236,11 @@ const FlagImg = styled.img`
     if (p.isActive && p.language === 'en')
       return `drop-shadow(1px 3px 10px #3f51b5)`;
     if (p.isActive && p.language === 'ua')
-      return `drop-shadow(1px 3px 10px #fdd835)`;
+      return `drop-shadow(1px 3px 10px #50b8f8)`;
     if (p.isActive && p.language === 'tr')
       return `drop-shadow(1px 3px 10px #E7192E)`;
-
+    if (p.isActive && p.language === 'de')
+      return `drop-shadow(1px 3px 10px #ffc107)`;
     return;
   }};
   transition: filter ${TRANSITION.duration} ${TRANSITION.timing};
@@ -248,8 +249,9 @@ const FlagImg = styled.img`
   &:focus {
     filter: ${p => {
       if (p.language === 'en') return `drop-shadow(1px 3px 10px #3f51b5)`;
-      if (p.language === 'ua') return `drop-shadow(1px 3px 10px #fdd835)`;
+      if (p.language === 'ua') return `drop-shadow(1px 3px 10px #50b8f8)`;
       if (p.language === 'tr') return `drop-shadow(1px 3px 10px #E7192E)`;
+      if (p.language === 'de') return `drop-shadow(1px 3px 10px #ffc107)`;
 
       return;
     }};

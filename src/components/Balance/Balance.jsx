@@ -26,7 +26,7 @@ const Balance = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    setValue(currentBalance);
+    setValue(currentBalance.toFixed(2));
   }, [currentBalance]);
 
   const onSubmit = e => {

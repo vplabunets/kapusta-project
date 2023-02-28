@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useTranslation } from 'react-i18next';
@@ -46,9 +46,15 @@ const initialValues = {
 const HomeAuthForm = () => {
   const [openForgotModal, setOpenForgotModal] = useState(false);
   const [showHidePassword, setShowHidePassword] = useState(false);
+  const [loading, setLoading] = useState('');
+
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const { isLoading } = useAuth();
+
+  useEffect(() => {
+    if (!isLoading) setLoading('');
+  }, [isLoading]);
 
   const onClick = (errors, values, handleReset) => {
     if (errors.email || errors.password)
@@ -68,8 +74,15 @@ const HomeAuthForm = () => {
     if (values.email && values.password) {
       dispatch(register(values));
       handleReset();
+      setLoading('click');
       return;
     }
+  };
+
+  const onSubmit = values => {
+    dispatch(logIn(values));
+    setLoading('submit');
+    return;
   };
 
   return (
@@ -94,7 +107,7 @@ const HomeAuthForm = () => {
             </LoginText>
             <Formik
               initialValues={initialValues}
-              onSubmit={values => dispatch(logIn(values))}
+              onSubmit={values => onSubmit(values)}
               validationSchema={ValidationSchema}
             >
               {({
@@ -165,7 +178,7 @@ const HomeAuthForm = () => {
                       design={'home'}
                       disabled={isSubmitting}
                     >
-                      {isLoading ? (
+                      {loading === 'submit' ? (
                         <Spinner width={30} height={30} />
                       ) : (
                         t('registration.LOG IN')
@@ -178,7 +191,7 @@ const HomeAuthForm = () => {
                       disabled={isSubmitting}
                       onClick={() => onClick(errors, values, handleReset)}
                     >
-                      {isLoading ? (
+                      {loading === 'click' ? (
                         <Spinner width={30} height={30} />
                       ) : (
                         t('registration.REGISTRATION')

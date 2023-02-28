@@ -7,7 +7,7 @@ export const BackgroundGrey = styled.div`
   height: 352px;
   z-index: -1;
 
-  position: absolute;
+  position: fixed;
   top: 0;
   background-color: ${p => p.theme.tableHeadBackgroundColor};
   border-bottom-left-radius: 20%;
@@ -18,6 +18,7 @@ export const BackgroundGrey = styled.div`
     0px 1px 10px 0px rgb(0 0 0 / 12%);
 
   @media ${DEVICE.tablet} {
+    position: absolute;
     height: 583px;
   }
 `;

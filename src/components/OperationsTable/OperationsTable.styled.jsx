@@ -94,6 +94,24 @@ export const TableHeadTitle = styled.th`
   }
 `;
 
+export const TableHeadTitleBtn = styled.button`
+  @media ${DEVICE.tablet} {
+    border: none;
+    background: transparent;
+    }
+  }
+  `
+
+export const TableHeadTitleSvg = styled.svg`
+  @media ${DEVICE.tablet} {
+    margin-left: 5px;
+    transform: rotate(270deg);
+    :active {
+      transform: rotate(90deg);
+    }
+  }
+  `
+
 export const TableBody = styled.tbody`
   @media ${DEVICE.tablet} {
     display: inline-block;

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useTranslation } from 'react-i18next';
-import { format, subMonths, addMonths } from 'date-fns';
 import changeMonth from 'helpers/changeMonth';
+import moment from 'moment';
 
 import { setCurrentPeriod } from 'redux/reports/slice';
 
@@ -24,23 +24,23 @@ const CurrentPeriod = () => {
   useEffect(() => {
     dispatch(
       setCurrentPeriod({
-        month: format(newDate, 'MMMM'),
-        year: format(newDate, 'yyyy'),
+        month: moment(newDate).format('MMMM'),
+        year: moment(newDate).format('yyyy'),
       })
     );
   }, [dispatch, newDate]);
 
   const monthChangeLeft = () => {
-    const prevDate = subMonths(newDate, 1);
+    const prevDate = moment(newDate).subtract(1, 'months');
     setNewDate(prevDate);
   };
   const monthChangeRight = () => {
-    const nextDate = addMonths(newDate, 1);
+    const nextDate = moment(newDate).add(1, 'months');
     setNewDate(nextDate);
   };
 
-  const year = format(newDate, ' yyyy');
-  const month = format(newDate, 'MMMM');
+  const year = moment(newDate).format('YYYY');
+  const month = moment(newDate).format('MMMM');
 
   return (
     <div>
@@ -51,7 +51,7 @@ const CurrentPeriod = () => {
             <use href={`${icons}#icon-arrow-left`}></use>
           </svg>
         </Button>
-        <Text>{`${t(changeMonth(month))}${year}`}</Text>
+        <Text>{`${t(changeMonth(month))} ${year}`}</Text>
         <Button type="button" onClick={monthChangeRight}>
           <svg alt="exit" width={16} height={16}>
             <use href={`${icons}#icon-arrow-right`}></use>

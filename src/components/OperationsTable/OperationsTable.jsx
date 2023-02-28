@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import moment from 'moment';
 
 import {
   getSelectTransactions,
@@ -51,7 +52,7 @@ const TransactionsTable = () => {
                 key={transaction._id}
                 id={transaction._id}
                 operation={transaction.operation}
-                date={transaction.date}
+                date={moment(transaction.date).format('DD.MM.YYYY')}
                 description={transaction.description}
                 category={transaction.category}
                 sum={transaction.sum}

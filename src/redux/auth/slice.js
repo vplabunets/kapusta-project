@@ -16,6 +16,7 @@ const initialState = {
   name: '',
   email: '',
   accessToken: '',
+  refreshToken: '',
   isLoggedIn: false,
   balance: 0,
   error: null,
@@ -39,6 +40,9 @@ const authSlice = createSlice({
       console.dir('state', state);
       console.log('action', action);
     },
+    setTokenRefresh(state, action) {
+      state.refreshToken = action.payload;
+    },
   },
   extraReducers: {
     [register.fulfilled]: (state, action) => {
@@ -53,8 +57,10 @@ const authSlice = createSlice({
       state.isLoading = true;
     },
     [logIn.fulfilled](state, action) {
+      console.log(action.payload);
       state.email = action.payload.email;
       state.accessToken = action.payload.accessToken;
+      state.refreshToken = action.payload.refreshToken;
       state.balance = action.payload.balance;
       state.name = action.payload.userName;
       state.isLoggedIn = true;
@@ -96,7 +102,7 @@ const authSlice = createSlice({
       state.avatarUrl = action.payload.avatarUrl;
     },
     [refreshUser.rejected](state, action) {
-      state.error = action.payload.message;
+      // state.error = action.payload.message;
       state.isRefreshing = false;
     },
     [setBalance.pending](state) {
@@ -155,4 +161,4 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-export const { changeBalance, setToken } = authSlice.actions;
+export const { changeBalance, setToken, setTokenRefresh } = authSlice.actions;

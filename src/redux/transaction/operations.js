@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
-import axios from 'axios';
+import { instans } from 'utils/axiosDefault';
 
 import { changeBalance } from '../auth/slice';
 
@@ -10,7 +9,7 @@ export const getSummary = createAsyncThunk(
   'transactions/summary',
   async (credentials, { rejectWithValue }) => {
     try {
-      const result = await axios.post('/transaction/summary', credentials);
+      const result = await instans.post('/transaction/summary', credentials);
       return result.data;
     } catch (error) {
       if (error.message === 'Network Error') {
@@ -25,7 +24,7 @@ export const getTransactionsByOperation = createAsyncThunk(
   'transactions/operation',
   async (credentials, { rejectWithValue }) => {
     try {
-      const result = await axios.post('/transaction/operation', credentials);
+      const result = await instans.post('/transaction/operation', credentials);
       return result.data;
     } catch (error) {
       toast.error('Something went wrong, please try again later');
@@ -37,7 +36,7 @@ export const addTransaction = createAsyncThunk(
   'transactions/addOperation',
   async (credentials, { rejectWithValue, dispatch }) => {
     try {
-      const result = await axios.post('/transaction/new', credentials);
+      const result = await instans.post('/transaction/new', credentials);
 
       dispatch(changeBalance(result.data));
       toast.success('Operation added successfully');
@@ -53,7 +52,9 @@ export const deleteTransaction = createAsyncThunk(
   'transactions/deleteOperation',
   async (transactionId, { rejectWithValue, dispatch }) => {
     try {
-      const result = await axios.delete(`/transaction/delete/${transactionId}`);
+      const result = await instans.delete(
+        `/transaction/delete/${transactionId}`
+      );
       dispatch(changeBalance(result.data));
       toast.info('Operation deleted successfully');
       return result.data;

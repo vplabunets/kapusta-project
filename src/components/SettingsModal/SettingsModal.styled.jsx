@@ -75,6 +75,7 @@ const Label = styled.label`
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: 0.04em;
+  font-family: inherit;
   color: ${p => p.theme.tableHeadTextColor};
 
   @media ${DEVICE.tablet} {
@@ -95,6 +96,7 @@ const Input = styled.input`
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.04em;
+  font-family: inherit;
   color: ${p => p.theme.mainTextColor};
   ::placeholder {
     font-size: 14px;
@@ -142,8 +144,8 @@ const DropFiles = styled.div`
 
   margin-bottom: 20px;
   border-radius: 10px;
-  border: 2px dashed #555;
-  color: #444;
+  border: 2px dashed ${p => p.theme.mainTextColor};
+  color: ${p => p.theme.mainTextColor};
   cursor: pointer;
   transition: background ${duration} ${timing} ${delay};
 
@@ -161,7 +163,7 @@ const DropFiles = styled.div`
 
 const DropFilesTitle = styled.span`
   font-family: inherit;
-  color: #444;
+  color: ${p => p.theme.mainTextColor};
   font-size: 15px;
   font-weight: bold;
   text-align: center;
@@ -172,6 +174,7 @@ const DropFilesTitle = styled.span`
 `;
 
 const DropFilesInput = styled.input`
+  font-family: inherit;
   width: 350px;
   max-width: 100%;
   color: ${p => p.theme.mainTextColor};

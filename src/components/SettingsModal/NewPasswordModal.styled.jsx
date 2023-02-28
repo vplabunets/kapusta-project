@@ -34,6 +34,7 @@ const Modal = styled.div`
 `;
 const ButtonClose = styled.button`
   cursor: pointer;
+  font-family: inherit;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -66,6 +67,7 @@ const Form = styled.form`
   flex-direction: column;
 `;
 const Label = styled.label`
+  font-family: inherit;
   display: block;
   /* height: 120px; */
   margin-bottom: 8px;
@@ -81,6 +83,7 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
+  font-family: inherit;
   margin-bottom: 20px;
   width: 100%;
   height: 52px;

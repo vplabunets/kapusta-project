@@ -16,7 +16,7 @@ const Backdrop = styled.div`
   z-index: 10;
   position: fixed;
   left: 0;
-  top: 55px;
+  top: 56px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,14 +28,13 @@ const Backdrop = styled.div`
 const Menu = styled.div`
   height: 80px;
   width: 100%;
-  background-color: rgb(255 165 108 / 93%);
-  box-shadow: ${p => p.theme.headerBoxShadow}, 0px 4px 5px 0px rgb(0 0 0 / 14%),
-    0px 1px 10px 0px rgb(0 0 0 / 12%);
+  background-color: ${p => p.theme.headerColor};
+  box-shadow: ${p => p.theme.headerBoxShadow};
   position: absolute;
   z-index: 11;
   top: 0px;
   right: 0px;
-  border-radius: 0px 0px 0px 24px;
+  border-radius: 0px 0px 24px 24px;
   padding: 10px;
 
   @media ${DEVICE.tablet} {
@@ -50,13 +49,14 @@ const Menu = styled.div`
 const Title = styled.p`
   font-family: inherit;
   line-height: 1.17;
+  font-weight: 600;
   letter-spacing: 0.04em;
-  color: ${p => p.theme.tableHeadTextColor};
+  color: ${p => p.theme.mainTextColor};
   font-size: 12px;
   text-align: center;
   margin-bottom: 10px;
   @media ${DEVICE.tablet} {
-    margin-bottom: 33px;
+    margin-bottom: 32px;
     font-size: 18px;
   }
 `;
@@ -83,13 +83,15 @@ const SettingsWrapper = styled.button`
   cursor: pointer;
   color: rgba(82, 85, 95, 1);
   transition: color ${TRANSITION.duration} ${TRANSITION.timing};
-  &:hover,
-  &:focus {
-    color: ${p => p.theme.tableHeadTextColor};
+
+  &:hover p {
+    color: ${p => p.theme.accentColor};
   }
-  &:hover i {
+  &:hover svg {
     animation-play-state: running;
+    fill: ${p => p.theme.accentColor};
   }
+
   @media ${DEVICE.tablet} {
     margin-bottom: 50px;
   }
@@ -102,40 +104,45 @@ const GearsWrapper = styled.div`
 
   @media ${DEVICE.tablet} {
     width: 280px;
+    margin-bottom: 12px;
   }
 `;
 
-const Gear = styled.i`
+const Gear = styled.svg`
   display: block;
   position: absolute;
-  width: 15px;
-  height: 15px;
-  top: 0px;
+  width: 20px;
+  height: 20px;
+  top: -1px;
   left: 49%;
-  background: url(http://i.imgur.com/lOBxb.png);
-  background-size: contain;
-  background-repeat: no-repeat;
+  fill: ${p => p.theme.mainTextColor};
   animation: ${barrelRoll} 2s linear infinite;
   animation-play-state: running;
+
   &:last-of-type {
-    top: 7px;
+    top: 9px;
     left: 30%;
     animation-name: ${invertBarrelRoll};
   }
   @media ${DEVICE.tablet} {
     width: 25px;
     height: 25px;
-    top: 0px;
-    left: 49%;
+    top: 4px;
+    left: 48%;
+
     &:last-of-type {
-      top: 15px;
-      left: 41.5%;
+      top: 16px;
+      left: 40.5%;
       animation-name: ${invertBarrelRoll};
     }
   }
 
   @media ${DEVICE.laptop} {
     animation-play-state: paused;
+    width: 30px;
+    height: 30px;
+    top: 1px;
+    left: 49%;
   }
 `;
 
@@ -149,6 +156,7 @@ const Settings = styled.p`
   line-height: 1.17;
   margin-bottom: 2px;
   letter-spacing: 0.04em;
+  color: ${p => p.theme.mainTextColor};
 
   @media ${DEVICE.tablet} {
     font-size: 16px;
@@ -164,7 +172,7 @@ const LanguageSelect = styled.p`
   font-family: inherit;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color: rgba(82, 85, 95, 1);
+  color: ${p => p.theme.mainTextColor};
 
   font-size: 11px;
   @media ${DEVICE.tablet} {

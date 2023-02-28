@@ -11,6 +11,7 @@ import { selectName } from 'redux/auth/selectors';
 // import english from 'images/flags/en.png';
 
 import SettingsModal from 'components/SettingsModal/SettingsModal';
+import icons from 'images/icons-sprite.svg';
 
 import {
   Menu,
@@ -81,8 +82,12 @@ const SettingsMenu = ({ setMenuOpen }) => {
             <SettingsWrapper onClick={toggleModal}>
               <Settings>{t('menu.Profile Settings')}</Settings>
               <GearsWrapper>
-                <Gear></Gear>
-                <Gear></Gear>
+                <Gear>
+                  <use href={`${icons}#icon-gear`}></use>
+                </Gear>
+                <Gear>
+                  <use href={`${icons}#icon-gear`}></use>
+                </Gear>
               </GearsWrapper>
             </SettingsWrapper>
             <LanguageWrapper>

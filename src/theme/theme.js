@@ -26,6 +26,7 @@ export const themeLight = {
   buttonShadow: 'rgba(82, 85, 95, 0.15)',
   btnGreyColor: '#52555F',
   sectionShadow: 'rgba(170, 178, 197, 0.2)',
+  userName: 'rgba(82, 85, 95, 1)',
 };
 
 export const themeDark = {
@@ -54,4 +55,5 @@ export const themeDark = {
   buttonShadow: 'rgba(170 178 197 / 40%)',
   btnGreyColor: '#f6f7fc',
   sectionShadow: 'rgb(255, 255, 255, 0.3)',
+  userName: '#FFFFFF',
 };

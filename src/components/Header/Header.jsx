@@ -23,7 +23,7 @@ const Header = ({ themeToggler, theme }) => {
         </svg>
       </Link>
       <CustomizedSwitcher themeToggler={themeToggler} theme={theme} />
-      {/* {isLoggedIn && <NavBar />} */}
+      {isLoggedIn && <NavBar />}
     </ContainerHeader>
   );
 };

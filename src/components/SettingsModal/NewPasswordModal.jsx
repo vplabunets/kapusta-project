@@ -1,8 +1,8 @@
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-
+import { instans } from 'utils/axiosDefault';
 import { useTranslation } from 'react-i18next';
-import axios from 'axios';
+
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 
@@ -35,7 +35,7 @@ const NewPasswordModal = ({ onClose }) => {
 
   const onHandleOldPassword = async evt => {
     const oldPassword = evt.currentTarget.value;
-    const res = await axios.post('/users/password-verification', {
+    const res = await instans.post('/users/password-verification', {
       password: oldPassword,
     });
     console.log(res.data.status);

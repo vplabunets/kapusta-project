@@ -1,12 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
-import axios from 'axios';
+import { instans } from 'utils/axiosDefault';
 
 export const getAllSummaryReports = createAsyncThunk(
   'reports/allSummaryReports',
   async (credentials, { rejectWithValue }) => {
     try {
-      const result = await axios.post(
+      const result = await instans.post(
         '/transaction/all-summary-reports',
         credentials
       );
@@ -21,7 +20,7 @@ export const getCategoryReports = createAsyncThunk(
   'reports/categoryReports',
   async (credentials, { rejectWithValue }) => {
     try {
-      const result = await axios.post(
+      const result = await instans.post(
         '/transaction/category-reports',
         credentials
       );
@@ -36,7 +35,7 @@ export const getItemsCategoryReports = createAsyncThunk(
   'reports/itemsCategoryReports',
   async (credentials, { rejectWithValue }) => {
     try {
-      const result = await axios.post(
+      const result = await instans.post(
         '/transaction/items-category-reports',
         credentials
       );

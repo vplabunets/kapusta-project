@@ -12,8 +12,7 @@ import './i18n';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-  <>
+  <React.StrictMode>
     <Suspense fallback="loading"></Suspense>
     <BrowserRouter>
       <Provider store={store}>
@@ -22,6 +21,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </PersistGate>
       </Provider>
     </BrowserRouter>
-  </>
-  // </React.StrictMode>
+  </React.StrictMode>
 );

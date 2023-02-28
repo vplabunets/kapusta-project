@@ -1,0 +1,121 @@
+{
+  "menu": {
+    "Hello": "Hallo",
+    "Select language": "Sprache auswählen",
+    "Profile Settings": "Profileinstellungen"
+  },
+
+  "modal": {
+    "Change Name": "Namen ändern",
+    "Write your new name": "Schreiben Sie Ihren neuen Namen",
+    "Set/Change Avatar": "Avatar festlegen/ändern",
+    "Drop image here": "Bild hier ablegen",
+    "or": "oder",
+    "YES": "JA",
+    "NO": "NEIN",
+    "leaveText": "Wollten Sie wirklich gehen?"
+  },
+
+  "button": {
+    "CONFIRM": "BESTÄTIGEN",
+    "CANCEL": "STORNIEREN",
+    "Expenses": "Ausgaben",
+    "Income": "Einkommen",
+    "Clear": "Löschen",
+    "Input": "Eingeben"
+  },
+
+  "Balance": "Balance",
+  "UAH": "EURO",
+  "00.00 UAH": "00.00 EURO",
+  "Reports": "Berichte",
+  "Current period": "Derzeitige Periode",
+  "Main page": "Main page",
+
+  "registration": {
+    "GoogleText": "Sie können sich mit Ihrem Google-Konto anmelden",
+    "loginText": " Oder sich mit einer E-Mail-Adresse und einem Passwort anmelden",
+    "after": "nach Anmeldung",
+    "Password": "Passwort",
+    "LOG IN": "EINLOGGEN",
+    "REGISTRATION": "ANMELDUNG",
+    "Forgot your password": "Haben Sie Ihr Passwort vergessen?"
+  },
+
+  "balanceModalTitle": " Hallo! Geben Sie zunächst den aktuellen Kontostand Ihres Kontos ein",
+  "balanceModalText": "Sie können kein Geld ausgeben, bis Sie es haben :)",
+
+  "expensesCategory": [
+    { "value": "Products", "label": "Produkte" },
+    { "value": "Health", "label": "Gesundheit" },
+    { "value": "Alcohol", "label": "Alkohol" },
+    { "value": "Entertainment", "label": "Unterhaltung" },
+    { "value": "Housing", "label": "Gehäuse" },
+    { "value": "Communal, communication", "label": "Kommunal, kommunikation" },
+    { "value": "Sports, hobbies", "label": "Sport, Hobbys" },
+    { "value": "Education", "label": "Ausbildung" },
+    { "value": "Other", "label": "Andere" }
+  ],
+  "Products": "Produkte",
+  "Health": "Gesundheit",
+  "Alcohol": "Alkohol",
+  "Entertainment": "Unterhaltung",
+  "Housing": "Gehäuse",
+  "Communal, communication": "Kommunal, kommunikation",
+  "Sports, hobbies": "Sport, Hobbys",
+  "Education": "Ausbildung",
+  "Other": "Andere",
+  "Salary": "Gehalt",
+  "Add.income": "Zusatzeinkommen",
+
+  "incomeCategory": [
+    { "value": "salary", "label": "Gehalt" },
+    { "value": "Add.income", "label": "Zusatzeinkommen" }
+  ],
+
+  "Product description": "Produktbeschreibung",
+  "Product category": "Produktkategorie",
+  "Type of income": "Art des Einkommens",
+
+  "Date": "Dates",
+  "Description": "Beschreibung",
+  "Category": "Kategorie",
+  "Sum": "Summe",
+  "Summary": "Zusammenfassung",
+
+  "January": "Januar",
+  "February": "Februar",
+  "March": "Marsch",
+  "April": "April",
+  "May": "Mai",
+  "June": "Juni",
+  "July": "Juli",
+  "August": "August",
+  "September": "September",
+  "October": "Oktober",
+  "November": "November",
+  "December": "Dezember",
+
+  "firstModal": {
+    "welcome": "Willkommen in unserer Smart Finance App",
+    "subText": "Fliegt Ihr Geld wie Kohl in unserem Hintergrund davon? Es ist kein Problem mehr! Denn jetzt helfen wir Ihnen, Ihre Finanzen zu kontrollieren. Danke nicht ",
+    "start": "Start"
+  },
+
+  "Exit": "Ausfahrt",
+  "exitText": "Wollten Sie wirklich gehen?",
+  "Are you sure": "Sind Sie sicher?",
+
+  "reportsTextExpenses": "Für diesen Zeitraum fallen für Sie keine Ausgaben an",
+  "reportsTextIncome": "Sie haben für diesen Zeitraum kein Einkommen",
+  "Expenses": "Ausgaben",
+  "Income": "Einkommen",
+
+  "Change password": "Passwort ändern",
+  "Old password": "Altes Passwort",
+  "New password": "Neues Passwort",
+  "Add new operation": "Operation hinzufügen",
+
+  "Forgot modal text": "Passwort vergessen? Bitte geben Sie Ihre E-Mail-Adresse ein",
+  "Send": "Senden"
+}

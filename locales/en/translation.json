@@ -1,52 +1,51 @@
 {
-"menu": {
-"Hello": "Hello",
-"Select language": "Select language",
-"Profile Settings": "Profile Settings"
-} ,
+  "menu": {
+    "Hello": "Hello",
+    "Select language": "Select language",
+    "Profile Settings": "Profile Settings"
+  },
 
-"modal":{
-"Change Name": "Change Name",
-"Write your new name": "Write your new name",
-"Set/Change Avatar": "Set/Change Avatar",
-"Drop image here": "Drop image here",
-"or": "or",
-"YES": "YES",
-"NO": "NO",
-"leaveText": "Do you really want to leave?"
+  "modal": {
+    "Change Name": "Change Name",
+    "Write your new name": "Write your new name",
+    "Set/Change Avatar": "Set/Change Avatar",
+    "Drop image here": "Drop image here",
+    "or": "or",
+    "YES": "YES",
+    "NO": "NO",
+    "leaveText": "Do you really want to leave?"
+  },
 
-},
+  "button": {
+    "CONFIRM": "CONFIRM",
+    "CANCEL": "CANCEL",
+    "Expenses": "Expenses",
+    "Income": "Income",
+    "Clear": "Clear",
+    "Input": "Input"
+  },
 
-"button": {
-"CONFIRM": "CONFIRM",
-"CANCEL": "CANCEL",
-"Expenses": "Expenses",
-"Income": "Income",
-"Clear" : "Clear",
-"Input" : "Input"
-},
+  "Balance": "Balance",
+  "UAH": "UAH",
+  "00.00 UAH": "00.00 UAH",
+  "Reports": "Reports",
+  "Current period": "Current period",
+  "Main page": "Main page",
 
-"Balance":"Balance",
-"UAH": "UAH",
-"00.00 UAH" : "00.00 UAH",
-"Reports": "Reports",
-"Current period": "Current period",
-"Main page": "Main page",
+  "registration": {
+    "GoogleText": "You can log in with your Google Account",
+    "loginText": " Or log in using an email and password",
+    "after": "after registering",
+    "Password": "Password",
+    "LOG IN": " LOG IN",
+    "REGISTRATION": " REGISTRATION",
+    "Forgot your password": "Forgot your password"
+  },
 
-"registration":{
-"GoogleText" : "You can log in with your Google Account",
-"loginText": " Or log in using an email and password",
-"after": "after registering",
-"Password": "Password",
-"LOG IN": " LOG IN",
-"REGISTRATION": " REGISTRATION",
-"Forgot your password": "Forgot your password"
- } ,
+  "balanceModalTitle": " Hello! To get started, enter the current balance of your account",
+  "balanceModalText": "You can't spend money until you have it :)",
 
-"balanceModalTitle": " Hello! To get started, enter the current balance of your account",
-"balanceModalText" : "You can't spend money until you have it :)",
-
-"expensesCategory":  [
+  "expensesCategory": [
     { "value": "Products", "label": "Products" },
     { "value": "Health", "label": "Health" },
     { "value": "Alcohol", "label": "Alcohol" },
@@ -56,72 +55,68 @@
     { "value": "Sports, hobbies", "label": "Sports, hobbies" },
     { "value": "Education", "label": "Education" },
     { "value": "Other", "label": "Other" }
-  ], 
+  ],
 
-  "Products" : "Products" ,
-  "Health": "Health" ,
-  "Alcohol" : "Alcohol" ,
-  "Entertainment" : "Entertainment",
-  "Housing" : "Housing" ,
-  "Communal, communication" : "Communal, communication" ,
-  "Sports, hobbies" : "Sports, hobbies",
-  "Education" : "Education" ,
+  "Products": "Products",
+  "Health": "Health",
+  "Alcohol": "Alcohol",
+  "Entertainment": "Entertainment",
+  "Housing": "Housing",
+  "Communal, communication": "Communal, communication",
+  "Sports, hobbies": "Sports, hobbies",
+  "Education": "Education",
   "Other": "Other",
   "Salary": "Salary",
   "Add.income": "Add.income",
 
-"incomeCategory": [
+  "incomeCategory": [
     { "value": "salary", "label": "Salary" },
     { "value": "Add.income", "label": "Add.income" }
   ],
-  
-"Product description" : "Product description",
-"Product category": "Product category",
-"Type of income": "Type of income",
 
-"Date" : "Date",
-"Description": "Description",
-"Category": "Category",
-"Sum": "Sum",
-"Summary": "Summary",
+  "Product description": "Product description",
+  "Product category": "Product category",
+  "Type of income": "Type of income",
 
-"January" : "January",
-"February" : "February",
-"March" : "March",
-"April" : "April",
-"May" : "May",
-"June": "June",
-"July": "July",
-"August": "August",
-"September": "September",
-"October": "October",
-"November": "November",
-"December" : "December",
+  "Date": "Date",
+  "Description": "Description",
+  "Category": "Category",
+  "Sum": "Sum",
+  "Summary": "Summary",
 
+  "January": "January",
+  "February": "February",
+  "March": "March",
+  "April": "April",
+  "May": "May",
+  "June": "June",
+  "July": "July",
+  "August": "August",
+  "September": "September",
+  "October": "October",
+  "November": "November",
+  "December": "December",
 
+  "firstModal": {
+    "welcome": "Welcome to our Smart Finance App",
+    "subText": "Is your money flying away like cabbage in our background? It's not a problem anymore! Because now we will help you control your finances. Don't thank",
+    "start": "Let's start"
+  },
 
-"firstModal" :{
-  "welcome": "Welcome to our Smart Finance App",
-  "subText": "Is your money flying away like cabbage in our background? It's not a problem anymore! Because now we will help you control your finances. Don't thank",
-   "start" : "Let's start" 
-},
+  "Exit": "Exit",
+  "exitText": "Do you really want to leave?",
+  "Are you sure": "Are you sure?",
 
-"Exit": "Exit",
-"exitText" : "Do you really want to leave?",
-"Are you sure" : "Are you sure?",
+  "reportsTextExpenses": "You have no expenses for this period",
+  "reportsTextIncome": "You have no income for this period",
+  "Expenses": "Expenses",
+  "Income": "Income",
 
-"reportsTextExpenses" : "You have no expenses for this period",
-"reportsTextIncome" : "You have no income for this period",
-"Expenses": "Expenses",
-"Income": "Income",
+  "Change password": "Change password",
+  "Old password": "Old password",
+  "New password": "New password",
+  "Add new operation": "Add new operation",
 
-"Change password" : "Change password",
-"Old password" : "Old password",
-"New password" : "New password",
-"Add new operation" : "Add new operation",
-
-"Forgot modal text" : "Forgot your password? Please enter your email",
-"Send": "Send"
-
-
+  "Forgot modal text": "Forgot your password? Please enter your email",
+  "Send": "Send"
 }

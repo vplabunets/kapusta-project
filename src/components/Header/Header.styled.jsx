@@ -28,3 +28,16 @@ export const ContainerHeader = styled.header`
     padding: 12px 16px 13px;
   }
 `;
+
+export const LogoGroup = styled.div`
+  position: relative;
+  width: 90px;
+  height: 31px;
+
+  & > svg:last-child {
+    position: absolute;
+    left: 20px;
+    bottom: 3px;
+    fill: ${p => p.theme.tableHeadTextColor};
+  }
+`;

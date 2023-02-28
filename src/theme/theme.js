@@ -44,7 +44,7 @@ export const themeDark = {
     'linear-gradient(117.84deg, #1D346A 2.84%, #031634 67.28%)',
   lightGreyColor: '#FFFFFF',
   googleBtnColor: '#202225',
-  tableBodyColor: '#f2f8f8',
+  tableBodyColor: '#40444b',
   operationTypeSwitchBg: '#2f3136',
   operationTypeSwitchBg2: '#202225',
   borderColor: '#f6f7fc',

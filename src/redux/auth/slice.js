@@ -24,7 +24,7 @@ const initialState = {
   isRefreshing: false,
   firstVisit: false,
   firstBalance: false,
-  avatarUrl: null,
+  avatarUrl: '',
   token: '',
 };
 
@@ -57,7 +57,6 @@ const authSlice = createSlice({
       state.isLoading = true;
     },
     [logIn.fulfilled](state, action) {
-      console.log(action.payload);
       state.email = action.payload.email;
       state.accessToken = action.payload.accessToken;
       state.refreshToken = action.payload.refreshToken;
@@ -102,7 +101,6 @@ const authSlice = createSlice({
       state.avatarUrl = action.payload.avatarUrl;
     },
     [refreshUser.rejected](state, action) {
-      // state.error = action.payload.message;
       state.isRefreshing = false;
     },
     [setBalance.pending](state) {

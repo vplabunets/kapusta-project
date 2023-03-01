@@ -60,7 +60,11 @@ const NavBar = () => {
               cursor: 'pointer',
               lineHeight: 1.17,
             }}
-            src={`https://kapusta-project-back-production.up.railway.app${avatar}`}
+            src={
+              avatar.includes('https://lh3.googleusercontent.com')
+                ? avatar
+                : `https://kapusta-project-back-production.up.railway.app${avatar}`
+            }
           >
             {!avatar && name ? toCutName(name) : toCutName(email)}
           </Avatar>

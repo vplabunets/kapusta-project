@@ -34,7 +34,7 @@ const ReportsChart = () => {
   const isLoading = useSelector(selectIsLoading);
   const { t } = useTranslation();
   useEffect(() => {
-    if (itemsByCategory.length > 0) {
+    if (itemsByCategory?.length > 0) {
       const sortArray = [...itemsByCategory].sort((a, b) =>
         a.sum < b.sum ? 1 : -1
       );

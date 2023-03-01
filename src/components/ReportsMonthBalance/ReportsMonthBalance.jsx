@@ -15,10 +15,11 @@ import {
 
 const ReportsMonthBalance = () => {
   const summaryReports = useSelector(selectAllSummaryReports);
+  console.log(summaryReports);
   const { t } = useTranslation();
   return (
     <Wrapper>
-      {summaryReports.map((item, index) => {
+      {summaryReports?.map((item, index) => {
         if (item.operation === 'expenses') {
           return (
             <ExpensesContainer key={index}>
@@ -34,7 +35,7 @@ const ReportsMonthBalance = () => {
 
       <Line></Line>
 
-      {summaryReports.map((item, index) => {
+      {summaryReports?.map((item, index) => {
         if (item.operation === 'income') {
           return (
             <IncomeContainer key={index}>

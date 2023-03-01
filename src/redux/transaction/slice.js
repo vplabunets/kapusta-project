@@ -4,6 +4,7 @@ import {
   getTransactionsByOperation,
   addTransaction,
   deleteTransaction,
+  resetAll,
 } from './operations';
 
 const initialState = {
@@ -109,6 +110,18 @@ const transactionSlice = createSlice({
       state.isLoading = false;
     },
     [deleteTransaction.pending](state) {
+      state.isLoading = true;
+    },
+    [resetAll.fulfilled]: (state, action) => {
+      state.transactions = action.payload.transactions;
+      state.summary = action.payload.transactions;
+      state.isLoading = false;
+    },
+    [resetAll.rejected](state, action) {
+      state.error = action.payload?.message;
+      state.isLoading = false;
+    },
+    [resetAll.pending](state) {
       state.isLoading = true;
     },
   },

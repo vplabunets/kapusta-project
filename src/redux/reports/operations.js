@@ -50,7 +50,7 @@ export const getReports = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const result = await instans.post(
-        '/transaction//all-operation',
+        '/transaction/all-operation',
         credentials
       );
       return result.data;

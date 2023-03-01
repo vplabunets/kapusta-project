@@ -15,7 +15,7 @@ export const Backdrop = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
-  top: 262px;
+  top: 182px;
   left: 50%;
   transform: translateX(-50%);
   max-width: 280px;

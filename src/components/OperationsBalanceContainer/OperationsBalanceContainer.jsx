@@ -14,10 +14,13 @@ import {
   OperationsModalOpenButton,
   Wrapper,
 } from 'components/OperationsBalanceContainer/OperationsBalanceContainer.styled';
+import { selectFirstBalance } from 'redux/auth/selectors';
+import { useSelector } from 'react-redux';
 
 const OperationsBalanceContainer = ({ addBalance }) => {
   const [isOpenOperationsAddModal, setIsOperationsAddModal] = useState(false);
   const openModal = () => setIsOperationsAddModal(true);
+  let firstBalance = useSelector(selectFirstBalance);
   const isScreenMorePhone = useMediaQuery('(max-width: 767px)');
   const { t } = useTranslation();
   useEffect(() => {
@@ -26,14 +29,16 @@ const OperationsBalanceContainer = ({ addBalance }) => {
 
   return (
     <Wrapper>
-      <OperationsForwardToReports />
+      {!isScreenMorePhone && <OperationsForwardToReports />}
       <Balance addBalance={addBalance} />
-      <OperationsModalOpenButton onClick={openModal}>
-        {t('Add new operation')}
-        <svg alt="plus" width={25} height={25}>
-          <use href={`${IconPlus}#icon-plus`}></use>
-        </svg>
-      </OperationsModalOpenButton>
+      {firstBalance && (
+        <OperationsModalOpenButton onClick={openModal}>
+          {t('Add new operation')}
+          <svg alt="plus" width={25} height={25}>
+            <use href={`${IconPlus}#icon-plus`}></use>
+          </svg>
+        </OperationsModalOpenButton>
+      )}
       {isScreenMorePhone && isOpenOperationsAddModal && (
         <OperationsAddModal setIsOpen={setIsOperationsAddModal} />
       )}

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-
+import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 
 import { Backdrop, Text, Title, Modal } from './OperationsBalanceModal.styled';
@@ -12,13 +12,14 @@ const OperationsBalanceModal = () => {
   }, []);
 
   const { t } = useTranslation();
-  return (
+  return createPortal(
     <Backdrop>
       <Modal>
         <Title>{t('balanceModalTitle')}!</Title>
         <Text>{t('balanceModalText')} </Text>
       </Modal>
-    </Backdrop>
+    </Backdrop>,
+    document.querySelector('#modal-root')
   );
 };
 export default OperationsBalanceModal;

@@ -26,15 +26,16 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
   const categoryItems = useSelector(selectCategoryReports);
   const [isActive, setIsActive] = useState('');
   const { t } = useTranslation();
+
   useEffect(() => {
-    if (categoryItems.length > 0) {
+    if (categoryItems?.length > 0) {
       const sortArray = [...categoryItems].sort((a, b) =>
         a.sum < b.sum ? 1 : -1
       );
       setArray(sortArray);
-      setIsActive(sortArray[0].category.toLowerCase());
+      if (!isActive) setIsActive(sortArray[0].category.toLowerCase());
     } else setArray([]);
-  }, [categoryItems]);
+  }, [categoryItems, isActive]);
 
   const expenses = t('Expenses', { returnObjects: true });
   const income = t('Income', { returnObjects: true });

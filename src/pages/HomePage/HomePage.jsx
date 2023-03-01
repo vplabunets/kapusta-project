@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { motion } from 'framer-motion';
 
-import { setToken } from 'redux/auth/slice';
+import { setToken, setTokenRefresh } from 'redux/auth/slice';
 import { refreshUser } from 'redux/auth/operations';
 import { selectAccessToken } from 'redux/auth/selectors';
 
@@ -27,11 +27,14 @@ const HomePage = () => {
 
   useEffect(() => {
     const accessToken = searchParams.get('accessToken');
-    if (!accessToken) {
+    const refreshToken = searchParams.get('refreshToken');
+
+    if (!accessToken && !refreshToken) {
       return;
     }
 
     dispatch(setToken(accessToken));
+    dispatch(setTokenRefresh(refreshToken));
     dispatch(refreshUser());
   }, [dispatch, searchParams]);
 

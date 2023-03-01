@@ -44,8 +44,6 @@ const authSlice = createSlice({
 
     setToken(state, action) {
       state.accessToken = action.payload;
-      console.dir('state', state);
-      console.log('action', action);
     },
     setTokenRefresh(state, action) {
       state.refreshToken = action.payload;

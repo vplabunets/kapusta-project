@@ -5,6 +5,7 @@ import {
   addTransaction,
   deleteTransaction,
   resetAll,
+  deleteAllByOperation,
 } from './operations';
 
 const initialState = {
@@ -122,6 +123,18 @@ const transactionSlice = createSlice({
       state.isLoading = false;
     },
     [resetAll.pending](state) {
+      state.isLoading = true;
+    },
+    [deleteAllByOperation.fulfilled]: (state, action) => {
+      state.transactions = action.payload.transactions;
+      state.summary = action.payload.transactions;
+      state.isLoading = false;
+    },
+    [deleteAllByOperation.rejected](state, action) {
+      state.error = action.payload?.message;
+      state.isLoading = false;
+    },
+    [deleteAllByOperation.pending](state) {
       state.isLoading = true;
     },
   },

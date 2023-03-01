@@ -35,6 +35,8 @@ import {
   TextWrapper,
   ResetAllBtn,
 } from './SettingsModal.styled';
+import { toast } from 'react-toastify';
+import LoaderCabbage from 'components/LoaderCabbage/LoaderCabbage';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -45,6 +47,7 @@ const SettingsModal = ({ onClose }) => {
   const [picture, setPicture] = useState(null);
   const [showModalPassword, setShowModalPassword] = useState(false);
   const [showModalReset, setShowModalReset] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -79,6 +82,7 @@ const SettingsModal = ({ onClose }) => {
       );
       setImage(res.data.url);
     } catch (error) {
+      toast.error('Something went wrong, try again later');
       console.error(error);
     }
   };
@@ -108,6 +112,7 @@ const SettingsModal = ({ onClose }) => {
   };
 
   const handleChangeImage = async evt => {
+    setIsLoading(true);
     try {
       const formData = new FormData();
       formData.append('image', evt.target.files[0]);
@@ -118,7 +123,9 @@ const SettingsModal = ({ onClose }) => {
         formData
       );
       setImage(res.data.url);
+      setIsLoading(false);
     } catch (error) {
+      toast.error('Something went wrong, try again later');
       console.error(error);
     }
   };
@@ -164,6 +171,7 @@ const SettingsModal = ({ onClose }) => {
             <Label htmlFor="avatar">
               {t('modal.Set/Change Avatar')}
               <DropFiles dragActive={dragActive}>
+                {isLoading && <LoaderCabbage />}
                 {image ? (
                   <DoneWrapper>
                     <PictureWrap>

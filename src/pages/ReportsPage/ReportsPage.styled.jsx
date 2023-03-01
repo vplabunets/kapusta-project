@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
 //
 const ReportsPageWrapper = styled.div`
-  margin: 19px 20px 0 20px;
+  margin: 72px 20px 0 20px;
   display: flex;
   flex-direction: column;
 

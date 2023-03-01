@@ -86,7 +86,7 @@ const ReportsChart = () => {
       },
 
       datalabels: {
-        align: !isScreenMorePhone ? '0' : 'end',
+        align: !isScreenMorePhone ? '70' : 'end',
         anchor: 'end',
         offset: !isScreenMorePhone ? '8' : '',
         font: {

@@ -70,7 +70,7 @@ const NewPasswordModal = ({ onClose }) => {
           </ButtonClose>
           <Text>{t('Change password')}</Text>
           <Form onSubmit={onFormSubmit}>
-            <Label htmlFor="password"> {t('Change password')}</Label>
+            <Label htmlFor="oldPassword"> {t('Enter old password')}</Label>
             <Input
               id="oldPassword"
               type="password"
@@ -81,6 +81,7 @@ const NewPasswordModal = ({ onClose }) => {
               onBlur={onHandleOldPassword}
               status={status}
             />
+            <Label htmlFor="newPassword"> {t('Enter new password')}</Label>
             <Input
               id="newPassword"
               type="password"

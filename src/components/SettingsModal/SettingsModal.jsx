@@ -11,8 +11,8 @@ import { userUpdate } from 'redux/auth/operations';
 
 import icon from 'images/icons-sprite.svg';
 import NewPasswordModal from './NewPasswordModal';
-
 import { Button } from 'components/UI/Button/Button';
+import { instans } from 'utils/axiosDefault';
 
 import {
   Backdrop,
@@ -28,8 +28,10 @@ import {
   Input,
   DragFileElement,
   ChangePasswordBtn,
+  PictureWrap,
+  DoneWrapper,
+  TextWrapper,
 } from './SettingsModal.styled';
-import { instans } from 'utils/axiosDefault';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -37,10 +39,8 @@ const SettingsModal = ({ onClose }) => {
   const { t } = useTranslation();
   const [dragActive, setDragActive] = useState(false);
   const [image, setImage] = useState(null);
-  //const [picture, setPicture] = useState(null);
+  const [picture, setPicture] = useState(null);
   const [showModalPassword, setShowModalPassword] = useState(false);
-  // const [isUpload, setIsUpload] = useState(false);
-  // const [fileName, setFileName] = useState('');
 
   const dispatch = useDispatch();
 
@@ -64,12 +64,19 @@ const SettingsModal = ({ onClose }) => {
     }
   };
 
-  const onUpload = files => {
-    console.log(files[0].name);
-    setImage(files[0].name);
-    // dispatch(userUpdate({ avatarUrl: image }));
-    // setFileName(files[0].name);
-    // setIsUpload(true);
+  const onUpload = async files => {
+    try {
+      const formData = new FormData();
+      formData.append('image', files[0]);
+      setPicture(URL.createObjectURL(files[0]));
+      const res = await instans.post(
+        'https://kapusta-project-back-production.up.railway.app/upload',
+        formData
+      );
+      setImage(res.data.url);
+    } catch (error) {
+      console.error(error);
+    }
   };
   const onPasswordModalToggle = () => {
     setShowModalPassword(prevState => !prevState);
@@ -80,10 +87,8 @@ const SettingsModal = ({ onClose }) => {
     e.stopPropagation();
     if (e.type === 'dragenter' || e.type === 'dragover') {
       setDragActive(true);
-      console.log(dragActive);
     } else if (e.type === 'dragleave') {
       setDragActive(false);
-      console.log(dragActive);
     }
   };
   const handleDrop = function (e) {
@@ -91,8 +96,6 @@ const SettingsModal = ({ onClose }) => {
     e.stopPropagation();
     setDragActive(false);
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      // at least one file has been dropped so do something
-      // handleFiles(e.dataTransfer.files);
       onUpload(e.dataTransfer.files);
     }
   };
@@ -101,13 +104,12 @@ const SettingsModal = ({ onClose }) => {
     try {
       const formData = new FormData();
       formData.append('image', evt.target.files[0]);
-      // const img = URL.createObjectURL(evt.target.files[0]);
-      // setPicture(URL.createObjectURL(evt.target.files[0]));
+
+      setPicture(URL.createObjectURL(evt.target.files[0]));
       const res = await instans.post(
         'https://kapusta-project-back-production.up.railway.app/upload',
         formData
       );
-      console.log(res.data.url);
       setImage(res.data.url);
     } catch (error) {
       console.error(error);
@@ -116,8 +118,6 @@ const SettingsModal = ({ onClose }) => {
 
   const onFormSubmit = evt => {
     evt.preventDefault();
-
-    // const newImage = evt.target.elements.avatar.value;
     const newName = evt.target.elements.name.value;
     if (newName) {
       dispatch(userUpdate({ userName: newName }));
@@ -158,14 +158,23 @@ const SettingsModal = ({ onClose }) => {
               {t('modal.Set/Change Avatar')}
               <DropFiles dragActive={dragActive}>
                 {image ? (
-                  <p>Done</p>
+                  <DoneWrapper>
+                    <PictureWrap>
+                      <img src={picture} alt="aaa" width="100%" />
+                    </PictureWrap>
+                    <TextWrapper>
+                      <svg width={40} height={40}>
+                        <use href={`${icon}#icon-galina`}></use>
+                      </svg>
+                      <p>{t('Done')}!</p>
+                    </TextWrapper>
+                  </DoneWrapper>
                 ) : (
                   <>
                     <DropFilesTitle>
                       {t('modal.Drop image here')}
                     </DropFilesTitle>
                     {t('modal.or')}
-                    {/* <p>click to select file</p> */}
                     <DropFilesInput
                       type="file"
                       name="avatar"

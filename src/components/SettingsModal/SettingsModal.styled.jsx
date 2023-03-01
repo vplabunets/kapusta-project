@@ -139,7 +139,7 @@ const DropFiles = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 120px;
+  height: 150px;
   padding: 10px;
 
   margin-bottom: 20px;
@@ -155,7 +155,6 @@ const DropFiles = styled.div`
   }
 
   @media ${DEVICE.tablet} {
-    height: 150px;
     padding: 20px;
     gap: 10px;
   }
@@ -226,6 +225,34 @@ const DragFileElement = styled.div`
   left: 0px;
 `;
 
+const PictureWrap = styled.div`
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  overflow: hidden;
+  border: 2px solid #3ab37c;
+  margin-bottom: 7px;
+`;
+
+const DoneWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const TextWrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
+
+  & > p {
+    color: #3ab37c;
+    font-size: 17px;
+    font-weight: 500;
+  }
+`;
+
 export {
   Backdrop,
   Modal,
@@ -235,9 +262,12 @@ export {
   DropFilesTitle,
   DropFiles,
   DropFilesInput,
+  PictureWrap,
   Form,
   Label,
   Input,
   DragFileElement,
   ChangePasswordBtn,
+  DoneWrapper,
+  TextWrapper,
 };

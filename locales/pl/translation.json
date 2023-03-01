@@ -1,0 +1,127 @@
+{
+    "menu": {
+      "Hello": "Witaj",
+      "Select language": "Wybierz język",
+      "Profile Settings": "Ustawienia profilu"
+    },
+  
+    "modal": {
+      "Change Name": "Zmień imię",
+      "Write your new name": "Wpisz nowe imię",
+      "Set/Change Avatar": "Ustaw/zmień avatar",
+      "Drop image here": "Przeciągnij zdjęcie tutaj",
+      "or": "lub",
+      "YES": "TAK",
+      "NO": "NIE",
+      "leaveText": "Opuścić aplikację?"
+    },
+  
+    "button": {
+      "CONFIRM": "POTWIERDŹ",
+      "CANCEL": "ANULUJ",
+      "Expenses": "Wydatki",
+      "Income": "Przychody",
+      "Clear": "Wyczyść",
+      "Input": "wprowadź"
+    },
+  
+    "Balance": "Stan konta",
+    "UAH": "UAH",
+    "00.00 UAH": "00.00 UAH",
+    "Reports": "Raporty",
+    "Current period": "Obecny okres",
+    "Main page": "Strona główna",
+  
+    "registration": {
+      "GoogleText": "Zaloguj się przy pomocy konta Google",
+      "loginText": " Lub przy pomocy adresu e-mail i hasła",
+      "after": "po zarejestrowaniu",
+      "Password": "Hasło",
+      "LOG IN": " Zaloguj się",
+      "REGISTRATION": " Rejestracja",
+      "Forgot your password": "Zapomniałem hasła"
+    },
+  
+    "balanceModalTitle": " Witaj! Aby zacząć wprowadź swój obecny stan konta",
+    "balanceModalText": "Nie możesz wydawać pieniędzy jeśli ich nie masz :)",
+  
+    "expensesCategory": [
+      { "value": "Products", "label": "Produkty" },
+      { "value": "Health", "label": "Zdrowie" },
+      { "value": "Alcohol", "label": "Alkohol" },
+      { "value": "Entertainment", "label": "Rozrywka" },
+      { "value": "Housing", "label": "Dom" },
+      { "value": "Communal, communication", "label": "Rachunki, transport" },
+      { "value": "Sports, hobbies", "label": "Sport, hobby" },
+      { "value": "Education", "label": "Edukacja" },
+      { "value": "Other", "label": "Inne" }
+    ],
+  
+    "Products": "Produkty",
+    "Health": "Zdrowie",
+    "Alcohol": "Alkohol",
+    "Entertainment": "Rozrywka",
+    "Housing": "Dom",
+    "Communal, communication": "Rachunki, transport",
+    "Sports, hobbies": "Sport, hobby",
+    "Education": "Edukacja",
+    "Other": "Inne",
+    "Salary": "Wynagrodzenie",
+    "Add.income": "Dodaj dochód",
+  
+    "incomeCategory": [
+      { "value": "salary", "label": "Wynagrodzenie" },
+      { "value": "Add.income", "label": "Dodaj dochód" }
+    ],
+  
+    "Product description": "Opis produktu",
+    "Product category": "Kategoria produktu",
+    "Type of income": "Rodzaj dochodu",
+  
+    "Date": "Data",
+    "Description": "Opis",
+    "Category": "Kategoria",
+    "Sum": "Suma",
+    "Summary": "Podsumowanie",
+  
+    "January": "Styczeń",
+    "February": "Luty",
+    "March": "Marzec",
+    "April": "Kwiecień",
+    "May": "Maj",
+    "June": "Czerwiec",
+    "July": "Lipiec",
+    "August": "Sierpień",
+    "September": "Wrzesień",
+    "October": "Październik",
+    "November": "Listopad",
+    "December": "Grudzień",
+  
+    "firstModal": {
+      "welcome": "Witaj w Smart Finance App",
+      "subText": "Zastanawiasz się gdzie znowu podziała się pieniądze z twojej wypłaty? Już od dziś zacznij kontrolować swoje finanse razem z nami! ",
+      "start": "Zaczynamy"
+    },
+  
+    "Exit": "Wyjście",
+    "exitText": "Czy na pewno chcesz wyjść?",
+    "Are you sure": "Na pewno?",
+  
+    "reportsTextExpenses": "Brak wydatków w danym okresie",
+    "reportsTextIncome": "Brak przychodów w danym okresie",
+    "Expenses": "Wydatki",
+    "Income": "Przychody",
+  
+    "Change password": "Zmień hasło",
+    "Old password": "Stare hasło",
+    "New password": "Nowe hasło",
+    "Add new operation": "Dodaj nową operację",
+  
+  "Enter old password" : "Wprowadź stare hasło",
+  "Enter new password" : "Wprowadź nowe hasło",
+  
+   "Done": "Done",
+  
+    "Forgot modal text": " Zapomniałeś hasło? Wpisz swój adres e-mail",
+    "Send": "Wyślij"
+  }

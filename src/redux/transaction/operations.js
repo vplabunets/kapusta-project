@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instans } from 'utils/axiosDefault';
 
-import { changeBalance } from '../auth/slice';
+import { changeBalance, resetFirstBalance, resetBalance } from '../auth/slice';
 
 import { toast } from 'react-toastify';
 
@@ -57,6 +57,22 @@ export const deleteTransaction = createAsyncThunk(
       );
       dispatch(changeBalance(result.data));
       toast.info('Operation deleted successfully');
+      return result.data;
+    } catch (error) {
+      toast.error('Something went wrong, please try again later');
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const resetAll = createAsyncThunk(
+  'transactions/resetAll',
+  async (_, { rejectWithValue, dispatch }) => {
+    try {
+      const result = await instans.delete(`/transaction/delete-all`);
+      toast.info('All was reset successfully');
+      dispatch(resetFirstBalance(result.data.firstBalance));
+      dispatch(resetBalance(result.data.balance));
       return result.data;
     } catch (error) {
       toast.error('Something went wrong, please try again later');

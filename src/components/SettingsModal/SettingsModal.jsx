@@ -8,11 +8,13 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
 import { userUpdate } from 'redux/auth/operations';
+import { resetAll } from 'redux/transaction/operations';
 
 import icon from 'images/icons-sprite.svg';
 import NewPasswordModal from './NewPasswordModal';
 import { Button } from 'components/UI/Button/Button';
 import { instans } from 'utils/axiosDefault';
+import ConfirmModal from 'components/ConfirmModal/ConfirmModal';
 
 import {
   Backdrop,
@@ -31,6 +33,7 @@ import {
   PictureWrap,
   DoneWrapper,
   TextWrapper,
+  ResetAllBtn,
 } from './SettingsModal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -41,6 +44,7 @@ const SettingsModal = ({ onClose }) => {
   const [image, setImage] = useState(null);
   const [picture, setPicture] = useState(null);
   const [showModalPassword, setShowModalPassword] = useState(false);
+  const [showModalReset, setShowModalReset] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -80,6 +84,9 @@ const SettingsModal = ({ onClose }) => {
   };
   const onPasswordModalToggle = () => {
     setShowModalPassword(prevState => !prevState);
+  };
+  const onResetModalToggle = () => {
+    setShowModalReset(prevState => !prevState);
   };
   // handle drag events
   const handleDrag = function (e) {
@@ -190,13 +197,11 @@ const SettingsModal = ({ onClose }) => {
             <ChangePasswordBtn type="button" onClick={onPasswordModalToggle}>
               {t('Change password')}
             </ChangePasswordBtn>
+            <ResetAllBtn type="button" onClick={onResetModalToggle}>
+              Reset All
+            </ResetAllBtn>
             <ButtonWrapper>
-              <Button
-                type={'submit'}
-                color={'accent'}
-                design={'modal'}
-                // onSubmit={onFormSubmit}
-              >
+              <Button type={'submit'} color={'accent'} design={'modal'}>
                 {t('button.CONFIRM')}
               </Button>
             </ButtonWrapper>
@@ -213,6 +218,16 @@ const SettingsModal = ({ onClose }) => {
         </Modal>
         {showModalPassword && (
           <NewPasswordModal onClose={onPasswordModalToggle} />
+        )}
+        {showModalReset && (
+          <ConfirmModal
+            setModalOpen={onResetModalToggle}
+            onClick={() => {
+              dispatch(resetAll());
+              onResetModalToggle();
+            }}
+            text="Are you sure? This action will delete all your transactions and reset balance!"
+          />
         )}
       </motion.div>
     </Backdrop>,

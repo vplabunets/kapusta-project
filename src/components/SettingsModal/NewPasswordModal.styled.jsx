@@ -20,7 +20,7 @@ const Modal = styled.div`
   position: relative;
 
   width: 100%;
-  height: 550px;
+  height: 610px;
 
   background-color: ${p => p.theme.headerColor};
   border-radius: 30px;

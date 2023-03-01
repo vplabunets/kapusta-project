@@ -3,7 +3,7 @@ import { TRANSITION } from 'constants/constants';
 const { duration, timing, delay } = TRANSITION;
 
 export const Backdrop = styled.div`
-  z-index: 10;
+  z-index: 15;
   position: fixed;
   left: 0;
   top: 0;

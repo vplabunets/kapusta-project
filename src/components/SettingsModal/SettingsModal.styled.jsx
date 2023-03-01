@@ -20,7 +20,7 @@ const Backdrop = styled.div`
 const Modal = styled.div`
   position: relative;
   min-width: 280px;
-  height: 550px;
+  height: 610px;
 
   background-color: ${p => p.theme.headerColor};
   border-radius: 30px;
@@ -107,6 +107,32 @@ const Input = styled.input`
 `;
 
 const ChangePasswordBtn = styled.button`
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: inherit;
+  line-height: 1.17;
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 700;
+  height: 44px;
+  border: none;
+  margin-bottom: 15px;
+  background-color: ${p => p.theme.tableHeadBackgroundColor};
+  color: ${p => p.theme.btnGreyColor};
+  transition: transform ${duration} ${timing} ${delay};
+
+  &:hover,
+  &:focus {
+    transform: scale(0.9);
+  }
+`;
+
+const ResetAllBtn = styled.button`
   cursor: pointer;
   font-size: 12px;
   font-weight: inherit;
@@ -270,4 +296,5 @@ export {
   ChangePasswordBtn,
   DoneWrapper,
   TextWrapper,
+  ResetAllBtn,
 };

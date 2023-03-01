@@ -35,6 +35,13 @@ const authSlice = createSlice({
     changeBalance(state, action) {
       state.balance = action.payload.user.balance;
     },
+    resetFirstBalance(state, action) {
+      state.firstBalance = action.payload;
+    },
+    resetBalance(state, action) {
+      state.balance = action.payload;
+    },
+
     setToken(state, action) {
       state.accessToken = action.payload;
       console.dir('state', state);
@@ -159,4 +166,10 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-export const { changeBalance, setToken, setTokenRefresh } = authSlice.actions;
+export const {
+  changeBalance,
+  setToken,
+  setTokenRefresh,
+  resetFirstBalance,
+  resetBalance,
+} = authSlice.actions;

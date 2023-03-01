@@ -241,6 +241,8 @@ const FlagImg = styled.img`
       return `drop-shadow(1px 3px 10px #E7192E)`;
     if (p.isActive && p.language === 'de')
       return `drop-shadow(1px 3px 10px #ffc107)`;
+    if (p.isActive && p.language === 'pl')
+      return `drop-shadow(1px 3px 10px #f44336)`;
     return;
   }};
   transition: filter ${TRANSITION.duration} ${TRANSITION.timing};
@@ -252,7 +254,7 @@ const FlagImg = styled.img`
       if (p.language === 'ua') return `drop-shadow(1px 3px 10px #50b8f8)`;
       if (p.language === 'tr') return `drop-shadow(1px 3px 10px #E7192E)`;
       if (p.language === 'de') return `drop-shadow(1px 3px 10px #ffc107)`;
-
+      if (p.language === 'pl') return `drop-shadow(1px 3px 10px #f44336)`;
       return;
     }};
   }

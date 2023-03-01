@@ -102,15 +102,13 @@ export const TableHeadTitleBtn = styled.button`
   }
   `
 
-export const TableHeadTitleSvg = styled.svg`
+  export const TableHeadTitleSvg = styled.svg`
   @media ${DEVICE.tablet} {
     margin-left: 5px;
     transform: rotate(270deg);
-    :active {
-      transform: rotate(90deg);
-    }
+    transform: ${p => (p.isActive ? 'rotate(90deg)' : 'rotate(270deg)')};
   }
-  `
+`;
 
 export const TableBody = styled.tbody`
   @media ${DEVICE.tablet} {

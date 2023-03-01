@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: center;
-  margin-top: 45px;
+  margin-top: 96px;
 
   @media ${DEVICE.tablet} {
     /* z-index: 0; */
@@ -23,7 +23,6 @@ export const Wrapper = styled.div`
     align-self: space-between;
   }
   @media ${DEVICE.laptop} {
-    margin-top: 0px;
     width: 100%;
     flex-direction: row-reverse;
     justify-content: right;

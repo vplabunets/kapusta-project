@@ -4,6 +4,7 @@ import DEVICE from 'constants/deviceSize';
 
 export const ContainerHeader = styled.header`
   position: fixed;
+  top: 0;
   z-index: 4;
   display: flex;
   flex-direction: row;

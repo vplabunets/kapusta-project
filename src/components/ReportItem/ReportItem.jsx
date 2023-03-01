@@ -1,4 +1,4 @@
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
@@ -23,35 +23,19 @@ import { setCategory } from 'redux/reports/slice';
 export const ReportItem = ({ sum, category, type, setIsActive, isActive }) => {
   const sumToFixed = sum.toFixed(2);
   const dispatch = useDispatch();
-  // const currentPeriod = useSelector(selectCurrentPeriod);
 
   const handleClick = e => {
     setIsActive(e.currentTarget.dataset.set);
     dispatch(setCategory(category));
-    // dispatch(
-    //   getItemsCategoryReports({
-    //     ...currentPeriod,
-    //     operation: type,
-    //     category,
-    //   })
-    // );
   };
 
-  // useEffect(() => {
-  //   if (isActive === true) {
-  //     dispatch(setCategory(category));
-  //     // dispatch(
-  //     //   getItemsCategoryReports({
-  //     //     ...currentPeriod,
-  //     //     operation: type,
-  //     //     category,
-  //     //   })
-  //     // );
-  //     return;
-  //   }
+  useEffect(() => {
+    if (isActive === true) {
+      dispatch(setCategory(category));
+      return;
+    }
+  }, [isActive, dispatch, category]);
 
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [isActive, dispatch, category]);
   const { t } = useTranslation();
   const getIconKey = category => {
     if (category.toLowerCase() === 'communal, communication') {

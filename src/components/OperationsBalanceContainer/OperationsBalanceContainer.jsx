@@ -29,7 +29,7 @@ const OperationsBalanceContainer = ({ addBalance }) => {
 
   return (
     <Wrapper>
-      {!isScreenMorePhone && <OperationsForwardToReports />}
+      {firstBalance && <OperationsForwardToReports />}
       <Balance addBalance={addBalance} />
       {firstBalance && (
         <OperationsModalOpenButton onClick={openModal}>

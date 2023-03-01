@@ -1,10 +1,16 @@
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
+import moment from 'moment';
+import { useTranslation } from 'react-i18next';
 
 import {
   getSelectTransactions,
-  selectIsLoading, selectTransactionsByRecentDate, selectTransactionsByOlderDate, selectTransactionsByLargerSum, selectTransactionsBySmallerSum, 
+  selectIsLoading,
+  selectTransactionsByRecentDate,
+  selectTransactionsByOlderDate,
+  selectTransactionsByLargerSum,
+  selectTransactionsBySmallerSum,
 } from 'redux/transaction/selectors';
 
 import TransactionsTableLines from './TransactionsTableLines';
@@ -63,7 +69,7 @@ const TransactionsTable = () => {
   useEffect(() => {
     setTransactions(sortedTransactions);
   }, [sortedTransactions]);
-  
+
   return (
     <>
       {IsLoading && <LoaderCabbage />}
@@ -108,7 +114,7 @@ const TransactionsTable = () => {
                 key={transaction._id}
                 id={transaction._id}
                 operation={transaction.operation}
-                date={transaction.date}
+                date={moment(transaction.date).format('DD.MM.YYYY')}
                 description={transaction.description}
                 category={transaction.category}
                 sum={transaction.sum}

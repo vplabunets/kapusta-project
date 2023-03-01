@@ -80,3 +80,21 @@ export const resetAll = createAsyncThunk(
     }
   }
 );
+
+export const deleteAllByOperation = createAsyncThunk(
+  'transactions/deleteAllByOperation',
+  async (operation, { rejectWithValue, dispatch }) => {
+    try {
+      const result = await instans.delete(
+        `/transaction/delete-all-operation`,
+        operation
+      );
+      toast.info('Transactions deleted successfully');
+      dispatch(resetBalance(result.data.balance));
+      return result.data;
+    } catch (error) {
+      toast.error('Something went wrong, please try again later');
+      return rejectWithValue(error.response.data);
+    }
+  }
+);

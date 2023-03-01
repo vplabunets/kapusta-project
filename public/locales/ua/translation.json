@@ -118,6 +118,10 @@
  "Old password" : "Старий пароль",
  "New password" : "Новий пароль",
  "Add new operation" : "Додати нову операцію",
+ "Enter old password" : "Введіть старий пароль",
+ "Enter new password" : "Введіть новий пароль",
+
+ "Done": "Готово",
 
 
 "Forgot modal text" : "Забули пароль? Будь-ласка введіть ваш email",

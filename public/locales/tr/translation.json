@@ -119,6 +119,10 @@
 "Old password" : "Eski şifre",
 "New password" : "Yeni şifre",
 "Add new operation" : "Yeni bir işlem ekleme",
+"Enter old password" : "Eski şifrenizi girin",
+"Enter new password" : "Yeni şifrenizi girin",
+
+ "Done": "Tamamlandı",
 
 "Forgot modal text" : "Şifrenizi unuttunuz mu? Lütfen emailinizi girin",
 "Send": "Gönder"

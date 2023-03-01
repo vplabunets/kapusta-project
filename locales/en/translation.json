@@ -117,6 +117,11 @@
   "New password": "New password",
   "Add new operation": "Add new operation",
 
+"Enter old password" : "Enter old password",
+"Enter new password" : "Enter new password",
+
+ "Done": "Done",
+
   "Forgot modal text": "Forgot your password? Please enter your email",
   "Send": "Send"
 }

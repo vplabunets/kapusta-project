@@ -1,0 +1,134 @@
+{
+"menu":{
+  "Hello": "Добре дошли",
+   "Select language" : "Да изберете език",
+   "Profile Settings" : "Настройки на профила"
+} ,
+
+"modal":{
+"Change Name": "Да промените името",
+"Write your new name": "Напишіть своє нове ім'я",
+"Set/Change Avatar": "Встановити/змінити аватар",
+"Drop image here": "Перетягніть зображення сюди",
+"or": "или",
+"YES": "ДА",
+"NO": "НЕ",
+"leaveText": "Наистина ли искате да си тръгнете?"
+
+
+},
+
+"button": {
+ "CONFIRM": "ПОТВЪРЖДАВАМ",
+ "CANCEL": " ОТМЕНИ",
+  "Expenses": "Разходи",
+"Income": "Приходи",
+"Clear" : "Ясно",
+"Input" : "Вход"
+},
+
+"Balance":"Баланс",
+"UAH": "ГРН",
+"00.00 UAH" : "00.00 ГРН",
+"Reports": "Доклади",
+"Current period": "Текущ период",
+"Main page": "Главна страница",
+
+"registration":{
+"GoogleText" : "Можете да влезете с вашия акаунт в Google",
+"loginText": " Или влезте, като използвате имейл и парола",
+"after": "след регистрация",
+"Password": "Парола",
+"LOG IN": "ВЛИЗАНЕ",
+"REGISTRATION": "РЕГИСТРАЦИЯ",
+ "Forgot your password": "Забравена парола"
+ },
+  
+ "balanceModalTitle": "Здравейте! За да започнете, въведете текущия баланс на вашия акаунт",
+ "balanceModalText" : "Не можеш да харчиш пари, докато не ги имаш :)",
+
+"expensesCategory":  [
+    { "value": "Products", "label": "Продукти" },
+    { "value": "Health", "label": "Здраве" },
+    { "value": "Alcohol", "label": "Алкохол" },
+    { "value": "Entertainment", "label": "Забавления" },
+    { "value": "Housing", "label": "Жилища" },
+    { "value": "Communal, communication", "label": "Комунални услуги, комуникации" },
+    { "value": "Sports, hobbies", "label": "Спортове, хобита" },
+    { "value": "Education", "label": "Образование" },
+    { "value": "Other", "label": "Други" }
+],
+"Products" : "Продукти" ,
+"Health": "Здраве" ,
+"Alcohol" : "Алкохол" ,
+"Entertainment" : "Забавления",
+"Housing" : "Жилища" ,
+"Communal, communication" : "Комунални услуги, комуникации" ,
+"Sports, hobbies" : "Спортове, хобита",
+"Education" : "Образование" ,
+"Other": "Други",
+"Salary": "Заплата",
+"Add.income": "Допълнителен доход",
+
+"incomeCategory": [
+    { "value": "salary", "label": "Заплата" },
+    { "value": "Add.income", "label": "Допълнителен доход" }
+],
+
+"Product description" : "Описание на продукта",
+"Product category": "Категория на продукта",
+"Type of income": "Вид доход",    
+
+"Date" : "Дата",
+"Description": "Описание",
+"Category": "Категория",
+"Sum": "Сума",
+"Summary": "Резюме",
+
+"January" : "Януари",
+"February" : "Февруари",
+"March" : "Март",
+"April" : "Април",
+"May" : "Май ",
+"June": "Юни",
+"July": "Юли",
+"August": "Август",
+"September": "Септември",
+"October": "Октомври",
+"November": "Ноември",
+"December" : "Декември",
+
+
+ "firstModal" :{
+  "welcome": "Дали парите ви отлитат като зеле на нашия фон? Това вече не е проблем! Защото сега ние ще ви помогнем да контролирате финансите си. Не благодарете",
+  "subText": "Дали парите ви отлитат като зеле на нашия фон? Това вече не е проблем! Защото сега ние ще ви помогнем да контролирате финансите си. Не благодарете ",
+   "start" : "Започнете"       
+},
+
+"Exit": "Изход",
+"exitText" : "Наистина ли искате да си тръгнете?",
+"Are you sure" : "Сигурни ли сте, че?",
+
+"reportsTextExpenses" : "Нямате разходи за този период.",
+ "reportsTextIncome" : "Нямате доходи за този период",
+ "Expenses": "Разходи",
+ "Income": "Доход",
+
+ "Change password" : "Промяна на паролата",
+ "Old password" : "Стара парола",
+ "New password" : "Нова парола",
+ "Add new operation" : "Добавете нова операция",
+ "Enter old password" : "Въведете старата парола",
+ "Enter new password" : "Въведете нова парола",
+
+ "Done": "Свършен",
+
+
+"Forgot modal text" : "Забравена парола? Моля, въведете своя имейл",
+"Send": "Изпратете",
+
+"Reset All": "Нулиране на всички",
+"Are you sure reset": "Сигурни ли сте? Това действие ще изтрие всичките ви транзакции и ще възстанови баланса ви!"
+
+
+}

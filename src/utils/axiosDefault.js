@@ -8,7 +8,6 @@ export const instans = axios.create({
 });
 
 export const setAuthHeader = token => {
-  //console.log('instans.defaults.', instans.defaults);
   instans.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 

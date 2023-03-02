@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import PropTypes from 'prop-types';
 
@@ -8,12 +8,14 @@ import { useTranslation } from 'react-i18next';
 
 import { userUpdate } from 'redux/auth/operations';
 import { resetAll } from 'redux/transaction/operations';
+import { selectIsLoading } from 'redux/transaction/selectors';
 
 import icon from 'images/icons-sprite.svg';
 import NewPasswordModal from './NewPasswordModal';
 import { Button } from 'components/UI/Button/Button';
 import { instans } from 'utils/axiosDefault';
 import ConfirmModal from 'components/ConfirmModal/ConfirmModal';
+import Spinner from 'components/UI/Loader/Loader';
 
 import {
   Backdrop,
@@ -47,6 +49,7 @@ const SettingsModal = ({ onClose }) => {
   const [showModalPassword, setShowModalPassword] = useState(false);
   const [showModalReset, setShowModalReset] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const isLoadingAsync = useSelector(selectIsLoading);
 
   const dispatch = useDispatch();
 
@@ -206,7 +209,11 @@ const SettingsModal = ({ onClose }) => {
           </ResetAllBtn>
           <ButtonWrapper>
             <Button type={'submit'} color={'accent'} design={'modal'}>
-              {t('button.CONFIRM')}
+              {isLoadingAsync ? (
+                <Spinner width={30} height={30} />
+              ) : (
+                t('button.CONFIRM')
+              )}
             </Button>
           </ButtonWrapper>
           {dragActive && (

@@ -18,7 +18,7 @@ import {
   LanguageBtnWrapper,
 } from './SettingsMenu.styled';
 
-const LanguageSwitcher = ({ position }) => {
+const LanguageSwitcher = ({ position, onClose }) => {
   const [current, setCurrent] = useState('');
 
   const { i18n } = useTranslation();
@@ -33,7 +33,15 @@ const LanguageSwitcher = ({ position }) => {
 
   return (
     <LanguageBtnWrapper position={position}>
-      <LanguageButton onClick={() => changeLanguage('ua')}>
+      <LanguageButton
+        onClick={() => {
+          changeLanguage('ua');
+          if (position === 'menu') {
+            onClose();
+            return;
+          }
+        }}
+      >
         <FlagImg
           src={ukrainian}
           alt="ukrainian"
@@ -42,7 +50,15 @@ const LanguageSwitcher = ({ position }) => {
           language="ua"
         />
       </LanguageButton>
-      <LanguageButton onClick={() => changeLanguage('pl')}>
+      <LanguageButton
+        onClick={() => {
+          changeLanguage('pl');
+          if (position === 'menu') {
+            onClose();
+            return;
+          }
+        }}
+      >
         <FlagImg
           src={polish}
           alt="polish"
@@ -51,7 +67,15 @@ const LanguageSwitcher = ({ position }) => {
           language="pl"
         />
       </LanguageButton>
-      <LanguageButton onClick={() => changeLanguage('en')}>
+      <LanguageButton
+        onClick={() => {
+          changeLanguage('en');
+          if (position === 'menu') {
+            onClose();
+            return;
+          }
+        }}
+      >
         <FlagImg
           src={english}
           alt="english"
@@ -60,7 +84,15 @@ const LanguageSwitcher = ({ position }) => {
           language="en"
         />
       </LanguageButton>
-      <LanguageButton onClick={() => changeLanguage('tr')}>
+      <LanguageButton
+        onClick={() => {
+          changeLanguage('tr');
+          if (position === 'menu') {
+            onClose();
+            return;
+          }
+        }}
+      >
         <FlagImg
           src={turkish}
           alt="turkish"
@@ -69,7 +101,15 @@ const LanguageSwitcher = ({ position }) => {
           language="tr"
         />
       </LanguageButton>
-      <LanguageButton onClick={() => changeLanguage('de')}>
+      <LanguageButton
+        onClick={() => {
+          changeLanguage('de');
+          if (position === 'menu') {
+            onClose();
+            return;
+          }
+        }}
+      >
         <FlagImg
           src={deutsch}
           alt="deutsch"
@@ -78,7 +118,15 @@ const LanguageSwitcher = ({ position }) => {
           language="de"
         />
       </LanguageButton>
-      <LanguageButton onClick={() => changeLanguage('bg')}>
+      <LanguageButton
+        onClick={() => {
+          changeLanguage('bg');
+          if (position === 'menu') {
+            onClose();
+            return;
+          }
+        }}
+      >
         <FlagImg
           src={bulgarian}
           alt="bulgarian"
@@ -87,7 +135,15 @@ const LanguageSwitcher = ({ position }) => {
           language="bg"
         />
       </LanguageButton>
-      <LanguageButton onClick={() => changeLanguage('swe')}>
+      <LanguageButton
+        onClick={() => {
+          changeLanguage('swe');
+          if (position === 'menu') {
+            onClose();
+            return;
+          }
+        }}
+      >
         <FlagImg
           src={swedish}
           alt="swedish"
@@ -96,7 +152,15 @@ const LanguageSwitcher = ({ position }) => {
           language="swe"
         />
       </LanguageButton>
-      <LanguageButton onClick={() => changeLanguage('he')}>
+      <LanguageButton
+        onClick={() => {
+          changeLanguage('he');
+          if (position === 'menu') {
+            onClose();
+            return;
+          }
+        }}
+      >
         <FlagImg
           src={hebrew}
           alt="hebrew"

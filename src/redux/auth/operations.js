@@ -10,7 +10,6 @@ export const register = createAsyncThunk(
       await instans.post('/users/register', credentials);
       toast.info('Registration successful! Please confirm your email');
     } catch (error) {
-      console.log(error);
       const errNot = error.response.data.message;
 
       if (errNot === 'Email verified, and already registered') {
@@ -36,11 +35,8 @@ export const logIn = createAsyncThunk(
     try {
       const res = await instans.post('/users/login', credentials);
       setAuthHeader(res.data.accessToken);
-      console.log(res.data);
-      console.log('token: ', res.data.accessToken);
       return res.data;
     } catch (error) {
-      console.log(error);
       const errNot = error.response.data.message;
       if (errNot === 'Invalid email address or password') {
         toast.error('Your email or password is wrong, check it and try again');

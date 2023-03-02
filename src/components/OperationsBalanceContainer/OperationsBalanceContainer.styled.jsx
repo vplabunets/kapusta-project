@@ -14,11 +14,11 @@ export const Wrapper = styled.div`
   margin-top: 96px;
 
   @media ${DEVICE.tablet} {
-    /* z-index: 0; */
     position: static;
     margin-top: 0px;
     width: 100%;
-    flex-direction: row-reverse;
+
+    flex-direction: ${p => (!p.direction ? 'row' : 'row-reverse')};
     justify-content: space-between;
     align-self: space-between;
   }
@@ -37,7 +37,7 @@ export const OperationsModalOpenButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 12px 6px;
-  width: 150px;
+  width: 138px;
   margin-top: 32px;
   margin-bottom: 32px;
   background-color: ${p => p.theme.accentColor};
@@ -58,6 +58,16 @@ export const OperationsModalOpenButton = styled.button`
     transform: scale(0.9);
   }
 
+  @media ${DEVICE.tablet} {
+    display: none;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   @media ${DEVICE.tablet} {
     display: none;
   }

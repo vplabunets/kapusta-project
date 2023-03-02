@@ -5,7 +5,7 @@ import DEVICE from 'constants/deviceSize';
 export const BackgroundGrey = styled.div`
   width: 100%;
   height: 352px;
-  z-index: -1;
+  z-index: 1;
 
   position: fixed;
   top: 0;
@@ -20,6 +20,7 @@ export const BackgroundGrey = styled.div`
   @media ${DEVICE.tablet} {
     position: absolute;
     height: 583px;
+    z-index: -1;
   }
 `;
 

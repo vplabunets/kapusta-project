@@ -129,5 +129,10 @@
   "Send": "Skicka",
 
   "Reset All": "Återställ allt",
-  "Are you sure reset": "Är du säker? Denna åtgärd kommer att radera dina transaktioner och nollställa ditt saldo!"
+  "Are you sure reset": "Är du säker? Denna åtgärd kommer att radera dina transaktioner och nollställa ditt saldo!",
+
+  "Delete All Expenses": "Ta bort alla utgifter",
+  "Delete All Income": "Radera alla inkomster",
+  "Are you sure delete income": "Är du säker på att du vill ta bort alla inkomstoperationer? ",
+  "Are you sure delete expenses": "Är du säker på att du vill ta bort alla utgifter? "
 }

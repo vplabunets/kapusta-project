@@ -22,9 +22,18 @@ export const Wrapper = styled.div`
 export const WrapperTableSummary = styled.div`
   display: flex;
   flex-direction: column;
-  @media ${DEVICE.tablet} {
-  }
+
   @media ${DEVICE.laptop} {
     flex-direction: row;
+  }
+`;
+
+export const BtnWrap = styled.div`
+  @media ${DEVICE.tablet} {
+    margin-top: 32px;
+    margin-left: auto;
+  }
+  @media ${DEVICE.laptop} {
+    margin-top: 0px;
   }
 `;

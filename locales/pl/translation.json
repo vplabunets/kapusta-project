@@ -126,5 +126,10 @@
   "Send": "Wyślij",
 
   "Reset All": "Zresetować wszystko",
-  "Are you sure reset": "Jesteś pewny? Ta czynność spowoduje usunięcie wszystkich transakcji i zresetowanie salda!"
+  "Are you sure reset": "Jesteś pewny? Ta czynność spowoduje usunięcie wszystkich transakcji i zresetowanie salda!",
+
+  "Delete All Expenses": "Usuń wszystkie wydatki",
+  "Delete All Income": "Usuń wszystkie dochody",
+  "Are you sure delete income": "Czy na pewno chcesz usunąć wszystkie operacje dochodu?",
+  "Are you sure delete expenses": "Czy na pewno chcesz usunąć wszystkie operacje wydatków?"
 }

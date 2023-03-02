@@ -26,7 +26,7 @@ const Backdrop = styled.div`
 `;
 
 const Menu = styled.div`
-  height: 80px;
+  height: 90px;
   width: 100%;
   background-color: ${p => p.theme.headerColor};
   box-shadow: ${p => p.theme.headerBoxShadow};
@@ -243,6 +243,8 @@ const FlagImg = styled.img`
       return `drop-shadow(1px 3px 10px #ffc107)`;
     if (p.isActive && p.language === 'pl')
       return `drop-shadow(1px 3px 10px #f44336)`;
+    if (p.isActive && p.language === 'swe')
+      return `drop-shadow(1px 3px 10px #fcc304)`;
     return;
   }};
   transition: filter ${TRANSITION.duration} ${TRANSITION.timing};
@@ -255,12 +257,14 @@ const FlagImg = styled.img`
       if (p.language === 'tr') return `drop-shadow(1px 3px 10px #E7192E)`;
       if (p.language === 'de') return `drop-shadow(1px 3px 10px #ffc107)`;
       if (p.language === 'pl') return `drop-shadow(1px 3px 10px #f44336)`;
+      if (p.language === 'swe') return `drop-shadow(1px 3px 10px #fcc304)`;
+
       return;
     }};
   }
   @media ${DEVICE.tablet} {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
   }
 `;
 export {

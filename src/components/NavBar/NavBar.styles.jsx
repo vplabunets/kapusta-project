@@ -30,6 +30,7 @@ export const ExitContainer = styled.div`
 `;
 
 export const UserName = styled.button`
+  position: relative;
   margin-right: 40px;
   font-family: inherit;
   font-size: 12px;
@@ -56,16 +57,13 @@ export const UserName = styled.button`
 
       position: absolute;
 
-      right: 74px;
-      top: 10px;
+      right: -20px;
+      top: -11px;
 
       width: 1px;
       height: 36px;
 
       background-color: rgba(224, 229, 235, 1);
-      @media ${DEVICE.laptop} {
-        right: 58px;
-      }
     }
   }
 `;
@@ -102,3 +100,10 @@ export const LogoutBtn = styled.button`
     display: none;
   }
 `;
+
+// desk
+// position: absolute;
+// right: -20px;
+// top: -12px;
+// width: 1px;
+// height: 36px;

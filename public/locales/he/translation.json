@@ -1,0 +1,128 @@
+{
+  "menu": {
+    "Hello": "שלום",
+    "Select language": "בחר שפה",
+    "Profile Settings": "הגדרות פרופיל"
+  },
+
+  "modal": {
+    "Change Name": "שנה שם",
+    "Write your new name": "כתוב את שמך החדש",
+    "Set/Change Avatar": "הגדר/שנה תמונת פרופיל",
+    "Drop image here": "שחרר את התמונה שלך כאן",
+    "or": "או",
+    "YES": "כן",
+    "NO": "לא",
+    "leaveText": "האם אתה באמת רוצה לעזוב"
+  },
+
+  "button": {
+    "CONFIRM": "לאשר",
+    "CANCEL": "לבטל",
+    "Expenses": "הוצאות",
+    "Income": "הכנסה",
+    "Clear": "לנקות",
+    "Input": "להזין"
+  },
+
+  "Balance": "איזון",
+  "UAH": "UAH",
+  "00.00 UAH": "00.00 UAH",
+  "Reports": "דיווחים",
+  "Current period": "התקןפה הנוכחית",
+  "Main page": "עמוד ראשי",
+
+  "registration": {
+    "GoogleText": "אתה יכול להיכנס עם חשבון גוגל שלך",
+    "loginText": " או היכנס באמצעות דואר אלקטרוני וסיסמה",
+    "after": "לאחר ההרשמה",
+    "Password": "סיסמה",
+    "LOG IN": "התחברות",
+    "REGISTRATION": "הרשמה",
+    "Forgot your password": "שכחת ססמה"
+  },
+
+  "balanceModalTitle": " שלום! כדי להתחיל, הזן את היתרה הנוכחית של חשבונך",
+  "balanceModalText": "אתה לא יכול להוציא כסף עד שיש לך אותו :)",
+
+  "expensesCategory": [
+    { "value": "Products", "label": "מוצר" },
+    { "value": "Health", "label": "בריאות" },
+    { "value": "Alcohol", "label": "כוהל" },
+    { "value": "Entertainment", "label": "בידור" },
+    { "value": "Housing", "label": "דיור" },
+    { "value": "Communal, communication", "label": "עדתי, תקשורת" },
+    { "value": "Sports, hobbies", "label": "ספורט, תחביבים" },
+    { "value": "Education", "label": "חינוך" },
+    { "value": "Other", "label": "אחר" }
+  ],
+  "Products": "מוצר",
+  "Health": "בריאות",
+  "Alcohol": "כוהל",
+  "Entertainment": "בידור",
+  "Housing": "דיור",
+  "Communal, communication": "עדתי, תקשורת",
+  "Sports, hobbies": "ספורט, תחביבים",
+  "Education": "חינוך",
+  "Other": "אחר",
+  "Salary": "משכורת",
+  "Add.income": "הכנסה נוספת",
+
+  "incomeCategory": [
+    { "value": "salary", "label": "משכורת" },
+    { "value": "Add.income", "label": "הכנסה נוספת" }
+  ],
+
+  "Product description": "תיאור מוצר",
+  "Product category": "קטגוריית מוצר",
+  "Type of income": "סוג ההכנסה",
+
+  "Date": "תַאֲרִיך",
+  "Description": "תיאור",
+  "Category": "קטגוריית",
+  "Sum": "סְכוּם",
+  "Summary": "סיכום",
+
+  "January": "ינואר",
+  "February": "פברואר",
+  "March": "מרץ",
+  "April": "אפריל",
+  "May": "מאי",
+  "June": "יוני",
+  "July": "יולי",
+  "August": "אוגוסט",
+  "September": "ספטמבר",
+  "October": "אוקטובר",
+  "November": "נובמבר",
+  "December": "דצמבר",
+
+  "firstModal": {
+    "welcome": "ברוכים הבאים לאפליקציית הפיננסים החכמה שלנו",
+    "subText": "האם הכסף שלך עף משם כמו כרוב ברקע שלנו? זה כבר לא בעיה! כי עכשיו אנחנו נעזור לך לשלוט על הכספים שלך. אל תודו ",
+    "start": "בואו נתחיל"
+  },
+
+  "Exit": "יציאה",
+  "exitText": "אתה באמת רוצה לעזוב?",
+  "Are you sure": "האם אתה בטוח?",
+
+  "reportsTextExpenses": "אין לך הוצאות לתקופה זו",
+  "reportsTextIncome": "אין לך הכנסה לתקופה זו",
+  "Expenses": "הוצאות",
+  "Income": "הכנסה",
+
+  "Change password": "שנה סיסמא",
+  "Old password": "סיסמה ישנה",
+  "New password": "סיסמה חדשה",
+  "Add new operation": "הוסף פעולה חדשה",
+  "Enter old password": "הזן סיסמה ישנה",
+  "Enter new password": "הזן סיסמה חדשה",
+
+  "Done": "בוצע",
+
+  "Forgot modal text": "שכחת ססמה? נא להזין את המייל שלך",
+  "Send": "שלח",
+
+  "Reset All": "לאפס הכל",
+  "Are you sure reset": "האם אתה בטוח? פעולה זו תמחק את כל העסקאות שלך ותאפס את היתרה שלך!"
+}

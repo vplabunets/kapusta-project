@@ -1,9 +1,10 @@
 import { lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
+import { selectAccessToken } from '../redux/auth/selectors';
 
 import RestrictedRoute from 'routes/RestrictedRoutes';
 import PrivateRoutes from 'routes/PrivateRoutes';
@@ -21,9 +22,14 @@ export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
+  const accessToken = useSelector(selectAccessToken);
+
   useEffect(() => {
+    if (!accessToken) {
+      return;
+    }
     dispatch(refreshUser());
-  }, [dispatch]);
+  }, [dispatch, accessToken]);
 
   return (
     <>

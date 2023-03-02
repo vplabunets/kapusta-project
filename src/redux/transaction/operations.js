@@ -84,7 +84,6 @@ export const resetAll = createAsyncThunk(
 export const deleteAllByOperation = createAsyncThunk(
   'transactions/deleteAllByOperation',
   async (operation, { rejectWithValue, dispatch }) => {
-    console.log(operation);
     try {
       const result = await instans.put(
         `/transaction/delete-all-operation`,

@@ -42,7 +42,7 @@ const OperationsBalanceContainer = ({ addBalance }) => {
   }, [isScreenMorePhone]);
 
   return (
-    <Wrapper direction={firstBalance ? true : false}>
+    <Wrapper direct={firstBalance ? true : false}>
       {firstBalance && <OperationsForwardToReports />}
       <Balance addBalance={addBalance} />
       {firstBalance && (

@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     margin-top: 0px;
     width: 100%;
 
-    flex-direction: ${p => (!p.direction ? 'row' : 'row-reverse')};
+    flex-direction: ${p => (!p.direct ? 'row' : 'row-reverse')};
     justify-content: space-between;
     align-self: space-between;
   }

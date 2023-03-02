@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { selectEmail, selectName } from 'redux/auth/selectors';
 
 import SettingsModal from 'components/SettingsModal/SettingsModal';
+import LanguageModal from './LanguageModal';
 import icons from 'images/icons-sprite.svg';
 
 import {
@@ -21,13 +22,14 @@ import {
   Gear,
   Backdrop,
   GearsWrapper,
+  Globe,
 } from './SettingsMenu.styled';
-import LanguageSwitcher from './LanguageSwitcher';
 
 const SettingsMenu = ({ setMenuOpen }) => {
   const { t } = useTranslation();
 
   const [showModal, setShowModal] = useState(false);
+  const [showModalLng, setShowModalLng] = useState(false);
 
   useEffect(() => {
     window.addEventListener('keydown', onKeyDown);
@@ -49,6 +51,9 @@ const SettingsMenu = ({ setMenuOpen }) => {
 
   const toggleModal = () => {
     setShowModal(prevState => !prevState);
+  };
+  const toggleModalLng = () => {
+    setShowModalLng(prevState => !prevState);
   };
 
   const toCutName = name => {
@@ -74,7 +79,7 @@ const SettingsMenu = ({ setMenuOpen }) => {
       >
         <Menu>
           <Title>
-            {t('menu.Hello')},
+            {t('menu.Hello')},{' '}
             {userName ? toCutName(userName) : toCutName(email)}!
           </Title>
           {/* max 16 symbols*/}
@@ -90,11 +95,15 @@ const SettingsMenu = ({ setMenuOpen }) => {
                 </Gear>
               </GearsWrapper>
             </SettingsWrapper>
-            <LanguageWrapper>
-              <LanguageSelect>{t('menu.Select language')}:</LanguageSelect>
-              <LanguageSwitcher position="menu" />
+            <LanguageWrapper onClick={toggleModalLng}>
+              <LanguageSelect>{t('menu.Select language')}</LanguageSelect>
+              {/* <LanguageSwitcher position="menu" /> */}
+              <Globe>
+                <use href={`${icons}#icon-earth`}></use>
+              </Globe>
             </LanguageWrapper>
             {showModal && <SettingsModal onClose={toggleModal} />}
+            {showModalLng && <LanguageModal onClose={toggleModalLng} />}
           </Container>
         </Menu>
       </motion.div>

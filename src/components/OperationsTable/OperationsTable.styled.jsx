@@ -98,11 +98,10 @@ export const TableHeadTitleBtn = styled.button`
   @media ${DEVICE.tablet} {
     border: none;
     background: transparent;
-    }
   }
-  `
+`;
 
-  export const TableHeadTitleSvg = styled.svg`
+export const TableHeadTitleSvg = styled.svg`
   @media ${DEVICE.tablet} {
     margin-left: 5px;
     transform: rotate(270deg);

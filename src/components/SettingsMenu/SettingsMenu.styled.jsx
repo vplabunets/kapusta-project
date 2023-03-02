@@ -165,7 +165,14 @@ const Settings = styled.p`
 `;
 
 const LanguageWrapper = styled.div`
+  cursor: pointer;
   text-align: center;
+  &:hover p {
+    color: ${p => p.theme.accentColor};
+  }
+  &:hover svg {
+    fill: ${p => p.theme.accentColor};
+  }
 `;
 
 const LanguageSelect = styled.p`
@@ -176,24 +183,48 @@ const LanguageSelect = styled.p`
 
   font-size: 11px;
   @media ${DEVICE.tablet} {
-    margin-bottom: 10px;
+    margin-bottom: 3px;
     font-size: 16px;
+  }
+`;
+
+const Globe = styled.svg`
+  fill: ${p => p.theme.mainTextColor};
+  width: 30px;
+  height: 30px;
+
+  @media ${DEVICE.tablet} {
+    width: 45px;
+    height: 45px;
   }
 `;
 
 const LanguageBtnWrapper = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: ${p => {
     switch (p.position) {
       case 'menu':
         return `0px`;
       case 'header':
-        return '16px';
+        return '15px';
       default:
         return;
     }
   }};
+  @media screen and (min-width: 420px) {
+    flex-wrap: ${p => {
+      switch (p.position) {
+        case 'menu':
+          return `wrap`;
+        case 'header':
+          return 'nowrap';
+        default:
+          return;
+      }
+    }};
+  }
 `;
 
 const LanguageButton = styled.button`
@@ -215,9 +246,9 @@ const FlagImg = styled.img`
   width: ${p => {
     switch (p.position) {
       case 'menu':
-        return `25px`;
+        return `30px`;
       case 'header':
-        return '35px';
+        return '28px';
       default:
         return `32px`;
     }
@@ -225,9 +256,9 @@ const FlagImg = styled.img`
   height: ${p => {
     switch (p.position) {
       case 'menu':
-        return `25px`;
+        return `30px`;
       case 'header':
-        return '35px';
+        return '28px';
       default:
         return `32px`;
     }
@@ -245,6 +276,10 @@ const FlagImg = styled.img`
       return `drop-shadow(1px 3px 10px #f44336)`;
     if (p.isActive && p.language === 'swe')
       return `drop-shadow(1px 3px 10px #fcc304)`;
+    if (p.isActive && p.language === 'bg')
+      return `drop-shadow(1px 3px 10px #43a047)`;
+    if (p.isActive && p.language === 'he')
+      return `drop-shadow(1px 3px 10px #3f51b5)`;
     return;
   }};
   transition: filter ${TRANSITION.duration} ${TRANSITION.timing};
@@ -258,13 +293,14 @@ const FlagImg = styled.img`
       if (p.language === 'de') return `drop-shadow(1px 3px 10px #ffc107)`;
       if (p.language === 'pl') return `drop-shadow(1px 3px 10px #f44336)`;
       if (p.language === 'swe') return `drop-shadow(1px 3px 10px #fcc304)`;
-
+      if (p.language === 'bg') return `drop-shadow(1px 3px 10px #43a047)`;
+      if (p.language === 'he') return `drop-shadow(1px 3px 10px #3f51b5)`;
       return;
     }};
   }
-  @media ${DEVICE.tablet} {
-    width: 30px;
-    height: 30px;
+  @media screen and (min-width: 420px) {
+    width: 32px;
+    height: 32px;
   }
 `;
 export {
@@ -281,4 +317,5 @@ export {
   Backdrop,
   GearsWrapper,
   LanguageBtnWrapper,
+  Globe,
 };

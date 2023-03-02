@@ -32,6 +32,7 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
 
   useEffect(() => {
     if (!categoryItems.length) {
+      setArray(categoryItems);
       return;
     }
     if (categoryItems?.length > 0) {

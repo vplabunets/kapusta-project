@@ -99,7 +99,7 @@ const transactionSlice = createSlice({
       }
 
       const summaryIndex = state.summary.findIndex(item => item.sum === 0);
-      //console.log(summaryIndex);
+      
       if (summaryIndex >= 0) {
         state.summary.splice(summaryIndex, 1);
       }

@@ -34,7 +34,7 @@
 
   "registration": {
     "GoogleText": "Du kan logga in med ditt Google-konto",
-    "loginText": " eller logga in med ditt email och lösenord",
+    "loginText": " Eller logga in med ditt email och lösenord",
     "after": "Efter registrering",
     "Password": "Lösenord",
     "LOG IN": " Logga in",
@@ -111,7 +111,7 @@
   "Are you sure": "Är du säker?",
 
   "reportsTextExpenses": "Du har inga utgifter för den här perioden ",
-  "reportsTextIncome": "You have no income for this period",
+  "reportsTextIncome": "Du har inga intäkter för den här perioden",
   "Expenses": "utgifter",
   "Income": "intäkter",
 

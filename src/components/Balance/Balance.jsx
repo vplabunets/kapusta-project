@@ -26,6 +26,10 @@ const Balance = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
+    if (currentBalance === 0) {
+      setValue('');
+      return;
+    }
     setValue(currentBalance.toFixed(2));
   }, [currentBalance]);
 
@@ -38,7 +42,6 @@ const Balance = () => {
   const onChange = e => {
     setValue(e.target.value);
   };
-
   return (
     <Wrapper>
       <Title> {t('Balance')}:</Title>
@@ -48,6 +51,7 @@ const Balance = () => {
             type="number"
             readOnly={firstBalance}
             name="balance"
+            placeholder="00.00"
             pattern="[0-9, .UAH]*"
             value={value}
             onChange={onChange}

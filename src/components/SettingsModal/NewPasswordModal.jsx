@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { instans } from 'utils/axiosDefault';
 import { useTranslation } from 'react-i18next';
 
-import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
 
 import { Button } from 'components/UI/Button/Button';
@@ -56,51 +55,49 @@ const NewPasswordModal = ({ onClose }) => {
 
   return createPortal(
     <Backdrop>
-      <motion.div
+      <Modal
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7 }}
       >
-        <Modal>
-          <ButtonClose onClick={onClose}>
-            <svg>
-              <use href={`${icon}#icon-close`}></use>
-            </svg>
-          </ButtonClose>
-          <Text>{t('Change password')}</Text>
-          <Form onSubmit={onFormSubmit}>
-            <Label htmlFor="oldPassword"> {t('Enter old password')}</Label>
-            <Input
-              id="oldPassword"
-              type="password"
-              name="oldPassword"
-              placeholder={t('Old password')}
-              maxlength="50"
-              minlength="6"
-              onBlur={onHandleOldPassword}
-              status={status}
-            />
-            <Label htmlFor="newPassword"> {t('Enter new password')}</Label>
-            <Input
-              id="newPassword"
-              type="password"
-              name="newPassword"
-              placeholder={t('New password')}
-              maxlength="50"
-              minlength="6"
-            />
-            <ButtonWrapper>
-              <Button type={'submit'} color={'accent'} design={'modal'}>
-                {t('button.CONFIRM')}
-              </Button>
-            </ButtonWrapper>
-          </Form>
-          <CabbageWrap>
-            <Cabbage />
-            <Cabbage position={true} />
-          </CabbageWrap>
-        </Modal>
-      </motion.div>
+        <ButtonClose onClick={onClose}>
+          <svg>
+            <use href={`${icon}#icon-close`}></use>
+          </svg>
+        </ButtonClose>
+        <Text>{t('Change password')}</Text>
+        <Form onSubmit={onFormSubmit}>
+          <Label htmlFor="oldPassword"> {t('Enter old password')}</Label>
+          <Input
+            id="oldPassword"
+            type="password"
+            name="oldPassword"
+            placeholder={t('Old password')}
+            maxlength="50"
+            minlength="6"
+            onBlur={onHandleOldPassword}
+            status={status}
+          />
+          <Label htmlFor="newPassword"> {t('Enter new password')}</Label>
+          <Input
+            id="newPassword"
+            type="password"
+            name="newPassword"
+            placeholder={t('New password')}
+            maxlength="50"
+            minlength="6"
+          />
+          <ButtonWrapper>
+            <Button type={'submit'} color={'accent'} design={'modal'}>
+              {t('button.CONFIRM')}
+            </Button>
+          </ButtonWrapper>
+        </Form>
+        <CabbageWrap>
+          <Cabbage />
+          <Cabbage position={true} />
+        </CabbageWrap>
+      </Modal>
     </Backdrop>,
     modalRoot
   );

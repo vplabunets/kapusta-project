@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 
 import { userUpdate } from 'redux/auth/operations';
 import { resetAll } from 'redux/transaction/operations';
@@ -146,98 +145,94 @@ const SettingsModal = ({ onClose }) => {
 
   return createPortal(
     <Backdrop onClick={onBackdropClick}>
-      <motion.div
+      <Modal
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7 }}
       >
-        <Modal>
-          <ButtonClose onClick={onClose}>
-            <svg>
-              <use href={`${icon}#icon-close`}></use>
-            </svg>
-          </ButtonClose>
-          <Text>{t('menu.Profile Settings')}</Text>
-          <Form onDragEnter={handleDrag} onSubmit={onFormSubmit}>
-            <Label htmlFor="name"> {t('modal.Change Name')}</Label>
-            <Input
-              id="name"
-              type="text"
-              name="name"
-              placeholder={t('modal.Write your new name')}
-              maxlength="16"
-              minlength="2"
-            />
-            <Label htmlFor="avatar">
-              {t('modal.Set/Change Avatar')}
-              <DropFiles dragActive={dragActive}>
-                {isLoading && <LoaderCabbage />}
-                {image ? (
-                  <DoneWrapper>
-                    <PictureWrap>
-                      <img src={picture} alt="aaa" width="100%" />
-                    </PictureWrap>
-                    <TextWrapper>
-                      <svg width={40} height={40}>
-                        <use href={`${icon}#icon-galina`}></use>
-                      </svg>
-                      <p>{t('Done')}!</p>
-                    </TextWrapper>
-                  </DoneWrapper>
-                ) : (
-                  <>
-                    <DropFilesTitle>
-                      {t('modal.Drop image here')}
-                    </DropFilesTitle>
-                    {t('modal.or')}
-                    <DropFilesInput
-                      type="file"
-                      name="avatar"
-                      id="avatar"
-                      accept="image/*"
-                      onChange={handleChangeImage}
-                    />
-                  </>
-                )}
-              </DropFiles>
-            </Label>
-
-            <ChangePasswordBtn type="button" onClick={onPasswordModalToggle}>
-              {t('Change password')}
-            </ChangePasswordBtn>
-            <ResetAllBtn type="button" onClick={onResetModalToggle}>
-              {t('Reset All')}
-            </ResetAllBtn>
-            <ButtonWrapper>
-              <Button type={'submit'} color={'accent'} design={'modal'}>
-                {t('button.CONFIRM')}
-              </Button>
-            </ButtonWrapper>
-            {dragActive && (
-              <DragFileElement
-                id="drag-file-element"
-                onDragEnter={handleDrag}
-                onDragLeave={handleDrag}
-                onDragOver={handleDrag}
-                onDrop={handleDrop}
-              ></DragFileElement>
-            )}
-          </Form>
-        </Modal>
-        {showModalPassword && (
-          <NewPasswordModal onClose={onPasswordModalToggle} />
-        )}
-        {showModalReset && (
-          <ConfirmModal
-            setModalOpen={onResetModalToggle}
-            onClick={() => {
-              dispatch(resetAll());
-              onResetModalToggle();
-            }}
-            text={t('Are you sure reset')}
+        <ButtonClose onClick={onClose}>
+          <svg>
+            <use href={`${icon}#icon-close`}></use>
+          </svg>
+        </ButtonClose>
+        <Text>{t('menu.Profile Settings')}</Text>
+        <Form onDragEnter={handleDrag} onSubmit={onFormSubmit}>
+          <Label htmlFor="name"> {t('modal.Change Name')}</Label>
+          <Input
+            id="name"
+            type="text"
+            name="name"
+            placeholder={t('modal.Write your new name')}
+            maxlength="16"
+            minlength="2"
           />
-        )}
-      </motion.div>
+          <Label htmlFor="avatar">
+            {t('modal.Set/Change Avatar')}
+            <DropFiles dragActive={dragActive}>
+              {isLoading && <LoaderCabbage />}
+              {image ? (
+                <DoneWrapper>
+                  <PictureWrap>
+                    <img src={picture} alt="aaa" width="100%" />
+                  </PictureWrap>
+                  <TextWrapper>
+                    <svg width={40} height={40}>
+                      <use href={`${icon}#icon-galina`}></use>
+                    </svg>
+                    <p>{t('Done')}!</p>
+                  </TextWrapper>
+                </DoneWrapper>
+              ) : (
+                <>
+                  <DropFilesTitle>{t('modal.Drop image here')}</DropFilesTitle>
+                  {t('modal.or')}
+                  <DropFilesInput
+                    type="file"
+                    name="avatar"
+                    id="avatar"
+                    accept="image/*"
+                    onChange={handleChangeImage}
+                  />
+                </>
+              )}
+            </DropFiles>
+          </Label>
+
+          <ChangePasswordBtn type="button" onClick={onPasswordModalToggle}>
+            {t('Change password')}
+          </ChangePasswordBtn>
+          <ResetAllBtn type="button" onClick={onResetModalToggle}>
+            {t('Reset All')}
+          </ResetAllBtn>
+          <ButtonWrapper>
+            <Button type={'submit'} color={'accent'} design={'modal'}>
+              {t('button.CONFIRM')}
+            </Button>
+          </ButtonWrapper>
+          {dragActive && (
+            <DragFileElement
+              id="drag-file-element"
+              onDragEnter={handleDrag}
+              onDragLeave={handleDrag}
+              onDragOver={handleDrag}
+              onDrop={handleDrop}
+            ></DragFileElement>
+          )}
+        </Form>
+      </Modal>
+      {showModalPassword && (
+        <NewPasswordModal onClose={onPasswordModalToggle} />
+      )}
+      {showModalReset && (
+        <ConfirmModal
+          setModalOpen={onResetModalToggle}
+          onClick={() => {
+            dispatch(resetAll());
+            onResetModalToggle();
+          }}
+          text={t('Are you sure reset')}
+        />
+      )}
     </Backdrop>,
 
     modalRoot

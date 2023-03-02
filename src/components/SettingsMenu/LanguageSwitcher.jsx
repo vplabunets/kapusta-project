@@ -9,6 +9,8 @@ import turkish from 'images/flags/tr.png';
 import deutsch from 'images/flags/de.png';
 import polish from 'images/flags/pl.png';
 import swedish from 'images/flags/swe.png';
+import bulgarian from 'images/flags/bg.png';
+import hebrew from 'images/flags/he.png';
 
 import {
   FlagImg,
@@ -76,6 +78,15 @@ const LanguageSwitcher = ({ position }) => {
           language="de"
         />
       </LanguageButton>
+      <LanguageButton onClick={() => changeLanguage('bg')}>
+        <FlagImg
+          src={bulgarian}
+          alt="bulgarian"
+          position={position}
+          isActive={current === 'bg'}
+          language="bg"
+        />
+      </LanguageButton>
       <LanguageButton onClick={() => changeLanguage('swe')}>
         <FlagImg
           src={swedish}
@@ -83,6 +94,15 @@ const LanguageSwitcher = ({ position }) => {
           position={position}
           isActive={current === 'swe'}
           language="swe"
+        />
+      </LanguageButton>
+      <LanguageButton onClick={() => changeLanguage('he')}>
+        <FlagImg
+          src={hebrew}
+          alt="hebrew"
+          position={position}
+          isActive={current === 'he'}
+          language="he"
         />
       </LanguageButton>
     </LanguageBtnWrapper>

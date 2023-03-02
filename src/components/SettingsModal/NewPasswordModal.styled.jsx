@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import DEVICE from 'constants/deviceSize';
 import { TRANSITION } from 'constants/constants';
@@ -16,7 +17,7 @@ const Backdrop = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
 `;
-const Modal = styled.div`
+const Modal = styled(motion.div)`
   position: relative;
 
   width: 100%;

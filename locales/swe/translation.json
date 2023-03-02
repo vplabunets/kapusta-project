@@ -1,0 +1,133 @@
+{
+  "menu": {
+    "Hello": "Hej",
+    "Select language": "Välj språk",
+    "Profile Settings": "Profilinställningar"
+  },
+
+  "modal": {
+    "Change Name": "Byt namn",
+    "Write your new name": "Ange ditt nya användarnamn",
+    "Set/Change Avatar": "Välj/Byt avatar",
+    "Drop image here": "Dra en bild hit",
+    "or": "eller ",
+    "YES": "JA",
+    "NO": "NEJ",
+    "leaveText": "Vill du verkligen lämna sidan?"
+  },
+
+  "button": {
+    "CONFIRM": "BEKRÄFTA",
+    "CANCEL": "AVBRYT",
+    "Expenses": "Utgifter",
+    "Income": "Inkomst",
+    "Clear": "Rensa",
+    "Input": "Fyll i"
+  },
+
+  "Balance": "Saldo",
+  "UAH": "UAH",
+  "00.00 UAH": "00.00 UAH",
+  "Reports": "Rapporter",
+  "Current period": "Nuvarande period",
+  "Main page": "Startsida",
+
+  "registration": {
+    "GoogleText": "Du kan logga in med ditt Google-konto",
+    "loginText": " eller logga in med ditt email och lösenord",
+    "after": "Efter registrering",
+    "Password": "Lösenord",
+    "LOG IN": " Logga in",
+    "REGISTRATION": " Registrering",
+    "Forgot your password": "Glömt lösenord"
+  },
+
+  "balanceModalTitle": " Hej! För att starta, ange ditt nuvarande saldo",
+  "balanceModalText": "Du kan inte spendera pengar förrän du har dem :)",
+
+  "expensesCategory": [
+    { "value": "Products", "label": "Produkter" },
+    { "value": "Health", "label": "Hälsa" },
+    { "value": "Alcohol", "label": "Alkohol" },
+    { "value": "Entertainment", "label": "Nöjen" },
+    { "value": "Housing", "label": "Bostad" },
+    {
+      "value": "Communal, communication",
+      "label": "Kommunala avgifter, telefoni, internet"
+    },
+    { "value": "Sports, hobbies", "label": "Sport, hobbyer" },
+    { "value": "Education", "label": "Utbildning" },
+    { "value": "Other", "label": "Övrigt" }
+  ],
+
+  "Products": "Produkter",
+  "Health": "Hälsa",
+  "Alcohol": "Alkohol",
+  "Entertainment": "Nöjen",
+  "Housing": "Bostad",
+  "Communal, communication": "Kommunala avgifter, telefoni, internet",
+  "Sports, hobbies": "Sport, hobbyer",
+  "Education": "Utbildning",
+  "Other": "Övrigt",
+  "Salary": "Lön",
+  "Add.income": "Lägg till inkomst",
+
+  "incomeCategory": [
+    { "value": "salary", "label": "Lön" },
+    { "value": "Add.income", "label": "Lägg till inkomst" }
+  ],
+
+  "Product description": "Produktinformation",
+  "Product category": "Produktkategori",
+  "Type of income": "Typ av inkomst",
+
+  "Date": "Datum",
+  "Description": "Beskrivning",
+  "Category": "Kategori",
+  "Sum": "Summa",
+  "Summary": "Sammanfattning",
+
+  "January": "Januari",
+  "February": "Februari",
+  "March": "Mars",
+  "April": "April",
+  "May": "Maj",
+  "June": "Juni",
+  "July": "Juli",
+  "August": "Augusti",
+  "September": "September",
+  "October": "Oktober",
+  "November": "November",
+  "December": "December",
+
+  "firstModal": {
+    "welcome": "Välkommen till vår Smart Finans App ",
+    "subText": "Flyger dina pengar iväg som kålhuvuden i appens backgrund? Det är inte längre ett problem! Vi hjälper dig att kontrollera din ekonomi. Tacka inte! ",
+    "start": "Starta"
+  },
+
+  "Exit": "Utgång",
+  "exitText": "Vill du verkligen lämna sidan?",
+  "Are you sure": "Är du säker?",
+
+  "reportsTextExpenses": "Du har inga utgifter för den här perioden ",
+  "reportsTextIncome": "You have no income for this period",
+  "Expenses": "utgifter",
+  "Income": "intäkter",
+
+  "Change password": "Byt lösenord",
+  "Old password": "Gammalt lösenord",
+  "New password": "Nytt lösenord",
+  "Add new operation": "Lägg till ny betalning",
+
+  "Enter old password": "Ange gammalt lösenord",
+  "Enter new password": "Ange nytt lösenord",
+
+  "Done": "Gjort",
+
+  "Forgot modal text": "Har du glömt ditt lösenord? Vänligen ange ditt email",
+  "Send": "Skicka",
+
+  "Reset All": "Återställ allt",
+  "Are you sure reset": "Är du säker? Denna åtgärd kommer att radera dina transaktioner och nollställa ditt saldo!"
+}

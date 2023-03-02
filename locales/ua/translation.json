@@ -1,53 +1,51 @@
 {
-"menu":{
-  "Hello": "Привіт",
-   "Select language" : "Оберіть мову",
-   "Profile Settings" : "Налаштування профілю"
-} ,
+  "menu": {
+    "Hello": "Привіт",
+    "Select language": "Оберіть мову",
+    "Profile Settings": "Налаштування"
+  },
 
-"modal":{
-"Change Name": "Змінити ім'я",
-"Write your new name": "Напишіть своє нове ім'я",
-"Set/Change Avatar": "Встановити/змінити аватар",
-"Drop image here": "Перетягніть зображення сюди",
-"or": "або",
-"YES": "ТАК",
-"NO": "НІ",
-"leaveText": "Ви дійсно хочете піти?"
+  "modal": {
+    "Change Name": "Змінити ім'я",
+    "Write your new name": "Напишіть своє нове ім'я",
+    "Set/Change Avatar": "Встановити/змінити аватар",
+    "Drop image here": "Перетягніть зображення сюди",
+    "or": "або",
+    "YES": "ТАК",
+    "NO": "НІ",
+    "leaveText": "Ви дійсно хочете піти?"
+  },
 
+  "button": {
+    "CONFIRM": "ПІДТВЕРДИТИ",
+    "CANCEL": " СКАСУВАТИ",
+    "Expenses": "Витрати",
+    "Income": "Дохід",
+    "Clear": "Видалити",
+    "Input": "Ввести"
+  },
 
-},
+  "Balance": "Баланс",
+  "UAH": "ГРН",
+  "00.00 UAH": "00.00 ГРН",
+  "Reports": "Звіти",
+  "Current period": "Поточний період",
+  "Main page": "Головна сторінка",
 
-"button": {
- "CONFIRM": "ПІДТВЕРДИТИ",
- "CANCEL": " СКАСУВАТИ",
-  "Expenses": "Витрати",
-"Income": "Дохід",
-"Clear" : "Видалити",
-"Input" : "Ввести"
-},
+  "registration": {
+    "GoogleText": "Ви можете увійти за допомогою свого облікового запису Google",
+    "loginText": " Або увійдіть за допомогою електронної пошти та пароля",
+    "after": "після реєстрації",
+    "Password": "Пароль",
+    "LOG IN": "УВІЙТИ",
+    "REGISTRATION": "РЕЄСТРАЦІЯ",
+    "Forgot your password": "Забули пароль"
+  },
 
-"Balance":"Баланс",
-"UAH": "ГРН",
-"00.00 UAH" : "00.00 ГРН",
-"Reports": "Звіти",
-"Current period": "Поточний період",
-"Main page": "Головна сторінка",
+  "balanceModalTitle": " Привіт! Для початку введіть поточний баланс вашого рахунку",
+  "balanceModalText": "Ви не можете витрачати гроші, поки їх у вас немає :)",
 
-"registration":{
-"GoogleText" : "Ви можете увійти за допомогою свого облікового запису Google",
-"loginText": " Або увійдіть за допомогою електронної пошти та пароля",
-"after": "після реєстрації",
-"Password": "Пароль",
-"LOG IN": "УВІЙТИ",
-"REGISTRATION": "РЕЄСТРАЦІЯ",
- "Forgot your password": "Забули пароль"
- },
-  
- "balanceModalTitle": " Привіт! Для початку введіть поточний баланс вашого рахунку",
- "balanceModalText" : "Ви не можете витрачати гроші, поки їх у вас немає :)",
-
-"expensesCategory":  [
+  "expensesCategory": [
     { "value": "Products", "label": "Продукти" },
     { "value": "Health", "label": "Здоров'я" },
     { "value": "Alcohol", "label": "Алкоголь" },
@@ -57,74 +55,74 @@
     { "value": "Sports, hobbies", "label": "Спорт, хобі" },
     { "value": "Education", "label": "Освіта" },
     { "value": "Other", "label": "Інше" }
-],
-"Products" : "Продукти" ,
-"Health": "Здоров'я" ,
-"Alcohol" : "Алкоголь" ,
-"Entertainment" : "Розваги",
-"Housing" : "Житло" ,
-"Communal, communication" : "Комуналка, комунікації" ,
-"Sports, hobbies" : "Спорт, хобі",
-"Education" : "Освіта" ,
-"Other": "Інше",
-"Salary": "Зарплата",
-"Add.income": "Додатковий дохід",
+  ],
+  "Products": "Продукти",
+  "Health": "Здоров'я",
+  "Alcohol": "Алкоголь",
+  "Entertainment": "Розваги",
+  "Housing": "Житло",
+  "Communal, communication": "Комуналка, комунікації",
+  "Sports, hobbies": "Спорт, хобі",
+  "Education": "Освіта",
+  "Other": "Інше",
+  "Salary": "Зарплата",
+  "Add.income": "Додатковий дохід",
 
-"incomeCategory": [
+  "incomeCategory": [
     { "value": "salary", "label": "Зарплата" },
     { "value": "Add.income", "label": "Додатковий дохід" }
-],
+  ],
 
-"Product description" : "Опис продукту",
-"Product category": "Категорія продукту",
-"Type of income": "Вид доходу",    
+  "Product description": "Опис продукту",
+  "Product category": "Категорія продукту",
+  "Type of income": "Вид доходу",
 
-"Date" : "Дата",
-"Description": "Опис",
-"Category": "Категорія",
-"Sum": "Сума",
-"Summary": "Підсумок",
+  "Date": "Дата",
+  "Description": "Опис",
+  "Category": "Категорія",
+  "Sum": "Сума",
+  "Summary": "Підсумок",
 
-"January" : "Січень",
-"February" : "Лютий",
-"March" : "Березень",
-"April" : "Квітень",
-"May" : "Травень",
-"June": "Червень",
-"July": "Липень",
-"August": "Черпень",
-"September": "Вересень",
-"October": "Жовтень",
-"November": "Листопад",
-"December" : "Грудень",
+  "January": "Січень",
+  "February": "Лютий",
+  "March": "Березень",
+  "April": "Квітень",
+  "May": "Травень",
+  "June": "Червень",
+  "July": "Липень",
+  "August": "Черпень",
+  "September": "Вересень",
+  "October": "Жовтень",
+  "November": "Листопад",
+  "December": "Грудень",
 
+  "firstModal": {
+    "welcome": "Ласкаво просимо в наш додаток Smart Finance",
+    "subText": "Ваші гроші розлітаються, як капуста, на нашому фоні? Це більше не проблема! Тому що тепер ми допоможемо вам контролювати свої фінанси. Не дякуйте ",
+    "start": "Розпочати"
+  },
 
- "firstModal" :{
-  "welcome": "Ласкаво просимо в наш додаток Smart Finance",
-  "subText": "Ваші гроші розлітаються, як капуста, на нашому фоні? Це більше не проблема! Тому що тепер ми допоможемо вам контролювати свої фінанси. Не дякуйте ",
-   "start" : "Розпочати"       
-},
+  "Exit": "Вихід",
+  "exitText": "Ви справді хочете піти?",
+  "Are you sure": "Ви впевнені?",
 
-"Exit": "Вихід",
-"exitText" : "Ви справді хочете піти?",
-"Are you sure" : "Ви впевнені?",
+  "reportsTextExpenses": "У вас немає витрат за цей період",
+  "reportsTextIncome": "У вас немає доходів за цей період",
+  "Expenses": "Витрати",
+  "Income": "Дохід",
 
-"reportsTextExpenses" : "У вас немає витрат за цей період",
- "reportsTextIncome" : "У вас немає доходів за цей період",
- "Expenses": "Витрати",
- "Income": "Дохід",
+  "Change password": "Змінити пароль",
+  "Old password": "Старий пароль",
+  "New password": "Новий пароль",
+  "Add new operation": "Додати нову операцію",
+  "Enter old password": "Введіть старий пароль",
+  "Enter new password": "Введіть новий пароль",
 
- "Change password" : "Змінити пароль",
- "Old password" : "Старий пароль",
- "New password" : "Новий пароль",
- "Add new operation" : "Додати нову операцію",
- "Enter old password" : "Введіть старий пароль",
- "Enter new password" : "Введіть новий пароль",
+  "Done": "Готово",
 
- "Done": "Готово",
+  "Forgot modal text": "Забули пароль? Будь-ласка введіть ваш email",
+  "Send": "Відправити",
 
-
-"Forgot modal text" : "Забули пароль? Будь-ласка введіть ваш email",
-"Send": "Відправити"
-
+  "Reset All": "Видалити все",
+  "Are you sure reset": "Ви впевнені? Ця дія видалить всі ваші транзакції та обнулить баланс!"
 }

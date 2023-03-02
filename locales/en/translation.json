@@ -123,5 +123,8 @@
   "Done": "Done",
 
   "Forgot modal text": "Forgot your password? Please enter your email",
-  "Send": "Send"
+  "Send": "Send",
+
+  "Reset All": "Reset All",
+  "Are you sure reset": "Are you sure? This action will delete all your transactions and reset your balance!"
 }

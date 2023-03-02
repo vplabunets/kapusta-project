@@ -158,7 +158,8 @@ const OperationsForm = ({ value }) => {
             type="number"
             name="amount"
             placeholder="00.00"
-            min={0.01}
+            min="0.01"
+            step="0.01"
             value={amount}
           />
           <CalculatorIcon

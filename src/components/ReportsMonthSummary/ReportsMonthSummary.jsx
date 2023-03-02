@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useTranslation } from 'react-i18next';
 
 import { selectCategoryReports } from 'redux/reports/selectors';
+import { setCategoryReports } from 'redux/reports/slice';
 
 import Icons from 'images/icons-sprite.svg';
 
@@ -27,15 +28,25 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
   const [isActive, setIsActive] = useState('');
   const { t } = useTranslation();
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
+    if (!categoryItems.length) {
+      return;
+    }
     if (categoryItems?.length > 0) {
       const sortArray = [...categoryItems].sort((a, b) =>
         a.sum < b.sum ? 1 : -1
       );
       setArray(sortArray);
+
       if (!isActive) setIsActive(sortArray[0].category.toLowerCase());
     } else setArray([]);
   }, [categoryItems, isActive]);
+
+  const changeCategoryRep = () => {
+    dispatch(setCategoryReports([]));
+  };
 
   const expenses = t('Expenses', { returnObjects: true });
   const income = t('Income', { returnObjects: true });
@@ -47,13 +58,25 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
     <Section>
       <Wrapper>
         <Switcher>
-          <BtnArrow onClick={() => toggleType()}>
+          <BtnArrow
+            onClick={() => {
+              toggleType();
+              changeCategoryRep();
+              setIsActive('');
+            }}
+          >
             <svg width="10" height="15">
               <use href={`${Icons}#icon-arrow-left`}></use>
             </svg>
           </BtnArrow>
           <Title>{reportType === 'expenses' ? expenses : income}</Title>
-          <BtnArrow onClick={() => toggleType()}>
+          <BtnArrow
+            onClick={() => {
+              toggleType();
+              changeCategoryRep();
+              setIsActive('');
+            }}
+          >
             <svg width="10" height="15">
               <use href={`${Icons}#icon-arrow-right`}></use>
             </svg>

@@ -29,10 +29,12 @@ const reportsSlice = createSlice({
     setCategory(state, action) {
       state.category = action.payload;
     },
+    setCategoryReports(state, action) {
+      state.categoryReports = action.payload;
+    },
   },
   extraReducers: {
     [getReports.fulfilled]: (state, action) => {
-      console.log(action.payload);
       state.allSummaryReports = action.payload[0].allSummaryReports;
       state.categoryReports = action.payload[0].categoryReports;
       state.itemsByCategory = action.payload[0].itemsCategoryReports;
@@ -86,4 +88,5 @@ const reportsSlice = createSlice({
 });
 
 export const reportsReducer = reportsSlice.reducer;
-export const { setCurrentPeriod, setCategory } = reportsSlice.actions;
+export const { setCurrentPeriod, setCategory, setCategoryReports } =
+  reportsSlice.actions;

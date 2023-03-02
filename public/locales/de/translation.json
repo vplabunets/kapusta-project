@@ -99,7 +99,7 @@
   "firstModal": {
     "welcome": "Willkommen in unserer Smart Finance App",
     "subText": "Fliegt Ihr Geld wie Kohl in unserem Hintergrund davon? Es ist kein Problem mehr! Denn jetzt helfen wir Ihnen, Ihre Finanzen zu kontrollieren. Danke nicht ",
-    "start": "Start"
+    "start": "Lasst uns beginnen"
   },
 
   "Exit": "Ausfahrt",
@@ -115,11 +115,14 @@
   "Old password": "Altes Passwort",
   "New password": "Neues Passwort",
   "Add new operation": "Operation hinzufügen",
-  "Enter old password" : "Altes Passwort eingeben",
-  "Enter new password" : "Neues Passwort eingeben",
+  "Enter old password": "Altes Passwort eingeben",
+  "Enter new password": "Neues Passwort eingeben",
 
-   "Done": "Erledigt",
+  "Done": "Erledigt",
 
   "Forgot modal text": "Passwort vergessen? Bitte geben Sie Ihre E-Mail-Adresse ein",
-  "Send": "Senden"
+  "Send": "Senden",
+
+  "Reset All": "Alles zurücksetzen",
+  "Are you sure reset": "Sind Sie sicher? Diese Aktion löscht alle Ihre Transaktionen und setzt Ihre Balance zurück!"
 }

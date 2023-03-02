@@ -5,10 +5,7 @@ import { PropTypes } from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
-import { selectName } from 'redux/auth/selectors';
-
-// import ukrainian from 'images/flags/ua.png';
-// import english from 'images/flags/en.png';
+import { selectEmail, selectName } from 'redux/auth/selectors';
 
 import SettingsModal from 'components/SettingsModal/SettingsModal';
 import icons from 'images/icons-sprite.svg';
@@ -48,6 +45,8 @@ const SettingsMenu = ({ setMenuOpen }) => {
   };
 
   const userName = useSelector(selectName);
+  const email = useSelector(selectEmail);
+
   const toggleModal = () => {
     setShowModal(prevState => !prevState);
   };
@@ -75,7 +74,8 @@ const SettingsMenu = ({ setMenuOpen }) => {
       >
         <Menu>
           <Title>
-            {t('menu.Hello')}, {toCutName(userName)}!
+            {t('menu.Hello')},
+            {userName ? toCutName(userName) : toCutName(email)}!
           </Title>
           {/* max 16 symbols*/}
           <Container>

@@ -206,7 +206,7 @@ const SettingsModal = ({ onClose }) => {
               {t('Change password')}
             </ChangePasswordBtn>
             <ResetAllBtn type="button" onClick={onResetModalToggle}>
-              Reset All
+              {t('Reset All')}
             </ResetAllBtn>
             <ButtonWrapper>
               <Button type={'submit'} color={'accent'} design={'modal'}>
@@ -234,7 +234,7 @@ const SettingsModal = ({ onClose }) => {
               dispatch(resetAll());
               onResetModalToggle();
             }}
-            text="Are you sure? This action will delete all your transactions and reset balance!"
+            text={t('Are you sure reset')}
           />
         )}
       </motion.div>

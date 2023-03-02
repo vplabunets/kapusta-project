@@ -49,7 +49,7 @@ const LanguageModal = ({ onClose }) => {
           </ButtonClose>
           <div>
             <Text>{t('menu.Select language')}:</Text>
-            <LanguageSwitcher position="menu" />
+            <LanguageSwitcher position="menu" onClose={onClose} />
             {/* <ButtonWrapper>
               <Button onClick={closeModal} type={'button'}>
                 {t('modal.YES')}

@@ -82,9 +82,10 @@ const OperationsBalanceContainer = ({ addBalance }) => {
               ? 'Are you sure delete expenses'
               : 'Are you sure delete income'
           )}
-          onClick={() =>
-            dispatch(deleteAllByOperation({ operation: operationType }))
-          }
+          onClick={() => {
+            dispatch(deleteAllByOperation({ operation: operationType }));
+            setIsOpenModalConfirm(false);
+          }}
           setModalOpen={setIsOpenModalConfirm}
         />
       )}

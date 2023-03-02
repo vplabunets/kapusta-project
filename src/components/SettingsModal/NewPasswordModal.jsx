@@ -38,7 +38,6 @@ const NewPasswordModal = ({ onClose }) => {
     const res = await instans.post('/users/password-verification', {
       password: oldPassword,
     });
-    console.log(res.data.status);
     setStatus(res.data.status);
   };
 

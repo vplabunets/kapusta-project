@@ -15,7 +15,6 @@ import {
 
 const ReportsMonthBalance = () => {
   const summaryReports = useSelector(selectAllSummaryReports);
-  console.log(summaryReports);
   const { t } = useTranslation();
   return (
     <Wrapper>

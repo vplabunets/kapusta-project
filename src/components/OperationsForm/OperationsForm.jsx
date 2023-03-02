@@ -56,8 +56,7 @@ const OperationsForm = ({ value }) => {
       year: moment(date).format('YYYY'),
       currency: 'UAH',
     };
-    console.log(userEnteredData);
-    dispatch(addTransaction(userEnteredData));
+     dispatch(addTransaction(userEnteredData));
     resetForm();
     return;
   };

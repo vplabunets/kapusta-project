@@ -126,5 +126,10 @@
   "Send": "Send",
 
   "Reset All": "Reset All",
-  "Are you sure reset": "Are you sure? This action will delete all your transactions and reset your balance!"
+  "Are you sure reset": "Are you sure? This action will delete all your transactions and reset your balance!",
+
+  "Delete All Expenses": "Delete all expenses",
+  "Delete All Income": "Delete all income",
+  "Are you sure delete income": "Are you sure you want to delete all income operations?",
+  "Are you sure delete expenses": "Are you sure you want to delete all expenses operations? "
 }

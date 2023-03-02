@@ -85,7 +85,7 @@ export const deleteAllByOperation = createAsyncThunk(
   'transactions/deleteAllByOperation',
   async (operation, { rejectWithValue, dispatch }) => {
     try {
-      const result = await instans.delete(
+      const result = await instans.put(
         `/transaction/delete-all-operation`,
         operation
       );

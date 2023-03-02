@@ -15,7 +15,7 @@ export const Backdrop = styled.div`
 
 export const Modal = styled.div`
   position: absolute;
-  top: 182px;
+  top: 232px;
   left: 50%;
   transform: translateX(-50%);
   max-width: 280px;
@@ -33,7 +33,7 @@ export const Modal = styled.div`
   @media ${DEVICE.laptop} {
     max-width: 288px;
     top: 154px;
-    left: 51%;
+    left: 53%;
   }
   &:before {
     content: '';

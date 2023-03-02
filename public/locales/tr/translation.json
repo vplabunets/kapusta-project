@@ -128,5 +128,10 @@
   "Send": "Gönder",
 
   "Reset All": "Hepsini sıfırla",
-  "Are you sure reset": "Emin misiniz? Bundan sonra tüm işlemlerinizi silinmiş olur ve bakiyenizi sıfırlar!"
+  "Are you sure reset": "Emin misiniz? Bundan sonra tüm işlemlerinizi silinmiş olur ve bakiyenizi sıfırlar!",
+
+  "Delete All Expenses": "Tüm masrafları sil",
+  "Delete All Income": "Tüm gelirleri sil",
+  "Are you sure delete income": "Tüm gelir işlemlerini silmek istediğinizden emin misiniz?",
+  "Are you sure delete expenses": "Tüm gider işlemlerini silmek istediğinizden emin misiniz?"
 }

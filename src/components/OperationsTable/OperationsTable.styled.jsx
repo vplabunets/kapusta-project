@@ -2,14 +2,12 @@ import styled from 'styled-components';
 import DEVICE from '../../constants/deviceSize';
 
 export const Table = styled.table`
-  z-index: -3;
   width: 100%;
   max-height: 500px;
   margin: 372px auto 20px;
   overflow-y: scroll;
 
   @media ${DEVICE.tablet} {
-    z-index: 0;
     width: 100%;
     margin: 48px 0 0 0;
   }
@@ -98,11 +96,10 @@ export const TableHeadTitleBtn = styled.button`
   @media ${DEVICE.tablet} {
     border: none;
     background: transparent;
-    }
   }
-  `
+`;
 
-  export const TableHeadTitleSvg = styled.svg`
+export const TableHeadTitleSvg = styled.svg`
   @media ${DEVICE.tablet} {
     margin-left: 5px;
     transform: rotate(270deg);

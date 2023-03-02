@@ -124,5 +124,10 @@
   "Send": "Senden",
 
   "Reset All": "Alles zurücksetzen",
-  "Are you sure reset": "Sind Sie sicher? Diese Aktion löscht alle Ihre Transaktionen und setzt Ihre Balance zurück!"
+  "Are you sure reset": "Sind Sie sicher? Diese Aktion löscht alle Ihre Transaktionen und setzt Ihre Balance zurück!",
+
+  "Delete All Expenses": "Alle Ausgaben löschen",
+  "Delete All Income": "Alle Einnahmen löschen",
+  "Are you sure delete income": "Sind Sie sicher, dass alle Einnahmen zu löschen?",
+  "Are you sure delete expenses": "Sind Sie sicher,dass alle Ausgaben zu löschen?"
 }

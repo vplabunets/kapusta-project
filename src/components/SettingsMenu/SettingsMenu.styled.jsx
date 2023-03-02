@@ -3,6 +3,19 @@ import { keyframes } from '@emotion/css';
 import TRANSITION from 'constants/constants';
 import DEVICE from 'constants/deviceSize';
 
+const scale = keyframes`
+  from {
+    transform: scale(0.9);
+  }
+  50%{
+   transform: scale(1.2);
+
+  }
+  to {
+   transform: scale(0.9);
+  }
+`;
+
 const barrelRoll = keyframes`
     0% { transform: rotate(0deg) }
     100% { transform: rotate(360deg)}
@@ -171,6 +184,7 @@ const LanguageWrapper = styled.div`
     color: ${p => p.theme.accentColor};
   }
   &:hover svg {
+    animation-play-state: running;
     fill: ${p => p.theme.accentColor};
   }
 `;
@@ -192,10 +206,14 @@ const Globe = styled.svg`
   fill: ${p => p.theme.mainTextColor};
   width: 30px;
   height: 30px;
+  animation: ${scale} 3s linear infinite;
 
   @media ${DEVICE.tablet} {
     width: 45px;
     height: 45px;
+  }
+  @media ${DEVICE.laptop} {
+    animation-play-state: paused;
   }
 `;
 

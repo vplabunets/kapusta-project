@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { useTranslation } from 'react-i18next';
 
 import { selectCategoryReports } from 'redux/reports/selectors';
-import { setCategoryReports } from 'redux/reports/slice';
+import { selectOperationType } from 'redux/transaction/selectors';
 
 import Icons from 'images/icons-sprite.svg';
 
@@ -25,29 +25,33 @@ import {
 const ReportsMonthSummary = ({ reportType, toggleType }) => {
   const [array, setArray] = useState([]);
   const categoryItems = useSelector(selectCategoryReports);
+  const operationType = useSelector(selectOperationType);
   const [isActive, setIsActive] = useState('');
   const { t } = useTranslation();
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!categoryItems.length) {
       setArray(categoryItems);
       return;
     }
-    if (categoryItems?.length > 0) {
-      const sortArray = [...categoryItems].sort((a, b) =>
+
+    const selectedArray = categoryItems.filter(
+      item => item.operation === operationType
+    );
+
+    if (!selectedArray[0].category.length) {
+      setArray(selectedArray[0].category);
+      return;
+    }
+    if (selectedArray[0].category.length > 0) {
+      const sortArray = [...selectedArray[0].category].sort((a, b) =>
         a.sum < b.sum ? 1 : -1
       );
       setArray(sortArray);
 
       if (!isActive) setIsActive(sortArray[0].category.toLowerCase());
     } else setArray([]);
-  }, [categoryItems, isActive]);
-
-  const changeCategoryRep = () => {
-    dispatch(setCategoryReports([]));
-  };
+  }, [operationType, isActive, categoryItems]);
 
   const expenses = t('Expenses', { returnObjects: true });
   const income = t('Income', { returnObjects: true });
@@ -62,7 +66,6 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
           <BtnArrow
             onClick={() => {
               toggleType();
-              changeCategoryRep();
               setIsActive('');
             }}
           >
@@ -74,7 +77,6 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
           <BtnArrow
             onClick={() => {
               toggleType();
-              changeCategoryRep();
               setIsActive('');
             }}
           >

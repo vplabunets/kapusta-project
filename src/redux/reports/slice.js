@@ -1,14 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import {
-  getAllSummaryReports,
-  getCategoryReports,
-  getItemsCategoryReports,
-  getReports,
-} from './operations';
+import { getReports } from './operations';
 
 const initialState = {
-  // reports: [],
   allSummaryReports: [],
   categoryReports: [],
   itemsByCategory: [],
@@ -48,41 +42,6 @@ const reportsSlice = createSlice({
     [getReports.pending](state) {
       state.isLoading = true;
       state.skelet = true;
-    },
-    [getAllSummaryReports.fulfilled]: (state, action) => {
-      state.allSummaryReports = action.payload;
-      state.isLoading = false;
-      state.skelet = false;
-    },
-    [getAllSummaryReports.rejected](state, action) {
-      state.error = action.payload.message;
-      state.isLoading = false;
-    },
-    [getAllSummaryReports.pending](state) {
-      // state.isLoading = true;
-      state.skelet = true;
-    },
-    [getCategoryReports.fulfilled]: (state, action) => {
-      state.categoryReports = action.payload;
-      state.isLoading = false;
-    },
-    [getCategoryReports.rejected](state, action) {
-      state.error = action.payload.message;
-      state.isLoading = false;
-    },
-    [getCategoryReports.pending](state) {
-      state.isLoading = true;
-    },
-    [getItemsCategoryReports.fulfilled]: (state, action) => {
-      state.itemsByCategory = action.payload;
-      state.isLoading = false;
-    },
-    [getItemsCategoryReports.rejected](state, action) {
-      state.error = action.payload.message;
-      state.isLoading = false;
-    },
-    [getItemsCategoryReports.pending](state) {
-      state.isLoading = true;
     },
   },
 });

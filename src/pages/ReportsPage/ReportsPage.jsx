@@ -1,17 +1,12 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { motion } from 'framer-motion';
 
-import {
-  // getAllSummaryReports,
-  // getCategoryReports,
-  getReports,
-} from 'redux/reports/operations';
+import { getReports } from 'redux/reports/operations';
 import { selectOperationType } from 'redux/transaction/selectors';
 import { setOperationType } from 'redux/transaction/slice';
-import { selectCategory, selectCurrentPeriod } from 'redux/reports/selectors';
+import { selectCurrentPeriod } from 'redux/reports/selectors';
 
 import OPERATION_TYPES from 'constants/constants';
 
@@ -26,7 +21,6 @@ import ReportsPageWrapper from './ReportsPage.styled';
 const ReportsPage = () => {
   const currentPeriod = useSelector(selectCurrentPeriod);
   const operation = useSelector(selectOperationType);
-  const category = useSelector(selectCategory);
 
   const dispatch = useDispatch();
 
@@ -38,11 +32,8 @@ const ReportsPage = () => {
   };
 
   useEffect(() => {
-    if (!currentPeriod.month && !currentPeriod.year) return;
-    dispatch(getReports({ ...currentPeriod, operation, category }));
-    // dispatch(getAllSummaryReports(currentPeriod));
-    // dispatch(getCategoryReports({ ...currentPeriod, operation }));
-  }, [dispatch, currentPeriod, operation, category]);
+    dispatch(getReports({ ...currentPeriod }));
+  }, [dispatch, currentPeriod]);
 
   return (
     <>

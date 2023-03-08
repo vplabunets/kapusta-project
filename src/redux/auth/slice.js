@@ -75,6 +75,7 @@ const authSlice = createSlice({
       state.avatarUrl = action.payload.avatarUrl;
     },
     [logIn.rejected](state, action) {
+      console.log(action.payload);
       state.error = action.payload.message;
       state.isLoading = false;
     },

@@ -12,8 +12,10 @@ import {
   BarElement,
 } from 'chart.js/auto';
 
+import { selectOperationType } from 'redux/transaction/selectors';
+import { selectCategory } from 'redux/reports/selectors';
+
 import {
-  selectCurrentPeriod,
   selectIsLoading,
   selectItemsByCategory,
 } from 'redux/reports/selectors';
@@ -30,20 +32,32 @@ const ReportsChart = () => {
   const isScreenMorePhone = useMediaQuery('(min-width: 768px)');
   const ticksFontSize = isScreenMorePhone ? 12 : 10;
   const itemsByCategory = useSelector(selectItemsByCategory);
-  const currentPeriod = useSelector(selectCurrentPeriod);
+  const category = useSelector(selectCategory);
   const isLoading = useSelector(selectIsLoading);
+  const operationType = useSelector(selectOperationType);
   const { t } = useTranslation();
+
   useEffect(() => {
-    if (itemsByCategory?.length > 0) {
-      const sortArray = [...itemsByCategory].sort((a, b) =>
+    if (!itemsByCategory.length) {
+      setItems(itemsByCategory);
+      return;
+    }
+
+    const selectedArray = itemsByCategory.filter(
+      item => item.operation === operationType
+    );
+    const selectedArrayByCategory = selectedArray[0].description.filter(
+      item => item.category === category
+    );
+
+    if (selectedArrayByCategory.length > 0) {
+      const sortArray = [...selectedArrayByCategory].sort((a, b) =>
         a.sum < b.sum ? 1 : -1
       );
       setMaxCount(sortArray[0].sum);
       setItems(sortArray.slice(0, 10));
-    } else {
-      setItems([]);
     }
-  }, [itemsByCategory, currentPeriod]);
+  }, [category, itemsByCategory, operationType]);
 
   const userData = {
     labels: items.map(data =>

@@ -3,7 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getReports } from './operations';
 
 const initialState = {
-  allSummaryReports: [],
+  allSummaryReports: [
+    { operation: 'expenses', sum: 0 },
+    { operation: 'income', sum: 0 },
+  ],
   categoryReports: [],
   itemsByCategory: [],
   currentPeriod: { month: '', year: '' },
@@ -29,7 +32,31 @@ const reportsSlice = createSlice({
   },
   extraReducers: {
     [getReports.fulfilled]: (state, action) => {
-      state.allSummaryReports = action.payload[0].allSummaryReports;
+      !action.payload[0].allSummaryReports.length &&
+        (state.allSummaryReports = [
+          { operation: 'expenses', sum: 0 },
+          { operation: 'income', sum: 0 },
+        ]);
+
+      action.payload[0].allSummaryReports.length === 1 &&
+        (state.allSummaryReports = state.allSummaryReports.map(item => {
+          if (
+            item.operation === action.payload[0].allSummaryReports[0].operation
+          ) {
+            const newObj = {
+              operation: item.operation,
+              sum: action.payload[0].allSummaryReports[0].sum,
+            };
+            return newObj;
+          }
+          const newObj = {
+            operation: item.operation,
+            sum: 0,
+          };
+          return newObj;
+        }));
+      action.payload[0].allSummaryReports.length === 2 &&
+        (state.allSummaryReports = action.payload[0].allSummaryReports);
       state.categoryReports = action.payload[0].categoryReports;
       state.itemsByCategory = action.payload[0].itemsCategoryReports;
       state.isLoading = false;

@@ -46,6 +46,10 @@ const ReportsChart = () => {
     const selectedArray = itemsByCategory.filter(
       item => item.operation === operationType
     );
+    if (!selectedArray.length) {
+      setItems(selectedArray);
+      return;
+    }
     const selectedArrayByCategory = selectedArray[0].description.filter(
       item => item.category === category
     );

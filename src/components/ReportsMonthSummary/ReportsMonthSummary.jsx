@@ -39,8 +39,8 @@ const ReportsMonthSummary = ({ reportType, toggleType }) => {
       item => item.operation === operationType
     );
 
-    if (!selectedArray[0].category.length) {
-      setArray(selectedArray[0].category);
+    if (!selectedArray.length) {
+      setArray(selectedArray);
       return;
     }
     if (selectedArray[0].category.length > 0) {

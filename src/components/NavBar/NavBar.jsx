@@ -63,7 +63,7 @@ const NavBar = () => {
             src={
               avatar.includes('https://lh3.googleusercontent.com')
                 ? avatar
-                : `https://kapusta-project-back-production.up.railway.app${avatar}`
+                : `https://kapusta-project-back.onrender.com${avatar}`
             }
           >
             {!avatar && name ? toCutName(name) : toCutName(email)}

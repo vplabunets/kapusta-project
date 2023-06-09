@@ -79,7 +79,7 @@ const SettingsModal = ({ onClose }) => {
       formData.append('image', files[0]);
       setPicture(URL.createObjectURL(files[0]));
       const res = await instans.post(
-        'https://kapusta-project-back-production.up.railway.app/upload',
+        'https://kapusta-project-back.onrender.com/upload',
         formData
       );
       setImage(res.data.url);
@@ -121,7 +121,7 @@ const SettingsModal = ({ onClose }) => {
 
       setPicture(URL.createObjectURL(evt.target.files[0]));
       const res = await instans.post(
-        'https://kapusta-project-back-production.up.railway.app/upload',
+        'https://kapusta-project-back.onrender.com/upload',
         formData
       );
       setImage(res.data.url);

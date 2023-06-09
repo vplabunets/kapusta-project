@@ -96,7 +96,7 @@ const HomeAuthForm = () => {
           <div>
             <LanguageSwitcher position="header" />
             <GoogleText>{t('registration.GoogleText')}:</GoogleText>
-            <GoogleButton href="https://kapusta-project-back-production.up.railway.app/auth/google">
+            <GoogleButton href="https://kapusta-project-back.onrender.com/auth/google">
               <svg>
                 <use href={`${icon}#icon-google-icon`}></use>
               </svg>

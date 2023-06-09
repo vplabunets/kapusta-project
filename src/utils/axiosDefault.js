@@ -4,7 +4,7 @@ import { store } from 'redux/store';
 import { setToken, setTokenRefresh } from 'redux/auth/slice';
 
 export const instans = axios.create({
-  baseURL: 'https://kapusta-project-back-production.up.railway.app/api',
+  baseURL: 'https://kapusta-project-back.onrender.com/api',
 });
 
 export const setAuthHeader = token => {

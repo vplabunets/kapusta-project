@@ -10,7 +10,7 @@ import Logo from 'images/icons-sprite.svg';
 
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 
-import { ContainerHeader, LogoGroup } from './Header.styled';
+import { ContainerHeader, LogoGroup, SwaggerBtn } from './Header.styled';
 
 const Header = ({ themeToggler, theme }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -27,7 +27,16 @@ const Header = ({ themeToggler, theme }) => {
           </svg>
         </LogoGroup>
       </Link>
+
       <CustomizedSwitcher themeToggler={themeToggler} theme={theme} />
+      <SwaggerBtn
+        href="https://kapusta-project-back.onrender.com/api-docs/"
+        marginRight={isLoggedIn}
+      >
+        <svg alt="swagger" width={39} height={31}>
+          <use href={`${Logo}#icon-swagger`}></use>
+        </svg>
+      </SwaggerBtn>
       {isLoggedIn && <NavBar />}
     </ContainerHeader>
   );

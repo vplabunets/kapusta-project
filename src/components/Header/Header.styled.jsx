@@ -46,3 +46,18 @@ export const LogoGroup = styled.div`
     fill: ${p => p.theme.tableHeadTextColor};
   }
 `;
+
+export const SwaggerBtn = styled.a`
+  display: block;
+  margin-right: ${p => (p.marginRight ? '16px' : '0px')};
+  height: 32px;
+
+  @media ${DEVICE.tablet} {
+    margin-right: ${p => (p.marginRight ? '31px' : '0px')};
+  }
+
+  & svg {
+    height: 32px;
+    width: 32px;
+  }
+`;
